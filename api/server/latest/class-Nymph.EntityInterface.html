@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Interface Nymph\EntityInterface | Nymph Server API</title>
+
+	<link rel="stylesheet" href="resources/style.css?c2f33731c1948fbed7c333554678bfa68d4817da">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active main">
+					<a href="namespace-Nymph.html">
+						Nymph<span></span>
+					</a>
+
+						<ul>
+				<li class="main">
+					<a href="namespace-Nymph.Drivers.html">
+						Drivers					</a>
+
+						</li>
+				<li class="main">
+					<a href="namespace-Nymph.Exceptions.html">
+						Exceptions					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Nymph.Entity.html">Entity</a></li>
+				<li><a href="class-Nymph.Nymph.html">Nymph</a></li>
+				<li><a href="class-Nymph.REST.html">REST</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Nymph.DataObjectInterface.html">DataObjectInterface</a></li>
+				<li class="active"><a href="class-Nymph.EntityInterface.html">EntityInterface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Nymph.html" title="Summary of Nymph"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Interface EntityInterface</h1>
+
+
+	<div class="description">
+	<p>Entity interface.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Nymph\EntityInterface</span></b>			
+			 implements 
+				<a href="class-Nymph.DataObjectInterface.html"><span>Nymph\DataObjectInterface</span></a>, 
+			
+<span>JsonSerializable</span>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+	<div>
+		<h4>Direct known implementers</h4>
+			<a href="class-Nymph.Entity.html">Nymph\Entity</a>
+	</div>
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Nymph.html">Nymph</a><br>
+		<b>Package:</b> Nymph<br>
+
+			<b>Located at</b> <a href="source-class-Nymph.EntityInterface.html#13-111" title="Go to source code">src/EntityInterface.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Nymph.Entity.html">Nymph\Entity</a></code>|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Nymph.EntityInterface.html#21-27" title="Go to source code">__construct</a>( <span>integer <var>$id</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			<p>Load an entity.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Load an entity.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd>The ID of the entity to load, 0 for a new entity.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Nymph.Entity.html">Nymph\Entity</a></code>|null
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="factory" id="_factory">
+
+		<td class="attributes"><code>
+			 public static
+
+			<code><a href="class-Nymph.Entity.html">Nymph\Entity</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_factory">#</a>
+		<code><a href="source-class-Nymph.EntityInterface.html#28-33" title="Go to source code">factory</a>( )</code>
+
+		<div class="description short">
+			<p>Create a new instance.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Create a new instance.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Nymph.Entity.html">Nymph\Entity</a></code><br>An entity instance.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="useSkipAc" id="_useSkipAc">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_useSkipAc">#</a>
+		<code><a href="source-class-Nymph.EntityInterface.html#34-39" title="Go to source code">useSkipAc</a>( <span>boolean <var>$useSkipAc</var></span> )</code>
+
+		<div class="description short">
+			<p>Set whether to use "skip_ac" when accessing entity references.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set whether to use "skip_ac" when accessing entity references.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$useSkipAc</var></dt>
+					<dd>True or false, whether to use it.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addTag" id="_addTag">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addTag">#</a>
+		<code><a href="source-class-Nymph.EntityInterface.html#40-45" title="Go to source code">addTag</a>( )</code>
+
+		<div class="description short">
+			<p>Add one or more tags.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Add one or more tags.</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="clearCache" id="_clearCache">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_clearCache">#</a>
+		<code><a href="source-class-Nymph.EntityInterface.html#46-52" title="Go to source code">clearCache</a>( )</code>
+
+		<div class="description short">
+			<p>Clear the cache of referenced entities.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Clear the cache of referenced entities.</p>
+
+<p>Calling this function ensures that the next time a referenced entity is
+accessed, it will be retrieved from the entity manager.</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getData" id="_getData">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getData">#</a>
+		<code><a href="source-class-Nymph.EntityInterface.html#53-62" title="Go to source code">getData</a>( )</code>
+
+		<div class="description short">
+			<p>Used to retrieve the data array.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Used to retrieve the data array.</p>
+
+<p>This should only be used by the entity manager to save the data array
+into storage.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>The entity's data array.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getSData" id="_getSData">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getSData">#</a>
+		<code><a href="source-class-Nymph.EntityInterface.html#63-77" title="Go to source code">getSData</a>( )</code>
+
+		<div class="description short">
+			<p>Used to retrieve the serialized data array.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Used to retrieve the serialized data array.</p>
+
+<p>This should only be used by the entity manager to save the data array
+into storage.</p>
+
+<p>This method can be used by entity managers to avoid unserializing data
+that hasn't been requested yet.</p>
+
+<p>It should always be called after getData().</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>The entity's serialized data array.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hasTag" id="_hasTag">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hasTag">#</a>
+		<code><a href="source-class-Nymph.EntityInterface.html#78-84" title="Go to source code">hasTag</a>( )</code>
+
+		<div class="description short">
+			<p>Check that the entity has all of the given tags.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Check that the entity has all of the given tags.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="putData" id="_putData">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_putData">#</a>
+		<code><a href="source-class-Nymph.EntityInterface.html#85-97" title="Go to source code">putData</a>( <span>array <var>$data</var></span>, <span>array <var>$sdata</var> = []</span> )</code>
+
+		<div class="description short">
+			<p>Used to set the data array.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Used to set the data array.</p>
+
+<p>This should only be used by the entity manager to push the data array
+from storage.</p>
+
+<p>$sdata be used by entity managers to avoid unserializing data that hasn't
+been requested yet.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>The data array.</dd>
+					<dt><var>$sdata</var></dt>
+					<dd>The serialized data array.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="removeTag" id="_removeTag">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_removeTag">#</a>
+		<code><a href="source-class-Nymph.EntityInterface.html#98-103" title="Go to source code">removeTag</a>( )</code>
+
+		<div class="description short">
+			<p>Remove one or more tags.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Remove one or more tags.</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="toReference" id="_toReference">
+
+		<td class="attributes"><code>
+			 public 
+
+			array|<code><a href="class-Nymph.Entity.html">Nymph\Entity</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_toReference">#</a>
+		<code><a href="source-class-Nymph.EntityInterface.html#104-110" title="Go to source code">toReference</a>( )</code>
+
+		<div class="description short">
+			<p>Return a Nymph Entity Reference for this entity.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Return a Nymph Entity Reference for this entity.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array|<code><a href="class-Nymph.Entity.html">Nymph\Entity</a></code><br><p>A Nymph Entity Reference array, or the entity
+                            if it is not saved yet.</p>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-Nymph.DataObjectInterface.html#methods">Nymph\DataObjectInterface</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Nymph.DataObjectInterface.html#_arraySearch">arraySearch()</a>, 
+			<a href="class-Nymph.DataObjectInterface.html#_delete">delete()</a>, 
+			<a href="class-Nymph.DataObjectInterface.html#_equals">equals()</a>, 
+			<a href="class-Nymph.DataObjectInterface.html#_inArray">inArray()</a>, 
+			<a href="class-Nymph.DataObjectInterface.html#_is">is()</a>, 
+			<a href="class-Nymph.DataObjectInterface.html#_refresh">refresh()</a>, 
+			<a href="class-Nymph.DataObjectInterface.html#_save">save()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from JsonSerializable</caption>
+	<tr>
+		<td><code>
+jsonSerialize()
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="magicProperties">
+	<caption>Magic properties summary</caption>
+	<tr data-order="guid" id="m$guid">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Nymph.EntityInterface.html#17" title="Go to source code"><var>$guid</var></a>
+
+			<div class="description short">
+				<p>The GUID of the entity.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+	</tr>
+	<tr data-order="tags" id="m$tags">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Nymph.EntityInterface.html#18" title="Go to source code"><var>$tags</var></a>
+
+			<div class="description short">
+				<p>Array of the entity's tags.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+</div>
+
+	<div id="footer">
+		Nymph Server API API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
