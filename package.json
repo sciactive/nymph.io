@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
-    "clean": "rm -r ./docs/*",
+    "clean": "test -d ./docs && rm -r ./docs || true",
     "build": "npm run clean && svelte-kit build",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",

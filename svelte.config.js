@@ -16,7 +16,8 @@ const config = {
     target: '#wrapper',
     paths: {
       base: '/sciactive-site',
-    }
+    },
+    appDir: 'sveltekit-dist',
   }
 };
 
