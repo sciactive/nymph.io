@@ -1,3 +1,15 @@
+<svelte:head>
+  <link rel="icon" href="{assets}/favicon.png" />
+  <link rel="stylesheet" href="{assets}/css/main.css" />
+
+  <!-- Scripts -->
+  <script src="{assets}/js/jquery.min.js"></script>
+  <script src="{assets}/js/browser.min.js"></script>
+  <script src="{assets}/js/breakpoints.min.js"></script>
+  <script src="{assets}/js/util.js"></script>
+  <script src="{assets}/js/main.js"></script>
+</svelte:head>
+
 <slot />
 
 <!-- Sidebar -->
@@ -16,10 +28,10 @@
         <h2>Menu</h2>
       </header>
       <ul>
-        <li><a href="/">Homepage</a></li>
-        <li><a href="/features">Features</a></li>
-        <li><a href="/generic">Generic</a></li>
-        <li><a href="/elements">Elements</a></li>
+        <li><a href="{base}/">Homepage</a></li>
+        <li><a href="{base}/features">Features</a></li>
+        <li><a href="{base}/generic">Generic</a></li>
+        <li><a href="{base}/elements">Elements</a></li>
         <li>
           <span class="opener">Submenu</span>
           <ul>
@@ -39,15 +51,15 @@
       </header>
       <div class="mini-posts">
         <article>
-          <a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+          <a href="#" class="image"><img src="{assets}/images/pic07.jpg" alt="" /></a>
           <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
         </article>
         <article>
-          <a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+          <a href="#" class="image"><img src="{assets}/images/pic08.jpg" alt="" /></a>
           <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
         </article>
         <article>
-          <a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+          <a href="#" class="image"><img src="{assets}/images/pic09.jpg" alt="" /></a>
           <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
         </article>
       </div>
@@ -86,3 +98,7 @@
     </footer>
   </div>
 </div>
+
+<script lang="ts">
+  import { base, assets } from '$app/paths';
+</script>

@@ -13,7 +13,10 @@ const config = {
 			assets: 'docs',
     }),
     // hydrate the <div id="svelte"> element in src/app.html
-    target: '#wrapper'
+    target: '#wrapper',
+    paths: {
+      base: '/sciactive-site',
+    }
   }
 };
 

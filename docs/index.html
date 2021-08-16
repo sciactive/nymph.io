@@ -7,25 +7,24 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/css/main.css" />
-    
+    <link rel="icon" href="/sciactive-site/favicon.png" data-svelte="svelte-m4145"><link rel="stylesheet" href="/sciactive-site/css/main.css" data-svelte="svelte-m4145"><script src="/sciactive-site/js/jquery.min.js" data-svelte="svelte-m4145"></script><script src="/sciactive-site/js/browser.min.js" data-svelte="svelte-m4145"></script><script src="/sciactive-site/js/breakpoints.min.js" data-svelte="svelte-m4145"></script><script src="/sciactive-site/js/util.js" data-svelte="svelte-m4145"></script><script src="/sciactive-site/js/main.js" data-svelte="svelte-m4145"></script>
 
 		
 
-		<link rel="modulepreload" href="/_app/start-7867c5d4.js">
-		<link rel="modulepreload" href="/_app/chunks/vendor-33fc6dbd.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-535ca1eb.js">
-		<link rel="modulepreload" href="/_app/pages/index.svelte-1decfea4.js">
-		<link rel="modulepreload" href="/_app/chunks/Header-c358eba0.js">
-		<link rel="stylesheet" href="/_app/assets/start-a8cd1609.css">
+		<link rel="modulepreload" href="/sciactive-site/_app/start-e370e5be.js">
+		<link rel="modulepreload" href="/sciactive-site/_app/chunks/vendor-3541a0ce.js">
+		<link rel="modulepreload" href="/sciactive-site/_app/chunks/paths-6758d194.js">
+		<link rel="modulepreload" href="/sciactive-site/_app/pages/__layout.svelte-765f5344.js">
+		<link rel="modulepreload" href="/sciactive-site/_app/pages/index.svelte-0bc2ab0b.js">
+		<link rel="modulepreload" href="/sciactive-site/_app/chunks/Header-bd613862.js">
+		<link rel="stylesheet" href="/sciactive-site/_app/assets/start-a8cd1609.css">
 
 		<script type="module">
-			import { start } from "/_app/start-7867c5d4.js";
+			import { start } from "/sciactive-site/_app/start-e370e5be.js";
 			start({
 				target: document.querySelector("#wrapper"),
-				paths: {"base":"","assets":""},
+				paths: {"base":"/sciactive-site","assets":""},
 				session: {},
 				host: location.host,
 				route: true,
@@ -35,8 +34,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/_app/pages/__layout.svelte-535ca1eb.js"),
-						import("/_app/pages/index.svelte-1decfea4.js")
+						import("/sciactive-site/_app/pages/__layout.svelte-765f5344.js"),
+						import("/sciactive-site/_app/pages/index.svelte-0bc2ab0b.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -54,10 +53,13 @@
 
 
 
+
+
 <div id="main"><div class="inner">
-<header id="header"><div class="logo"><a href="/" class="logo"><strong>SciActive Site</strong></a> - Index Page</div>
+<header id="header"><div class="logo"><a href="/sciactive-site/" class="logo"><strong>SciActive Site</strong></a> - Index Page</div>
   <ul class="icons"><li><a href="https://twitter.com/SciActive" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/sciactive" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li></ul></header>
+    <li><a href="https://github.com/sciactive" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li></ul>
+</header>
 
     
     <section id="banner"><div class="content"><header><h1>SciActive Site
@@ -79,10 +81,10 @@
 
     
     <nav id="menu"><header class="major"><h2>Menu</h2></header>
-      <ul><li><a href="/">Homepage</a></li>
-        <li><a href="/features">Features</a></li>
-        <li><a href="/generic">Generic</a></li>
-        <li><a href="/elements">Elements</a></li>
+      <ul><li><a href="/sciactive-site/">Homepage</a></li>
+        <li><a href="/sciactive-site/features">Features</a></li>
+        <li><a href="/sciactive-site/generic">Generic</a></li>
+        <li><a href="/sciactive-site/elements">Elements</a></li>
         <li><span class="opener">Submenu</span>
           <ul><li><a href="#">Lorem Dolor</a></li>
             <li><a href="#">Ipsum Adipiscing</a></li>
@@ -91,11 +93,11 @@
 
     
     <section><header class="major"><h2>Ante interdum</h2></header>
-      <div class="mini-posts"><article><a href="#" class="image"><img src="images/pic07.jpg" alt=""></a>
+      <div class="mini-posts"><article><a href="#" class="image"><img src="/sciactive-site/images/pic07.jpg" alt=""></a>
           <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p></article>
-        <article><a href="#" class="image"><img src="images/pic08.jpg" alt=""></a>
+        <article><a href="#" class="image"><img src="/sciactive-site/images/pic08.jpg" alt=""></a>
           <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p></article>
-        <article><a href="#" class="image"><img src="images/pic09.jpg" alt=""></a>
+        <article><a href="#" class="image"><img src="/sciactive-site/images/pic09.jpg" alt=""></a>
           <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p></article></div>
       <ul class="actions"><li><a href="#" class="button">More</a></li></ul></section>
 
@@ -115,18 +117,12 @@
     <footer id="footer"><p class="copyright">© SciActive Inc. All rights reserved. Demo Images:
         <a href="https://unsplash.com">Unsplash</a>. Design:
         <a href="https://html5up.net">HTML5 UP</a>.
-      </p></footer></div></div>
+      </p></footer></div>
+</div>
 
 
 
 	
 </div>
-
-    <!-- Scripts -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/browser.min.js"></script>
-    <script src="/js/breakpoints.min.js"></script>
-    <script src="/js/util.js"></script>
-    <script src="/js/main.js"></script>
   </body>
 </html>

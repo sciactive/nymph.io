@@ -9,7 +9,7 @@
         <h1>Generic</h1>
       </header>
 
-      <span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+      <span class="image main"><img src="{assets}/images/pic11.jpg" alt="" /></span>
 
       <p>
         Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.
@@ -110,5 +110,6 @@
 </div>
 
 <script lang="ts">
+  import { assets } from '$app/paths';
   import Header from '../components/Header.svelte';
 </script>
