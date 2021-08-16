@@ -525,5 +525,5 @@ console.log('It took ' + i + ' iterations to sort the deck.');`}</code></pre>
 
 <script lang="ts">
   import { assets } from '$app/paths';
-  import Header from '../components/Header.svelte';
+  import Header from '$lib/Header.svelte';
 </script>

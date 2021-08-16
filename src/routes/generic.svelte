@@ -111,5 +111,5 @@
 
 <script lang="ts">
   import { assets } from '$app/paths';
-  import Header from '../components/Header.svelte';
+  import Header from '$lib/Header.svelte';
 </script>

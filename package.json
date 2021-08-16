@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
-    "clean": "test -d ./docs && rm -r ./docs || true",
-    "build": "npm run clean && svelte-kit build",
+    "clean": "test -d ./sciactive-site && rm -r ./sciactive-site || true",
+    "build": "npm run clean && svelte-kit build --verbose",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
