@@ -17,7 +17,6 @@ const config = {
       base: '/sciactive-site',
       assets: 'https://sciactive.github.io/sciactive-site'
     },
-    appDir: 'sveltekit-dist',
     vite: {
       optimizeDeps: {
         include: ['highlight.js/lib/core']
