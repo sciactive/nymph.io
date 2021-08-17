@@ -91,8 +91,7 @@
     <!-- Footer -->
     <footer id="footer">
       <p class="copyright">
-        &copy; SciActive Inc. All rights reserved. Demo Images:
-        <a href="https://unsplash.com">Unsplash</a>. Design:
+        &copy; SciActive Inc. All rights reserved. Design by:
         <a href="https://html5up.net">HTML5 UP</a>.
       </p>
     </footer>
