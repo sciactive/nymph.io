@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "svelte-kit dev",
     "clean": "test -d ./docs && rm -r ./docs || true",
-    "build": "npm run clean && svelte-kit build --verbose",
+    "build": "npm run clean && svelte-kit build",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
