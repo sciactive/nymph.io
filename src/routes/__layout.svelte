@@ -41,6 +41,33 @@
             <li><a href="#">Feugiat Veroeros</a></li>
           </ul>
         </li>
+        <li>
+          <span
+            class="opener"
+            class:active={submenu === 'submenu2'}
+            on:click={() => (submenu = submenu === 'submenu2' ? null : 'submenu2')}>Submenu 2</span
+          >
+          <ul>
+            <li><a href="#">Lorem Dolor</a></li>
+            <li><a href="#">Ipsum Adipiscing</a></li>
+            <li><a href="#">Tempus Magna</a></li>
+            <li>
+              <span
+                class="opener"
+                class:active={submenu2submenu === 'submenu'}
+                on:click={() =>
+                  (submenu2submenu = submenu2submenu === 'submenu' ? null : 'submenu')}
+                >Submenu Within</span
+              >
+              <ul>
+                <li><a href="#">Lorem Dolor</a></li>
+                <li><a href="#">Ipsum Adipiscing</a></li>
+                <li><a href="#">Tempus Magna</a></li>
+                <li><a href="#">Feugiat Veroeros</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </nav>
 
@@ -118,6 +145,7 @@
   import { base, assets } from '$app/paths';
 
   let submenu: string | null = null;
+  let submenu2submenu: string | null = null;
   let sidebarInactive = false;
   let smallWindow = false;
 
