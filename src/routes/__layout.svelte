@@ -1,6 +1,9 @@
 <svelte:window on:resize={handleWindowResize} />
 <svelte:head>
-  <link rel="icon" href="{assets}/favicon.png" />
+  <link rel="icon" href="{assets}/images/cropped-logo-32x32.png" sizes="32x32" />
+  <link rel="icon" href="{assets}/images/cropped-logo-192x192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="{assets}/images/cropped-logo-180x180.png" />
+  <meta name="msapplication-TileImage" content="{assets}/images/cropped-logo-270x270.png" />
   <link rel="stylesheet" href="{assets}/css/main.css" />
 </svelte:head>
 
@@ -14,18 +17,26 @@
 <!-- Sidebar -->
 <div id="sidebar" class:inactive={sidebarInactive} on:click={handleSidebarLinkClick}>
   <div class="inner">
+    <!-- Logo -->
+    <section id="top-panel" class="alt">
+      <div class="title">
+        <img class="logo" src="{assets}/images/web-logo.png" alt="SciActive" />
+        <span class="name">SciActive</span>
+      </div>
+    </section>
+
     <!-- Search -->
-    <section id="search" class="alt">
-      <form method="post" action="#">
+    <!-- <section id="top-panel" class="alt">
+      <form class="search" method="post" action="#">
         <input type="text" name="query" id="query" placeholder="Search" />
       </form>
-    </section>
+    </section> -->
 
     <!-- Menu -->
     <nav id="menu">
-      <header class="major">
+      <!-- <header class="major">
         <h2>Menu</h2>
-      </header>
+      </header> -->
       <ul>
         <li><a href="{base}/">Homepage</a></li>
         <li><a href="{base}/features">Features</a></li>

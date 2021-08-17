@@ -8,20 +8,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="icon" href="https://sciactive.github.io/sciactive-site/favicon.png" data-svelte="svelte-rlj3nk"><link rel="stylesheet" href="https://sciactive.github.io/sciactive-site/css/main.css" data-svelte="svelte-rlj3nk">
+    <link rel="icon" href="https://sciactive.github.io/sciactive-site/images/cropped-logo-32x32.png" sizes="32x32" data-svelte="svelte-b6beo8"><link rel="icon" href="https://sciactive.github.io/sciactive-site/images/cropped-logo-192x192.png" sizes="192x192" data-svelte="svelte-b6beo8"><link rel="apple-touch-icon" href="https://sciactive.github.io/sciactive-site/images/cropped-logo-180x180.png" data-svelte="svelte-b6beo8"><meta name="msapplication-TileImage" content="https://sciactive.github.io/sciactive-site/images/cropped-logo-270x270.png" data-svelte="svelte-b6beo8"><link rel="stylesheet" href="https://sciactive.github.io/sciactive-site/css/main.css" data-svelte="svelte-b6beo8">
 
 		
 
-		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/sveltekit-dist/start-5bc52992.js">
-		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/sveltekit-dist/chunks/vendor-cf16f06d.js">
+		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/sveltekit-dist/start-47df2760.js">
+		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/sveltekit-dist/chunks/vendor-309d1024.js">
 		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/sveltekit-dist/chunks/paths-6758d194.js">
-		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/sveltekit-dist/pages/__layout.svelte-c462ba34.js">
-		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/sveltekit-dist/pages/index.svelte-d4f660e0.js">
-		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/sveltekit-dist/chunks/Header-149d79a2.js">
+		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/sveltekit-dist/pages/__layout.svelte-bc5d4184.js">
+		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/sveltekit-dist/pages/index.svelte-697a1bc5.js">
+		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/sveltekit-dist/chunks/Header-88275e04.js">
 		<link rel="stylesheet" href="https://sciactive.github.io/sciactive-site/sveltekit-dist/assets/start-a8cd1609.css">
 
 		<script type="module">
-			import { start } from "https://sciactive.github.io/sciactive-site/sveltekit-dist/start-5bc52992.js";
+			import { start } from "https://sciactive.github.io/sciactive-site/sveltekit-dist/start-47df2760.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"/sciactive-site","assets":"https://sciactive.github.io/sciactive-site"},
@@ -34,8 +34,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("https://sciactive.github.io/sciactive-site/sveltekit-dist/pages/__layout.svelte-c462ba34.js"),
-						import("https://sciactive.github.io/sciactive-site/sveltekit-dist/pages/index.svelte-d4f660e0.js")
+						import("https://sciactive.github.io/sciactive-site/sveltekit-dist/pages/__layout.svelte-bc5d4184.js"),
+						import("https://sciactive.github.io/sciactive-site/sveltekit-dist/pages/index.svelte-697a1bc5.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -77,10 +77,14 @@
 
 
 <div id="sidebar"><div class="inner">
-    <section id="search" class="alt"><form method="post" action="#"><input type="text" name="query" id="query" placeholder="Search"></form></section>
+    <section id="top-panel" class="alt"><div class="title"><img class="logo" src="https://sciactive.github.io/sciactive-site/images/web-logo.png" alt="SciActive">
+        <span class="name">SciActive</span></div></section>
 
     
-    <nav id="menu"><header class="major"><h2>Menu</h2></header>
+    
+
+    
+    <nav id="menu">
       <ul><li><a href="/sciactive-site/">Homepage</a></li>
         <li><a href="/sciactive-site/features">Features</a></li>
         <li><a href="/sciactive-site/generic">Generic</a></li>

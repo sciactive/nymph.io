@@ -1,5 +1,5 @@
 @import url(fontawesome-all.min.css);
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 /*
 	Editorial by HTML5 UP
 	html5up.net | @ajlkn
@@ -277,7 +277,7 @@ h4,
 h5,
 h6 {
   color: #3d4449;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Libre Baskerville', serif;
   font-weight: 700;
   line-height: 1.5;
   margin: 0 0 1em 0;
@@ -1521,7 +1521,7 @@ article.special {
 }
 
 header p {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Libre Baskerville', serif;
   font-size: 1em;
   font-weight: 400;
   letter-spacing: 0.075em;
@@ -2138,7 +2138,7 @@ button,
   color: #f56a6a !important;
   cursor: pointer;
   display: inline-block;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Libre Baskerville', serif;
   font-size: 0.8em;
   font-weight: 700;
   height: 3.5em;
@@ -2622,11 +2622,11 @@ body {
 }
 
 /* Sidebar */
-#search form {
+#top-panel > * {
   text-decoration: none;
   position: relative;
 }
-#search form:before {
+#top-panel > *:before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -2638,7 +2638,7 @@ body {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
 }
-#search form:before {
+#top-panel .search:before {
   -moz-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
   -ms-transform: scaleX(-1);
@@ -2657,8 +2657,23 @@ body {
   top: 0;
   width: 2em;
 }
-#search form input[type='text'] {
+#top-panel > * input[type='text'] {
   padding-right: 2.75em;
+}
+#top-panel .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+#top-panel .logo {
+  height: 48px;
+  width: auto;
+}
+#top-panel .name {
+  font-family: 'Libre Baskerville', serif;
+  margin-left: 0.3em;
+  font-size: 3em;
 }
 
 #sidebar {
@@ -2865,7 +2880,7 @@ body {
 #header .logo {
   border-bottom: 0;
   color: inherit;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Libre Baskerville', serif;
   font-size: 1.125em;
 }
 #header .icons {
@@ -2999,7 +3014,7 @@ body {
   -ms-user-select: none;
   user-select: none;
   color: #3d4449;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Libre Baskerville', serif;
   font-weight: 400;
   letter-spacing: 0.075em;
   list-style: none;
