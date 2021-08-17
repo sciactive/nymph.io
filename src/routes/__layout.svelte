@@ -1,19 +1,15 @@
+<svelte:window on:resize={handleWindowResize} />
 <svelte:head>
   <link rel="icon" href="{assets}/favicon.png" />
   <link rel="stylesheet" href="{assets}/css/main.css" />
-
-  <!-- Scripts -->
-  <script src="{assets}/js/jquery.min.js"></script>
-  <script src="{assets}/js/browser.min.js"></script>
-  <script src="{assets}/js/breakpoints.min.js"></script>
-  <script src="{assets}/js/util.js"></script>
-  <script src="{assets}/js/main.js"></script>
 </svelte:head>
 
-<slot />
+<div on:click={() => setSidebarInactive()}>
+  <slot />
+</div>
 
 <!-- Sidebar -->
-<div id="sidebar">
+<div id="sidebar" class:inactive={sidebarInactive} on:click={handleSidebarLinkClick}>
   <div class="inner">
     <!-- Search -->
     <section id="search" class="alt">
@@ -33,7 +29,11 @@
         <li><a href="{base}/generic">Generic</a></li>
         <li><a href="{base}/elements">Elements</a></li>
         <li>
-          <span class="opener">Submenu</span>
+          <span
+            class="opener"
+            class:active={submenu === 'submenu'}
+            on:click={() => (submenu = submenu === 'submenu' ? null : 'submenu')}>Submenu</span
+          >
           <ul>
             <li><a href="#">Lorem Dolor</a></li>
             <li><a href="#">Ipsum Adipiscing</a></li>
@@ -97,8 +97,64 @@
       </p>
     </footer>
   </div>
+
+  {#if smallWindow}
+    <a
+      href="#sidebar"
+      class="toggle"
+      on:click={(event) => {
+        // Prevent default.
+        event.preventDefault();
+        event.stopPropagation();
+
+        // Toggle.
+        sidebarInactive = !sidebarInactive;
+      }}>Toggle Sidebar</a
+    >
+  {/if}
 </div>
 
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { base, assets } from '$app/paths';
+
+  let submenu: string | null = null;
+  let sidebarInactive = false;
+  let smallWindow = false;
+
+  onMount(() => {
+    document.body.classList.remove('is-preload');
+    setSidebarInactive();
+  });
+
+  let resizeTimeout: any;
+
+  function handleWindowResize() {
+    setSidebarInactive();
+
+    if (!document.body) {
+      return;
+    }
+
+    // Mark as resizing.
+    document.body.classList.add('is-resizing');
+
+    // Unmark after delay.
+    clearTimeout(resizeTimeout);
+
+    resizeTimeout = setTimeout(function () {
+      document.body.classList.remove('is-resizing');
+    }, 100);
+  }
+
+  function setSidebarInactive() {
+    smallWindow = window.innerWidth <= 1280;
+    sidebarInactive = smallWindow;
+  }
+
+  function handleSidebarLinkClick(event: MouseEvent) {
+    if ('href' in event.target) {
+      setSidebarInactive();
+    }
+  }
 </script>
