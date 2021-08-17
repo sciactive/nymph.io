@@ -475,24 +475,24 @@
 
           <h4>Left &amp; Right</h4>
           <p>
-            <span class="image left"><img src="{assets}/images/pic01.jpg" alt="" /></span>Lorem ipsum dolor
-            sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod.
-            Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis
-            volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt
-            felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus
+            <span class="image left"><img src="{assets}/images/pic01.jpg" alt="" /></span>Lorem
+            ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus
             euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu
             felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque
-            praesent.
+            praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis
+            sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum.
+            Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer
+            ac pellentesque praesent.
           </p>
           <p>
-            <span class="image right"><img src="{assets}/images/pic02.jpg" alt="" /></span>Lorem ipsum dolor
-            sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod.
-            Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis
-            volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt
-            felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus
+            <span class="image right"><img src="{assets}/images/pic02.jpg" alt="" /></span>Lorem
+            ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus
             euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu
             felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque
-            praesent.
+            praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis
+            sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum.
+            Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer
+            ac pellentesque praesent.
           </p>
 
           <!-- Box -->
@@ -508,7 +508,9 @@
 
           <!-- Preformatted Code -->
           <h3>Preformatted</h3>
-          <pre><code>{`let i = 0;
+          <Highlight
+            language={typescript}
+            code={`let i = 0;
 
 while (!deck.isInOrder()) {
   console.log('Iteration ' + i);
@@ -516,14 +518,22 @@ while (!deck.isInOrder()) {
   i++;
 }
 
-console.log('It took ' + i + ' iterations to sort the deck.');`}</code></pre>
+console.log('It took ' + i + ' iterations to sort the deck.');`}
+          />
         </div>
       </div>
     </section>
   </div>
 </div>
 
+<svelte:head>
+  {@html github}
+</svelte:head>
+
 <script lang="ts">
+  import Highlight from 'svelte-highlight';
+  import typescript from 'svelte-highlight/src/languages/typescript';
+  import github from 'svelte-highlight/src/styles/github';
   import { assets } from '$app/paths';
   import Header from '$lib/Header.svelte';
 </script>

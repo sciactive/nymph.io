@@ -10,15 +10,20 @@ const config = {
   kit: {
     adapter: adapter({
       pages: 'docs',
-			assets: 'docs',
+      assets: 'docs'
     }),
     // hydrate the <div id="svelte"> element in src/app.html
     target: '#wrapper',
     paths: {
       base: '/sciactive-site',
-      assets: 'https://sciactive.github.io/sciactive-site',
+      assets: 'https://sciactive.github.io/sciactive-site'
     },
     appDir: 'sveltekit-dist',
+    vite: {
+      optimizeDeps: {
+        include: ['highlight.js/lib/core']
+      }
+    }
   }
 };
 

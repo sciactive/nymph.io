@@ -1,7 +1,7 @@
 <!-- Main -->
 <div id="main">
   <div class="inner">
-    <Header>Index Page</Header>
+    <Header>Features</Header>
 
     <!-- Banner -->
     <section id="banner">
