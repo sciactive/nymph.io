@@ -4,8 +4,11 @@
   <link rel="stylesheet" href="{assets}/css/main.css" />
 </svelte:head>
 
-<div on:click={() => setSidebarInactive()}>
-  <slot />
+<!-- Main -->
+<div id="main" on:click={() => setSidebarInactive()}>
+  <div class="inner">
+    <slot />
+  </div>
 </div>
 
 <!-- Sidebar -->

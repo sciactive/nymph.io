@@ -2560,7 +2560,7 @@ button:disabled,
 }
 
 /* Wrapper */
-#wrapper {
+body {
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
