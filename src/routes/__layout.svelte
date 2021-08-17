@@ -92,15 +92,15 @@
       </header>
       <div class="mini-posts">
         <article>
-          <a href="#" class="image"><img src="{assets}/images/pic07.jpg" alt="" /></a>
+          <a href="#" class="image"><img src="https://picsum.photos/seed/rofl/416/256" alt="" /></a>
           <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
         </article>
         <article>
-          <a href="#" class="image"><img src="{assets}/images/pic08.jpg" alt="" /></a>
+          <a href="#" class="image"><img src="https://picsum.photos/seed/lmao/416/256" alt="" /></a>
           <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
         </article>
         <article>
-          <a href="#" class="image"><img src="{assets}/images/pic09.jpg" alt="" /></a>
+          <a href="#" class="image"><img src="https://picsum.photos/seed/omg/416/256" alt="" /></a>
           <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
         </article>
       </div>

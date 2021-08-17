@@ -6,7 +6,7 @@
     <h1>Generic</h1>
   </header>
 
-  <span class="image main"><img src="{assets}/images/pic11.jpg" alt="" /></span>
+  <span class="image main"><img src="https://picsum.photos/seed/laptop/1280/416" alt="" /></span>
 
   <p>
     Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque
@@ -99,6 +99,5 @@
 </section>
 
 <script lang="ts">
-  import { assets } from '$app/paths';
   import Header from '$lib/Header.svelte';
 </script>

@@ -4,10 +4,7 @@
 <section id="banner">
   <div class="content">
     <header>
-      <h1>
-        Hi, I’m Editorial<br />
-        by HTML5 UP
-      </h1>
+      <h1>Hi, I’m Editorial by HTML5 UP</h1>
       <p>A free and fully responsive site template</p>
     </header>
     <p>
@@ -21,7 +18,7 @@
     </ul>
   </div>
   <span class="image object">
-    <img src="{assets}/images/pic10.jpg" alt="" />
+    <img src="https://picsum.photos/seed/discover/736/512" alt="" />
   </span>
 </section>
 
@@ -81,7 +78,7 @@
   </header>
   <div class="posts">
     <article>
-      <a href="#" class="image"><img src="{assets}/images/pic01.jpg" alt="" /></a>
+      <a href="#" class="image"><img src="https://picsum.photos/seed/mario/416/256" alt="" /></a>
       <h3>Interdum aenean</h3>
       <p>
         Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
@@ -92,7 +89,7 @@
       </ul>
     </article>
     <article>
-      <a href="#" class="image"><img src="{assets}/images/pic02.jpg" alt="" /></a>
+      <a href="#" class="image"><img src="https://picsum.photos/seed/sonic/416/256" alt="" /></a>
       <h3>Nulla amet dolore</h3>
       <p>
         Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
@@ -103,7 +100,7 @@
       </ul>
     </article>
     <article>
-      <a href="#" class="image"><img src="{assets}/images/pic03.jpg" alt="" /></a>
+      <a href="#" class="image"><img src="https://picsum.photos/seed/metroid/416/256" alt="" /></a>
       <h3>Tempus ullamcorper</h3>
       <p>
         Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
@@ -114,7 +111,7 @@
       </ul>
     </article>
     <article>
-      <a href="#" class="image"><img src="{assets}/images/pic04.jpg" alt="" /></a>
+      <a href="#" class="image"><img src="https://picsum.photos/seed/pokemon/416/256" alt="" /></a>
       <h3>Sed etiam facilis</h3>
       <p>
         Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
@@ -125,7 +122,9 @@
       </ul>
     </article>
     <article>
-      <a href="#" class="image"><img src="{assets}/images/pic05.jpg" alt="" /></a>
+      <a href="#" class="image"
+        ><img src="https://picsum.photos/seed/tombraider/416/256" alt="" /></a
+      >
       <h3>Feugiat lorem aenean</h3>
       <p>
         Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
@@ -136,7 +135,8 @@
       </ul>
     </article>
     <article>
-      <a href="#" class="image"><img src="{assets}/images/pic06.jpg" alt="" /></a>
+      <a href="#" class="image"><img src="https://picsum.photos/seed/asteroids/416/256" alt="" /></a
+      >
       <h3>Amet varius aliquam</h3>
       <p>
         Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
@@ -150,6 +150,5 @@
 </section>
 
 <script lang="ts">
-  import { assets } from '$app/paths';
   import Header from '$lib/Header.svelte';
 </script>

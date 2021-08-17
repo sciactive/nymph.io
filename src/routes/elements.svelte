@@ -422,59 +422,79 @@
       <h3>Image</h3>
 
       <h4>Fit</h4>
-      <span class="image fit"><img src="{assets}/images/pic11.jpg" alt="" /></span>
+      <span class="image fit"
+        ><img src="https://picsum.photos/seed/sciactive/1280/416" alt="" /></span
+      >
       <div class="box alt">
         <div class="row gtr-50 gtr-uniform">
           <div class="col-4">
-            <span class="image fit"><img src="{assets}/images/pic01.jpg" alt="" /></span>
+            <span class="image fit"
+              ><img src="https://picsum.photos/seed/slide1/416/256" alt="" /></span
+            >
           </div>
           <div class="col-4">
-            <span class="image fit"><img src="{assets}/images/pic02.jpg" alt="" /></span>
+            <span class="image fit"
+              ><img src="https://picsum.photos/seed/slide2/416/256" alt="" /></span
+            >
           </div>
           <div class="col-4">
-            <span class="image fit"><img src="{assets}/images/pic03.jpg" alt="" /></span>
-          </div>
-          <!-- Break -->
-          <div class="col-4">
-            <span class="image fit"><img src="{assets}/images/pic03.jpg" alt="" /></span>
-          </div>
-          <div class="col-4">
-            <span class="image fit"><img src="{assets}/images/pic01.jpg" alt="" /></span>
-          </div>
-          <div class="col-4">
-            <span class="image fit"><img src="{assets}/images/pic02.jpg" alt="" /></span>
+            <span class="image fit"
+              ><img src="https://picsum.photos/seed/slide3/416/256" alt="" /></span
+            >
           </div>
           <!-- Break -->
           <div class="col-4">
-            <span class="image fit"><img src="{assets}/images/pic02.jpg" alt="" /></span>
+            <span class="image fit"
+              ><img src="https://picsum.photos/seed/slide4/416/256" alt="" /></span
+            >
           </div>
           <div class="col-4">
-            <span class="image fit"><img src="{assets}/images/pic03.jpg" alt="" /></span>
+            <span class="image fit"
+              ><img src="https://picsum.photos/seed/slide5/416/256" alt="" /></span
+            >
           </div>
           <div class="col-4">
-            <span class="image fit"><img src="{assets}/images/pic01.jpg" alt="" /></span>
+            <span class="image fit"
+              ><img src="https://picsum.photos/seed/slide6/416/256" alt="" /></span
+            >
+          </div>
+          <!-- Break -->
+          <div class="col-4">
+            <span class="image fit"
+              ><img src="https://picsum.photos/seed/slide7/416/256" alt="" /></span
+            >
+          </div>
+          <div class="col-4">
+            <span class="image fit"
+              ><img src="https://picsum.photos/seed/slide8/416/256" alt="" /></span
+            >
+          </div>
+          <div class="col-4">
+            <span class="image fit"
+              ><img src="https://picsum.photos/seed/slide9/416/256" alt="" /></span
+            >
           </div>
         </div>
       </div>
 
       <h4>Left &amp; Right</h4>
       <p>
-        <span class="image left"><img src="{assets}/images/pic01.jpg" alt="" /></span>Lorem ipsum
-        dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod.
-        Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis
-        volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt
-        felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus
+        <span class="image left"><img src="https://picsum.photos/seed/foo/416/256" alt="" /></span
+        >Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus
         euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis
-        iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.
+        iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent
+        tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget.
+        tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu
+        felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.
       </p>
       <p>
-        <span class="image right"><img src="{assets}/images/pic02.jpg" alt="" /></span>Lorem ipsum
-        dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod.
-        Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis
-        volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt
-        felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus
+        <span class="image right"><img src="https://picsum.photos/seed/bar/416/256" alt="" /></span
+        >Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus
         euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis
-        iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.
+        iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent
+        tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget.
+        tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu
+        felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.
       </p>
 
       <!-- Box -->
@@ -514,6 +534,5 @@ console.log('It took ' + i + ' iterations to sort the deck.');`}
   import Highlight from 'svelte-highlight';
   import typescript from 'svelte-highlight/src/languages/typescript';
   import github from 'svelte-highlight/src/styles/github';
-  import { assets } from '$app/paths';
   import Header from '$lib/Header.svelte';
 </script>
