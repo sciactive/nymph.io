@@ -4,38 +4,57 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+@use 'sass:math';
+
 /* Sidebar */
 
-#search {
-  form {
+#top-panel {
+  & > * {
     @include icon(false, solid);
     position: relative;
 
-    &:before {
+    &.search:before {
       @include vendor('transform', 'scaleX(-1)');
       color: _palette(fg);
       content: '\f002';
       cursor: default;
       display: block;
       font-size: 1.5em;
-      height: _size(element-height) / 1.375;
-      line-height: _size(element-height) / 1.375;
+      height: math.div(_size(element-height), 1.375);
+      line-height: math.div(_size(element-height), 1.375);
       opacity: 0.325;
       position: absolute;
       right: 0;
       text-align: center;
       top: 0;
-      width: _size(element-height) / 1.375;
+      width: math.div(_size(element-height), 1.375);
     }
 
     input[type='text'] {
       padding-right: _size(element-height);
     }
   }
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .logo {
+      height: 48px;
+      width: auto;
+    }
+    .name {
+      font-family: 'Libre Baskerville', serif;
+      margin-left: 0.3em;
+      font-size: 3em;
+    }
+  }
 }
 
 #sidebar {
-  $pad: 2em / 0.9;
+  $pad: math.div(2em, 0.9);
 
   @include vendor('flex-grow', '0');
   @include vendor('flex-shrink', '0');
@@ -46,7 +65,7 @@
   width: _size(sidebar-width);
 
   h2 {
-    font-size: (1.25em / 0.9);
+    font-size: math.div(1.25em, 0.9);
   }
 
   > .inner {
@@ -116,7 +135,7 @@
   }
 
   @include breakpoint('<=xlarge') {
-    $pad: 1.5em / 0.9;
+    $pad: math.div(1.5em, 0.9);
 
     width: _size(sidebar-width-alt);
 
@@ -183,7 +202,7 @@
 
       &:before {
         font-size: 1.5rem;
-        margin-left: (-0.875em / 2);
+        margin-left: math.div(-0.875em, 2);
       }
     }
 
@@ -199,8 +218,8 @@
 
       &:before {
         color: _palette(fg);
-        margin-left: (-0.125em / 2);
-        margin-top: (-0.5em / 2);
+        margin-left: math.div(-0.125em, 2);
+        margin-top: math.div(-0.5em, 2);
         font-size: 1.1rem;
         z-index: 1;
       }

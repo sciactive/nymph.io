@@ -4,6 +4,8 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+@use 'sass:math';
+
 /* Header */
 
 #header {
@@ -26,6 +28,7 @@
 
   .icons {
     text-align: right;
+    line-height: 2em;
   }
 
   @include breakpoint('<=xlarge') {
@@ -41,10 +44,10 @@
     }
 
     .icons {
-      height: (6.25em / 1.25);
-      line-height: (6.25em / 1.25);
+      height: math.div(6.25em, 1.25);
+      line-height: math.div(6.25em, 1.25);
       position: absolute;
-      right: (-0.625em / 1.25);
+      right: math.div(-0.625em, 1.25);
       top: 0;
     }
   }

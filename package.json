@@ -5,6 +5,8 @@
     "dev": "svelte-kit dev",
     "clean": "test -d ./docs && rm -r ./docs || true",
     "build": "npm run clean && svelte-kit build",
+    "build:sass": "sass",
+    "build:site": "svelte-kit build",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
@@ -12,10 +14,12 @@
     "format": "prettier --ignore-path .gitignore --ignore-unknown --write --plugin-search-dir=. ."
   },
   "devDependencies": {
+    "@mdi/js": "^5.9.55",
     "@sveltejs/adapter-static": "^1.0.0-next.16",
     "@sveltejs/kit": "next",
     "prettier": "~2.2.1",
     "prettier-plugin-svelte": "^2.3.1",
+    "sass": "^1.38.0",
     "svelte": "^3.34.0",
     "svelte-check": "^2.0.0",
     "svelte-highlight": "^3.2.0",
@@ -23,5 +27,6 @@
     "tslib": "^2.0.0",
     "typescript": "^4.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {}
 }
