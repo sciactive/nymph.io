@@ -13,10 +13,6 @@ const config = {
       assets: 'docs'
     }),
     target: 'body',
-    paths: {
-      base: '/sciactive-site',
-      assets: 'https://sciactive.github.io/sciactive-site'
-    },
     vite: {
       optimizeDeps: {
         include: ['highlight.js/lib/core']

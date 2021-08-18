@@ -1,5 +1,17 @@
 <svelte:window on:resize={handleWindowResize} />
 <svelte:head>
+  <meta name="description" content="Object relational mapper for Node.js and the browser" />
+  <meta property="og:title" content="Nymph" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://nymph.io/" />
+  <meta
+    property="og:image"
+    content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png"
+  />
+  <meta property="og:site_name" content="Nymph" />
+  <meta property="fb:admins" content="508999194" />
+  <meta property="og:description" content="Object relational mapper for Node.js and the browser" />
+
   <link rel="icon" href="{assets}/images/cropped-logo-32x32.png" sizes="32x32" />
   <link rel="icon" href="{assets}/images/cropped-logo-192x192.png" sizes="192x192" />
   <link rel="apple-touch-icon" href="{assets}/images/cropped-logo-180x180.png" />
@@ -25,89 +37,13 @@
       </div>
     </section>
 
-    <!-- Search -->
-    <!-- <section id="top-panel" class="alt">
-      <form class="search" method="post" action="#">
-        <input type="text" name="query" id="query" placeholder="Search" />
-      </form>
-    </section> -->
-
     <!-- Menu -->
     <nav id="menu">
-      <!-- <header class="major">
-        <h2>Menu</h2>
-      </header> -->
       <ul>
         <li><a href="{base}/">Homepage</a></li>
-        <li><a href="{base}/features">Features</a></li>
-        <li><a href="{base}/generic">Generic</a></li>
-        <li><a href="{base}/elements">Elements</a></li>
-        <li>
-          <span
-            class="opener"
-            class:active={submenu === 'submenu'}
-            on:click={() => (submenu = submenu === 'submenu' ? null : 'submenu')}>Submenu</span
-          >
-          <ul>
-            <li><a href="#">Lorem Dolor</a></li>
-            <li><a href="#">Ipsum Adipiscing</a></li>
-            <li><a href="#">Tempus Magna</a></li>
-            <li><a href="#">Feugiat Veroeros</a></li>
-          </ul>
-        </li>
-        <li>
-          <span
-            class="opener"
-            class:active={submenu === 'submenu2'}
-            on:click={() => (submenu = submenu === 'submenu2' ? null : 'submenu2')}>Submenu 2</span
-          >
-          <ul>
-            <li><a href="#">Lorem Dolor</a></li>
-            <li><a href="#">Ipsum Adipiscing</a></li>
-            <li><a href="#">Tempus Magna</a></li>
-            <li>
-              <span
-                class="opener"
-                class:active={submenu2submenu === 'submenu'}
-                on:click={() =>
-                  (submenu2submenu = submenu2submenu === 'submenu' ? null : 'submenu')}
-                >Submenu Within</span
-              >
-              <ul>
-                <li><a href="#">Lorem Dolor</a></li>
-                <li><a href="#">Ipsum Adipiscing</a></li>
-                <li><a href="#">Tempus Magna</a></li>
-                <li><a href="#">Feugiat Veroeros</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
+        <li><a href="/3.0/index.html" rel="external">Legacy Website</a></li>
       </ul>
     </nav>
-
-    <!-- Section -->
-    <section>
-      <header class="major">
-        <h2>Ante interdum</h2>
-      </header>
-      <div class="mini-posts">
-        <article>
-          <a href="#" class="image"><img src="https://picsum.photos/seed/rofl/416/256" alt="" /></a>
-          <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-        </article>
-        <article>
-          <a href="#" class="image"><img src="https://picsum.photos/seed/lmao/416/256" alt="" /></a>
-          <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-        </article>
-        <article>
-          <a href="#" class="image"><img src="https://picsum.photos/seed/omg/416/256" alt="" /></a>
-          <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-        </article>
-      </div>
-      <ul class="actions">
-        <li><a href="#" class="button">More</a></li>
-      </ul>
-    </section>
 
     <!-- Section -->
     <section>
@@ -115,21 +51,24 @@
         <h2>Get in touch</h2>
       </header>
       <p>
-        Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim
-        lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem
-        feugiat tempus aliquam.
+        Nymph is a product of SciActive Inc. You can contact SciActive by email or US post, or
+        follow on Twitter.
       </p>
       <ul class="contact">
         <li class="icon">
-          <Icon path={mdiEmail} /> <a href="#">information@untitled.tld</a>
+          <Icon path={mdiTwitter} />
+          <a href="https://twitter.com/SciActive" target="_blank">@SciActive on Twitter</a>
         </li>
         <li class="icon">
-          <Icon path={mdiCellphoneSound} /> (000) 000-0000
+          <Icon path={mdiEmail} />
+          <a href="mailto:someone@example.com" bind:this={email}>(loading...)</a>
         </li>
         <li class="icon">
           <Icon path={mdiMapMarker} />
-          1234 Somewhere Road #8254<br />
-          Nashville, TN 00000-0000
+          SciActive, Inc<br />
+          310 S Twin Oaks Valley Rd #107<br />
+          PMB 422<br />
+          San Marcos, CA 92078
         </li>
       </ul>
     </section>
@@ -162,16 +101,19 @@
 
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { mdiCellphoneSound, mdiEmail, mdiMapMarker, mdiMenu } from '@mdi/js';
+  import { mdiEmail, mdiMapMarker, mdiMenu, mdiTwitter } from '@mdi/js';
   import { base, assets } from '$app/paths';
   import Icon from '$lib/Icon.svelte';
 
-  let submenu: string | null = null;
-  let submenu2submenu: string | null = null;
+  let email: HTMLAnchorElement;
   let sidebarInactive = false;
   let smallWindow = false;
 
   onMount(() => {
+    const contactEmail = ['gmail.com', 'hperrin'].reverse().join('@');
+    email.href = 'mailto:' + contactEmail;
+    email.textContent = contactEmail;
+
     document.body.classList.remove('is-preload');
     setSidebarInactive();
   });

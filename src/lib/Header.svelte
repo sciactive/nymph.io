@@ -1,7 +1,7 @@
 <!-- Header -->
 <header id="header">
   <div class="logo">
-    <a href="{base}/" class="logo"><strong>SciActive Site</strong></a> - <slot />
+    <a href="{base}/" class="logo"><strong>Nymph</strong></a> - <slot />
   </div>
   <ul class="icons">
     <li>
@@ -10,8 +10,11 @@
       >
     </li>
     <li>
-      <a href="https://github.com/sciactive" target="_blank" class="icon brands" title="GitHub"
-        ><Icon path={mdiGithub} /></a
+      <a
+        href="https://github.com/sciactive/nymphjs"
+        target="_blank"
+        class="icon brands"
+        title="GitHub"><Icon path={mdiGithub} /></a
       >
     </li>
   </ul>
