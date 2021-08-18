@@ -27,10 +27,12 @@
       height: 48px;
       width: auto;
     }
+
     .name {
       font-family: 'Libre Baskerville', serif;
       margin-left: 0.3em;
       font-size: 3em;
+      color: _palette(fg-bold);
     }
   }
 }
