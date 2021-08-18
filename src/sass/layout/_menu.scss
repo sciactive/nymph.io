@@ -33,7 +33,6 @@
 
       &.opener {
         @include vendor('transition', 'color #{_duration(transition)} ease-in-out');
-        @include icon(false, solid);
         -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
         position: relative;
 
@@ -45,8 +44,17 @@
               'transform #{_duration(transition)} ease-in-out'
             )
           );
+          @include vendor('transform', 'scale(1.5) translateY(-5px)');
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
+          display: inline-block;
+          font-style: normal;
+          font-variant: normal;
+          text-rendering: auto;
+          line-height: 1;
+          text-transform: none !important;
           color: _palette(fg-light);
-          content: '\f078';
+          content: '\2304';
           position: absolute;
           right: 0;
         }
@@ -63,7 +71,7 @@
           }
 
           &:before {
-            @include vendor('transform', 'rotate(-180deg)');
+            @include vendor('transform', 'scale(1.5) translateY(5px) rotate(-180deg)');
           }
         }
       }

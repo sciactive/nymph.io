@@ -4,8 +4,8 @@
   "scripts": {
     "dev": "svelte-kit dev",
     "clean": "test -d ./docs && rm -r ./docs || true",
-    "build": "npm run clean && svelte-kit build",
-    "build:sass": "sass",
+    "build": "npm run clean && npm run build:sass && npm run build:site",
+    "build:sass": "sass src/sass/main.scss static/css/main.css",
     "build:site": "svelte-kit build",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",

@@ -100,7 +100,6 @@ input[type='radio'] {
   z-index: -1;
 
   & + label {
-    @include icon(false, solid);
     color: _palette(fg);
     cursor: pointer;
     display: inline-block;
@@ -110,29 +109,45 @@ input[type='radio'] {
     padding-right: 0.75em;
     position: relative;
 
+    &:before,
+    &:after {
+      display: inline-block;
+      content: '';
+      height: (_size(element-height) * 0.5);
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: (_size(element-height) * 0.5);
+      margin-top: 0.15em;
+    }
+
     &:before {
       background: _palette(bg);
       border-radius: _size(border-radius);
       border: solid 1px _palette(border);
-      content: '';
-      display: inline-block;
-      font-size: 0.8em;
-      height: (_size(element-height) * 0.75);
-      left: 0;
-      line-height: (_size(element-height) * 0.75);
-      position: absolute;
+    }
+
+    &:after {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      text-transform: none !important;
+      font-size: 1.2em;
+      line-height: (_size(element-height) * 0.5);
       text-align: center;
-      top: 0;
-      width: (_size(element-height) * 0.75);
     }
   }
 
-  &:checked + label {
-    &:before {
+  &:checked {
+    & + label:before {
       background: _palette(fg-bold);
       border-color: _palette(fg-bold);
+    }
+
+    & + label:after {
       color: _palette(bg);
-      content: '\f00c';
     }
   }
 
@@ -150,6 +165,15 @@ input[type='checkbox'] {
       border-radius: _size(border-radius);
     }
   }
+
+  &:checked + label:after {
+    border-bottom: 0.33em solid;
+    border-right: 0.33em solid;
+    transform: scale(0.5) rotate(45deg);
+    width: (_size(element-height) * 0.25);
+    top: -0.2em;
+    left: 0.2em;
+  }
 }
 
 input[type='radio'] {
@@ -157,6 +181,15 @@ input[type='radio'] {
     &:before {
       border-radius: 100%;
     }
+  }
+
+  &:checked + label:after {
+    border: 0.25em solid;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    top: (_size(element-height) * 0.125);
+    left: (_size(element-height) * 0.125);
   }
 }
 

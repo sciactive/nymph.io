@@ -44,11 +44,9 @@
       text-align: center;
       width: 10em;
 
-      &:before {
+      svg {
         color: _palette(accent);
-        font-size: 2.75rem;
-        position: relative;
-        top: 0.05em;
+        transform: scale(2.75);
       }
 
       &:after {

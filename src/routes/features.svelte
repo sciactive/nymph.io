@@ -29,7 +29,7 @@
   </header>
   <div class="features">
     <article>
-      <span class="icon fa-gem" />
+      <span class="icon"><Icon path={mdiDiamondStone} /></span>
       <div class="content">
         <h3>Portitor ullamcorper</h3>
         <p>
@@ -39,7 +39,7 @@
       </div>
     </article>
     <article>
-      <span class="icon solid fa-paper-plane" />
+      <span class="icon"><Icon path={mdiSend} /></span>
       <div class="content">
         <h3>Sapien veroeros</h3>
         <p>
@@ -49,7 +49,7 @@
       </div>
     </article>
     <article>
-      <span class="icon solid fa-rocket" />
+      <span class="icon"><Icon path={mdiRocketLaunch} /></span>
       <div class="content">
         <h3>Quam lorem ipsum</h3>
         <p>
@@ -59,7 +59,7 @@
       </div>
     </article>
     <article>
-      <span class="icon solid fa-signal" />
+      <span class="icon"><Icon path={mdiSignal} /></span>
       <div class="content">
         <h3>Sed magna finibus</h3>
         <p>
@@ -151,4 +151,6 @@
 
 <script lang="ts">
   import Header from '$lib/Header.svelte';
+  import Icon from '$lib/Icon.svelte';
+  import { mdiDiamondStone, mdiRocketLaunch, mdiSend, mdiSignal } from '@mdi/js';
 </script>

@@ -120,9 +120,14 @@
         feugiat tempus aliquam.
       </p>
       <ul class="contact">
-        <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-        <li class="icon solid fa-phone">(000) 000-0000</li>
-        <li class="icon solid fa-home">
+        <li class="icon">
+          <Icon path={mdiEmail} /> <a href="#">information@untitled.tld</a>
+        </li>
+        <li class="icon">
+          <Icon path={mdiCellphoneSound} /> (000) 000-0000
+        </li>
+        <li class="icon">
+          <Icon path={mdiMapMarker} />
           1234 Somewhere Road #8254<br />
           Nashville, TN 00000-0000
         </li>
@@ -149,14 +154,17 @@
 
         // Toggle.
         sidebarInactive = !sidebarInactive;
-      }}>Toggle Sidebar</a
+      }}
+      title="Toggle Sidebar"><Icon path={mdiMenu} /></a
     >
   {/if}
 </div>
 
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { mdiCellphoneSound, mdiEmail, mdiMapMarker, mdiMenu } from '@mdi/js';
   import { base, assets } from '$app/paths';
+  import Icon from '$lib/Icon.svelte';
 
   let submenu: string | null = null;
   let submenu2submenu: string | null = null;

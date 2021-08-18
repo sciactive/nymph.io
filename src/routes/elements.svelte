@@ -121,22 +121,19 @@
           <h4>Icons</h4>
           <ul class="icons">
             <li>
-              <a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a>
+              <a href="#" class="icon" title="Twitter"><Icon path={mdiTwitter} /></a>
             </li>
             <li>
-              <a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+              <a href="#" class="icon" title="Facebook"><Icon path={mdiFacebook} /></a>
             </li>
             <li>
-              <a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+              <a href="#" class="icon" title="Instagram"><Icon path={mdiInstagram} /></a>
             </li>
             <li>
-              <a href="#" class="icon brands fa-github"><span class="label">Github</span></a>
+              <a href="#" class="icon" title="Github"><Icon path={mdiGithub} /></a>
             </li>
             <li>
-              <a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a>
-            </li>
-            <li>
-              <a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a>
+              <a href="#" class="icon" title="Twitch"><Icon path={mdiTwitch} /></a>
             </li>
           </ul>
         </div>
@@ -348,8 +345,8 @@
         <li><a href="#" class="button fit small">Fit + Small</a></li>
       </ul>
       <ul class="actions">
-        <li><a href="#" class="button primary icon solid fa-search">Icon</a></li>
-        <li><a href="#" class="button icon solid fa-download">Icon</a></li>
+        <li><a href="#" class="button primary icon"><Icon path={mdiMagnify} /> Icon</a></li>
+        <li><a href="#" class="button icon"><Icon path={mdiDownload} /> Icon</a></li>
       </ul>
       <ul class="actions">
         <li><span class="button primary disabled">Primary</span></li>
@@ -535,4 +532,14 @@ console.log('It took ' + i + ' iterations to sort the deck.');`}
   import typescript from 'svelte-highlight/src/languages/typescript';
   import github from 'svelte-highlight/src/styles/github';
   import Header from '$lib/Header.svelte';
+  import Icon from '$lib/Icon.svelte';
+  import {
+    mdiDownload,
+    mdiFacebook,
+    mdiGithub,
+    mdiInstagram,
+    mdiMagnify,
+    mdiTwitch,
+    mdiTwitter
+  } from '@mdi/js';
 </script>
