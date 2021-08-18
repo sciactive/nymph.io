@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Nymph\Nymph | Nymph Server API</title>
+
+	<link rel="stylesheet" href="resources/style.css?c2f33731c1948fbed7c333554678bfa68d4817da">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active main">
+					<a href="namespace-Nymph.html">
+						Nymph<span></span>
+					</a>
+
+						<ul>
+				<li class="main">
+					<a href="namespace-Nymph.Drivers.html">
+						Drivers					</a>
+
+						</li>
+				<li class="main">
+					<a href="namespace-Nymph.Exceptions.html">
+						Exceptions					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Nymph.Entity.html">Entity</a></li>
+				<li class="active"><a href="class-Nymph.Nymph.html">Nymph</a></li>
+				<li><a href="class-Nymph.REST.html">REST</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Nymph.DataObjectInterface.html">DataObjectInterface</a></li>
+				<li><a href="class-Nymph.EntityInterface.html">EntityInterface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Nymph.html" title="Summary of Nymph"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Nymph</h1>
+
+
+	<div class="description">
+	<p>Nymph</p>
+
+<p>An object relational mapper with PHP and JavaScript interfaces. Written by
+Hunter Perrin for SciActive.</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Nymph.html">Nymph</a><br>
+		<b>Package:</b> Nymph<br>
+
+				<b>Copyright:</b>
+				SciActive.com<br>
+				<b>License:</b>
+				<a href="https://www.apache.org/licenses/LICENSE-2.0">https://www.apache.org/licenses/LICENSE-2.0</a><br>
+				<b>Author:</b>
+				Hunter Perrin <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x68;&#x70;&#x65;&#x72;&#114;&#105;&#110;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;om">&#x68;&#x70;&#x65;&#x72;&#114;&#105;&#110;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;om</a><br>
+				<b>Link:</b>
+				<a href="http://nymph.io/">http://nymph.io/</a><br>
+			<b>Located at</b> <a href="source-class-Nymph.Nymph.html#16-566" title="Go to source code">src/Nymph.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__callStatic" id="___callStatic">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___callStatic">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#31-33" title="Go to source code">__callStatic</a>( <span> <var>$name</var></span>, <span> <var>$args</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="configure" id="_configure">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_configure">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#35-67" title="Go to source code">configure</a>( <span>array <var>$config</var> = []</span> )</code>
+
+		<div class="description short">
+			<p>Apply configuration to Nymph.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Apply configuration to Nymph.</p>
+
+<p>$config should be an associative array of Nymph configuration. Use the
+following form:</p>
+
+<p>[ 'driver' => 'MySQL', 'pubsub' => true, 'MySql' => [ 'host' => '127.0.0.1' ]
+]</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$config</var></dt>
+					<dd>An associative array of Nymph's configuration.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="checkData" id="_checkData">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_checkData">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#70-110" title="Go to source code">checkData</a>( <span>array <var>&amp; $data</var></span>, <span>array <var>&amp; $sdata</var></span>, <span>array <var>$selectors</var></span>, <span>integer|null <var>$guid</var> = <span class="php-keyword1">null</span></span>, <span>array|null <var>$tags</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$typesAlreadyChecked</var> = []</span>, <span>array <var>$dataValsAreadyChecked</var> = [] </span> )</code>
+
+		<div class="description short">
+			<p>Check entity data to see if it matches given selectors.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Check entity data to see if it matches given selectors.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd><p>An array of unserialized entity data. The data array
+                   should contain the cdate and mdate.</p></dd>
+					<dt><var>$sdata</var></dt>
+					<dd><p>An array of serialized entity data. If a value here is
+                    checked, it will be unserialized and placed in the
+                    $data array.</p></dd>
+					<dt><var>$selectors</var></dt>
+					<dd>An array of formatted selectors.</dd>
+					<dt><var>$guid</var></dt>
+					<dd><p>The guid. If left null, guid will not be checked, and
+                      automatically considered passing.</p></dd>
+					<dt><var>$tags</var></dt>
+					<dd><p>The tags array. If left null, tags will not be
+                        checked, and automatically considered passing.</p></dd>
+					<dt><var>$typesAlreadyChecked</var></dt>
+					<dd><p>An array of criteria types that have
+                                  already been checked. They will be
+                                  considered passing.</p></dd>
+					<dt><var>$dataValsAreadyChecked</var></dt>
+					<dd><p>An array of data values that have
+                                    already been checked. They will be
+                                    considered passing if the value is
+                                    identical.</p></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>Whether the entity data passes the given selectors.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteEntity" id="_deleteEntity">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteEntity">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#112-120" title="Go to source code">deleteEntity</a>( <span><code><a href="class-Nymph.Entity.html">Nymph\Entity</a></code> <var>&amp; $entity</var></span> )</code>
+
+		<div class="description short">
+			<p>Delete an entity from the database.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Delete an entity from the database.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$entity</var></dt>
+					<dd>$entity The entity to delete.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>True on success, false on failure.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="saveEntity" id="_saveEntity">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_saveEntity">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#122-136" title="Go to source code">saveEntity</a>( <span>mixed <var>&amp; $entity</var></span> )</code>
+
+		<div class="description short">
+			<p>Save an entity to the database.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Save an entity to the database.</p>
+
+<p>If the entity has never been saved (has no GUID), a variable "cdate"
+is set on it with the current Unix timestamp using microtime(true).</p>
+
+<p>The variable "mdate" is set to the current Unix timestamp using
+microtime(true).</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$entity</var></dt>
+					<dd>$entity The entity.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>True on success, false on failure.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hsort" id="_hsort">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hsort">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#138-165" title="Go to source code">hsort</a>( <span>array <var>&amp; $array</var></span>, <span>string|null <var>$property</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$parentProperty</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$caseSensitive</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$reverse</var> = <span class="php-keyword1">false</span> </span> )</code>
+
+		<div class="description short">
+			<p>Sort an array of entities hierarchically by a specified property's value.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Sort an array of entities hierarchically by a specified property's value.</p>
+
+<p>Entities will be placed immediately after their parents. The
+$parentProperty property must hold either null, or the entity's parent.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd>$array The array of entities.</dd>
+					<dt><var>$property</var></dt>
+					<dd>The name of the property to sort entities by.</dd>
+					<dt><var>$parentProperty</var></dt>
+					<dd><p>The name of the property which holds the
+                                   parent of the entity.</p></dd>
+					<dt><var>$caseSensitive</var></dt>
+					<dd>Sort case sensitively.</dd>
+					<dt><var>$reverse</var></dt>
+					<dd>Reverse the sort order.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="psort" id="_psort">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_psort">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#167-194" title="Go to source code">psort</a>( <span>array <var>&amp; $array</var></span>, <span>string|null <var>$property</var> = <span class="php-keyword1">null</span></span>, <span>string|null <var>$parentProperty</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$caseSensitive</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$reverse</var> = <span class="php-keyword1">false</span> </span> )</code>
+
+		<div class="description short">
+			<p>Sort an array of entities by parent and a specified property's value.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Sort an array of entities by parent and a specified property's value.</p>
+
+<p>Entities' will be sorted by their parents' properties, then the entities'
+properties.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd>$array The array of entities.</dd>
+					<dt><var>$property</var></dt>
+					<dd>The name of the property to sort entities by.</dd>
+					<dt><var>$parentProperty</var></dt>
+					<dd><p>The name of the property which holds the
+                                   parent of the entity.</p></dd>
+					<dt><var>$caseSensitive</var></dt>
+					<dd>Sort case sensitively.</dd>
+					<dt><var>$reverse</var></dt>
+					<dd>Reverse the sort order.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sort" id="_sort">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sort">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#196-216" title="Go to source code">sort</a>( <span>array <var>&amp; $array</var></span>, <span>string|null <var>$property</var> = <span class="php-keyword1">null</span></span>, <span>boolean <var>$caseSensitive</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$reverse</var> = <span class="php-keyword1">false</span> </span> )</code>
+
+		<div class="description short">
+			<p>Sort an array of entities by a specified property's value.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Sort an array of entities by a specified property's value.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd>$array The array of entities.</dd>
+					<dt><var>$property</var></dt>
+					<dd>The name of the property to sort entities by.</dd>
+					<dt><var>$caseSensitive</var></dt>
+					<dd>Sort case sensitively.</dd>
+					<dt><var>$reverse</var></dt>
+					<dd>Reverse the sort order.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="formatSelectors" id="_formatSelectors">
+
+		<td class="attributes"><code>
+			 public static
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_formatSelectors">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#218-241" title="Go to source code">formatSelectors</a>( <span>array <var>&amp; $selectors</var></span> )</code>
+
+		<div class="description short">
+			<p>Make all selectors in the format:</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Make all selectors in the format:</p>
+
+<p>[ 0 => '&amp;', 'crit' => [ ['value'] ], 'crit2' => [ ['var', 'value'] ], [ 0 => '|', 'crit' => [ ['value2'] ] ]
+]</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$selectors</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="connect" id="_connect">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_connect">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#245-252" title="Go to source code">connect</a>( )</code>
+
+		<div class="description short">
+			<p>Connect to the database.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Connect to the database.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>Whether the instance is connected to the database.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteEntityByID" id="_deleteEntityByID">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteEntityByID">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#253-261" title="Go to source code">deleteEntityByID</a>( <span>integer <var>$guid</var></span> )</code>
+
+		<div class="description short">
+			<p>Delete an entity by its GUID.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Delete an entity by its GUID.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$guid</var></dt>
+					<dd>The GUID of the entity.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>True on success, false on failure.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteUID" id="_deleteUID">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteUID">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#262-270" title="Go to source code">deleteUID</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>Delete a unique ID.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Delete a unique ID.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>The UID's name.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>True on success, false on failure.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="disconnect" id="_disconnect">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_disconnect">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#271-278" title="Go to source code">disconnect</a>( )</code>
+
+		<div class="description short">
+			<p>Disconnect from the database.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Disconnect from the database.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>Whether the instance is connected to the database.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="export" id="_export">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_export">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#279-314" title="Go to source code">export</a>( <span>string <var>$filename</var></span> )</code>
+
+		<div class="description short">
+			<p>Export entities to a local file.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Export entities to a local file.</p>
+
+<p>This is the file format:</p>
+
+<pre><span class="php-comment"># Comments begin with #</span>
+   <span class="php-comment"># And can have white space before them.</span>
+<span class="php-comment"># This defines a UID.</span>
+&amp;lt;name/of/uid&amp;gt;[<span class="php-num">5</span>]
+&amp;lt;another uid&amp;gt;[<span class="php-num">8000</span>]
+<span class="php-comment"># For UIDs, the name is in angle brackets (&amp;lt;&amp;gt;) and the value follows</span>
+<span class="php-comment"># in square brackets ([]).</span>
+<span class="php-comment"># This starts a new entity.</span>
+{<span class="php-num">1</span>}[tag,<span class="php-keyword1">list</span>,with,commas]
+<span class="php-comment"># For entities, the GUID is in curly brackets ({}) and the comma</span>
+<span class="php-comment">#  separated tag list follows in square brackets ([]).</span>
+<span class="php-comment"># Variables are stored like this:</span>
+<span class="php-comment"># varname=json_encode(serialize(value))</span>
+    abilities=<span class="php-quote">&quot;a:1:{i:0;s:10:\&quot;system\/all\&quot;;}&quot;</span>
+    groups=<span class="php-quote">&quot;a:0:{}&quot;</span>
+    inheritAbilities=<span class="php-quote">&quot;b:0;&quot;</span>
+    name=<span class="php-quote">&quot;s:5:\&quot;admin\&quot;;&quot;</span>
+<span class="php-comment"># White space before/after &quot;=&quot; and at beginning/end of line is ignored.</span>
+        username  =     <span class="php-quote">&quot;s:5:\&quot;admin\&quot;;&quot;</span>
+{<span class="php-num">2</span>}[tag,<span class="php-keyword1">list</span>]
+    another=<span class="php-quote">&quot;s:23:\&quot;This is another entity.\&quot;;&quot;</span>
+    newline=<span class="php-quote">&quot;s:1:\&quot;\n\&quot;;&quot;</span></pre>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$filename</var></dt>
+					<dd>The file to export to.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>True on success, false on failure.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="exportPrint" id="_exportPrint">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_exportPrint">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#315-322" title="Go to source code">exportPrint</a>( )</code>
+
+		<div class="description short">
+			<p>Export entities to the client as a downloadable file.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Export entities to the client as a downloadable file.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>True on success, false on failure.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getEntities" id="_getEntities">
+
+		<td class="attributes"><code>
+			 public static
+
+			array|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getEntities">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#323-478" title="Go to source code">getEntities</a>( <span>array <var>$options</var></span>, <span>array <var>$selectors</var></span> )</code>
+
+		<div class="description short">
+			<p>Get an array of entities.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get an array of entities.</p>
+
+<p>$options is an associative array, which contains any of the following
+settings (in the form $options['name'] = value):</p>
+
+<ul>
+<li>class - (string) The class to create each entity with.</li>
+<li>limit - (int) The limit of entities to be returned.</li>
+<li>offset - (int) The offset from the oldest matching entity to start retrieving.</li>
+<li>reverse - (bool) If true, entities will be retrieved from newest to oldest. Therefore, offset will be from the newest entity.</li>
+<li>sort - (string) How to sort the entities. Accepts "guid", "cdate", and "mdate". Defaults to "cdate".</li>
+<li>skip_ac - (bool) If true, the user manager will not filter returned entities according to access controls.</li>
+</ul>
+
+<p>If a class is specified, it must have a factory() static method that
+returns a new instance.</p>
+
+<p>Selectors are also associative arrays. Any amount of selectors can be
+provided. Empty selectors will be ignored. The first member of a selector
+must be a "type" string. The type string can be:</p>
+
+<ul>
+<li>&amp; - (and) All values in the selector must be true.</li>
+<li>| - (or) At least one value in the selector must be true.</li>
+<li>!&amp; - (not and) All values in the selector must be false.</li>
+<li>!| - (not or) At least one value in the selector must be false.</li>
+</ul>
+
+<p>The rest of the entries in the selector are either more selectors or
+associative entries called selector clauses, which can be any of the
+following (in the form $selector['name'] = value, or
+$selector['name'] = [value1, value2,...]):</p>
+
+<ul>
+<li>guid - A GUID. True if the entity's GUID is equal.</li>
+<li>tag - A tag. True if the entity has the tag.</li>
+<li>isset - A name. True if the named variable exists and is not null.</li>
+<li>data - An array with a name, then value. True if the named variable is defined and equal.</li>
+<li>strict - An array with a name, then value. True if the named variable is defined and identical.</li>
+<li>array - An array with a name, then value. True if the named variable is an array containing the value. Uses in_array().</li>
+<li>match - An array with a name, then regular expression. True if the named variable matches. Uses preg_match(). More powerful than "pmatch" but slower. Must be surrounded by "/" delimiters.</li>
+<li>pmatch - An array with a name, then regular expression. True if the named variable matches. Uses POSIX RegExp. Case sensitive. Faster than "match". Must <em>not</em> be surrounded by any delimiters.</li>
+<li>ipmatch - An array with a name, then regular expression. True if the named variable matches. Uses POSIX RegExp. Case insensitive. Faster than "match". Must <em>not</em> be surrounded by any delimiters.</li>
+<li>like - An array with a name, then pattern. True if the named variable matches. Uses % for variable length wildcard and _ for single character wildcard. Case sensitive.</li>
+<li>ilike - An array with a name, then pattern. True if the named variable matches. Uses % for variable length wildcard and _ for single character wildcard. Case insensitive.</li>
+<li>gt - An array with a name, then value. True if the named variable is greater than the value.</li>
+<li>gte - An array with a name, then value. True if the named variable is greater than or equal to the value.</li>
+<li>lt - An array with a name, then value. True if the named variable is less than the value.</li>
+<li>lte - An array with a name, then value. True if the named variable is less than or equal to the value.</li>
+<li>ref - An array with a name, then either a entity, or a GUID. True if the named variable is the entity or an array containing the entity.</li>
+</ul>
+
+<p>These clauses can all be negated, by prefixing them with an exclamation
+point, such as "!isset".</p>
+
+<p>Any clause that accepts an array of name and value can also accept a third
+element. If value is null and the third element is a string, the third
+element will be used with PHP's strtotime function to set value to a
+relative timestamp. For example, the following selector will look for all
+entities that were created in the last day:</p>
+
+<pre>[
+  <span class="php-quote">'&amp;'</span>,
+  <span class="php-quote">'gte'</span> =&gt; [<span class="php-quote">'cdate'</span>, <span class="php-keyword1">null</span>, <span class="php-quote">'-1 day'</span>]
+]</pre>
+
+<p>This example will retrieve the last two entities where:</p>
+
+<ul>
+<li>It has 'person' tag.</li>
+<li>spouse exists and is not null.</li>
+<li>gender is male and lname is Smith.</li>
+<li>warnings is not an integer 0.</li>
+<li>It has 'level1' and 'level2' tags, or it has 'access1' and 'access2' tags.</li>
+<li>It has either 'employee' or 'manager' tag.</li>
+<li>name is either Clark, James, Chris, Christopher, Jake, or Jacob.</li>
+<li>If age is 22 or more, then pay is not greater than 8.</li>
+</ul>
+
+<pre><span class="php-var">$entities</span> = \Nymph\Nymph::getEntities(
+  [<span class="php-quote">'reverse'</span> =&gt; <span class="php-keyword1">true</span>, <span class="php-quote">'limit'</span> =&gt; <span class="php-num">2</span>],
+  [
+    <span class="php-quote">'&amp;'</span>, <span class="php-comment">// all must be true</span>
+    <span class="php-quote">'tag'</span> =&gt; <span class="php-quote">'person'</span>,
+    <span class="php-quote">'isset'</span> =&gt; <span class="php-quote">'spouse'</span>,
+    <span class="php-quote">'data'</span> =&gt; [
+      [<span class="php-quote">'gender'</span>, <span class="php-quote">'male'</span>],
+      [<span class="php-quote">'lname'</span>, <span class="php-quote">'Smith'</span>]
+    ],
+    <span class="php-quote">'!strict'</span> =&gt; [<span class="php-quote">'warnings'</span>, <span class="php-num">0</span>]
+  ],
+  [
+    <span class="php-quote">'|'</span>, <span class="php-comment">// at least one of the selectors in this must evaluate to true</span>
+    [
+      <span class="php-quote">'&amp;'</span>,
+      <span class="php-quote">'tag'</span> =&gt; [<span class="php-quote">'level1'</span>, <span class="php-quote">'level2'</span>]
+    ],
+    [
+      <span class="php-quote">'&amp;'</span>,
+      <span class="php-quote">'tag'</span> =&gt; [<span class="php-quote">'access1'</span>, <span class="php-quote">'access2'</span>]
+    ]
+  ],
+  [
+    <span class="php-quote">'|'</span>, <span class="php-comment">// at least one must be true</span>
+    <span class="php-quote">'tag'</span> =&gt; [<span class="php-quote">'employee'</span>, <span class="php-quote">'manager'</span>]
+  ],
+  [
+    <span class="php-quote">'|'</span>,
+    <span class="php-quote">'data'</span> =&gt; [
+      [<span class="php-quote">'name'</span>, <span class="php-quote">'Clark'</span>],
+      [<span class="php-quote">'name'</span>, <span class="php-quote">'James'</span>]
+    ],
+    <span class="php-quote">'pmatch'</span> =&gt; [
+      [<span class="php-quote">'name'</span>, <span class="php-quote">'Chris(topher)?'</span>],
+      [<span class="php-quote">'name'</span>, <span class="php-quote">'Ja(ke|cob)'</span>]
+    ]
+  ],
+  [
+    <span class="php-quote">'!|'</span>, <span class="php-comment">// at least one must be false</span>
+    <span class="php-quote">'gte'</span> =&gt; [<span class="php-quote">'age'</span>, <span class="php-num">22</span>],
+    <span class="php-quote">'gt'</span> =&gt; [<span class="php-quote">'pay'</span>, <span class="php-num">8</span>]
+  ]
+);</pre>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$options</var></dt>
+					<dd>The options.</dd>
+					<dt><var>$selectors</var></dt>
+					<dd><p>Unlimited optional selectors to search for. If none
+                        are given, all entities are retrieved for the given
+                        options.</p></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array|null<br>An array of entities, or null on failure.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getEntity" id="_getEntity">
+
+		<td class="attributes"><code>
+			 public static
+
+			<code><a href="class-Nymph.Entity.html">Nymph\Entity</a></code>|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getEntity">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#479-496" title="Go to source code">getEntity</a>( <span>array <var>$options</var></span>, <span>array|integer <var>$selectors</var></span> )</code>
+
+		<div class="description short">
+			<p>Get the first entity to match all options/selectors.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get the first entity to match all options/selectors.</p>
+
+<p>$options and $selectors are the same as in getEntities().</p>
+
+<p>This function is equivalent to setting $options['limit'] to 1 for
+getEntities(), except that it will return null if no entity is found.
+getEntities() would return an empty array.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$options</var></dt>
+					<dd>The options to search for.</dd>
+					<dt><var>$selectors</var></dt>
+					<dd><p>Unlimited optional selectors to search for, or
+                            just a GUID.</p></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Nymph.Entity.html">Nymph\Entity</a></code>|null<br>An entity, or null on failure and nothing found.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getUID" id="_getUID">
+
+		<td class="attributes"><code>
+			 public static
+
+			integer|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getUID">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#497-506" title="Go to source code">getUID</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>Get the current value of a unique ID.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get the current value of a unique ID.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>The UID's name.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer|null<br><p>The UID's value, or null on failure and if it doesn't
+                 exist.</p>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="import" id="_import">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_import">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#507-515" title="Go to source code">import</a>( <span>string <var>$filename</var></span> )</code>
+
+		<div class="description short">
+			<p>Import entities from a file.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Import entities from a file.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$filename</var></dt>
+					<dd>The file to import from.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>True on success, false on failure.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="newUID" id="_newUID">
+
+		<td class="attributes"><code>
+			 public static
+
+			integer|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_newUID">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#516-545" title="Go to source code">newUID</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>Increment or create a unique ID and return the new value.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Increment or create a unique ID and return the new value.</p>
+
+<p>Unique IDs, or UIDs, are ID numbers, similar to GUIDs, but without any
+constraints on how they are used. UIDs can be named anything. A good
+naming convention, in order to avoid conflicts, is to use your
+component's name, a slash, then a descriptive name of the sequence being
+identified for non-entity sequences, and the name of the entity's class
+for entity sequences. E.g. "com_example/widget_hits" or
+"com_hrm_employee".</p>
+
+<p>A UID can be used to identify an object when the GUID doesn't suffice. On
+a system where a new entity is created many times per second, referring
+to something by its GUID may be unintuitive. However, the component
+designer is responsible for assigning UIDs to the component's entities.
+Beware that if a UID is incremented for an entity, and the entity cannot
+be saved, there is no safe, and therefore, no recommended way to
+decrement the UID back to its previous value.</p>
+
+<p>If newUID() is passed the name of a UID which does not exist yet, one
+will be created with that name, and assigned the value 1. If the UID
+already exists, its value will be incremented. The new value will be
+returned.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>The UID's name.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer|null<br>The UID's new value, or null on failure.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="renameUID" id="_renameUID">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_renameUID">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#546-555" title="Go to source code">renameUID</a>( <span>string <var>$oldName</var></span>, <span>string <var>$newName</var></span> )</code>
+
+		<div class="description short">
+			<p>Rename a unique ID.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Rename a unique ID.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$oldName</var></dt>
+					<dd>The old name.</dd>
+					<dt><var>$newName</var></dt>
+					<dd>The new name.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>True on success, false on failure.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setUID" id="_setUID">
+
+		<td class="attributes"><code>
+			 public static
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setUID">#</a>
+		<code><a href="source-class-Nymph.Nymph.html#556-565" title="Go to source code">setUID</a>( <span>string <var>$name</var></span>, <span>integer <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Set the value of a UID.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set the value of a UID.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>The UID's name.</dd>
+					<dt><var>$value</var></dt>
+					<dd>The value.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>True on success, false on failure.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+	<table class="summary constants" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="VERSION" id="VERSION">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Nymph.Nymph.html#29" title="Go to source code"><b>VERSION</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#VERSION" class="anchor">#</a>
+				<code><span class="php-quote">'2.2.0'</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Nymph Server API API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

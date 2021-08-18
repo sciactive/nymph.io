@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Interface Nymph\DataObjectInterface | Nymph 3.0.0-beta.6 Server API</title>
+
+	<link rel="stylesheet" href="resources/style.css?c2f33731c1948fbed7c333554678bfa68d4817da">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active main">
+					<a href="namespace-Nymph.html">
+						Nymph<span></span>
+					</a>
+
+						<ul>
+				<li class="main">
+					<a href="namespace-Nymph.Drivers.html">
+						Drivers					</a>
+
+						</li>
+				<li class="main">
+					<a href="namespace-Nymph.Exceptions.html">
+						Exceptions					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Nymph.Entity.html">Entity</a></li>
+				<li><a href="class-Nymph.Nymph.html">Nymph</a></li>
+				<li><a href="class-Nymph.REST.html">REST</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li class="active"><a href="class-Nymph.DataObjectInterface.html">DataObjectInterface</a></li>
+				<li><a href="class-Nymph.EntityInterface.html">EntityInterface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Nymph.html" title="Summary of Nymph"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Interface DataObjectInterface</h1>
+
+
+	<div class="description">
+	<p>Data Object interface.</p>
+
+<p>Objects which hold data from some type of storage.</p>
+	</div>
+
+
+
+
+
+	<div>
+		<h4>Direct known implementers</h4>
+			<a href="class-Nymph.EntityInterface.html">Nymph\EntityInterface</a>
+	</div>
+
+	<div>
+		<h4>Indirect known implementers</h4>
+			<a href="class-Nymph.Entity.html">Nymph\Entity</a>
+	</div>
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Nymph.html">Nymph</a><br>
+		<b>Package:</b> Nymph<br>
+
+				<b>Copyright:</b>
+				SciActive.com<br>
+				<b>License:</b>
+				<a href="https://www.apache.org/licenses/LICENSE-2.0">https://www.apache.org/licenses/LICENSE-2.0</a><br>
+				<b>Author:</b>
+				Hunter Perrin <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x68;&#x70;&#x65;&#x72;&#114;&#105;&#110;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;om">&#x68;&#x70;&#x65;&#x72;&#114;&#105;&#110;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;om</a><br>
+				<b>Link:</b>
+				<a href="http://nymph.io/">http://nymph.io/</a><br>
+			<b>Located at</b> <a href="source-class-Nymph.DataObjectInterface.html#3-75" title="Go to source code">src/DataObjectInterface.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="arraySearch" id="_arraySearch">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_arraySearch">#</a>
+		<code><a href="source-class-Nymph.DataObjectInterface.html#15-26" title="Go to source code">arraySearch</a>( <span>array <var>$array</var></span>, <span>boolean <var>$strict</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			<p>Search the array for this object and return the corresponding key.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Search the array for this object and return the corresponding key.</p>
+
+<p>If $strict is false, is() is used to compare. If $strict is true,
+equals() is used.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd>The array to search.</dd>
+					<dt><var>$strict</var></dt>
+					<dd>Whether to use stronger comparison.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed<br><p>The key if the object is in the array, false if it isn't or
+              if $array is not an array.</p>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="delete" id="_delete">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_delete">#</a>
+		<code><a href="source-class-Nymph.DataObjectInterface.html#27-32" title="Go to source code">delete</a>( )</code>
+
+		<div class="description short">
+			<p>Delete the object from storage.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Delete the object from storage.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>True on success, false on failure.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="equals" id="_equals">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_equals">#</a>
+		<code><a href="source-class-Nymph.DataObjectInterface.html#33-39" title="Go to source code">equals</a>( <span>mixed <var>&amp; $object</var></span> )</code>
+
+		<div class="description short">
+			<p>Perform a more strict comparison of this object to another.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Perform a more strict comparison of this object to another.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$object</var></dt>
+					<dd>$object The object to compare.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>True or false.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="inArray" id="_inArray">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_inArray">#</a>
+		<code><a href="source-class-Nymph.DataObjectInterface.html#40-51" title="Go to source code">inArray</a>( <span>array <var>$array</var></span>, <span>boolean <var>$strict</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			<p>Check whether this object is in an array.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Check whether this object is in an array.</p>
+
+<p>If $strict is false, is() is used to compare. If $strict is true,
+equals() is used.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd>The array to search.</dd>
+					<dt><var>$strict</var></dt>
+					<dd>Whether to use stronger comparison.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br><p>True if the object is in the array, false if it isn't or if
+             $array is not an array.</p>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="is" id="_is">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_is">#</a>
+		<code><a href="source-class-Nymph.DataObjectInterface.html#52-58" title="Go to source code">is</a>( <span>mixed <var>&amp; $object</var></span> )</code>
+
+		<div class="description short">
+			<p>Perform a less strict comparison of this object to another.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Perform a less strict comparison of this object to another.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$object</var></dt>
+					<dd>$object The object to compare.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>True or false.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="refresh" id="_refresh">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean|integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_refresh">#</a>
+		<code><a href="source-class-Nymph.DataObjectInterface.html#59-68" title="Go to source code">refresh</a>( )</code>
+
+		<div class="description short">
+			<p>Refresh the object from storage.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Refresh the object from storage.</p>
+
+<p>If the object has been deleted from storage, the database cannot be
+reached, or a database error occurs, refresh() will return 0.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean|integer<br><p>False if the data has not been saved, 0 if it can't be
+                 refreshed, true on success.</p>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="save" id="_save">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_save">#</a>
+		<code><a href="source-class-Nymph.DataObjectInterface.html#69-74" title="Go to source code">save</a>( )</code>
+
+		<div class="description short">
+			<p>Save the object to storage.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Save the object to storage.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>True on success, false on failure.
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Nymph 3.0.0-beta.6 Server API API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
