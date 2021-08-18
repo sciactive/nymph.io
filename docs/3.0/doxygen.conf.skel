@@ -1,0 +1,17 @@
+DOXYFILE_ENCODING      = UTF-8
+PROJECT_NAME           = "Nymph Server API"
+PROJECT_NUMBER         = "--version--"
+PROJECT_BRIEF          = "Data objects for JavaScript and PHP."
+PROJECT_LOGO           = "../assets/nymph-logo-sil-125.png"
+OUTPUT_DIRECTORY       = "api/server/--version--"
+BRIEF_MEMBER_DESC      = YES
+FULL_PATH_NAMES        = NO
+JAVADOC_AUTOBRIEF      = YES
+TAB_SIZE               = 2
+INPUT                  = ../server/conf ../server/src ../server/README.md
+FILE_PATTERNS          = *.php
+                         *.md
+RECURSIVE              = YES
+SOURCE_BROWSER         = YES
+HTML_OUTPUT            = .
+GENERATE_LATEX         = NO

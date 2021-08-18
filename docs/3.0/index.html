@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Nymph</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Object relational mapper for PHP and JavaScript" />
+    <meta property="og:title" content="Nymph" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://nymph.io/" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png" />
+    <meta property="og:site_name" content="Nymph" />
+    <meta property="fb:admins" content="508999194" />
+    <meta property="og:description" content="Object relational mapper for PHP and JavaScript" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic" rel="stylesheet" type="text/css" />
+    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+      <link rel="stylesheet" href="css/skel-noscript.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/style-wide.css" />
+    </noscript>
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+    <style>
+      .scrolly {
+        margin: 0 1em 1em 0;
+      }
+    </style>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.0/gist-embed.min.js"></script>
+  </head>
+  <body>
+
+    <!-- Header -->
+    <section id="header" class="dark">
+      <header>
+        <h1><img style="max-width: 90%;" alt="Nymph" src="images/nymph-header-sil-white-125.png" /></h1>
+        <p>Object relational mapper for collaborative web apps</p>
+      </header>
+      <footer>
+        <a href="https://github.com/sciactive/nymph" class="button scrolly" title="Nymph on GitHub"><span style="font-size: 3em;" class="fa fa-github"></span></a>
+        <a href="https://github.com/sciactive/nymph/wiki" class="button scrolly" title="Wiki Docs"><span style="font-size: 3em;" class="fa fa-graduation-cap"></span></a>
+      </footer>
+      <div class="arrow-indicator">
+        <i onclick="$('html, body').stop().animate({scrollTop: $('#header').outerHeight()}, 500);" class="fa fa-arrow-circle-down fa-5x"></i>
+      </div>
+    </section>
+
+    <!-- First -->
+    <section id="first" class="main">
+      <header id="demos">
+        <div class="container">
+          <h2>See It in Action</h2>
+          <p>
+            These demos use Nymph. Try opening the same one in two windows, and
+            see one window react to changes in the other.
+          </p>
+          <p></p>
+          <table border="1" style="text-align: right; max-width: 600px; margin: 0 auto;">
+            <tbody>
+              <tr style="border-bottom: 1px solid #333;">
+                <td style="text-align: left;"><i class="fa fa-check-square-o"></i> ToDo App</td>
+                <td><i class="fa fa-arrow-circle-right"></i> <a href="https://nymph-demo.herokuapp.com/examples/todo/svelte/" target="_blank">See the Demo</a></td>
+                <td><i class="fa fa-code"></i> <a href="https://github.com/sciactive/nymph-examples/tree/master/examples/todo" target="_blank">See the Source</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #333;">
+                <td style="text-align: left;"><i class="fa fa-pencil-square-o"></i> Sudoku Game</td>
+                <td><i class="fa fa-arrow-circle-right"></i> <a href="https://nymph-demo.herokuapp.com/examples/sudoku/" target="_blank">See the Demo</a></td>
+                <td><i class="fa fa-code"></i> <a href="https://github.com/sciactive/nymph-examples/tree/master/examples/sudoku" target="_blank">See the Source</a></td>
+              </tr>
+              <tr>
+                <td style="text-align: left;"><i class="fa fa-hand-o-up"></i> Simple Clicker</td>
+                <td><i class="fa fa-arrow-circle-right"></i> <a href="https://nymph-demo.herokuapp.com/examples/clicker/" target="_blank">See the Demo</a></td>
+                <td><i class="fa fa-code"></i> <a href="https://github.com/sciactive/nymph-examples/tree/master/examples/clicker" target="_blank">See the Source</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </header>
+      <div class="content dark style1 featured">
+        <div class="container">
+          <div class="row">
+            <div class="4u">
+              <section>
+                <span class="feature-icon"><span class="fa fa-clock-o"></span></span>
+                <header>
+                  <h3>Speedy</h3>
+                </header>
+                <p>Nymph is lean and fast. Not just in processing, but Nymph can be used for rapid prototyping.</p>
+              </section>
+            </div>
+            <div class="4u">
+              <section>
+                <span class="feature-icon"><span class="fa fa-github"></span></span>
+                <header>
+                  <h3>Open Source</h3>
+                </header>
+                <p>Nymph is licensed under the Apache-2 license.</p>
+                <p>&nbsp;</p>
+                <p><a href="https://github.com/sciactive/nymph" class="button scrolly">Nymph on GitHub</a></p>
+              </section>
+            </div>
+            <div class="4u">
+              <section>
+                <span class="feature-icon"><span class="fa fa-refresh" id="rotateMe"></span></span>
+                <script type="text/javascript">
+                  window.onscroll = function(){
+                    document.getElementById("rotateMe").style.transform = "rotate("+(window.scrollY % 360)+"deg)";
+                  };
+                </script>
+                <header>
+                  <h3>Reactive</h3>
+                </header>
+                <p>Nymph's publish/subscribe server makes it easy to build <strong>collaborative</strong> apps.</p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Second -->
+    <section id="second" class="main">
+      <header>
+        <div class="container">
+          <h2>Build an App</h2>
+          <p>You can be up and running with Nymph in a few minutes with the <a href="https://github.com/hperrin/nymph-template">app template</a>.</p>
+        </div>
+      </header>
+      <div class="content dark style3">
+        <div class="container">
+          <div class="row">
+            <div class="12u">
+              <p>The <a href="https://github.com/hperrin/nymph-template">Nymph App Template</a> will run everything you need to start making an app with Nymph in Docker containers.</p>
+              <p style="text-align: center; margin-top: 6em;">
+                <a href="images/template-screenshot.png"><img alt="App template screenshot" src="images/template-screenshot.png" style="max-width: 1024px; width: 100%;" /></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Third -->
+    <section id="third" class="main">
+      <header>
+        <div class="container">
+          <h2>Why Nymph</h2>
+          <p>Why use Nymph when you can just use REST or SQL endpoints?</p>
+        </div>
+      </header>
+      <div class="content dark style2">
+        <div class="container">
+          <div class="row" id="better-than-sql">
+            <div class="12u">
+              <p>Because of <a href="https://github.com/sciactive/nymph/wiki/Entity-Querying">Nymph's frontend query language</a>! (And don't forget Nymph's built in PubSub server.)</p>
+              <div class="row">
+                <div class="6u">
+                  <h3>Nymph Query from Frontend</h3>
+                  <code data-gist-id="55935d42e01da53f8418"></code>
+                  <p><em style="font-size: .8em;">No need for specific endpoints with Nymph.</em></p>
+                </div>
+                <div class="6u">
+                  <h3>Equivalent SQL Query from Frontend</h3>
+                  <code data-gist-id="a5766b1167b07424080f"></code>
+                  <p><em style="font-size: .8em;">Without Nymph, every time you want a new type of query, you'll need a new endpoint.</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fourth -->
+    <section id="fourth" class="main">
+      <header>
+        <div class="container">
+          <h2>Easy to Integrate</h2>
+          <p>Nymph is very easy to integrate into Angular, React, Ember, Svelte, and more. Check out the demos.</p>
+        </div>
+      </header>
+      <div class="content dark style1">
+        <div class="container">
+          <div class="row">
+            <div class="6u">
+              <h3>[your framework of choice] and Nymph, a Love Story</h3>
+              <p>Nymph's easy querying on the client makes it perfect for building complex apps with a frontend framework.
+                Because you don't have to write SQL, almost all of your logic can be on the client side, if you prefer.
+                That means fewer round trips, more responsive interfaces, and happier customers.</p>
+            </div>
+            <div class="6u">
+              <p>Creating a new type of entity is simple in Nymph. You can code your logic on the PHP or JS side,
+                and access it all the same. If you're already invested in a data store, Nymph's REST endpoint
+                library makes it easy to integrate anywhere in your app.</p>
+              <p>It's not just for frontend. Nymph will integrate with all PHP backend frameworks. Nymph is designed
+                to be flexible.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+      <ul class="icons">
+        <li><a href="http://twitter.com/SciActive" class="fa fa-twitter solo"><span>Twitter</span></a></li>
+        <li><a href="http://sciactive.com" class="fa fa-globe solo"><span>SciActive</span></a></li>
+        <li><a href="https://github.com/sciactive" class="fa fa-github solo"><span>GitHub</span></a></li>
+      </ul>
+      <div class="content">
+        Nymph is a SciActive project by Hunter Perrin.
+      </div>
+      <div class="copyright">
+        <ul class="menu">
+          <li>&copy; SciActive.com. All rights reserved.</li>
+          <li>Design: <a href="http://html5up.net/">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57881656-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
