@@ -65,7 +65,7 @@
         </li>
         <li class="icon">
           <Icon path={mdiMapMarker} />
-          SciActive, Inc<br />
+          SciActive Inc<br />
           310 S Twin Oaks Valley Rd #107<br />
           PMB 422<br />
           San Marcos, CA 92078
