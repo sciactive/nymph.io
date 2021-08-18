@@ -1,0 +1,32 @@
+{
+  "name": "sciactive-site",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "clean": "test -d ./docs && rm -r ./docs || true",
+    "build": "npm run clean && npm run build:sass && npm run build:site",
+    "build:sass": "sass src/sass/main.scss static/css/main.css",
+    "build:site": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --ignore-path .gitignore --ignore-unknown --check --plugin-search-dir=. .",
+    "format": "prettier --ignore-path .gitignore --ignore-unknown --write --plugin-search-dir=. ."
+  },
+  "devDependencies": {
+    "@mdi/js": "^5.9.55",
+    "@sveltejs/adapter-static": "^1.0.0-next.16",
+    "@sveltejs/kit": "next",
+    "prettier": "~2.2.1",
+    "prettier-plugin-svelte": "^2.3.1",
+    "sass": "^1.38.0",
+    "svelte": "^3.34.0",
+    "svelte-check": "^2.0.0",
+    "svelte-highlight": "^3.2.0",
+    "svelte-preprocess": "^4.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.0"
+  },
+  "type": "module",
+  "dependencies": {}
+}

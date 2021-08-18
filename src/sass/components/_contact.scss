@@ -1,0 +1,40 @@
+///
+/// Editorial by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Contact */
+
+ul.contact {
+  list-style: none;
+  padding: 0;
+
+  li {
+    border-top: solid 1px _palette(border);
+    margin: 1.5em 0 0 0;
+    padding: 1.5em 0 0 3em;
+    position: relative;
+
+    svg {
+      color: _palette(accent);
+      left: 0.5em;
+      position: absolute;
+      transform: scale(1.4);
+    }
+
+    &:first-child {
+      border-top: 0;
+      margin-top: 0;
+      padding-top: 0;
+
+      &:before {
+        top: 0;
+      }
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+}

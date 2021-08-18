@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="icon" href="https://sciactive.github.io/sciactive-site/images/cropped-logo-32x32.png" sizes="32x32" data-svelte="svelte-b6beo8"><link rel="icon" href="https://sciactive.github.io/sciactive-site/images/cropped-logo-192x192.png" sizes="192x192" data-svelte="svelte-b6beo8"><link rel="apple-touch-icon" href="https://sciactive.github.io/sciactive-site/images/cropped-logo-180x180.png" data-svelte="svelte-b6beo8"><meta name="msapplication-TileImage" content="https://sciactive.github.io/sciactive-site/images/cropped-logo-270x270.png" data-svelte="svelte-b6beo8"><link rel="stylesheet" href="https://sciactive.github.io/sciactive-site/css/main.css" data-svelte="svelte-b6beo8"><!-- HTML_TAG_START --><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}</style><!-- HTML_TAG_END -->
+
+		
+
+		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/_app/start-f07f25f5.js">
+		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/_app/chunks/vendor-10780e9b.js">
+		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/_app/chunks/paths-6758d194.js">
+		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/_app/pages/__layout.svelte-dfc24685.js">
+		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/_app/chunks/Icon-924e5522.js">
+		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/_app/pages/elements.svelte-23f1a284.js">
+		<link rel="modulepreload" href="https://sciactive.github.io/sciactive-site/_app/chunks/Header-28be1cbf.js">
+		<link rel="stylesheet" href="https://sciactive.github.io/sciactive-site/_app/assets/start-a8cd1609.css">
+
+		<script type="module">
+			import { start } from "https://sciactive.github.io/sciactive-site/_app/start-f07f25f5.js";
+			start({
+				target: document.querySelector("body"),
+				paths: {"base":"/sciactive-site","assets":"https://sciactive.github.io/sciactive-site"},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("https://sciactive.github.io/sciactive-site/_app/pages/__layout.svelte-dfc24685.js"),
+						import("https://sciactive.github.io/sciactive-site/_app/pages/elements.svelte-23f1a284.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/elements",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+  </head>
+  <body class="is-preload">
+    
+
+
+
+
+
+
+<div id="main"><div class="inner">
+<header id="header"><div class="logo"><a href="/sciactive-site/" class="logo"><strong>SciActive Site</strong></a> - Elements</div>
+  <ul class="icons"><li><a href="https://twitter.com/SciActive" target="_blank" class="icon brands" title="Twitter"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg></a></li>
+    <li><a href="https://github.com/sciactive" target="_blank" class="icon brands" title="GitHub"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path></svg></a></li></ul>
+</header>
+
+
+<section><header class="main"><h1>Elements</h1></header>
+
+  
+  <h2 id="content">Sample Content</h2>
+  <p>Praesent ac adipiscing ullamcorper semper ut amet ac risus. Lorem sapien ut odio odio nunc. Ac
+    adipiscing nibh porttitor erat risus justo adipiscing adipiscing amet placerat accumsan. Vis.
+    Faucibus odio magna tempus adipiscing a non. In mi primis arcu ut non accumsan vivamus ac
+    blandit adipiscing adipiscing arcu metus praesent turpis eu ac lacinia nunc ac commodo gravida
+    adipiscing eget accumsan ac nunc adipiscing adipiscing lorem ipsum dolor sit amet nullam
+    veroeros adipiscing.
+  </p>
+  <div class="row"><div class="col-6 col-12-small"><h3>Sem turpis amet semper</h3>
+      <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi
+        integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat commodo eu sed ante
+        lacinia. Sapien a lorem in integer ornare praesent commodo adipiscing arcu in massa commodo
+        lorem accumsan at odio massa ac ac. Semper adipiscing varius montes viverra nibh in
+        adipiscing blandit tempus accumsan.
+      </p></div>
+    <div class="col-6 col-12-small"><h3>Magna odio tempus commodo</h3>
+      <p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac
+        integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor. Ante commodo
+        blandit adipiscing integer semper orci eget. Faucibus commodo adipiscing mi eu nullam
+        accumsan morbi arcu ornare odio mi adipiscing nascetur lacus ac interdum morbi accumsan vis
+        mi accumsan.
+      </p></div>
+    
+    <div class="col-4 col-12-medium"><h3>Interdum sapien gravida</h3>
+      <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi
+        integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia
+        sapien lorem accumsan varius montes viverra nibh in adipiscing blandit.
+      </p></div>
+    <div class="col-4 col-12-medium"><h3>Faucibus consequat lorem</h3>
+      <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi
+        integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia
+        sapien lorem accumsan varius montes viverra nibh in adipiscing blandit.
+      </p></div>
+    <div class="col-4 col-12-medium"><h3>Accumsan montes viverra</h3>
+      <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi
+        integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia
+        sapien lorem accumsan varius montes viverra nibh in adipiscing blandit.
+      </p></div></div>
+
+  <hr class="major">
+
+  
+  <h2 id="elements">Elements</h2>
+  <div class="row gtr-200"><div class="col-6 col-12-medium">
+      <h3>Text</h3>
+      <p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is
+        <em>emphasized</em>. This is <sup>superscript</sup> text and this is
+        <sub>subscript</sub> text. This is <u>underlined</u> and this is code:
+        <code>fancyCode(true);</code>. Finally, this is a <a href="#">link</a>.
+      </p>
+      <hr>
+      <h2>Heading Level 2</h2>
+      <h3>Heading Level 3</h3>
+      <h4>Heading Level 4</h4>
+      <hr>
+      <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi
+        integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia
+        sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.
+      </p>
+
+      
+      <h3>Lists</h3>
+      <div class="row"><div class="col-6 col-12-small"><h4>Unordered</h4>
+          <ul><li>Dolor etiam magna etiam.</li>
+            <li>Sagittis lorem eleifend.</li>
+            <li>Felis dolore viverra.</li></ul>
+
+          <h4>Alternate</h4>
+          <ul class="alt"><li>Dolor etiam magna etiam.</li>
+            <li>Sagittis lorem eleifend.</li>
+            <li>Felis feugiat viverra.</li></ul></div>
+        <div class="col-6 col-12-small"><h4>Ordered</h4>
+          <ol><li>Dolor etiam magna etiam.</li>
+            <li>Etiam vel lorem sed viverra.</li>
+            <li>Felis dolore viverra.</li>
+            <li>Dolor etiam magna etiam.</li>
+            <li>Etiam vel lorem sed viverra.</li>
+            <li>Felis dolore viverra.</li></ol>
+
+          <h4>Icons</h4>
+          <ul class="icons"><li><a href="#" class="icon" title="Twitter"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg></a></li>
+            <li><a href="#" class="icon" title="Facebook"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"></path></svg></a></li>
+            <li><a href="#" class="icon" title="Instagram"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"></path></svg></a></li>
+            <li><a href="#" class="icon" title="Github"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path></svg></a></li>
+            <li><a href="#" class="icon" title="Twitch"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M11.64 5.93H13.07V10.21H11.64M15.57 5.93H17V10.21H15.57M7 2L3.43 5.57V18.43H7.71V22L11.29 18.43H14.14L20.57 12V2M19.14 11.29L16.29 14.14H13.43L10.93 16.64V14.14H7.71V3.43H19.14Z"></path></svg></a></li></ul></div></div>
+      <h4>Definition</h4>
+      <dl><dt>Item1</dt><dd><p>Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit
+            adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac
+            pellentesque praesent. Lorem ipsum dolor.
+          </p>
+        </dd><dt>Item2</dt><dd><p>Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit
+            adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac
+            pellentesque praesent. Lorem ipsum dolor.
+          </p>
+        </dd><dt>Item3</dt><dd><p>Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit
+            adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac
+            pellentesque praesent. Lorem ipsum dolor.
+          </p></dd></dl>
+
+      <h4>Actions</h4>
+      <ul class="actions"><li><a href="#" class="button primary">Default</a></li>
+        <li><a href="#" class="button">Default</a></li></ul>
+      <ul class="actions small"><li><a href="#" class="button primary small">Small</a></li>
+        <li><a href="#" class="button small">Small</a></li></ul>
+      <div class="row"><div class="col-6 col-12-small"><ul class="actions stacked"><li><a href="#" class="button primary">Default</a></li>
+            <li><a href="#" class="button">Default</a></li></ul></div>
+        <div class="col-6 col-12-small"><ul class="actions stacked"><li><a href="#" class="button primary small">Small</a></li>
+            <li><a href="#" class="button small">Small</a></li></ul></div>
+        <div class="col-6 col-12-small"><ul class="actions stacked"><li><a href="#" class="button primary fit">Default</a></li>
+            <li><a href="#" class="button fit">Default</a></li></ul></div>
+        <div class="col-6 col-12-small"><ul class="actions stacked"><li><a href="#" class="button primary small fit">Small</a></li>
+            <li><a href="#" class="button small fit">Small</a></li></ul></div></div>
+
+      <h4>Pagination</h4>
+      <ul class="pagination"><li><span class="button disabled">Prev</span></li>
+        <li><a href="#" class="page active">1</a></li>
+        <li><a href="#" class="page">2</a></li>
+        <li><a href="#" class="page">3</a></li>
+        <li><span>…</span></li>
+        <li><a href="#" class="page">8</a></li>
+        <li><a href="#" class="page">9</a></li>
+        <li><a href="#" class="page">10</a></li>
+        <li><a href="#" class="button">Next</a></li></ul>
+
+      
+      <h3>Blockquote</h3>
+      <blockquote>Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu
+        felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.
+        Lorem ipsum dolor. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum.
+        Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus.
+      </blockquote>
+
+      
+      <h3>Table</h3>
+
+      <h4>Default</h4>
+      <div class="table-wrapper"><table><thead><tr><th>Name</th>
+              <th>Description</th>
+              <th>Price</th></tr></thead>
+          <tbody><tr><td>Item1</td>
+              <td>Ante turpis integer aliquet porttitor.</td>
+              <td>29.99</td></tr>
+            <tr><td>Item2</td>
+              <td>Vis ac commodo adipiscing arcu aliquet.</td>
+              <td>19.99</td></tr>
+            <tr><td>Item3</td>
+              <td>Morbi faucibus arcu accumsan lorem.</td>
+              <td>29.99</td></tr>
+            <tr><td>Item4</td>
+              <td>Vitae integer tempus condimentum.</td>
+              <td>19.99</td></tr>
+            <tr><td>Item5</td>
+              <td>Ante turpis integer aliquet porttitor.</td>
+              <td>29.99</td></tr></tbody>
+          <tfoot><tr><td colspan="2"></td>
+              <td>100.00</td></tr></tfoot></table></div>
+
+      <h4>Alternate</h4>
+      <div class="table-wrapper"><table class="alt"><thead><tr><th>Name</th>
+              <th>Description</th>
+              <th>Price</th></tr></thead>
+          <tbody><tr><td>Item1</td>
+              <td>Ante turpis integer aliquet porttitor.</td>
+              <td>29.99</td></tr>
+            <tr><td>Item2</td>
+              <td>Vis ac commodo adipiscing arcu aliquet.</td>
+              <td>19.99</td></tr>
+            <tr><td>Item3</td>
+              <td>Morbi faucibus arcu accumsan lorem.</td>
+              <td>29.99</td></tr>
+            <tr><td>Item4</td>
+              <td>Vitae integer tempus condimentum.</td>
+              <td>19.99</td></tr>
+            <tr><td>Item5</td>
+              <td>Ante turpis integer aliquet porttitor.</td>
+              <td>29.99</td></tr></tbody>
+          <tfoot><tr><td colspan="2"></td>
+              <td>100.00</td></tr></tfoot></table></div></div>
+    <div class="col-6 col-12-medium">
+      <h3>Buttons</h3>
+      <ul class="actions"><li><a href="#" class="button primary">Primary</a></li>
+        <li><a href="#" class="button">Default</a></li></ul>
+      <ul class="actions"><li><a href="#" class="button large">Large</a></li>
+        <li><a href="#" class="button">Default</a></li>
+        <li><a href="#" class="button small">Small</a></li></ul>
+      <ul class="actions"><li><a href="#" class="button primary large">Large</a></li>
+        <li><a href="#" class="button primary">Default</a></li>
+        <li><a href="#" class="button primary small">Small</a></li></ul>
+      <ul class="actions fit"><li><a href="#" class="button primary fit">Fit</a></li>
+        <li><a href="#" class="button fit">Fit</a></li></ul>
+      <ul class="actions fit small"><li><a href="#" class="button primary fit small">Fit + Small</a></li>
+        <li><a href="#" class="button fit small">Fit + Small</a></li></ul>
+      <ul class="actions"><li><a href="#" class="button primary icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path></svg> Icon</a></li>
+        <li><a href="#" class="button icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"></path></svg> Icon</a></li></ul>
+      <ul class="actions"><li><span class="button primary disabled">Primary</span></li>
+        <li><span class="button disabled">Default</span></li></ul>
+
+      
+      <h3>Form</h3>
+
+      <form method="post" action="#"><div class="row gtr-uniform"><div class="col-6 col-12-xsmall"><input type="text" name="demo-name" id="demo-name" value="" placeholder="Name"></div>
+          <div class="col-6 col-12-xsmall"><input type="email" name="demo-email" id="demo-email" value="" placeholder="Email"></div>
+          
+          <div class="col-12"><select name="demo-category" id="demo-category"><option value="">- Category -</option><option value="1">Manufacturing</option><option value="1">Shipping</option><option value="1">Administration</option><option value="1">Human Resources</option></select></div>
+          
+          <div class="col-4 col-12-small"><input type="radio" id="demo-priority-low" name="demo-priority" checked>
+            <label for="demo-priority-low">Low</label></div>
+          <div class="col-4 col-12-small"><input type="radio" id="demo-priority-normal" name="demo-priority">
+            <label for="demo-priority-normal">Normal</label></div>
+          <div class="col-4 col-12-small"><input type="radio" id="demo-priority-high" name="demo-priority">
+            <label for="demo-priority-high">High</label></div>
+          
+          <div class="col-6 col-12-small"><input type="checkbox" id="demo-copy" name="demo-copy">
+            <label for="demo-copy">Email me a copy</label></div>
+          <div class="col-6 col-12-small"><input type="checkbox" id="demo-human" name="demo-human" checked>
+            <label for="demo-human">I am a human</label></div>
+          
+          <div class="col-12"><textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea></div>
+          
+          <div class="col-12"><ul class="actions"><li><input type="submit" value="Send Message" class="primary"></li>
+              <li><input type="reset" value="Reset"></li></ul></div></div></form>
+
+      
+      <h3>Image</h3>
+
+      <h4>Fit</h4>
+      <span class="image fit"><img src="https://picsum.photos/seed/sciactive/1280/416" alt=""></span>
+      <div class="box alt"><div class="row gtr-50 gtr-uniform"><div class="col-4"><span class="image fit"><img src="https://picsum.photos/seed/slide1/416/256" alt=""></span></div>
+          <div class="col-4"><span class="image fit"><img src="https://picsum.photos/seed/slide2/416/256" alt=""></span></div>
+          <div class="col-4"><span class="image fit"><img src="https://picsum.photos/seed/slide3/416/256" alt=""></span></div>
+          
+          <div class="col-4"><span class="image fit"><img src="https://picsum.photos/seed/slide4/416/256" alt=""></span></div>
+          <div class="col-4"><span class="image fit"><img src="https://picsum.photos/seed/slide5/416/256" alt=""></span></div>
+          <div class="col-4"><span class="image fit"><img src="https://picsum.photos/seed/slide6/416/256" alt=""></span></div>
+          
+          <div class="col-4"><span class="image fit"><img src="https://picsum.photos/seed/slide7/416/256" alt=""></span></div>
+          <div class="col-4"><span class="image fit"><img src="https://picsum.photos/seed/slide8/416/256" alt=""></span></div>
+          <div class="col-4"><span class="image fit"><img src="https://picsum.photos/seed/slide9/416/256" alt=""></span></div></div></div>
+
+      <h4>Left &amp; Right</h4>
+      <p><span class="image left"><img src="https://picsum.photos/seed/foo/416/256" alt=""></span>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus
+        euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis
+        iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent
+        tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget.
+        tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu
+        felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.
+      </p>
+      <p><span class="image right"><img src="https://picsum.photos/seed/bar/416/256" alt=""></span>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus
+        euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis
+        iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent
+        tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget.
+        tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu
+        felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.
+      </p>
+
+      
+      <h3>Box</h3>
+      <div class="box"><p>Felis sagittis eget tempus primis in faucibus vestibulum. Blandit adipiscing eu felis
+          iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent
+          tincidunt felis sagittis eget. tempus euismod. Magna sed etiam ante ipsum primis in
+          faucibus vestibulum.
+        </p></div>
+
+      
+      <h3>Preformatted</h3>
+      
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">while</span> (!deck.<span class="hljs-title function_">isInOrder</span>()) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Iteration &#x27;</span> + i);
+  deck.<span class="hljs-title function_">shuffle</span>();
+  i++;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;It took &#x27;</span> + i + <span class="hljs-string">&#x27; iterations to sort the deck.&#x27;</span>);<!-- HTML_TAG_END --></code></pre>
+</div></div></section>
+
+</div></div>
+
+
+<div id="sidebar"><div class="inner">
+    <section id="top-panel" class="alt"><div class="title"><img class="logo" src="https://sciactive.github.io/sciactive-site/images/web-logo.png" alt="SciActive">
+        <span class="name">SciActive</span></div></section>
+
+    
+    
+
+    
+    <nav id="menu">
+      <ul><li><a href="/sciactive-site/">Homepage</a></li>
+        <li><a href="/sciactive-site/features">Features</a></li>
+        <li><a href="/sciactive-site/generic">Generic</a></li>
+        <li><a href="/sciactive-site/elements">Elements</a></li>
+        <li><span class="opener">Submenu</span>
+          <ul><li><a href="#">Lorem Dolor</a></li>
+            <li><a href="#">Ipsum Adipiscing</a></li>
+            <li><a href="#">Tempus Magna</a></li>
+            <li><a href="#">Feugiat Veroeros</a></li></ul></li>
+        <li><span class="opener">Submenu 2</span>
+          <ul><li><a href="#">Lorem Dolor</a></li>
+            <li><a href="#">Ipsum Adipiscing</a></li>
+            <li><a href="#">Tempus Magna</a></li>
+            <li><span class="opener">Submenu Within</span>
+              <ul><li><a href="#">Lorem Dolor</a></li>
+                <li><a href="#">Ipsum Adipiscing</a></li>
+                <li><a href="#">Tempus Magna</a></li>
+                <li><a href="#">Feugiat Veroeros</a></li></ul></li></ul></li></ul></nav>
+
+    
+    <section><header class="major"><h2>Ante interdum</h2></header>
+      <div class="mini-posts"><article><a href="#" class="image"><img src="https://picsum.photos/seed/rofl/416/256" alt=""></a>
+          <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p></article>
+        <article><a href="#" class="image"><img src="https://picsum.photos/seed/lmao/416/256" alt=""></a>
+          <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p></article>
+        <article><a href="#" class="image"><img src="https://picsum.photos/seed/omg/416/256" alt=""></a>
+          <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p></article></div>
+      <ul class="actions"><li><a href="#" class="button">More</a></li></ul></section>
+
+    
+    <section><header class="major"><h2>Get in touch</h2></header>
+      <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim
+        lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem
+        feugiat tempus aliquam.
+      </p>
+      <ul class="contact"><li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"></path></svg> <a href="#">information@untitled.tld</a></li>
+        <li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M19.1,8.7C20.9,10.5 20.9,13.3 19.1,15.2L20.1,16.2C22.6,13.9 22.6,10.1 20.1,7.7L19.1,8.7M18,9.8L17,10.8C17.5,11.5 17.5,12.4 17,13.1L18,14.1C19.2,12.9 19.2,11.1 18,9.8M14,1H4A2,2 0 0,0 2,3V21A2,2 0 0,0 4,23H14A2,2 0 0,0 16,21V3A2,2 0 0,0 14,1M14,20H4V4H14V20Z"></path></svg> (000) 000-0000
+        </li>
+        <li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path></svg>
+          1234 Somewhere Road #8254<br>
+          Nashville, TN 00000-0000
+        </li></ul></section>
+
+    
+    <footer id="footer"><p class="copyright">© SciActive Inc. All rights reserved. Design by:
+        <a href="https://html5up.net">HTML5 UP</a>.
+      </p></footer></div>
+
+  
+</div>
+
+
+
+	
+
+  </body>
+</html>
