@@ -8,10 +8,11 @@
       <p>A free and fully responsive site template</p>
     </header>
     <p>
-      Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante
-      interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet
-      egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.
-      Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.
+      Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam
+      facilisis ante interdum congue. Integer mollis, nisl amet convallis,
+      porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi
+      nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac
+      quam. Lorem ipsum dolor sit nullam.
     </p>
     <ul class="actions">
       <li><a href="#" class="button big">Learn More</a></li>
@@ -33,8 +34,9 @@
       <div class="content">
         <h3>Portitor ullamcorper</h3>
         <p>
-          Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
-          facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
+          Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
+          Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+          tempus aliquam.
         </p>
       </div>
     </article>
@@ -43,8 +45,9 @@
       <div class="content">
         <h3>Sapien veroeros</h3>
         <p>
-          Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
-          facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
+          Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
+          Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+          tempus aliquam.
         </p>
       </div>
     </article>
@@ -53,8 +56,9 @@
       <div class="content">
         <h3>Quam lorem ipsum</h3>
         <p>
-          Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
-          facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
+          Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
+          Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+          tempus aliquam.
         </p>
       </div>
     </article>
@@ -63,8 +67,9 @@
       <div class="content">
         <h3>Sed magna finibus</h3>
         <p>
-          Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
-          facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
+          Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
+          Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+          tempus aliquam.
         </p>
       </div>
     </article>
@@ -78,44 +83,56 @@
   </header>
   <div class="posts">
     <article>
-      <a href="#" class="image"><img src="https://picsum.photos/seed/mario/416/256" alt="" /></a>
+      <a href="#" class="image"
+        ><img src="https://picsum.photos/seed/mario/416/256" alt="" /></a
+      >
       <h3>Interdum aenean</h3>
       <p>
-        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
-        ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
+        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
+        Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+        tempus aliquam.
       </p>
       <ul class="actions">
         <li><a href="#" class="button">More</a></li>
       </ul>
     </article>
     <article>
-      <a href="#" class="image"><img src="https://picsum.photos/seed/sonic/416/256" alt="" /></a>
+      <a href="#" class="image"
+        ><img src="https://picsum.photos/seed/sonic/416/256" alt="" /></a
+      >
       <h3>Nulla amet dolore</h3>
       <p>
-        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
-        ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
+        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
+        Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+        tempus aliquam.
       </p>
       <ul class="actions">
         <li><a href="#" class="button">More</a></li>
       </ul>
     </article>
     <article>
-      <a href="#" class="image"><img src="https://picsum.photos/seed/metroid/416/256" alt="" /></a>
+      <a href="#" class="image"
+        ><img src="https://picsum.photos/seed/metroid/416/256" alt="" /></a
+      >
       <h3>Tempus ullamcorper</h3>
       <p>
-        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
-        ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
+        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
+        Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+        tempus aliquam.
       </p>
       <ul class="actions">
         <li><a href="#" class="button">More</a></li>
       </ul>
     </article>
     <article>
-      <a href="#" class="image"><img src="https://picsum.photos/seed/pokemon/416/256" alt="" /></a>
+      <a href="#" class="image"
+        ><img src="https://picsum.photos/seed/pokemon/416/256" alt="" /></a
+      >
       <h3>Sed etiam facilis</h3>
       <p>
-        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
-        ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
+        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
+        Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+        tempus aliquam.
       </p>
       <ul class="actions">
         <li><a href="#" class="button">More</a></li>
@@ -127,20 +144,23 @@
       >
       <h3>Feugiat lorem aenean</h3>
       <p>
-        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
-        ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
+        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
+        Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+        tempus aliquam.
       </p>
       <ul class="actions">
         <li><a href="#" class="button">More</a></li>
       </ul>
     </article>
     <article>
-      <a href="#" class="image"><img src="https://picsum.photos/seed/asteroids/416/256" alt="" /></a
+      <a href="#" class="image"
+        ><img src="https://picsum.photos/seed/asteroids/416/256" alt="" /></a
       >
       <h3>Amet varius aliquam</h3>
       <p>
-        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis
-        ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
+        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
+        Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+        tempus aliquam.
       </p>
       <ul class="actions">
         <li><a href="#" class="button">More</a></li>
@@ -152,5 +172,10 @@
 <script lang="ts">
   import Header from '$lib/Header.svelte';
   import Icon from '$lib/Icon.svelte';
-  import { mdiDiamondStone, mdiRocketLaunch, mdiSend, mdiSignal } from '@mdi/js';
+  import {
+    mdiDiamondStone,
+    mdiRocketLaunch,
+    mdiSend,
+    mdiSignal
+  } from '@mdi/js';
 </script>

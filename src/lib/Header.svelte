@@ -1,17 +1,24 @@
 <!-- Header -->
 <header id="header">
   <div class="logo">
-    <a href="{base}/" class="logo"><strong>SciActive Site</strong></a> - <slot />
+    <a href="{base}/" class="logo"><strong>SciActive Site</strong></a> - <slot
+    />
   </div>
   <ul class="icons">
     <li>
-      <a href="https://twitter.com/SciActive" target="_blank" class="icon brands" title="Twitter"
-        ><Icon path={mdiTwitter} /></a
+      <a
+        href="https://twitter.com/SciActive"
+        target="_blank"
+        class="icon brands"
+        title="Twitter"><Icon path={mdiTwitter} /></a
       >
     </li>
     <li>
-      <a href="https://github.com/sciactive" target="_blank" class="icon brands" title="GitHub"
-        ><Icon path={mdiGithub} /></a
+      <a
+        href="https://github.com/sciactive"
+        target="_blank"
+        class="icon brands"
+        title="GitHub"><Icon path={mdiGithub} /></a
       >
     </li>
   </ul>

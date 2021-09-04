@@ -1,9 +1,23 @@
 <svelte:window on:resize={handleWindowResize} />
 <svelte:head>
-  <link rel="icon" href="{assets}/images/cropped-logo-32x32.png" sizes="32x32" />
-  <link rel="icon" href="{assets}/images/cropped-logo-192x192.png" sizes="192x192" />
-  <link rel="apple-touch-icon" href="{assets}/images/cropped-logo-180x180.png" />
-  <meta name="msapplication-TileImage" content="{assets}/images/cropped-logo-270x270.png" />
+  <link
+    rel="icon"
+    href="{assets}/images/cropped-logo-32x32.png"
+    sizes="32x32"
+  />
+  <link
+    rel="icon"
+    href="{assets}/images/cropped-logo-192x192.png"
+    sizes="192x192"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="{assets}/images/cropped-logo-180x180.png"
+  />
+  <meta
+    name="msapplication-TileImage"
+    content="{assets}/images/cropped-logo-270x270.png"
+  />
   <link rel="stylesheet" href="{assets}/css/main.css" />
 </svelte:head>
 
@@ -15,7 +29,11 @@
 </div>
 
 <!-- Sidebar -->
-<div id="sidebar" class:inactive={sidebarInactive} on:click={handleSidebarLinkClick}>
+<div
+  id="sidebar"
+  class:inactive={sidebarInactive}
+  on:click={handleSidebarLinkClick}
+>
   <div class="inner">
     <!-- Logo -->
     <section id="top-panel" class="alt">
@@ -46,7 +64,9 @@
           <span
             class="opener"
             class:active={submenu === 'submenu'}
-            on:click={() => (submenu = submenu === 'submenu' ? null : 'submenu')}>Submenu</span
+            on:click={() =>
+              (submenu = submenu === 'submenu' ? null : 'submenu')}
+            >Submenu</span
           >
           <ul>
             <li><a href="#">Lorem Dolor</a></li>
@@ -59,7 +79,9 @@
           <span
             class="opener"
             class:active={submenu === 'submenu2'}
-            on:click={() => (submenu = submenu === 'submenu2' ? null : 'submenu2')}>Submenu 2</span
+            on:click={() =>
+              (submenu = submenu === 'submenu2' ? null : 'submenu2')}
+            >Submenu 2</span
           >
           <ul>
             <li><a href="#">Lorem Dolor</a></li>
@@ -70,7 +92,8 @@
                 class="opener"
                 class:active={submenu2submenu === 'submenu'}
                 on:click={() =>
-                  (submenu2submenu = submenu2submenu === 'submenu' ? null : 'submenu')}
+                  (submenu2submenu =
+                    submenu2submenu === 'submenu' ? null : 'submenu')}
                 >Submenu Within</span
               >
               <ul>
@@ -92,16 +115,31 @@
       </header>
       <div class="mini-posts">
         <article>
-          <a href="#" class="image"><img src="https://picsum.photos/seed/rofl/416/256" alt="" /></a>
-          <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+          <a href="#" class="image"
+            ><img src="https://picsum.photos/seed/rofl/416/256" alt="" /></a
+          >
+          <p>
+            Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore
+            aliquam.
+          </p>
         </article>
         <article>
-          <a href="#" class="image"><img src="https://picsum.photos/seed/lmao/416/256" alt="" /></a>
-          <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+          <a href="#" class="image"
+            ><img src="https://picsum.photos/seed/lmao/416/256" alt="" /></a
+          >
+          <p>
+            Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore
+            aliquam.
+          </p>
         </article>
         <article>
-          <a href="#" class="image"><img src="https://picsum.photos/seed/omg/416/256" alt="" /></a>
-          <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+          <a href="#" class="image"
+            ><img src="https://picsum.photos/seed/omg/416/256" alt="" /></a
+          >
+          <p>
+            Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore
+            aliquam.
+          </p>
         </article>
       </div>
       <ul class="actions">
@@ -115,9 +153,9 @@
         <h2>Get in touch</h2>
       </header>
       <p>
-        Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim
-        lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem
-        feugiat tempus aliquam.
+        Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit
+        lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam
+        facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
       </p>
       <ul class="contact">
         <li class="icon">

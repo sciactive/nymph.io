@@ -10,8 +10,8 @@
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --ignore-path .gitignore --ignore-unknown --check --plugin-search-dir=. .",
-    "format": "prettier --ignore-path .gitignore --ignore-unknown --write --plugin-search-dir=. ."
+    "lint": "prettier --ignore-unknown --check --plugin-search-dir=. .",
+    "format": "prettier --ignore-unknown --write --plugin-search-dir=. ."
   },
   "devDependencies": {
     "@mdi/js": "^5.9.55",

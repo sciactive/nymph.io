@@ -8,9 +8,9 @@
       <p>A site for a SciActive project.</p>
     </header>
     <p>
-      The description of the SciActive project. This whole paragraph is full of descriptive text
-      regarding the project. The project is described, in detail, by all the text found within this
-      paragraph.
+      The description of the SciActive project. This whole paragraph is full of
+      descriptive text regarding the project. The project is described, in
+      detail, by all the text found within this paragraph.
     </p>
     <ul class="actions">
       <li><a href="#" class="button big">Learn More</a></li>
