@@ -10,8 +10,8 @@
   </header>
 
   <p>
-    The Nymph core provides the base level utilities to query the database, save data to it, and
-    define different data types.
+    The Nymph core provides the base level utilities to query the database, save
+    data to it, and define different data types.
   </p>
 </section>
 

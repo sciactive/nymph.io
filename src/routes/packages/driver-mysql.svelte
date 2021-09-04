@@ -9,7 +9,10 @@
     <h2>MySQL Driver</h2>
   </header>
 
-  <p>The MySQL driver lets you configure Nymph to query and save data to a MySQL database.</p>
+  <p>
+    The MySQL driver lets you configure Nymph to query and save data to a MySQL
+    database.
+  </p>
 </section>
 
 <script lang="ts">

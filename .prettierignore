@@ -4,3 +4,5 @@ node_modules
 /_svelte_kit_assets
 
 /docs
+/static/3.0
+/static/api
