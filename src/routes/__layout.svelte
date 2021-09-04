@@ -41,6 +41,16 @@
     <nav id="menu">
       <ul>
         <li><a href="{base}/">Homepage</a></li>
+        <li>
+          <span
+            class="opener"
+            class:active={submenu === 'packages'}
+            on:click={() => (submenu = submenu === 'packages' ? null : 'packages')}>Packages</span
+          >
+          <ul>
+            <li><a href="{base}/packages/nymph">Nymph Core</a></li>
+          </ul>
+        </li>
         <li><a href="/3.0/index.html" rel="external">Legacy Website</a></li>
       </ul>
     </nav>
@@ -106,6 +116,7 @@
   import Icon from '$lib/Icon.svelte';
 
   let email: HTMLAnchorElement;
+  let submenu: string | null = null;
   let sidebarInactive = false;
   let smallWindow = false;
 
