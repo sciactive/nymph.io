@@ -2,3 +2,5 @@
 node_modules
 /.svelte-kit
 /_svelte_kit_assets
+
+/docs

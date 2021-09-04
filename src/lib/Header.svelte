@@ -5,8 +5,11 @@
   </div>
   <ul class="icons">
     <li>
-      <a href="https://twitter.com/SciActive" target="_blank" class="icon brands" title="Twitter"
-        ><Icon path={mdiTwitter} /></a
+      <a
+        href="https://twitter.com/SciActive"
+        target="_blank"
+        class="icon brands"
+        title="Twitter"><Icon path={mdiTwitter} /></a
       >
     </li>
     <li>

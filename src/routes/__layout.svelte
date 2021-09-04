@@ -1,6 +1,9 @@
 <svelte:window on:resize={handleWindowResize} />
 <svelte:head>
-  <meta name="description" content="Object relational mapper for Node.js and the browser" />
+  <meta
+    name="description"
+    content="Object relational mapper for Node.js and the browser"
+  />
   <meta property="og:title" content="Nymph" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="http://nymph.io/" />
@@ -10,12 +13,29 @@
   />
   <meta property="og:site_name" content="Nymph" />
   <meta property="fb:admins" content="508999194" />
-  <meta property="og:description" content="Object relational mapper for Node.js and the browser" />
+  <meta
+    property="og:description"
+    content="Object relational mapper for Node.js and the browser"
+  />
 
-  <link rel="icon" href="{assets}/images/cropped-logo-32x32.png" sizes="32x32" />
-  <link rel="icon" href="{assets}/images/cropped-logo-192x192.png" sizes="192x192" />
-  <link rel="apple-touch-icon" href="{assets}/images/cropped-logo-180x180.png" />
-  <meta name="msapplication-TileImage" content="{assets}/images/cropped-logo-270x270.png" />
+  <link
+    rel="icon"
+    href="{assets}/images/cropped-logo-32x32.png"
+    sizes="32x32"
+  />
+  <link
+    rel="icon"
+    href="{assets}/images/cropped-logo-192x192.png"
+    sizes="192x192"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="{assets}/images/cropped-logo-180x180.png"
+  />
+  <meta
+    name="msapplication-TileImage"
+    content="{assets}/images/cropped-logo-270x270.png"
+  />
   <link rel="stylesheet" href="{assets}/css/main.css" />
 </svelte:head>
 
@@ -27,7 +47,11 @@
 </div>
 
 <!-- Sidebar -->
-<div id="sidebar" class:inactive={sidebarInactive} on:click={handleSidebarLinkClick}>
+<div
+  id="sidebar"
+  class:inactive={sidebarInactive}
+  on:click={handleSidebarLinkClick}
+>
   <div class="inner">
     <!-- Logo -->
     <section id="top-panel" class="alt">
@@ -45,7 +69,9 @@
           <span
             class="opener"
             class:active={submenu === 'packages'}
-            on:click={() => (submenu = submenu === 'packages' ? null : 'packages')}>Packages</span
+            on:click={() =>
+              (submenu = submenu === 'packages' ? null : 'packages')}
+            >Packages</span
           >
           <ul>
             <li><a href="{base}/packages/nymph">Nymph Core</a></li>
@@ -61,17 +87,20 @@
         <h2>Get in touch</h2>
       </header>
       <p>
-        Nymph is a product of SciActive Inc. You can contact SciActive by email or US post, or
-        follow on Twitter.
+        Nymph is a product of SciActive Inc. You can contact SciActive by email
+        or US post, or follow on Twitter.
       </p>
       <ul class="contact">
         <li class="icon">
           <Icon path={mdiTwitter} />
-          <a href="https://twitter.com/SciActive" target="_blank">@SciActive on Twitter</a>
+          <a href="https://twitter.com/SciActive" target="_blank"
+            >@SciActive on Twitter</a
+          >
         </li>
         <li class="icon">
           <Icon path={mdiEmail} />
-          <a href="mailto:someone@example.com" bind:this={email}>(loading...)</a>
+          <a href="mailto:someone@example.com" bind:this={email}>(loading...)</a
+          >
         </li>
         <li class="icon">
           <Icon path={mdiMapMarker} />

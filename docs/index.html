@@ -7,21 +7,25 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>Nymph - JavaScript Data Objects</title><meta name="description" content="Object relational mapper for Node.js and the browser" data-svelte="svelte-74gxc4"><meta property="og:title" content="Nymph" data-svelte="svelte-74gxc4"><meta property="og:type" content="website" data-svelte="svelte-74gxc4"><meta property="og:url" content="http://nymph.io/" data-svelte="svelte-74gxc4"><meta property="og:image" content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png" data-svelte="svelte-74gxc4"><meta property="og:site_name" content="Nymph" data-svelte="svelte-74gxc4"><meta property="fb:admins" content="508999194" data-svelte="svelte-74gxc4"><meta property="og:description" content="Object relational mapper for Node.js and the browser" data-svelte="svelte-74gxc4"><link rel="icon" href="/images/cropped-logo-32x32.png" sizes="32x32" data-svelte="svelte-74gxc4"><link rel="icon" href="/images/cropped-logo-192x192.png" sizes="192x192" data-svelte="svelte-74gxc4"><link rel="apple-touch-icon" href="/images/cropped-logo-180x180.png" data-svelte="svelte-74gxc4"><meta name="msapplication-TileImage" content="/images/cropped-logo-270x270.png" data-svelte="svelte-74gxc4"><link rel="stylesheet" href="/css/main.css" data-svelte="svelte-74gxc4">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <title>Nymph - JavaScript Data Objects</title><meta name="description" content="Object relational mapper for Node.js and the browser" data-svelte="svelte-6i6yy0"><meta property="og:title" content="Nymph" data-svelte="svelte-6i6yy0"><meta property="og:type" content="website" data-svelte="svelte-6i6yy0"><meta property="og:url" content="http://nymph.io/" data-svelte="svelte-6i6yy0"><meta property="og:image" content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png" data-svelte="svelte-6i6yy0"><meta property="og:site_name" content="Nymph" data-svelte="svelte-6i6yy0"><meta property="fb:admins" content="508999194" data-svelte="svelte-6i6yy0"><meta property="og:description" content="Object relational mapper for Node.js and the browser" data-svelte="svelte-6i6yy0"><link rel="icon" href="/images/cropped-logo-32x32.png" sizes="32x32" data-svelte="svelte-6i6yy0"><link rel="icon" href="/images/cropped-logo-192x192.png" sizes="192x192" data-svelte="svelte-6i6yy0"><link rel="apple-touch-icon" href="/images/cropped-logo-180x180.png" data-svelte="svelte-6i6yy0"><meta name="msapplication-TileImage" content="/images/cropped-logo-270x270.png" data-svelte="svelte-6i6yy0"><link rel="stylesheet" href="/css/main.css" data-svelte="svelte-6i6yy0">
 
 		
 
-		<link rel="modulepreload" href="/_app/start-c70795db.js">
-		<link rel="modulepreload" href="/_app/chunks/vendor-38f3ca7d.js">
+		<link rel="modulepreload" href="/_app/start-d1fa5d02.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-e071b051.js">
 		<link rel="modulepreload" href="/_app/chunks/paths-6758d194.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-5922355e.js">
-		<link rel="modulepreload" href="/_app/chunks/Icon-c114a0df.js">
-		<link rel="modulepreload" href="/_app/pages/index.svelte-5652a5c5.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-b3e755ac.js">
+		<link rel="modulepreload" href="/_app/chunks/Icon-4edcbcce.js">
+		<link rel="modulepreload" href="/_app/pages/index.svelte-3715308d.js">
+		<link rel="modulepreload" href="/_app/chunks/Header-ab28ccee.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 
 		<script type="module">
-			import { start } from "/_app/start-c70795db.js";
+			import { start } from "/_app/start-d1fa5d02.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
@@ -34,8 +38,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/_app/pages/__layout.svelte-5922355e.js"),
-						import("/_app/pages/index.svelte-5652a5c5.js")
+						import("/_app/pages/__layout.svelte-b3e755ac.js"),
+						import("/_app/pages/index.svelte-3715308d.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -65,56 +69,62 @@
 
 <section id="banner"><div class="content"><header><h1>Nymph</h1>
       <p>Object relational mapper for Node.js and the browser.</p></header>
-    <p>Nymph is an object relational mapper for collaborative web apps. Nymph runs in Node.js and
-      provides a REST server with clients built for Node.js and the browser. Nymph is written in
-      TypeScript. It allows rapid prototyping as well as production ready speed and features.
+    <p>Nymph is an object relational mapper for collaborative web apps. Nymph
+      runs in Node.js and provides a REST server with clients built for Node.js
+      and the browser. Nymph is written in TypeScript. It allows rapid
+      prototyping as well as production ready speed and features.
     </p>
     <ul class="actions"><li><a href="https://github.com/sciactive/nymphjs" target="_blank" class="button big">Learn More</a></li></ul></div></section>
 
 <section><header class="major"><h2>Migration</h2></header>
 
-  <p>Nymph is currently being migrated from PHP to Node.js. During this process, this site will be
-    growing and changing. Until the next version of Nymph, 4.0, is released, the API is subject to
-    change. You can also visit <a href="/3.0/index.html" rel="external">the site for the old version, 3.0</a>.
+  <p>Nymph is currently being migrated from PHP to Node.js. During this process,
+    this site will be growing and changing. Until the next version of Nymph,
+    4.0, is released, the API is subject to change. You can also visit <a href="/3.0/index.html" rel="external">the site for the old version, 3.0</a>.
   </p></section>
 
 <section><header class="major"><h2>Features</h2></header>
   <div class="features"><article><span class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,16A3,3 0 0,1 9,13C9,11.88 9.61,10.9 10.5,10.39L20.21,4.77L14.68,14.35C14.18,15.33 13.17,16 12,16M12,3C13.81,3 15.5,3.5 16.97,4.32L14.87,5.53C14,5.19 13,5 12,5A8,8 0 0,0 4,13C4,15.21 4.89,17.21 6.34,18.65H6.35C6.74,19.04 6.74,19.67 6.35,20.06C5.96,20.45 5.32,20.45 4.93,20.07V20.07C3.12,18.26 2,15.76 2,13A10,10 0 0,1 12,3M22,13C22,15.76 20.88,18.26 19.07,20.07V20.07C18.68,20.45 18.05,20.45 17.66,20.06C17.27,19.67 17.27,19.04 17.66,18.65V18.65C19.11,17.2 20,15.21 20,13C20,12 19.81,11 19.46,10.1L20.67,8C21.5,9.5 22,11.18 22,13Z"></path></svg></span>
       <div class="content"><h3>Speedy</h3>
-        <p>Nymph is lean and fast. Not just in processing, but Nymph can be used for rapid
-          prototyping.
+        <p>Nymph is lean and fast. Not just in processing, but Nymph can be used
+          for rapid prototyping.
         </p></div></article>
     <article><span class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M6,2H18A2,2 0 0,1 20,4V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2M12.75,13.5C15.5,13.5 16.24,11.47 16.43,10.4C17.34,10.11 18,9.26 18,8.25C18,7 17,6 15.75,6C14.5,6 13.5,7 13.5,8.25C13.5,9.19 14.07,10 14.89,10.33C14.67,11 14,12 12,12C10.62,12 9.66,12.35 9,12.84V8.87C9.87,8.56 10.5,7.73 10.5,6.75C10.5,5.5 9.5,4.5 8.25,4.5C7,4.5 6,5.5 6,6.75C6,7.73 6.63,8.56 7.5,8.87V15.13C6.63,15.44 6,16.27 6,17.25C6,18.5 7,19.5 8.25,19.5C9.5,19.5 10.5,18.5 10.5,17.25C10.5,16.32 9.94,15.5 9.13,15.18C9.41,14.5 10.23,13.5 12.75,13.5M8.25,16.5A0.75,0.75 0 0,1 9,17.25A0.75,0.75 0 0,1 8.25,18A0.75,0.75 0 0,1 7.5,17.25A0.75,0.75 0 0,1 8.25,16.5M8.25,6A0.75,0.75 0 0,1 9,6.75A0.75,0.75 0 0,1 8.25,7.5A0.75,0.75 0 0,1 7.5,6.75A0.75,0.75 0 0,1 8.25,6M15.75,7.5A0.75,0.75 0 0,1 16.5,8.25A0.75,0.75 0 0,1 15.75,9A0.75,0.75 0 0,1 15,8.25A0.75,0.75 0 0,1 15.75,7.5Z"></path></svg></span>
       <div class="content"><h3>Open Source</h3>
-        <p>Nymph is licensed under the Apache-2 license. It provides all you need to build a backend
-          for your app and the frontend tools you&#39;ll need as well.
+        <p>Nymph is licensed under the Apache-2 license. It provides all you need
+          to build a backend for your app and the frontend tools you&#39;ll need as
+          well.
         </p></div></article>
     <article><span class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M17,12V3A1,1 0 0,0 16,2H3A1,1 0 0,0 2,3V17L6,13H16A1,1 0 0,0 17,12M21,6H19V15H6V17A1,1 0 0,0 7,18H18L22,22V7A1,1 0 0,0 21,6Z"></path></svg></span>
       <div class="content"><h3>Reactive</h3>
-        <p>Nymph&#39;s publish/subscribe server makes it easy to build <strong>collaborative</strong> apps.
-          Subscribing to queries and entities is a powerful feature that will get your collaboritive
-          features working quickly and easily.
+        <p>Nymph&#39;s publish/subscribe server makes it easy to build <strong>collaborative</strong> apps. Subscribing to queries and entities is a powerful feature that
+          will get your collaboritive features working quickly and easily.
         </p></div></article>
     <article><span class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z"></path></svg></span>
       <div class="content"><h3>Secure</h3>
-        <p>Nymph provides an optional user and group manager called Tilmeld that secures your app
-          based on granular permission controls.
+        <p>Nymph provides an optional user and group manager called Tilmeld that
+          secures your app based on granular permission controls.
         </p></div></article></div></section>
 
 <section><header class="major"><h2>Framework Ready</h2>
-    <p>Nymph is very easy to integrate into Angular, React, Ember, Svelte, and more.</p></header>
+    <p>Nymph is very easy to integrate into Angular, React, Ember, Svelte, and
+      more.
+    </p></header>
 
-  <p>Nymph&#39;s easy querying on the server and client makes it perfect for building complex apps with
-    any backend and frontend framework. Because you don&#39;t have to write SQL, almost all of your
-    logic can be on the client side, if you prefer. That means fewer round trips, more responsive
-    interfaces, and happier customers.
+  <p>Nymph&#39;s easy querying on the server and client makes it perfect for building
+    complex apps with any backend and frontend framework. Because you don&#39;t have
+    to write SQL, almost all of your logic can be on the client side, if you
+    prefer. That means fewer round trips, more responsive interfaces, and
+    happier customers.
   </p>
-  <p>Creating a new type of entity is simple in Nymph. You can code your logic on the server or
-    client side, and access it all the same. If you&#39;re already invested in a data store, Nymph&#39;s
-    REST server package makes it easy to integrate anywhere in your app.
+  <p>Creating a new type of entity is simple in Nymph. You can code your logic on
+    the server or client side, and access it all the same. If you&#39;re already
+    invested in a data store, Nymph&#39;s REST server package makes it easy to
+    integrate anywhere in your app.
   </p>
-  <p>It&#39;s not just for frontend. Nymph will integrate with any Node.js server frameworks that can
-    accept, or run side by side with, Express apps. Nymph is designed to be flexible.
+  <p>It&#39;s not just for frontend. Nymph will integrate with any Node.js server
+    frameworks that can accept, or run side by side with, Express apps. Nymph is
+    designed to be flexible.
   </p>
 </section></div></div>
 
@@ -125,12 +135,14 @@
 
     
     <nav id="menu"><ul><li><a href="/">Homepage</a></li>
+        <li><span class="opener">Packages</span>
+          <ul><li><a href="/packages/nymph">Nymph Core</a></li></ul></li>
         <li><a href="/3.0/index.html" rel="external">Legacy Website</a></li></ul></nav>
 
     
     <section><header class="major"><h2>Get in touch</h2></header>
-      <p>Nymph is a product of SciActive Inc. You can contact SciActive by email or US post, or
-        follow on Twitter.
+      <p>Nymph is a product of SciActive Inc. You can contact SciActive by email
+        or US post, or follow on Twitter.
       </p>
       <ul class="contact"><li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg>
           <a href="https://twitter.com/SciActive" target="_blank">@SciActive on Twitter</a></li>

@@ -175,7 +175,11 @@ $breakpoints: ();
 
         // Equal (>= x and <= y)
         @else {
-          $media: 'screen and (min-width: ' + $x + ') and (max-width: ' + $y + ')';
+          $media: 'screen and (min-width: ' +
+            $x +
+            ') and (max-width: ' +
+            $y +
+            ')';
         }
       }
     }
