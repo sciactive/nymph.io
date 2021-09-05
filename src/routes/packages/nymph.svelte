@@ -118,6 +118,7 @@ Nymph.setEntityClass(Todo.class, Todo);`}
   import Highlight from 'svelte-highlight';
   import bash from 'svelte-highlight/src/languages/bash';
   import typescript from 'svelte-highlight/src/languages/typescript';
+
   import { base } from '$app/paths';
   import Header from '$lib/Header.svelte';
 </script>

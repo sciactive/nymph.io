@@ -14,8 +14,20 @@
     users and groups and configure how Tilmeld works. It also acts as the
     endpoint for email address verification.
   </p>
+
+  <header class="major">
+    <h3>Installation</h3>
+  </header>
+
+  <Highlight
+    language={bash}
+    code={`npm install --save @nymphjs/tilmeld-setup`}
+  />
 </section>
 
 <script lang="ts">
+  import Highlight from 'svelte-highlight';
+  import bash from 'svelte-highlight/src/languages/bash';
+
   import Header from '$lib/Header.svelte';
 </script>

@@ -14,8 +14,17 @@
     from the browser. You can also subscribe to entities and queries on a Nymph
     PubSub server and be notified of changes.
   </p>
+
+  <header class="major">
+    <h3>Installation</h3>
+  </header>
+
+  <Highlight language={bash} code={`npm install --save @nymphjs/client`} />
 </section>
 
 <script lang="ts">
+  import Highlight from 'svelte-highlight';
+  import bash from 'svelte-highlight/src/languages/bash';
+
   import Header from '$lib/Header.svelte';
 </script>
