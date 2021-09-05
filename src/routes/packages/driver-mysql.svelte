@@ -1,12 +1,10 @@
 <svelte:head>
-  <title>MySQL Driver - Nymph</title>
+  <title>MySQL Driver - Packages - Nymph</title>
 </svelte:head>
-
-<Header>MySQL Driver</Header>
 
 <section>
   <header class="major">
-    <h2>MySQL Driver</h2>
+    <h1 style="font-size: 3em;">MySQL Driver</h1>
   </header>
 
   <p>
@@ -15,7 +13,7 @@
   </p>
 
   <header class="major">
-    <h3>Installation</h3>
+    <h2>Installation</h2>
   </header>
 
   <Highlight
@@ -27,6 +25,4 @@
 <script lang="ts">
   import Highlight from 'svelte-highlight';
   import bash from 'svelte-highlight/src/languages/bash';
-
-  import Header from '$lib/Header.svelte';
 </script>

@@ -1,27 +1,26 @@
 <svelte:head>
-  <title>Nymph Core - Nymph</title>
+  <title>Nymph - Packages - Nymph</title>
+  {@html github}
 </svelte:head>
-
-<Header>Nymph Core</Header>
 
 <section>
   <header class="major">
-    <h2>Nymph Core</h2>
+    <h1 style="font-size: 3em;">Nymph</h1>
   </header>
 
   <p>
-    The Nymph core provides the base level utilities to query the database, save
-    data to it, and define different data types.
+    The Nymph core provides the base level classes and utilities to query the
+    database, save data to it, and define different data types.
   </p>
 
   <header class="major">
-    <h3>Installation</h3>
+    <h2>Installation</h2>
   </header>
 
   <Highlight language={bash} code={`npm install --save @nymphjs/nymph`} />
 
   <header class="major">
-    <h3>Drivers</h3>
+    <h2>Drivers</h2>
   </header>
 
   <p>
@@ -32,7 +31,7 @@
   </p>
 
   <header class="major">
-    <h3>Usage</h3>
+    <h2>Usage</h2>
   </header>
 
   <p>Here's an overview:</p>
@@ -118,7 +117,7 @@ Nymph.setEntityClass(Todo.class, Todo);`}
   import Highlight from 'svelte-highlight';
   import bash from 'svelte-highlight/src/languages/bash';
   import typescript from 'svelte-highlight/src/languages/typescript';
+  import github from 'svelte-highlight/src/styles/github';
 
   import { base } from '$app/paths';
-  import Header from '$lib/Header.svelte';
 </script>

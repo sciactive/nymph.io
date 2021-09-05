@@ -1,12 +1,10 @@
 <svelte:head>
-  <title>SQLite3 Driver - Nymph</title>
+  <title>SQLite3 Driver - Packages - Nymph</title>
 </svelte:head>
-
-<Header>SQLite3 Driver</Header>
 
 <section>
   <header class="major">
-    <h2>SQLite3 Driver</h2>
+    <h1 style="font-size: 3em;">SQLite3 Driver</h1>
   </header>
 
   <p>
@@ -15,7 +13,7 @@
   </p>
 
   <header class="major">
-    <h3>Installation</h3>
+    <h2>Installation</h2>
   </header>
 
   <Highlight
@@ -27,6 +25,4 @@
 <script lang="ts">
   import Highlight from 'svelte-highlight';
   import bash from 'svelte-highlight/src/languages/bash';
-
-  import Header from '$lib/Header.svelte';
 </script>

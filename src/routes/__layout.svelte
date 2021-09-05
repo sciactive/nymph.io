@@ -42,6 +42,8 @@
 <!-- Main -->
 <div id="main" on:click={() => setSidebarInactive()}>
   <div class="inner">
+    <Header />
+
     <slot />
   </div>
 </div>
@@ -65,6 +67,49 @@
     <nav id="menu">
       <ul>
         <li><a href="{base}/">Homepage</a></li>
+        <li>
+          <span
+            class="opener"
+            class:active={submenu === 'user-guide'}
+            on:click={() =>
+              (submenu = submenu === 'user-guide' ? null : 'user-guide')}
+            >User Guide</span
+          >
+          <ul>
+            <li><a href="{base}/user-guide/introduction">Introduction</a></li>
+            <li>
+              <a href="{base}/user-guide/creating-entities">Creating Entities</a
+              >
+            </li>
+            <li>
+              <a href="{base}/user-guide/entity-querying">Entity Querying</a>
+            </li>
+            <li>
+              <a href="{base}/user-guide/subscribing-to-queries"
+                >Subscribing to Queries</a
+              >
+            </li>
+            <li>
+              <a href="{base}/user-guide/entity-class">Entity Class</a>
+            </li>
+            <li>
+              <a href="{base}/user-guide/extending-the-entity-class"
+                >Extending the Entity Class</a
+              >
+            </li>
+            <li>
+              <a href="{base}/user-guide/uids">UIDs</a>
+            </li>
+            <li>
+              <a href="{base}/user-guide/transactions">Transactions</a>
+            </li>
+            <li>
+              <a href="{base}/user-guide/exporting-and-importing-entities"
+                >Exporting and Importing Entities</a
+              >
+            </li>
+          </ul>
+        </li>
         <li>
           <span
             class="opener"
@@ -152,6 +197,7 @@
   import { onMount } from 'svelte';
   import { mdiEmail, mdiMapMarker, mdiMenu, mdiTwitter } from '@mdi/js';
   import { base, assets } from '$app/paths';
+  import Header from '$lib/Header.svelte';
   import Icon from '$lib/Icon.svelte';
 
   let email: HTMLAnchorElement;

@@ -1,12 +1,10 @@
 <svelte:head>
-  <title>Node Client - Nymph</title>
+  <title>Node Client - Packages - Nymph</title>
 </svelte:head>
-
-<Header>Node Client</Header>
 
 <section>
   <header class="major">
-    <h2>Node Client</h2>
+    <h1 style="font-size: 3em;">Node Client</h1>
   </header>
 
   <p>
@@ -15,7 +13,7 @@
   </p>
 
   <header class="major">
-    <h3>Installation</h3>
+    <h2>Installation</h2>
   </header>
 
   <Highlight language={bash} code={`npm install --save @nymphjs/client-node`} />
@@ -24,6 +22,4 @@
 <script lang="ts">
   import Highlight from 'svelte-highlight';
   import bash from 'svelte-highlight/src/languages/bash';
-
-  import Header from '$lib/Header.svelte';
 </script>

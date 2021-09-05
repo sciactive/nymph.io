@@ -1,7 +1,7 @@
 <!-- Header -->
 <header id="header">
   <div class="logo">
-    <a href="{base}/" class="logo"><strong>Nymph</strong></a> - <slot />
+    <a href="{base}/" class="logo"><strong>Nymph</strong></a>
   </div>
   <ul class="icons">
     <li>

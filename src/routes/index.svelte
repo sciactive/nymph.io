@@ -2,8 +2,6 @@
   <title>Nymph - JavaScript Data Objects</title>
 </svelte:head>
 
-<Header>Homepage</Header>
-
 <section id="banner">
   <div class="content">
     <header>
@@ -124,7 +122,6 @@
 </section>
 
 <script lang="ts">
-  import Header from '$lib/Header.svelte';
   import Icon from '$lib/Icon.svelte';
   import {
     mdiForum,
