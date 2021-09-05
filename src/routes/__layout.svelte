@@ -75,6 +75,16 @@
           >
           <ul>
             <li><a href="{base}/packages/nymph">Nymph Core</a></li>
+            <li><a href="{base}/packages/driver-mysql">MySQL Driver</a></li>
+            <li><a href="{base}/packages/driver-sqlite3">SQLite3 Driver</a></li>
+            <li><a href="{base}/packages/server">REST Server</a></li>
+            <li><a href="{base}/packages/pubsub">PubSub Server</a></li>
+            <li><a href="{base}/packages/client">Client</a></li>
+            <li><a href="{base}/packages/client-node">Node Client</a></li>
+            <li><a href="{base}/packages/tilmeld">Tilmeld</a></li>
+            <li><a href="{base}/packages/tilmeld-client">Tilmeld Client</a></li>
+            <li><a href="{base}/packages/tilmeld-setup">Tilmeld Setup</a></li>
+            <li><a href="{base}/packages/query-parser">Query Parser</a></li>
           </ul>
         </li>
         <li><a href="/3.0/index.html" rel="external">Legacy Website</a></li>

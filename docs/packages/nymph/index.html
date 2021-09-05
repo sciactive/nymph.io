@@ -15,17 +15,17 @@
 
 		
 
-		<link rel="modulepreload" href="/_app/start-d1fa5d02.js">
-		<link rel="modulepreload" href="/_app/chunks/vendor-e071b051.js">
+		<link rel="modulepreload" href="/_app/start-bc7e0c99.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-aa46c83e.js">
 		<link rel="modulepreload" href="/_app/chunks/paths-6758d194.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-b3e755ac.js">
-		<link rel="modulepreload" href="/_app/chunks/Icon-4edcbcce.js">
-		<link rel="modulepreload" href="/_app/pages/packages/nymph.svelte-c55333e7.js">
-		<link rel="modulepreload" href="/_app/chunks/Header-ab28ccee.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-a756a835.js">
+		<link rel="modulepreload" href="/_app/chunks/Icon-adc01479.js">
+		<link rel="modulepreload" href="/_app/pages/packages/nymph.svelte-2af72556.js">
+		<link rel="modulepreload" href="/_app/chunks/Header-efbb9e63.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 
 		<script type="module">
-			import { start } from "/_app/start-d1fa5d02.js";
+			import { start } from "/_app/start-bc7e0c99.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
@@ -38,8 +38,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/_app/pages/__layout.svelte-b3e755ac.js"),
-						import("/_app/pages/packages/nymph.svelte-c55333e7.js")
+						import("/_app/pages/__layout.svelte-a756a835.js"),
+						import("/_app/pages/packages/nymph.svelte-2af72556.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -69,9 +69,99 @@
 
 <section><header class="major"><h2>Nymph Core</h2></header>
 
-  <p>The Nymph core provides the base level utilities to query the database, save data to it, and
-    define different data types.
+  <p>The Nymph core provides the base level utilities to query the database, save
+    data to it, and define different data types.
   </p>
+
+  <header class="major"><h3>Installation</h3></header>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START -->npm install --save @nymphjs/nymph<!-- HTML_TAG_END --></code></pre>
+
+
+  <header class="major"><h3>Drivers</h3></header>
+
+  <p>To use Nymph, you need a database driver. Nymph provides a <a href="/packages/driver-mysql">MySQL driver</a>
+    and a <a href="/packages/driver-sqlite3">SQLite3 driver</a>.
+  </p>
+
+  <header class="major"><h3>Usage</h3></header>
+
+  <p>Here&#39;s an overview:</p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-comment">// main.ts</span>
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Nymph</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/nymph&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">My</span>SQLDriver <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/driver-mysql&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">Todo</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./Todo&#x27;</span>;
+
+<span class="hljs-keyword">const</span> mysqlConfig = {
+  <span class="hljs-attr">host</span>: <span class="hljs-string">&#x27;your_db_host&#x27;</span>,
+  <span class="hljs-attr">database</span>: <span class="hljs-string">&#x27;your_database&#x27;</span>,
+  <span class="hljs-attr">user</span>: <span class="hljs-string">&#x27;your_user&#x27;</span>,
+  <span class="hljs-attr">password</span>: <span class="hljs-string">&#x27;your_password&#x27;</span>,
+};
+
+<span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">init</span>({}, <span class="hljs-keyword">new</span> <span class="hljs-title class_">My</span>SQLDriver(mysqlConfig));
+
+<span class="hljs-comment">// You are set up. Now you can use entity classes like `Todo` to store data,</span>
+<span class="hljs-comment">// and Nymph&#x27;s query methods like `getEntities` to retrieve them.</span>
+
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">run</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> myEntity = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Todo</span>();
+  myEntity.<span class="hljs-property">text</span> = <span class="hljs-string">&#x27;Get it done!&#x27;</span>;
+  <span class="hljs-keyword">await</span> myEntity.$save();
+
+  <span class="hljs-keyword">const</span> otherPendingTodos = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">getEntities</span>(
+    { <span class="hljs-attr">class</span>: <span class="hljs-title class_">Todo</span> },
+    { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>, <span class="hljs-string">&#x27;!guid&#x27;</span>: myEntity.<span class="hljs-property">guid</span>, <span class="hljs-attr">equal</span>: [<span class="hljs-string">&#x27;done&#x27;</span>, <span class="hljs-literal">false</span>] }
+  );
+
+  <span class="hljs-keyword">const</span> total = otherPendingTodos.<span class="hljs-property">length</span>;
+  <span class="hljs-keyword">const</span> single = total === <span class="hljs-number">1</span>;
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(
+    <span class="hljs-string">`Besides the one I just created, there <span class="hljs-subst">${
+      single ? <span class="hljs-string">&#x27;is&#x27;</span> : <span class="hljs-string">&#x27;are&#x27;</span>
+    }</span> <span class="hljs-subst">${total}</span> pending todo<span class="hljs-subst">${single ? <span class="hljs-string">&#x27;&#x27;</span> : <span class="hljs-string">&#x27;s&#x27;</span>}</span> in the database.`</span>
+  );
+}<!-- HTML_TAG_END --></code></pre>
+
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-comment">// Todo.ts</span>
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Nymph</span>, <span class="hljs-title class_">Entity</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/nymph&#x27;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">TodoData</span> = {
+  <span class="hljs-attr">text</span>: <span class="hljs-built_in">string</span>;
+  <span class="hljs-attr">done</span>: <span class="hljs-built_in">boolean</span>;
+};
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Todo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Entity</span>&lt;<span class="hljs-title class_">TodoData</span>&gt; {
+  <span class="hljs-keyword">static</span> <span class="hljs-variable constant_">ETYPE</span> = <span class="hljs-string">&#x27;todo&#x27;</span>; <span class="hljs-comment">// This is used for the table name(s) in the DB.</span>
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> = <span class="hljs-string">&#x27;Todo&#x27;</span>; <span class="hljs-comment">// This is used to map references to their class.</span>
+
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">async</span> <span class="hljs-title function_">factory</span>(guid?: <span class="hljs-built_in">string</span>): <span class="hljs-title class_">Promise</span>&lt;<span class="hljs-title class_">Todo</span> &amp; <span class="hljs-title class_">TodoData</span>&gt; {
+    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">await</span> <span class="hljs-variable language_">super</span>.<span class="hljs-title function_">factory</span>(guid)) <span class="hljs-keyword">as</span> <span class="hljs-title class_">Todo</span> &amp; <span class="hljs-title class_">TodoData</span>;
+  }
+
+  <span class="hljs-keyword">static</span> <span class="hljs-title function_">factorySync</span>(guid?: <span class="hljs-built_in">string</span>): <span class="hljs-title class_">Todo</span> &amp; <span class="hljs-title class_">TodoData</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">super</span>.<span class="hljs-title function_">factorySync</span>(guid) <span class="hljs-keyword">as</span> <span class="hljs-title class_">Todo</span> &amp; <span class="hljs-title class_">TodoData</span>;
+  }
+
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">guid?: <span class="hljs-built_in">string</span></span>) {
+    <span class="hljs-variable language_">super</span>(guid);
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">guid</span> == <span class="hljs-literal">null</span>) {
+      <span class="hljs-comment">// Within the methods of an entity, you will use `this.$data` to access</span>
+      <span class="hljs-comment">// its data. Outside, you don&#x27;t need the $data part.</span>
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">$data</span>.<span class="hljs-property">text</span> = <span class="hljs-string">&#x27;&#x27;</span>;
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">$data</span>.<span class="hljs-property">done</span> = <span class="hljs-literal">false</span>;
+    }
+  }
+}
+
+<span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">setEntityClass</span>(<span class="hljs-title class_">Todo</span>.<span class="hljs-property">class</span>, <span class="hljs-title class_">Todo</span>);<!-- HTML_TAG_END --></code></pre>
+
 </section></div></div>
 
 
@@ -82,7 +172,17 @@
     
     <nav id="menu"><ul><li><a href="/">Homepage</a></li>
         <li><span class="opener">Packages</span>
-          <ul><li><a href="/packages/nymph">Nymph Core</a></li></ul></li>
+          <ul><li><a href="/packages/nymph">Nymph Core</a></li>
+            <li><a href="/packages/driver-mysql">MySQL Driver</a></li>
+            <li><a href="/packages/driver-sqlite3">SQLite3 Driver</a></li>
+            <li><a href="/packages/server">REST Server</a></li>
+            <li><a href="/packages/pubsub">PubSub Server</a></li>
+            <li><a href="/packages/client">Client</a></li>
+            <li><a href="/packages/client-node">Node Client</a></li>
+            <li><a href="/packages/tilmeld">Tilmeld</a></li>
+            <li><a href="/packages/tilmeld-client">Tilmeld Client</a></li>
+            <li><a href="/packages/tilmeld-setup">Tilmeld Setup</a></li>
+            <li><a href="/packages/query-parser">Query Parser</a></li></ul></li>
         <li><a href="/3.0/index.html" rel="external">Legacy Website</a></li></ul></nav>
 
     
