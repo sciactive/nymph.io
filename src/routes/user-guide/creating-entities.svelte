@@ -65,7 +65,7 @@ entity.foo.bar = 'It works!';
 await entity.foo.$save(); // Saving the referenced entity first! :)
 await entity.$save(); // now foo has been saved.
 
-const guid = entity->guid;
+const guid = entity.guid;
 entity = await Entity.factory(guid);
 
 entity.foo.guid == null; // False
@@ -87,7 +87,7 @@ await entity.$save(); // foo hasn't been saved yet!
 entity.foo.bar = 'It works!';
 await entity.foo.$save();
 
-const guid = entity->guid;
+const guid = entity.guid;
 entity = await Entity.factory(guid);
 
 entity.foo.guid == null; // True

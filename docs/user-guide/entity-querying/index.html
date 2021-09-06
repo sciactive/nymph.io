@@ -11,20 +11,29 @@
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
-    <title>Entity Querying - User Guide - Nymph</title><meta name="description" content="Object relational mapper for Node.js and the browser" data-svelte="svelte-6i6yy0"><meta property="og:title" content="Nymph" data-svelte="svelte-6i6yy0"><meta property="og:type" content="website" data-svelte="svelte-6i6yy0"><meta property="og:url" content="http://nymph.io/" data-svelte="svelte-6i6yy0"><meta property="og:image" content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png" data-svelte="svelte-6i6yy0"><meta property="og:site_name" content="Nymph" data-svelte="svelte-6i6yy0"><meta property="fb:admins" content="508999194" data-svelte="svelte-6i6yy0"><meta property="og:description" content="Object relational mapper for Node.js and the browser" data-svelte="svelte-6i6yy0"><link rel="icon" href="/images/cropped-logo-32x32.png" sizes="32x32" data-svelte="svelte-6i6yy0"><link rel="icon" href="/images/cropped-logo-192x192.png" sizes="192x192" data-svelte="svelte-6i6yy0"><link rel="apple-touch-icon" href="/images/cropped-logo-180x180.png" data-svelte="svelte-6i6yy0"><meta name="msapplication-TileImage" content="/images/cropped-logo-270x270.png" data-svelte="svelte-6i6yy0"><link rel="stylesheet" href="/css/main.css" data-svelte="svelte-6i6yy0">
+    <title>Entity Querying - User Guide - Nymph</title><meta name="description" content="Object relational mapper for Node.js and the browser" data-svelte="svelte-6i6yy0"><meta property="og:title" content="Nymph" data-svelte="svelte-6i6yy0"><meta property="og:type" content="website" data-svelte="svelte-6i6yy0"><meta property="og:url" content="http://nymph.io/" data-svelte="svelte-6i6yy0"><meta property="og:image" content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png" data-svelte="svelte-6i6yy0"><meta property="og:site_name" content="Nymph" data-svelte="svelte-6i6yy0"><meta property="fb:admins" content="508999194" data-svelte="svelte-6i6yy0"><meta property="og:description" content="Object relational mapper for Node.js and the browser" data-svelte="svelte-6i6yy0"><link rel="icon" href="/images/cropped-logo-32x32.png" sizes="32x32" data-svelte="svelte-6i6yy0"><link rel="icon" href="/images/cropped-logo-192x192.png" sizes="192x192" data-svelte="svelte-6i6yy0"><link rel="apple-touch-icon" href="/images/cropped-logo-180x180.png" data-svelte="svelte-6i6yy0"><meta name="msapplication-TileImage" content="/images/cropped-logo-270x270.png" data-svelte="svelte-6i6yy0"><link rel="stylesheet" href="/css/main.css" data-svelte="svelte-6i6yy0"><!-- HTML_TAG_START --><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}</style><!-- HTML_TAG_END -->
 
 		
 
-		<link rel="modulepreload" href="/_app/start-52d10364.js">
+		<link rel="modulepreload" href="/_app/start-ae8136cf.js">
 		<link rel="modulepreload" href="/_app/chunks/vendor-836b274b.js">
 		<link rel="modulepreload" href="/_app/chunks/paths-6758d194.js">
 		<link rel="modulepreload" href="/_app/pages/__layout.svelte-781ffa4c.js">
 		<link rel="modulepreload" href="/_app/chunks/Icon-7e579511.js">
-		<link rel="modulepreload" href="/_app/pages/user-guide/entity-querying.svelte-47c2ed49.js">
+		<link rel="modulepreload" href="/_app/pages/user-guide/entity-querying.svelte-d1ff3f0c.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 
 		<script type="module">
-			import { start } from "/_app/start-52d10364.js";
+			import { start } from "/_app/start-ae8136cf.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
@@ -38,7 +47,7 @@
 					error: null,
 					nodes: [
 						import("/_app/pages/__layout.svelte-781ffa4c.js"),
-						import("/_app/pages/user-guide/entity-querying.svelte-47c2ed49.js")
+						import("/_app/pages/user-guide/entity-querying.svelte-d1ff3f0c.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -68,11 +77,398 @@
 
 <section><header class="major"><h1 style="font-size: 3em;">Entity Querying</h1></header>
 
-  <p>section</p>
+  <p>The real power behind Nymph is the entity querying system.</p>
 
-  <header class="major"><h2>sub</h2></header>
+  <header class="major"><h2>Factory Method</h2></header>
 
-  <p>section</p>
+  <p>The <code>Entity</code> class&#39;s factory method can take a GUID as an
+    argument. You can provide other factory functions that can take things as
+    well. For example, the <code>User</code> class in Tilmeld has a
+    <code>factoryUsername</code> method that takes a username. The method will return
+    a new entity if the queried entity is not found. You can determine if it was
+    found by checking that its GUID is not null.
+  </p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-comment">// FoobarBaz expects a GUID.</span>
+<span class="hljs-keyword">const</span> baz = <span class="hljs-keyword">await</span> <span class="hljs-title class_">FoobarBaz</span>.<span class="hljs-title function_">factory</span>(guid);
+<span class="hljs-keyword">if</span> (baz.<span class="hljs-property">guid</span> == <span class="hljs-literal">null</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;Can&#x27;t find the Foobar Baz!&quot;</span>);
+}
+
+<span class="hljs-comment">// Tilmeld&#x27;s User class expects a GUID or a username.</span>
+<span class="hljs-keyword">const</span> cronUser = <span class="hljs-keyword">await</span> <span class="hljs-title class_">User</span>.<span class="hljs-title function_">factoryUsername</span>(<span class="hljs-string">&#x27;cron&#x27;</span>);
+<span class="hljs-keyword">if</span> (cronUser.<span class="hljs-property">guid</span> == <span class="hljs-literal">null</span>) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;Can&#x27;t find the cron user!&quot;</span>);
+}<!-- HTML_TAG_END --></code></pre>
+
+
+  <header class="major"><h2>Nymph&#39;s Query Language</h2></header>
+
+  <p>The powerful way of querying entities is Nymph&#39;s <code>getEntities</code>
+    and <code>getEntity</code> methods. The first argument is an Options object.
+  </p>
+
+  <div class="table-wrapper"><table><thead><tr><th>Option</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th></tr></thead>
+      <tbody><tr><td>class</td>
+          <td>T extends Entity</td>
+          <td>Entity</td>
+          <td>The class used to create each entity. It must have a <code>factory</code> static method that returns a new instance.</td></tr>
+        <tr><td>limit</td>
+          <td>number</td>
+          <td>undefined</td>
+          <td>The limit of entities to be returned. Not needed when using <code>getEntity</code>, as it always returns only one.</td></tr>
+        <tr><td>offset</td>
+          <td>number</td>
+          <td>0</td>
+          <td>The offset from the first matching entity, in order, to start
+            retrieving.</td></tr>
+        <tr><td>reverse</td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>If true, entities will be retrieved from newest to oldest (with
+            regard to <code>sort</code>).</td></tr>
+        <tr><td>sort</td>
+          <td>&#39;cdate&#39; | &#39;mdate&#39;</td>
+          <td>&#39;cdate&#39;</td>
+          <td>How to sort the entities.</td></tr>
+        <tr><td>return</td>
+          <td>&#39;entity&#39; | &#39;guid&#39;</td>
+          <td>&#39;entity&#39;</td>
+          <td>What to return, the entities with their data or just the GUIDs.</td></tr>
+        <tr><td>source</td>
+          <td>string</td>
+          <td>undefined</td>
+          <td>Will be &#39;client&#39; if the query came from a REST request, &#39;pubsub&#39;
+            from the PubSub server.</td></tr>
+        <tr><td>skipCache</td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>If true, Nymph will skip the cache and retrieve the entity from the
+            DB.</td></tr>
+        <tr><td>skipAc</td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>If true, Tilmeld will not filter returned entities according to
+            access controls. (If Tilmeld is installed.) (This is always set to
+            false by the REST endpoint.)</td></tr></tbody></table></div>
+
+  <p>Every argument following the Options is a Selector object. They contain
+    clauses and a type. An entity must match each selector to be returned. There
+    are four selector types, and they are defined on the <code>type</code> property.
+  </p>
+
+  <div class="table-wrapper"><table><thead><tr><th>Type</th>
+          <th>Name</th>
+          <th>Description</th></tr></thead>
+      <tbody><tr><td>&amp;</td>
+          <td>And</td>
+          <td>All clauses in the selector must match.</td></tr>
+        <tr><td>|</td>
+          <td>Or</td>
+          <td>At least one clause in the selector must match.</td></tr>
+        <tr><td>!&amp;</td>
+          <td>Not And</td>
+          <td>All clauses in the selector must not match.</td></tr>
+        <tr><td>!|</td>
+          <td>Not Or</td>
+          <td>At least one clause in the selector must not match.</td></tr></tbody></table></div>
+
+  <p>The other properties of the Selector are clauses. Clauses use the form <code>name: value</code>, or
+    <code>name: [value1, value2, ...]</code>. They can be negated by prepending
+    a bang (!) to the name, like <code>&#39;!name&#39;: value</code>. A clause that has
+    multiple values is considered as multiple clauses in terms of matching for
+    &quot;or&quot; selectors.
+  </p>
+
+  <div class="table-wrapper"><table><thead><tr><th>Property</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Works On</th></tr></thead>
+      <tbody><tr><td>guid</td>
+          <td>The entity&#39;s GUID is equal.</td>
+          <td><code>{type: &#39;&amp;&#39;, guid: &#39;790229ae527f1511b3120b71&#39;}</code></td>
+          <td><code>entity.guid = &#39;790229ae527f1511b3120b71&#39;</code></td></tr>
+        <tr><td>tag</td>
+          <td>The entity has the tag.</td>
+          <td><code>{type: &#39;&amp;&#39;, tag: &#39;foobar&#39;}</code></td>
+          <td><code>entity.$addTag(&#39;foobar&#39;)</code></td></tr>
+        <tr><td>defined</td>
+          <td>The named property is not undefined.</td>
+          <td><code>{type: &#39;&amp;&#39;, defined: &#39;foo&#39;}</code></td>
+          <td><code>entity.foo = 0</code></td></tr>
+        <tr><td>truthy</td>
+          <td>The named property evaluates to true.</td>
+          <td><code>{type: &#39;&amp;&#39;, truthy: &#39;foo&#39;}</code></td>
+          <td><code>entity.foo = 1</code></td></tr>
+        <tr><td>equal</td>
+          <td>The named property is defined and equal (their JSON strings are
+            identical).</td>
+          <td><code>{type: &#39;&amp;&#39;, equal: [&#39;foo&#39;, 0]}</code></td>
+          <td><code>entity.foo = 0</code></td></tr>
+        <tr><td>contain</td>
+          <td>The named property contains the value (its JSON string is found
+            within the property&#39;s JSON string).</td>
+          <td><code>{type: &#39;&amp;&#39;, array: [&#39;foo&#39;, &#39;bar&#39;]}</code></td>
+          <td><code>entity.foo = [&#39;bar&#39;, &#39;baz&#39;]</code></td></tr>
+        <tr><td>match</td>
+          <td>The named property matches. Uses POSIX RegExp. Case sensitive. Must
+            *not* be surrounded by any delimiters.</td>
+          <td><code>{type: &#39;&amp;&#39;, match: [&#39;foo&#39;, &#39;bar.*z&#39;]}</code></td>
+          <td><code>entity.foo = &#39;foobarbaz&#39;</code></td></tr>
+        <tr><td>imatch</td>
+          <td>The named property matches. Uses POSIX RegExp. Case insensitive.
+            Must *not* be surrounded by any delimiters.</td>
+          <td><code>{type: &#39;&amp;&#39;, imatch: [&#39;foo&#39;, &#39;BaR.*Z&#39;]}</code></td>
+          <td><code>entity.foo = &#39;foobarbaz&#39;</code></td></tr>
+        <tr><td>like</td>
+          <td>The named property matches. Uses % for variable length wildcard and
+            _ for single character wildcard. Case sensitive.</td>
+          <td><code>{type: &#39;&amp;&#39;, like: [&#39;foo&#39;, &#39;f%bar_az&#39;]}</code></td>
+          <td><code>entity.foo = &#39;foobarbaz&#39;</code></td></tr>
+        <tr><td>ilike</td>
+          <td>The named property matches. Uses % for variable length wildcard and
+            _ for single character wildcard. Case insensitive.</td>
+          <td><code>{type: &#39;&amp;&#39;, ilike: [&#39;foo&#39;, &#39;F%bAr_aZ&#39;]}</code></td>
+          <td><code>entity.foo = &#39;foobarbaz&#39;</code></td></tr>
+        <tr><td>gt</td>
+          <td>The named property is greater than the value.</td>
+          <td><code>{type: &#39;&amp;&#39;, gt: [&#39;foo&#39;, 5]}</code></td>
+          <td><code>entity.foo = 6</code></td></tr>
+        <tr><td>gte</td>
+          <td>The named property is greater than or equal to the value.</td>
+          <td><code>{type: &#39;&amp;&#39;, gte: [&#39;foo&#39;, 6]}</code></td>
+          <td><code>entity.foo = 6</code></td></tr>
+        <tr><td>lt</td>
+          <td>The named property is less than the value.</td>
+          <td><code>{type: &#39;&amp;&#39;, lt: [&#39;foo&#39;, 7]}</code></td>
+          <td><code>entity.foo = 6</code></td></tr>
+        <tr><td>lte</td>
+          <td>The named property is less than or equal to the value.</td>
+          <td><code>{type: &#39;&amp;&#39;, lte: [&#39;foo&#39;, 6]}</code></td>
+          <td><code>entity.foo = 6</code></td></tr>
+        <tr><td>ref</td>
+          <td>The named property is the entity or contains the entity.</td>
+          <td><code>{type: &#39;&amp;&#39;, ref: [&#39;foo&#39;, &#39;790229ae527f1511b3120b71&#39;]}</code></td>
+          <td><code>entity.foo = await Entity.factory(&#39;790229ae527f1511b3120b71&#39;)</code></td></tr>
+        <tr><td>selector</td>
+          <td>A selector. (Keep in mind, you can also use an array of these, just
+            like any other clause.)</td>
+          <td><code>{type: &#39;&amp;&#39;, selector: {type: &#39;|&#39;, tag: [&#39;foo&#39;, &#39;bar&#39;]}}</code></td>
+          <td><code>entity.$addTag(&#39;bar&#39;)</code></td></tr></tbody></table></div>
+
+  <p>The clauses &quot;equal&quot;, &quot;contain&quot;, &quot;gt&quot;, &quot;gte&quot;, &quot;lt&quot;, and &quot;lte&quot; can also accept
+    a third element. If value is null and the third element is a string, the
+    third element will be used with <a href="https://locutus.io/php/datetime/strtotime/" target="_blank">Locutus&#39; strtotime function</a> to set the value to a relative timestamp. For example, the following selector
+    will look for all entities that were created in the last day.
+  </p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START -->{
+  <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
+  <span class="hljs-attr">gte</span>: [<span class="hljs-string">&#x27;cdate&#x27;</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">&#x27;-1 day&#x27;</span>]
+}<!-- HTML_TAG_END --></code></pre>
+
+
+  <header class="major"><h2>Querying Examples</h2></header>
+
+  <p>So putting it all together, you can specify the options and selectors to
+    find the exact entities you want.
+  </p>
+
+  <p>Get the first FoobarBaz entity.</p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">getEntity</span>({ <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span> });<!-- HTML_TAG_END --></code></pre>
+
+
+  <p>Get the latest FoobarBaz entity.</p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">getEntity</span>({
+  <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>,
+  <span class="hljs-attr">reverse</span>: <span class="hljs-literal">true</span>
+});<!-- HTML_TAG_END --></code></pre>
+
+
+  <p>Get all baz tagged entities, using the FoobarBaz class.</p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">getEntities</span>(
+  {
+    <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
+  },
+  {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
+    <span class="hljs-attr">tag</span>: <span class="hljs-string">&#x27;baz&#x27;</span>
+  }
+);<!-- HTML_TAG_END --></code></pre>
+
+
+  <p>Get the five last created bar and baz tagged entities.</p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">getEntities</span>(
+  {
+    <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>,
+    <span class="hljs-attr">reverse</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">limit</span>: <span class="hljs-number">5</span>
+  },
+  {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
+    <span class="hljs-attr">tag</span>: [<span class="hljs-string">&#x27;bar&#x27;</span>, <span class="hljs-string">&#x27;baz&#x27;</span>]
+  }
+);<!-- HTML_TAG_END --></code></pre>
+
+
+  <p>Get the five last modified bar and baz tagged entities.</p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">getEntities</span>(
+  {
+    <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>,
+    <span class="hljs-attr">reverse</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">limit</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">sort</span>: <span class="hljs-string">&#x27;mdate&#x27;</span>
+  },
+  {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
+    <span class="hljs-attr">tag</span>: [<span class="hljs-string">&#x27;bar&#x27;</span>, <span class="hljs-string">&#x27;baz&#x27;</span>]
+  }
+);<!-- HTML_TAG_END --></code></pre>
+
+
+  <p>Get baz tagged entities with names.</p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">getEntities</span>(
+  {
+    <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
+  },
+  {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
+    <span class="hljs-attr">tag</span>: <span class="hljs-string">&#x27;baz&#x27;</span>,
+    <span class="hljs-attr">defined</span>: <span class="hljs-string">&#x27;name&#x27;</span>
+  }
+);<!-- HTML_TAG_END --></code></pre>
+
+
+  <p>Get baz tagged entities without names.</p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">getEntities</span>(
+  {
+    <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
+  },
+  {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
+    <span class="hljs-attr">tag</span>: <span class="hljs-string">&#x27;baz&#x27;</span>,
+    <span class="hljs-string">&#x27;!defined&#x27;</span>: <span class="hljs-string">&#x27;name&#x27;</span>
+  }
+);<!-- HTML_TAG_END --></code></pre>
+
+
+  <p>Get baz tagged entities without names or bar tagged entities with names.
+  </p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">getEntities</span>(
+  {
+    <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
+  },
+  {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;|&#x27;</span>,
+    <span class="hljs-attr">selector</span>: [
+      {
+        <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
+        <span class="hljs-attr">tag</span>: <span class="hljs-string">&#x27;baz&#x27;</span>,
+        <span class="hljs-string">&#x27;!defined&#x27;</span>: <span class="hljs-string">&#x27;name&#x27;</span>
+      },
+      {
+        <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
+        <span class="hljs-attr">tag</span>: <span class="hljs-string">&#x27;bar&#x27;</span>,
+        <span class="hljs-attr">defined</span>: <span class="hljs-string">&#x27;name&#x27;</span>
+      }
+    ]
+  }
+);<!-- HTML_TAG_END --></code></pre>
+
+
+  <p>Get baz tagged entities with either first names or last names.</p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">getEntities</span>(
+  {
+    <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
+  },
+  {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
+    <span class="hljs-attr">tag</span>: <span class="hljs-string">&#x27;baz&#x27;</span>
+  },
+  {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;|&#x27;</span>,
+    <span class="hljs-attr">defined</span>: [<span class="hljs-string">&#x27;firstName&#x27;</span>, <span class="hljs-string">&#x27;lastName&#x27;</span>]
+  }
+);<!-- HTML_TAG_END --></code></pre>
+
+
+  <p>Get baz tagged entities created since yesterday.</p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">getEntities</span>(
+  {
+    <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
+  },
+  {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
+    <span class="hljs-attr">tag</span>: <span class="hljs-string">&#x27;baz&#x27;</span>,
+    <span class="hljs-attr">gt</span>: [<span class="hljs-string">&#x27;cdate&#x27;</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">&#x27;-1 day&#x27;</span>]
+  }
+);<!-- HTML_TAG_END --></code></pre>
+
+
+  <p>Get baz tagged entities with names, who either make not greater than 8
+    dollars pay or are under 22.
+  </p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">getEntities</span>(
+  {
+    <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
+  },
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>, <span class="hljs-attr">tag</span>: <span class="hljs-string">&#x27;baz&#x27;</span>, <span class="hljs-attr">defined</span>: <span class="hljs-string">&#x27;name&#x27;</span> },
+  {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;!|&#x27;</span>, <span class="hljs-comment">// at least one must be false</span>
+    <span class="hljs-attr">gte</span>: [<span class="hljs-string">&#x27;age&#x27;</span>, <span class="hljs-number">22</span>],
+    <span class="hljs-attr">gt</span>: [<span class="hljs-string">&#x27;pay&#x27;</span>, <span class="hljs-number">8</span>]
+  }
+);<!-- HTML_TAG_END --></code></pre>
+
+
+  <p>Get baz tagged entities named Clark, James, Chris, Christopher, Jake, or
+    Jacob.
+  </p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">getEntities</span>(
+  { <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span> },
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>, <span class="hljs-attr">tag</span>: <span class="hljs-string">&#x27;baz&#x27;</span> },
+  {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;|&#x27;</span>,
+    <span class="hljs-attr">equal</span>: [
+      [<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;Clark&#x27;</span>],
+      [<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;James&#x27;</span>]
+    ],
+    <span class="hljs-attr">match</span>: [
+      [<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;Chris(topher)?&#x27;</span>],
+      [<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;Ja(ke|cob)&#x27;</span>]
+    ]
+  }
+);<!-- HTML_TAG_END --></code></pre>
+
 </section></div></div>
 
 
