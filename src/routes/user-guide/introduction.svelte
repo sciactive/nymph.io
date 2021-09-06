@@ -10,10 +10,8 @@
   <p>
     Nymph is an ORM for Node.js and the browser, written in TypeScript. Nymph
     data objects, called entities, are accessed just like plain objects. Nymph
-    includes a REST server and a Publish/Subscribe server. Nymph is the ORM that
-    powered the Pines Framework, which ran a high demand ecommerce website and
-    Point of Sale system. It also powered Tunnelgram, an end to end encrypted
-    messenger. It used to be a PHP library and was migrated to Node.js in 2021.
+    includes a REST server and a Publish/Subscribe server. It used to be a PHP
+    library and was migrated to Node.js in 2021.
   </p>
 
   <header class="major">
