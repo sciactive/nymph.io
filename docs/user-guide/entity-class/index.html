@@ -24,16 +24,16 @@
 
 		
 
-		<link rel="modulepreload" href="/_app/start-eea92fe4.js">
+		<link rel="modulepreload" href="/_app/start-ac9882c5.js">
 		<link rel="modulepreload" href="/_app/chunks/vendor-836b274b.js">
 		<link rel="modulepreload" href="/_app/chunks/paths-6758d194.js">
 		<link rel="modulepreload" href="/_app/pages/__layout.svelte-781ffa4c.js">
 		<link rel="modulepreload" href="/_app/chunks/Icon-7e579511.js">
-		<link rel="modulepreload" href="/_app/pages/user-guide/entity-class.svelte-0e2354c3.js">
+		<link rel="modulepreload" href="/_app/pages/user-guide/entity-class.svelte-8c863222.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 
 		<script type="module">
-			import { start } from "/_app/start-eea92fe4.js";
+			import { start } from "/_app/start-ac9882c5.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
@@ -47,7 +47,7 @@
 					error: null,
 					nodes: [
 						import("/_app/pages/__layout.svelte-781ffa4c.js"),
-						import("/_app/pages/user-guide/entity-class.svelte-0e2354c3.js")
+						import("/_app/pages/user-guide/entity-class.svelte-8c863222.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -77,8 +77,12 @@
 
 <section><header class="major"><h1 style="font-size: 3em;">Entity Class</h1></header>
 
-  <p>Entity classes in Nymph work pretty much like regular objects. Instance
-    methods and properties begin with &quot;$&quot; to differentiate them from data.
+  <p>Entities in Nymph work pretty much like regular objects, and this is due to
+    the Entity class. The Entity class constructor returns a proxy to allow
+    accessing data on it just like a regular object while keeping track of
+    changes and only unserializing data from the DB when it&#39;s first accessed.
+    Instance methods and properties begin with &quot;$&quot; to differentiate them from
+    data.
   </p>
 
   <p>In the client, assigning a property internally marks that property as

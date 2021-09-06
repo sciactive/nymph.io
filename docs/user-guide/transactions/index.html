@@ -15,16 +15,16 @@
 
 		
 
-		<link rel="modulepreload" href="/_app/start-eea92fe4.js">
+		<link rel="modulepreload" href="/_app/start-ac9882c5.js">
 		<link rel="modulepreload" href="/_app/chunks/vendor-836b274b.js">
 		<link rel="modulepreload" href="/_app/chunks/paths-6758d194.js">
 		<link rel="modulepreload" href="/_app/pages/__layout.svelte-781ffa4c.js">
 		<link rel="modulepreload" href="/_app/chunks/Icon-7e579511.js">
-		<link rel="modulepreload" href="/_app/pages/user-guide/transactions.svelte-b3bfd953.js">
+		<link rel="modulepreload" href="/_app/pages/user-guide/transactions.svelte-4a4d9e9e.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 
 		<script type="module">
-			import { start } from "/_app/start-eea92fe4.js";
+			import { start } from "/_app/start-ac9882c5.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
@@ -38,7 +38,7 @@
 					error: null,
 					nodes: [
 						import("/_app/pages/__layout.svelte-781ffa4c.js"),
-						import("/_app/pages/user-guide/transactions.svelte-b3bfd953.js")
+						import("/_app/pages/user-guide/transactions.svelte-4a4d9e9e.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -68,11 +68,32 @@
 
 <section><header class="major"><h1 style="font-size: 3em;">Transactions</h1></header>
 
-  <p>section</p>
+  <p>In Node.js, Nymph supports nested transactions. Nothing will be written to
+    the database&#39;s permanent storage until the highest level transaction is
+    committed. When you start a transaction, you give it a name, then you can
+    commit or roll back that transaction, by name. This means if you&#39;re doing
+    transactions recursively, you should use a counter in your name. Nymph uses
+    internal transactions that start with the &quot;nymph-&quot; prefix. You should be
+    sure to commit or rollback transactions in the reverse order that they were
+    started, or you might run into trouble.
+  </p>
 
-  <header class="major"><h2>sub</h2></header>
+  <p><code>Nymph</code> has the following methods for managing transactions.</p>
 
-  <p>section</p></section>
+  <ul><li><code>startTransaction</code> - Start a named transaction.</li>
+    <li><code>commit</code> - Commit a named transaction.</li>
+    <li><code>rollback</code> - Rollback a named transaction.</li>
+    <li><code>inTransaction</code> - Check if Nymph is currently running within a transaction.
+    </li></ul>
+
+  <p>Not all databases that Nymph supports (namely, MySQL using the MyISAM
+    engine) can use transactions, so the <code>startTransaction</code> method will
+    return false if transactions aren&#39;t supported.
+  </p>
+
+  <p>To ensure data consistency, it&#39;s highly recommended to use a configuration
+    that supports transactions.
+  </p></section>
 
 <section><div class="row"><div class="col-6 col-12-small"><a href="/user-guide/uids" class="button" style="margin: .5em;">Previous: UIDs</a></div>
     <div class="col-6 col-12-small" style="text-align: end;"><a href="/user-guide/exporting-and-importing-entities" class="button" style="margin: .5em;">Next: Exp. and Imp. Entities</a></div></div>

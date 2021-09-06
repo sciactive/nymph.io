@@ -7,13 +7,38 @@
     <h1 style="font-size: 3em;">Transactions</h1>
   </header>
 
-  <p>section</p>
+  <p>
+    In Node.js, Nymph supports nested transactions. Nothing will be written to
+    the database's permanent storage until the highest level transaction is
+    committed. When you start a transaction, you give it a name, then you can
+    commit or roll back that transaction, by name. This means if you're doing
+    transactions recursively, you should use a counter in your name. Nymph uses
+    internal transactions that start with the "nymph-" prefix. You should be
+    sure to commit or rollback transactions in the reverse order that they were
+    started, or you might run into trouble.
+  </p>
 
-  <header class="major">
-    <h2>sub</h2>
-  </header>
+  <p><code>Nymph</code> has the following methods for managing transactions.</p>
 
-  <p>section</p>
+  <ul>
+    <li><code>startTransaction</code> - Start a named transaction.</li>
+    <li><code>commit</code> - Commit a named transaction.</li>
+    <li><code>rollback</code> - Rollback a named transaction.</li>
+    <li>
+      <code>inTransaction</code> - Check if Nymph is currently running within a transaction.
+    </li>
+  </ul>
+
+  <p>
+    Not all databases that Nymph supports (namely, MySQL using the MyISAM
+    engine) can use transactions, so the <code>startTransaction</code> method will
+    return false if transactions aren't supported.
+  </p>
+
+  <p>
+    To ensure data consistency, it's highly recommended to use a configuration
+    that supports transactions.
+  </p>
 </section>
 
 <section>

@@ -9,8 +9,12 @@
   </header>
 
   <p>
-    Entity classes in Nymph work pretty much like regular objects. Instance
-    methods and properties begin with "$" to differentiate them from data.
+    Entities in Nymph work pretty much like regular objects, and this is due to
+    the Entity class. The Entity class constructor returns a proxy to allow
+    accessing data on it just like a regular object while keeping track of
+    changes and only unserializing data from the DB when it's first accessed.
+    Instance methods and properties begin with "$" to differentiate them from
+    data.
   </p>
 
   <p>
