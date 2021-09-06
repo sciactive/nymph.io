@@ -9,7 +9,7 @@
 
   <p>
     The Nymph Node Client let's you do everything the Nymph Client does, but
-    from Node instead of the browser.
+    from Node.js instead of the browser.
   </p>
 
   <header class="major">

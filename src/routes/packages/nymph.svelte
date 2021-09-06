@@ -111,6 +111,18 @@ export default class Todo extends Entity<TodoData> {
 
 Nymph.setEntityClass(Todo.class, Todo);`}
   />
+
+  <header class="major">
+    <h2>Options</h2>
+  </header>
+
+  <p>
+    See the <a
+      href="https://github.com/sciactive/nymphjs/tree/master/packages/nymph/src/conf/d.ts"
+      target="_blank"
+      rel="external">config declaration file</a
+    >.
+  </p>
 </section>
 
 <script lang="ts">

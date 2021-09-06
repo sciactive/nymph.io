@@ -28,21 +28,6 @@
 
 <section>
   <header class="major">
-    <h2>Migration</h2>
-  </header>
-
-  <p>
-    Nymph is currently being migrated from PHP to Node.js. During this process,
-    this site will be growing and changing. Until the next version of Nymph,
-    4.0, is released, the API is subject to change. You can also visit <a
-      href="/3.0/index.html"
-      rel="external">the site for the old version, 3.0</a
-    >.
-  </p>
-</section>
-
-<section>
-  <header class="major">
     <h2>Features</h2>
   </header>
   <div class="features">
@@ -118,6 +103,19 @@
     It's not just for frontend. Nymph will integrate with any Node.js server
     frameworks that can accept, or run side by side with, Express apps. Nymph is
     designed to be flexible.
+  </p>
+</section>
+
+<section>
+  <header class="major">
+    <h2>Migration</h2>
+  </header>
+
+  <p>
+    In 2021, Nymph was migrated from PHP to Node.js. You can also visit <a
+      href="/3.0/index.html"
+      rel="external">the site for the old version, 3.0</a
+    >.
   </p>
 </section>
 
