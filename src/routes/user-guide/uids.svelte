@@ -49,8 +49,29 @@ await entity.$save();`}
   </p>
 </section>
 
+<section>
+  <div class="row">
+    <div class="col-6 col-12-small">
+      <a
+        href="{base}/user-guide/extending-the-entity-class"
+        class="button"
+        style="margin: .5em;">Previous: Ext. the Entity Class</a
+      >
+    </div>
+    <div class="col-6 col-12-small" style="text-align: end;">
+      <a
+        href="{base}/user-guide/transactions"
+        class="button"
+        style="margin: .5em;">Next: Transactions</a
+      >
+    </div>
+  </div>
+</section>
+
 <script lang="ts">
   import Highlight from 'svelte-highlight';
   import typescript from 'svelte-highlight/src/languages/typescript';
   import github from 'svelte-highlight/src/styles/github';
+
+  import { base } from '$app/paths';
 </script>
