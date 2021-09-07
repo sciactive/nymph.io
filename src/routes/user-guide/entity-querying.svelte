@@ -321,6 +321,23 @@ if (cronUser.guid == null) {
           >
         </tr>
         <tr>
+          <td>qref</td>
+          <td
+            >The named property is an entity that matches the query or contains
+            an entity that matches the query.</td
+          >
+          <td
+            ><code
+              >{"{type: '&', qref: ['foo', [{class: Entity}, {type: '&', equal: ['name', 'Foobar']}]]}"}</code
+            ></td
+          >
+          <td
+            ><code
+              >{"entity.foo = await Nymph.getEntity({class: Entity}, {type: '&', equal: ['name', 'Foobar']})"}</code
+            ></td
+          >
+        </tr>
+        <tr>
           <td>selector</td>
           <td
             >A selector. (Keep in mind, you can also use an array of these, just
