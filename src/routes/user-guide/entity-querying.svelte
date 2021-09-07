@@ -586,6 +586,34 @@ if (cronUser.guid == null) {
   }
 );`}
   />
+
+  <p>
+    Get baz tagged entities that belong to any user named "John" or "James".
+  </p>
+
+  <Highlight
+    language={typescript}
+    code={`const entities = await Nymph.getEntities(
+  { class: FoobarBaz },
+  {
+    type: '&',
+    tag: 'baz',
+    qref: [
+      'user',
+      [
+        { class: User },
+        {
+          type: '|',
+          like: [
+            ['name', 'John %'],
+            ['name', 'James %']
+          ]
+        }
+      ]
+    ]
+  }
+);`}
+  />
 </section>
 
 <section>
