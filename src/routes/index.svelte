@@ -113,8 +113,8 @@
 
   <p>
     In 2021, Nymph was migrated from PHP to Node.js. You can also visit <a
-      href="/3.0/index.html"
-      rel="external">the site for the old version, 3.0</a
+      href="/legacy/index.html"
+      rel="external">the site for the legacy version</a
     >.
   </p>
 </section>
