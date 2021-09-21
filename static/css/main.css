@@ -2331,6 +2331,9 @@ button:disabled,
     line-height: 8em;
     width: 8em;
   }
+  .features article .icon svg {
+    transform: scale(2);
+  }
   .features article .icon:before {
     font-size: 2.25rem;
   }
@@ -2356,6 +2359,9 @@ button:disabled,
     line-height: 6em;
     margin: 0 0 1.5em 0;
     width: 6em;
+  }
+  .features article .icon svg {
+    transform: scale(1.5);
   }
   .features article .icon:before {
     font-size: 1.5rem;
