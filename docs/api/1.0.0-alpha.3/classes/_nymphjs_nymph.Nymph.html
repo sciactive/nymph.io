@@ -1,0 +1,1803 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Nymph | Nymph.js - v1.0.0-alpha.3</title>
+	<meta name="description" content="Documentation for Nymph.js - v1.0.0-alpha.3">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">Nymph.js - v1.0.0-alpha.3</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">Nymph.js - v1.0.0-alpha.3</a>
+				</li>
+				<li>
+					<a href="../modules/_nymphjs_nymph.html">@nymphjs/nymph</a>
+				</li>
+				<li>
+					<a href="_nymphjs_nymph.Nymph.html">Nymph</a>
+				</li>
+			</ul>
+			<h1>Class Nymph</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>An object relational mapper for Node.js.</p>
+					</div>
+					<p>Written by Hunter Perrin for SciActive.</p>
+					<dl class="tsd-comment-tags">
+						<dt>author</dt>
+						<dd><p>Hunter Perrin <a href="mailto:hperrin@gmail.com">hperrin@gmail.com</a></p>
+						</dd>
+						<dt>copyright</dt>
+						<dd><p>SciActive Inc</p>
+						</dd>
+						<dt>see</dt>
+						<dd><p><a href="http://nymph.io/">http://nymph.io/</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Nymph</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#afterDeleteEntityByIDCallbacks" class="tsd-kind-icon">after<wbr>Delete<wbr>Entity<wbr>ByIDCallbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#afterDeleteEntityCallbacks" class="tsd-kind-icon">after<wbr>Delete<wbr>Entity<wbr>Callbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#afterDeleteUIDCallbacks" class="tsd-kind-icon">after<wbr>DeleteUIDCallbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#afterNewUIDCallbacks" class="tsd-kind-icon">after<wbr>NewUIDCallbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#afterRenameUIDCallbacks" class="tsd-kind-icon">after<wbr>RenameUIDCallbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#afterSaveEntityCallbacks" class="tsd-kind-icon">after<wbr>Save<wbr>Entity<wbr>Callbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#afterSetUIDCallbacks" class="tsd-kind-icon">after<wbr>SetUIDCallbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#beforeDeleteEntityByIDCallbacks" class="tsd-kind-icon">before<wbr>Delete<wbr>Entity<wbr>ByIDCallbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#beforeDeleteEntityCallbacks" class="tsd-kind-icon">before<wbr>Delete<wbr>Entity<wbr>Callbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#beforeDeleteUIDCallbacks" class="tsd-kind-icon">before<wbr>DeleteUIDCallbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#beforeGetEntitiesCallbacks" class="tsd-kind-icon">before<wbr>Get<wbr>Entities<wbr>Callbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#beforeGetEntityCallbacks" class="tsd-kind-icon">before<wbr>Get<wbr>Entity<wbr>Callbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#beforeNewUIDCallbacks" class="tsd-kind-icon">before<wbr>NewUIDCallbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#beforeRenameUIDCallbacks" class="tsd-kind-icon">before<wbr>RenameUIDCallbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#beforeSaveEntityCallbacks" class="tsd-kind-icon">before<wbr>Save<wbr>Entity<wbr>Callbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#beforeSetUIDCallbacks" class="tsd-kind-icon">before<wbr>SetUIDCallbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#config" class="tsd-kind-icon">config</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#connectCallbacks" class="tsd-kind-icon">connect<wbr>Callbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#disconnectCallbacks" class="tsd-kind-icon">disconnect<wbr>Callbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#driver" class="tsd-kind-icon">driver</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#entityClasses" class="tsd-kind-icon">entity<wbr>Classes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Nymph.html#queryCallbacks" class="tsd-kind-icon">query<wbr>Callbacks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#tilmeld" class="tsd-kind-icon">tilmeld</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#clone" class="tsd-kind-icon">clone</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#commit" class="tsd-kind-icon">commit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#connect" class="tsd-kind-icon">connect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#deleteEntity" class="tsd-kind-icon">delete<wbr>Entity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#deleteEntityByID" class="tsd-kind-icon">delete<wbr>Entity<wbr>ByID</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#deleteUID" class="tsd-kind-icon">deleteUID</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#disconnect" class="tsd-kind-icon">disconnect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#export" class="tsd-kind-icon">export</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#exportPrint" class="tsd-kind-icon">export<wbr>Print</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="_nymphjs_nymph.Nymph.html#getEntities" class="tsd-kind-icon">get<wbr>Entities</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="_nymphjs_nymph.Nymph.html#getEntity" class="tsd-kind-icon">get<wbr>Entity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#getEntityClass" class="tsd-kind-icon">get<wbr>Entity<wbr>Class</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#getUID" class="tsd-kind-icon">getUID</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#import" class="tsd-kind-icon">import</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#inTransaction" class="tsd-kind-icon">in<wbr>Transaction</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#newUID" class="tsd-kind-icon">newUID</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="_nymphjs_nymph.Nymph.html#off" class="tsd-kind-icon">off</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="_nymphjs_nymph.Nymph.html#on" class="tsd-kind-icon">on</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#renameUID" class="tsd-kind-icon">renameUID</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#rollback" class="tsd-kind-icon">rollback</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#runQueryCallbacks" class="tsd-kind-icon">run<wbr>Query<wbr>Callbacks</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#saveEntity" class="tsd-kind-icon">save<wbr>Entity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#setEntityClass" class="tsd-kind-icon">set<wbr>Entity<wbr>Class</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#setUID" class="tsd-kind-icon">setUID</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Nymph.html#startTransaction" class="tsd-kind-icon">start<wbr>Transaction</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Nymph<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_nymphjs_nymph.Config.html" class="tsd-signature-type" data-tsd-kind="Interface">Config</a><span class="tsd-signature-symbol">&gt;</span>, driver<span class="tsd-signature-symbol">: </span><a href="_nymphjs_nymph.NymphDriver.html" class="tsd-signature-type" data-tsd-kind="Class">NymphDriver</a>, tilmeld<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_nymphjs_nymph.TilmeldInterface.html" class="tsd-signature-type" data-tsd-kind="Interface">TilmeldInterface</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_nymphjs_nymph.Nymph.html" class="tsd-signature-type" data-tsd-kind="Class">Nymph</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L106">packages/nymph/src/Nymph.ts:106</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Initialize Nymph.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>config: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_nymphjs_nymph.Config.html" class="tsd-signature-type" data-tsd-kind="Interface">Config</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The Nymph configuration.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>driver: <a href="_nymphjs_nymph.NymphDriver.html" class="tsd-signature-type" data-tsd-kind="Class">NymphDriver</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The Nymph database driver.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> tilmeld: <a href="../interfaces/_nymphjs_nymph.TilmeldInterface.html" class="tsd-signature-type" data-tsd-kind="Interface">TilmeldInterface</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The Tilmeld user/group manager instance, if you want to use it.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_nymphjs_nymph.Nymph.html" class="tsd-signature-type" data-tsd-kind="Class">Nymph</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="afterDeleteEntityByIDCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> after<wbr>Delete<wbr>Entity<wbr>ByIDCallbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">after<wbr>Delete<wbr>Entity<wbr>ByIDCallbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphAfterDeleteEntityByIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterDeleteEntityByIDCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L74">packages/nymph/src/Nymph.ts:74</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="afterDeleteEntityCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> after<wbr>Delete<wbr>Entity<wbr>Callbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">after<wbr>Delete<wbr>Entity<wbr>Callbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphAfterDeleteEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterDeleteEntityCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L71">packages/nymph/src/Nymph.ts:71</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="afterDeleteUIDCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> after<wbr>DeleteUIDCallbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">after<wbr>DeleteUIDCallbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphAfterDeleteUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterDeleteUIDCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L83">packages/nymph/src/Nymph.ts:83</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="afterNewUIDCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> after<wbr>NewUIDCallbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">after<wbr>NewUIDCallbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphAfterNewUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterNewUIDCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L77">packages/nymph/src/Nymph.ts:77</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="afterRenameUIDCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> after<wbr>RenameUIDCallbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">after<wbr>RenameUIDCallbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphAfterRenameUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterRenameUIDCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L81">packages/nymph/src/Nymph.ts:81</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="afterSaveEntityCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> after<wbr>Save<wbr>Entity<wbr>Callbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">after<wbr>Save<wbr>Entity<wbr>Callbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphAfterSaveEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterSaveEntityCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L69">packages/nymph/src/Nymph.ts:69</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="afterSetUIDCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> after<wbr>SetUIDCallbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">after<wbr>SetUIDCallbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphAfterSetUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterSetUIDCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L79">packages/nymph/src/Nymph.ts:79</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="beforeDeleteEntityByIDCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> before<wbr>Delete<wbr>Entity<wbr>ByIDCallbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">before<wbr>Delete<wbr>Entity<wbr>ByIDCallbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphBeforeDeleteEntityByIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeDeleteEntityByIDCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L72">packages/nymph/src/Nymph.ts:72</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="beforeDeleteEntityCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> before<wbr>Delete<wbr>Entity<wbr>Callbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">before<wbr>Delete<wbr>Entity<wbr>Callbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphBeforeDeleteEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeDeleteEntityCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L70">packages/nymph/src/Nymph.ts:70</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="beforeDeleteUIDCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> before<wbr>DeleteUIDCallbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">before<wbr>DeleteUIDCallbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphBeforeDeleteUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeDeleteUIDCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L82">packages/nymph/src/Nymph.ts:82</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="beforeGetEntitiesCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> before<wbr>Get<wbr>Entities<wbr>Callbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">before<wbr>Get<wbr>Entities<wbr>Callbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphBeforeGetEntitiesCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeGetEntitiesCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L67">packages/nymph/src/Nymph.ts:67</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="beforeGetEntityCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> before<wbr>Get<wbr>Entity<wbr>Callbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">before<wbr>Get<wbr>Entity<wbr>Callbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphBeforeGetEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeGetEntityCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L66">packages/nymph/src/Nymph.ts:66</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="beforeNewUIDCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> before<wbr>NewUIDCallbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">before<wbr>NewUIDCallbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphBeforeNewUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeNewUIDCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L76">packages/nymph/src/Nymph.ts:76</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="beforeRenameUIDCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> before<wbr>RenameUIDCallbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">before<wbr>RenameUIDCallbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphBeforeRenameUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeRenameUIDCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L80">packages/nymph/src/Nymph.ts:80</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="beforeSaveEntityCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> before<wbr>Save<wbr>Entity<wbr>Callbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">before<wbr>Save<wbr>Entity<wbr>Callbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphBeforeSaveEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeSaveEntityCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L68">packages/nymph/src/Nymph.ts:68</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="beforeSetUIDCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> before<wbr>SetUIDCallbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">before<wbr>SetUIDCallbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphBeforeSetUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeSetUIDCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L78">packages/nymph/src/Nymph.ts:78</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="config" class="tsd-anchor"></a>
+					<h3>config</h3>
+					<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_nymphjs_nymph.Config.html" class="tsd-signature-type" data-tsd-kind="Interface">Config</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L46">packages/nymph/src/Nymph.ts:46</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The PubSub config.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="connectCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> connect<wbr>Callbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">connect<wbr>Callbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphConnectCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphConnectCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L63">packages/nymph/src/Nymph.ts:63</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="disconnectCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> disconnect<wbr>Callbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">disconnect<wbr>Callbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphDisconnectCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphDisconnectCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L64">packages/nymph/src/Nymph.ts:64</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="driver" class="tsd-anchor"></a>
+					<h3>driver</h3>
+					<div class="tsd-signature tsd-kind-icon">driver<span class="tsd-signature-symbol">:</span> <a href="_nymphjs_nymph.NymphDriver.html" class="tsd-signature-type" data-tsd-kind="Class">NymphDriver</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L51">packages/nymph/src/Nymph.ts:51</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The Nymph database driver.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="entityClasses" class="tsd-anchor"></a>
+					<h3>entity<wbr>Classes</h3>
+					<div class="tsd-signature tsd-kind-icon">entity<wbr>Classes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol"> = {}</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L61">packages/nymph/src/Nymph.ts:61</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A simple map of names to Entity classes.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>k: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="queryCallbacks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> query<wbr>Callbacks</h3>
+					<div class="tsd-signature tsd-kind-icon">query<wbr>Callbacks<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#NymphQueryCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphQueryCallback</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L65">packages/nymph/src/Nymph.ts:65</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="tilmeld" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> tilmeld</h3>
+					<div class="tsd-signature tsd-kind-icon">tilmeld<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_nymphjs_nymph.TilmeldInterface.html" class="tsd-signature-type" data-tsd-kind="Interface">TilmeldInterface</a><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L56">packages/nymph/src/Nymph.ts:56</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An optional Tilmeld user/group manager instance.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clone" class="tsd-anchor"></a>
+					<h3>clone</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clone<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_nymphjs_nymph.Nymph.html" class="tsd-signature-type" data-tsd-kind="Class">Nymph</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L130">packages/nymph/src/Nymph.ts:130</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This is used internally by Nymph. Don&#39;t call it yourself.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="_nymphjs_nymph.Nymph.html" class="tsd-signature-type" data-tsd-kind="Class">Nymph</a></h4>
+							<p>A clone of this instance.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="commit" class="tsd-anchor"></a>
+					<h3>commit</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">commit<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L239">packages/nymph/src/Nymph.ts:239</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Commit the named transaction.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>True on success, false on failure.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="connect" class="tsd-anchor"></a>
+					<h3>connect</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">connect<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L179">packages/nymph/src/Nymph.ts:179</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Connect to the database.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Whether the instance is connected to the database.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="deleteEntity" class="tsd-anchor"></a>
+					<h3>delete<wbr>Entity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Entity<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="../interfaces/_nymphjs_nymph.EntityInterface.html" class="tsd-signature-type" data-tsd-kind="Interface">EntityInterface</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L635">packages/nymph/src/Nymph.ts:635</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Delete an entity from the database.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entity: <a href="../interfaces/_nymphjs_nymph.EntityInterface.html" class="tsd-signature-type" data-tsd-kind="Interface">EntityInterface</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The entity.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>True on success, false on failure.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="deleteEntityByID" class="tsd-anchor"></a>
+					<h3>delete<wbr>Entity<wbr>ByID</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Entity<wbr>ByID<span class="tsd-signature-symbol">(</span>guid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, className<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L657">packages/nymph/src/Nymph.ts:657</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Delete an entity from the database by its GUID.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>guid: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The entity&#39;s GUID.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> className: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The entity&#39;s class name.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>True on success, false on failure.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="deleteUID" class="tsd-anchor"></a>
+					<h3>deleteUID</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">deleteUID<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L334">packages/nymph/src/Nymph.ts:334</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Delete a unique ID.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The UID&#39;s name.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>True on success, false on failure.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="disconnect" class="tsd-anchor"></a>
+					<h3>disconnect</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">disconnect<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L194">packages/nymph/src/Nymph.ts:194</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Disconnect from the database.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Whether the instance is connected to the database.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="export" class="tsd-anchor"></a>
+					<h3>export</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">export<span class="tsd-signature-symbol">(</span>filename<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L711">packages/nymph/src/Nymph.ts:711</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Export entities to a local file.</p>
+								</div>
+								<p>This is the file format:</p>
+								<pre><code><span style="color: #000000">#</span><span style="color: #001080">nex2</span>
+<span style="color: #000000"># </span><span style="color: #001080">The</span><span style="color: #000000"> </span><span style="color: #001080">above</span><span style="color: #000000"> </span><span style="color: #001080">line</span><span style="color: #000000"> </span><span style="color: #001080">must</span><span style="color: #000000"> </span><span style="color: #001080">be</span><span style="color: #000000"> </span><span style="color: #001080">the</span><span style="color: #000000"> </span><span style="color: #001080">first</span><span style="color: #000000"> </span><span style="color: #001080">thing</span><span style="color: #000000"> </span><span style="color: #0000FF">in</span><span style="color: #000000"> </span><span style="color: #001080">the</span><span style="color: #000000"> </span><span style="color: #001080">file</span><span style="color: #000000">.</span>
+<span style="color: #000000"># </span><span style="color: #001080">Comments</span><span style="color: #000000"> </span><span style="color: #001080">begin</span><span style="color: #000000"> </span><span style="color: #AF00DB">with</span><span style="color: #000000"> #</span>
+<span style="color: #000000">   # </span><span style="color: #001080">And</span><span style="color: #000000"> </span><span style="color: #001080">can</span><span style="color: #000000"> </span><span style="color: #001080">have</span><span style="color: #000000"> </span><span style="color: #001080">white</span><span style="color: #000000"> </span><span style="color: #001080">space</span><span style="color: #000000"> </span><span style="color: #001080">before</span><span style="color: #000000"> </span><span style="color: #001080">them</span><span style="color: #000000">.</span>
+<span style="color: #000000"># </span><span style="color: #001080">This</span><span style="color: #000000"> </span><span style="color: #001080">defines</span><span style="color: #000000"> </span><span style="color: #001080">a</span><span style="color: #000000"> </span><span style="color: #0070C1">UID</span><span style="color: #000000">.</span>
+<span style="color: #000000">&lt;</span><span style="color: #001080">name</span><span style="color: #000000">/</span><span style="color: #0000FF">of</span><span style="color: #000000">/</span><span style="color: #001080">uid</span><span style="color: #000000">&gt;[</span><span style="color: #098658">5</span><span style="color: #000000">]</span>
+<span style="color: #000000">&lt;</span><span style="color: #001080">another</span><span style="color: #000000"> </span><span style="color: #001080">uid</span><span style="color: #000000">&gt;[</span><span style="color: #098658">8000</span><span style="color: #000000">]</span>
+<span style="color: #000000"># </span><span style="color: #001080">For</span><span style="color: #000000"> </span><span style="color: #001080">UIDs</span><span style="color: #000000">, </span><span style="color: #001080">the</span><span style="color: #000000"> </span><span style="color: #001080">name</span><span style="color: #000000"> </span><span style="color: #001080">is</span><span style="color: #000000"> </span><span style="color: #0000FF">in</span><span style="color: #000000"> </span><span style="color: #001080">angle</span><span style="color: #000000"> </span><span style="color: #795E26">brackets</span><span style="color: #000000"> (&lt;&gt;) </span><span style="color: #001080">and</span><span style="color: #000000"> </span><span style="color: #001080">the</span><span style="color: #000000"> </span><span style="color: #001080">value</span><span style="color: #000000"> </span><span style="color: #001080">follows</span>
+<span style="color: #000000"># </span><span style="color: #0000FF">in</span><span style="color: #000000"> </span><span style="color: #001080">square</span><span style="color: #000000"> </span><span style="color: #795E26">brackets</span><span style="color: #000000"> ([]).</span>
+<span style="color: #000000"># </span><span style="color: #001080">This</span><span style="color: #000000"> </span><span style="color: #001080">starts</span><span style="color: #000000"> </span><span style="color: #001080">a</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #001080">entity</span><span style="color: #000000">.</span>
+<span style="color: #000000">{1234</span><span style="color: #001080">abcd</span><span style="color: #000000">}&lt;</span><span style="color: #001080">etype</span><span style="color: #000000">&gt;[</span><span style="color: #001080">tag</span><span style="color: #000000">,</span><span style="color: #001080">list</span><span style="color: #000000">,</span><span style="color: #001080">with</span><span style="color: #000000">,</span><span style="color: #001080">commas</span><span style="color: #000000">]</span>
+<span style="color: #000000"># </span><span style="color: #001080">For</span><span style="color: #000000"> </span><span style="color: #001080">entities</span><span style="color: #000000">, </span><span style="color: #001080">the</span><span style="color: #000000"> </span><span style="color: #0070C1">GUID</span><span style="color: #000000"> </span><span style="color: #001080">is</span><span style="color: #000000"> </span><span style="color: #0000FF">in</span><span style="color: #000000"> </span><span style="color: #001080">curly</span><span style="color: #000000"> </span><span style="color: #795E26">brackets</span><span style="color: #000000"> ({}), </span><span style="color: #001080">then</span><span style="color: #000000"> </span><span style="color: #001080">the</span><span style="color: #000000"> </span><span style="color: #001080">etype</span><span style="color: #000000"> </span><span style="color: #0000FF">in</span>
+<span style="color: #000000">#  </span><span style="color: #001080">angle</span><span style="color: #000000"> </span><span style="color: #001080">brackets</span><span style="color: #000000">, </span><span style="color: #001080">then</span><span style="color: #000000"> </span><span style="color: #001080">the</span><span style="color: #000000"> </span><span style="color: #001080">comma</span><span style="color: #000000"> </span><span style="color: #001080">separated</span><span style="color: #000000"> </span><span style="color: #001080">tag</span><span style="color: #000000"> </span><span style="color: #001080">list</span><span style="color: #000000"> </span><span style="color: #001080">follows</span><span style="color: #000000"> </span><span style="color: #0000FF">in</span><span style="color: #000000"> </span><span style="color: #001080">square</span>
+<span style="color: #000000">#  </span><span style="color: #795E26">brackets</span><span style="color: #000000"> ([]).</span>
+<span style="color: #000000"># </span><span style="color: #001080">Properties</span><span style="color: #000000"> </span><span style="color: #001080">are</span><span style="color: #000000"> </span><span style="color: #001080">stored</span><span style="color: #000000"> </span><span style="color: #001080">like</span><span style="color: #000000"> this:</span>
+<span style="color: #000000"># </span><span style="color: #001080">propname</span><span style="color: #000000">=</span><span style="color: #267F99">JSON</span><span style="color: #000000">.</span><span style="color: #795E26">stringify</span><span style="color: #000000">(</span><span style="color: #001080">value</span><span style="color: #000000">)</span>
+<span style="color: #000000">    </span><span style="color: #001080">abilities</span><span style="color: #000000">=[</span><span style="color: #A31515">&quot;system/all&quot;</span><span style="color: #000000">]</span>
+<span style="color: #000000">    </span><span style="color: #001080">groups</span><span style="color: #000000">=[]</span>
+<span style="color: #000000">    </span><span style="color: #001080">inheritAbilities</span><span style="color: #000000">=</span><span style="color: #0000FF">false</span>
+<span style="color: #000000">    </span><span style="color: #001080">name</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;admin&quot;</span>
+<span style="color: #000000"># </span><span style="color: #001080">White</span><span style="color: #000000"> </span><span style="color: #001080">space</span><span style="color: #000000"> </span><span style="color: #001080">before</span><span style="color: #000000">/</span><span style="color: #001080">after</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;=&quot;</span><span style="color: #000000"> </span><span style="color: #001080">and</span><span style="color: #000000"> </span><span style="color: #001080">at</span><span style="color: #000000"> </span><span style="color: #001080">beginning</span><span style="color: #000000">/</span><span style="color: #001080">end</span><span style="color: #000000"> </span><span style="color: #0000FF">of</span><span style="color: #000000"> </span><span style="color: #001080">line</span><span style="color: #000000"> </span><span style="color: #001080">is</span><span style="color: #000000"> </span><span style="color: #001080">ignored</span><span style="color: #000000">.</span>
+<span style="color: #000000">        </span><span style="color: #001080">username</span><span style="color: #000000">  =     </span><span style="color: #A31515">&quot;admin&quot;</span>
+<span style="color: #000000">{</span><span style="color: #098658">2</span><span style="color: #000000">}&lt;</span><span style="color: #001080">etype</span><span style="color: #000000">&gt;[</span><span style="color: #001080">tag</span><span style="color: #000000">,</span><span style="color: #001080">list</span><span style="color: #000000">]</span>
+<span style="color: #000000">    </span><span style="color: #001080">another</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;This is another entity.&quot;</span>
+<span style="color: #000000">    </span><span style="color: #001080">newline</span><span style="color: #000000">=</span><span style="color: #A31515">&quot;</span><span style="color: #EE0000">\n</span><span style="color: #A31515">&quot;</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>filename: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The file to export to.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>True on success, false on failure.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="exportPrint" class="tsd-anchor"></a>
+					<h3>export<wbr>Print</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">export<wbr>Print<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L720">packages/nymph/src/Nymph.ts:720</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Export entities to the console.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>True on success, false on failure.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<a name="getEntities" class="tsd-anchor"></a>
+					<h3>get<wbr>Entities</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entities&lt;T&gt;<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#Options" class="tsd-signature-type" data-tsd-kind="Type alias">Options</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>return<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;guid&quot;</span><span class="tsd-signature-symbol"> }</span>, <span class="tsd-signature-symbol">...</span>selectors<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#Selector" class="tsd-signature-type" data-tsd-kind="Type alias">Selector</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entities&lt;T&gt;<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><a href="../modules/_nymphjs_nymph.html#Options" class="tsd-signature-type" data-tsd-kind="Type alias">Options</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, <span class="tsd-signature-symbol">...</span>selectors<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#Selector" class="tsd-signature-type" data-tsd-kind="Type alias">Selector</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">&quot;factorySync&quot;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L556">packages/nymph/src/Nymph.ts:556</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get an array of entities.</p>
+								</div>
+								<p><code>options</code> is an object, which contains any of the following settings:</p>
+								<ul>
+									<li>class - The class to create each entity with.</li>
+									<li>limit - The limit of entities to be returned.</li>
+									<li>offset - The offset from the oldest matching entity to start retrieving.</li>
+									<li>reverse - If true, entities will be retrieved from newest to oldest.
+									Therefore, offset will be from the newest entity.</li>
+									<li>sort - How to sort the entities. Accepts &quot;cdate&quot; or &quot;mdate&quot;. Defaults to
+									&quot;cdate&quot;.</li>
+									<li>return - What to return. &quot;entity&quot; or &quot;guid&quot;. Defaults to &quot;entity&quot;.</li>
+									<li>source - Will be &#39;client&#39; if the query came from a REST call.</li>
+									<li>skipCache - If true, Nymph will skip the cache and retrieve the entity
+									from the DB.</li>
+									<li>skipAc - If true, Tilmeld will not filter returned entities according to
+										access controls. (If Tilmeld is installed.) (This is <em>always</em> set to
+									false by the REST server.)</li>
+								</ul>
+								<p>If a class is specified, it must have a factory() static method that
+								returns a new instance.</p>
+								<p>Selectors are objects. Any amount of selectors can be provided. Empty
+									selectors will be ignored. The <code>type</code> property of a selector is required
+								and can be one of the following strings:</p>
+								<ul>
+									<li>&amp; - (and) All values in the selector must be true.</li>
+									<li>| - (or) At least one value in the selector must be true.</li>
+									<li>!&amp; - (not and) All values in the selector must be false.</li>
+									<li>!| - (not or) At least one value in the selector must be false.</li>
+								</ul>
+								<p>The rest of the properties in the selectors are called selector clauses,
+									which can be any of the following (in the form selector.name = value, or
+								selector.name = [value1, value2,...]):</p>
+								<ul>
+									<li>guid - A GUID. True if the entity&#39;s GUID is equal.</li>
+									<li>tag - A tag. True if the entity has the tag.</li>
+									<li>defined - A name. True if the named property exists.</li>
+									<li>truthy - A name. True if the named property is defined and truthy.</li>
+									<li>equal - An array with a name, then value. True if the named property is
+									defined and equal (their JSON strings are identical).</li>
+									<li>contain - An array with a name, then value. True if the named property
+										contains the value (its JSON string is found within the property&#39;s JSON
+									string).</li>
+									<li>match - An array with a name, then regular expression. True if the
+										named property matches. Uses POSIX RegExp. Case sensitive. Must <em>not</em> be
+									surrounded by any delimiters.</li>
+									<li>imatch - An array with a name, then regular expression. True if the
+										named property matches. Uses POSIX RegExp. Case insensitive. Must <em>not</em>
+									be surrounded by any delimiters.</li>
+									<li>like - An array with a name, then pattern. True if the named property
+										matches. Uses % for variable length wildcard and _ for single character
+									wildcard. Case sensitive.</li>
+									<li>ilike - An array with a name, then pattern. True if the named property
+										matches. Uses % for variable length wildcard and _ for single character
+									wildcard. Case insensitive.</li>
+									<li>gt - An array with a name, then value. True if the named property is
+									greater than the value.</li>
+									<li>gte - An array with a name, then value. True if the named property is
+									greater than or equal to the value.</li>
+									<li>lt - An array with a name, then value. True if the named property is
+									less than the value.</li>
+									<li>lte - An array with a name, then value. True if the named property is
+									less than or equal to the value.</li>
+									<li>ref - An array with a name, then either an entity, or a GUID. True if
+									the named property is the entity or contains the entity.</li>
+									<li>qref - An array with a name, then a full query (including options) in an
+										array. True if the named property is an entity that matches the query or
+									contains an entity that matches the query.</li>
+									<li>selector - A selector. (Keep in mind, you can also use an array of these,
+									just like any other clause.)</li>
+								</ul>
+								<p>These clauses can all be negated, by prefixing them with an exclamation
+								point, such as &quot;!truthy&quot; to mean falsy (or undefined).</p>
+								<p>Any clause that accepts an array of name and value can also accept a third
+									element. If value is null and the third element is a string, the third
+									element will be used with Locutus&#39; strtotime function to set value to a
+									relative timestamp. For example, the following selector will look for all
+								entities that were created in the last day:</p>
+								<pre><code><span style="color: #000000">[</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;&amp;&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&#039;gte&#039;</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> [</span><span style="color: #A31515">&#039;cdate&#039;</span><span style="color: #000000">, </span><span style="color: #0000FF">null</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;-1 day&#039;</span><span style="color: #000000">]</span>
+<span style="color: #000000">]</span>
+</code></pre>
+								<p>Locutus&#39; implementation: <a href="https://locutus.io/php/datetime/strtotime/">https://locutus.io/php/datetime/strtotime/</a>
+								PHP&#39;s documentation: <a href="https://www.php.net/manual/en/function.strtotime.php">https://www.php.net/manual/en/function.strtotime.php</a></p>
+								<p>This example will retrieve the last two entities where:</p>
+								<ul>
+									<li>It has &#39;person&#39; tag.</li>
+									<li>spouse is defined.</li>
+									<li>gender is male and lname is Smith.</li>
+									<li>warnings is not an integer 0.</li>
+									<li>It has &#39;level1&#39; and &#39;level2&#39; tags, or it has &#39;access1&#39; and &#39;access2&#39;
+									tags.</li>
+									<li>It has either &#39;employee&#39; or &#39;manager&#39; tag.</li>
+									<li>name is either Clark, James, Chris, Christopher, Jake, or Jacob.</li>
+									<li>If age is 22 or more, then pay is not greater than 8.</li>
+								</ul>
+								<pre><code><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">entities</span><span style="color: #000000"> = </span><span style="color: #001080">Nymph</span><span style="color: #000000">.</span><span style="color: #795E26">getEntities</span><span style="color: #000000">(</span>
+<span style="color: #000000">  { </span><span style="color: #001080">class:</span><span style="color: #000000"> </span><span style="color: #001080">Entity</span><span style="color: #000000">, </span><span style="color: #001080">reverse:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">, </span><span style="color: #001080">limit:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000"> },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&amp;&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// all must be true</span>
+<span style="color: #000000">    </span><span style="color: #001080">tag:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;person&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">defined:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;spouse&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">equal:</span><span style="color: #000000"> [</span>
+<span style="color: #000000">      [</span><span style="color: #A31515">&#039;gender&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;male&#039;</span><span style="color: #000000">],</span>
+<span style="color: #000000">      [</span><span style="color: #A31515">&#039;lname&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Smith&#039;</span><span style="color: #000000">]</span>
+<span style="color: #000000">    ],</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&#039;!equal&#039;</span><span style="color: #001080">:</span><span style="color: #000000"> [</span><span style="color: #A31515">&#039;warnings&#039;</span><span style="color: #000000">, </span><span style="color: #098658">0</span><span style="color: #000000">]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;|&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// at least one of the selectors in this must match</span>
+<span style="color: #000000">    </span><span style="color: #001080">selector:</span><span style="color: #000000"> [</span>
+<span style="color: #000000">      {</span>
+<span style="color: #000000">        </span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&amp;&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">tag:</span><span style="color: #000000"> [</span><span style="color: #A31515">&#039;level1&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;level2&#039;</span><span style="color: #000000">]</span>
+<span style="color: #000000">      },</span>
+<span style="color: #000000">      {</span>
+<span style="color: #000000">        </span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&amp;&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">tag:</span><span style="color: #000000"> [</span><span style="color: #A31515">&#039;access1&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;access2&#039;</span><span style="color: #000000">]</span>
+<span style="color: #000000">      }</span>
+<span style="color: #000000">    ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;|&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// at least one must be true</span>
+<span style="color: #000000">    </span><span style="color: #001080">tag:</span><span style="color: #000000"> [</span><span style="color: #A31515">&#039;employee&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;manager&#039;</span><span style="color: #000000">]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;|&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">equal:</span><span style="color: #000000"> [</span>
+<span style="color: #000000">      [</span><span style="color: #A31515">&#039;name&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Clark&#039;</span><span style="color: #000000">],</span>
+<span style="color: #000000">      [</span><span style="color: #A31515">&#039;name&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;James&#039;</span><span style="color: #000000">]</span>
+<span style="color: #000000">    ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">match:</span><span style="color: #000000"> [</span>
+<span style="color: #000000">      [</span><span style="color: #A31515">&#039;name&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Chris(topher)?&#039;</span><span style="color: #000000">],</span>
+<span style="color: #000000">      [</span><span style="color: #A31515">&#039;name&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Ja(ke|cob)&#039;</span><span style="color: #000000">]</span>
+<span style="color: #000000">    ]</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  {</span>
+<span style="color: #000000">    </span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;!|&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// at least one must be false</span>
+<span style="color: #000000">    </span><span style="color: #001080">gte:</span><span style="color: #000000"> [</span><span style="color: #A31515">&#039;age&#039;</span><span style="color: #000000">, </span><span style="color: #098658">22</span><span style="color: #000000">],</span>
+<span style="color: #000000">    </span><span style="color: #001080">gt:</span><span style="color: #000000"> [</span><span style="color: #A31515">&#039;pay&#039;</span><span style="color: #000000">, </span><span style="color: #098658">8</span><span style="color: #000000">]</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">);</span>
+</code></pre>
+								<dl class="tsd-comment-tags">
+									<dt>todo</dt>
+									<dd><p>An option to place a total count in a var.</p>
+									</dd>
+									<dt>todo</dt>
+									<dd><p>Use an asterisk to specify any variable.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a> = <a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="../modules/_nymphjs_nymph.html#Options" class="tsd-signature-type" data-tsd-kind="Type alias">Options</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>return<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;guid&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The options.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>selectors: <a href="../modules/_nymphjs_nymph.html#Selector" class="tsd-signature-type" data-tsd-kind="Type alias">Selector</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Unlimited optional selectors to search for. If none are given, all entities are retrieved for the given options.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An array of entities.</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L560">packages/nymph/src/Nymph.ts:560</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a> = <a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../modules/_nymphjs_nymph.html#Options" class="tsd-signature-type" data-tsd-kind="Type alias">Options</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>selectors: <a href="../modules/_nymphjs_nymph.html#Selector" class="tsd-signature-type" data-tsd-kind="Type alias">Selector</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">&quot;factorySync&quot;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<a name="getEntity" class="tsd-anchor"></a>
+					<h3>get<wbr>Entity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entity&lt;T&gt;<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#Options" class="tsd-signature-type" data-tsd-kind="Type alias">Options</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>return<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;guid&quot;</span><span class="tsd-signature-symbol"> }</span>, <span class="tsd-signature-symbol">...</span>selectors<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#Selector" class="tsd-signature-type" data-tsd-kind="Type alias">Selector</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entity&lt;T&gt;<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#Options" class="tsd-signature-type" data-tsd-kind="Type alias">Options</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, <span class="tsd-signature-symbol">...</span>selectors<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#Selector" class="tsd-signature-type" data-tsd-kind="Type alias">Selector</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">&quot;factorySync&quot;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entity&lt;T&gt;<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#Options" class="tsd-signature-type" data-tsd-kind="Type alias">Options</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>return<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;guid&quot;</span><span class="tsd-signature-symbol"> }</span>, guid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entity&lt;T&gt;<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#Options" class="tsd-signature-type" data-tsd-kind="Type alias">Options</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, guid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">&quot;factorySync&quot;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L589">packages/nymph/src/Nymph.ts:589</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the first entity to match all options/selectors.</p>
+								</div>
+								<p>options and selectors are the same as in getEntities().</p>
+								<p>This function is equivalent to setting options.limit to 1 for
+									getEntities(), except that it will return null if no entity is found.
+								getEntities() would return an empty array.</p>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a> = <a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="../modules/_nymphjs_nymph.html#Options" class="tsd-signature-type" data-tsd-kind="Type alias">Options</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>return<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;guid&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The options.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>selectors: <a href="../modules/_nymphjs_nymph.html#Selector" class="tsd-signature-type" data-tsd-kind="Type alias">Selector</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Unlimited optional selectors to search for, or a single GUID. If none are given, all entities are searched for the given options.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An entity, or null on failure or nothing found.</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L593">packages/nymph/src/Nymph.ts:593</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a> = <a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="../modules/_nymphjs_nymph.html#Options" class="tsd-signature-type" data-tsd-kind="Type alias">Options</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>selectors: <a href="../modules/_nymphjs_nymph.html#Selector" class="tsd-signature-type" data-tsd-kind="Type alias">Selector</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">&quot;factorySync&quot;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L597">packages/nymph/src/Nymph.ts:597</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a> = <a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="../modules/_nymphjs_nymph.html#Options" class="tsd-signature-type" data-tsd-kind="Type alias">Options</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>return<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;guid&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+								</li>
+								<li>
+									<h5>guid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L601">packages/nymph/src/Nymph.ts:601</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a> = <a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="../modules/_nymphjs_nymph.html#Options" class="tsd-signature-type" data-tsd-kind="Type alias">Options</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>guid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">&quot;factorySync&quot;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getEntityClass" class="tsd-anchor"></a>
+					<h3>get<wbr>Entity<wbr>Class</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Entity<wbr>Class<span class="tsd-signature-symbol">(</span>className<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L90">packages/nymph/src/Nymph.ts:90</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>className: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getUID" class="tsd-anchor"></a>
+					<h3>getUID</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">getUID<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L302">packages/nymph/src/Nymph.ts:302</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the current value of a unique ID.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The UID&#39;s name.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>The UID&#39;s value, or null on failure and if it doesn&#39;t exist.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="import" class="tsd-anchor"></a>
+					<h3>import</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">import<span class="tsd-signature-symbol">(</span>filename<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L730">packages/nymph/src/Nymph.ts:730</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Import entities from a file.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>filename: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The file to import from.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>True on success, false on failure.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="inTransaction" class="tsd-anchor"></a>
+					<h3>in<wbr>Transaction</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">in<wbr>Transaction<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L257">packages/nymph/src/Nymph.ts:257</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check if there is any open transaction.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>True if there is a transaction.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="newUID" class="tsd-anchor"></a>
+					<h3>newUID</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">newUID<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L282">packages/nymph/src/Nymph.ts:282</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Increment or create a unique ID and return the new value.</p>
+								</div>
+								<p>Unique IDs, or UIDs are similar to GUIDs, but numeric and sequential.</p>
+								<p>A UID can be used to identify an object when the GUID doesn&#39;t suffice. On
+									a system where a new entity is created many times per second, referring
+									to something by its GUID may be unintuitive. However, the component
+									designer is responsible for assigning UIDs to the component&#39;s entities.
+									Beware that if a UID is incremented for an entity, and the entity cannot
+									be saved, there is no safe, and therefore, no recommended way to
+								decrement the UID back to its previous value.</p>
+								<p>If newUID() is passed the name of a UID which does not exist yet, one
+									will be created with that name, and assigned the value 1. If the UID
+									already exists, its value will be incremented. The new value will be
+								returned.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The UID&#39;s name.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>The UID&#39;s new value, or null on failure.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<a name="off" class="tsd-anchor"></a>
+					<h3>off</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">off&lt;T&gt;<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;connect&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphConnectCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphConnectCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;disconnect&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphDisconnectCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphDisconnectCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;query&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphQueryCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphQueryCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeGetEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeGetEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeGetEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeGetEntities&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeGetEntitiesCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeGetEntitiesCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeSaveEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeSaveEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeSaveEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterSaveEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterSaveEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterSaveEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeDeleteEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeDeleteEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeDeleteEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterDeleteEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterDeleteEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterDeleteEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeDeleteEntityByID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeDeleteEntityByIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeDeleteEntityByIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterDeleteEntityByID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterDeleteEntityByIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterDeleteEntityByIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeNewUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeNewUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeNewUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterNewUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterNewUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterNewUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeSetUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeSetUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeSetUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterSetUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterSetUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterSetUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeRenameUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeRenameUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeRenameUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterRenameUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterRenameUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterRenameUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeDeleteUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeDeleteUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeDeleteUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterDeleteUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterDeleteUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterDeleteUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L823">packages/nymph/src/Nymph.ts:823</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#NymphEventType" class="tsd-signature-type" data-tsd-kind="Type alias">NymphEventType</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">T</span></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;connect&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphConnectCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphConnectCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;disconnect&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphDisconnectCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphDisconnectCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;query&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphQueryCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphQueryCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeGetEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeGetEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeGetEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeGetEntities&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeGetEntitiesCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeGetEntitiesCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeSaveEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeSaveEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeSaveEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterSaveEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterSaveEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterSaveEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeDeleteEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeDeleteEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeDeleteEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterDeleteEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterDeleteEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterDeleteEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeDeleteEntityByID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeDeleteEntityByIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeDeleteEntityByIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterDeleteEntityByID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterDeleteEntityByIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterDeleteEntityByIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeNewUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeNewUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeNewUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterNewUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterNewUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterNewUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeSetUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeSetUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeSetUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterSetUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterSetUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterSetUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeRenameUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeRenameUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeRenameUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterRenameUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterRenameUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterRenameUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeDeleteUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeDeleteUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeDeleteUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterDeleteUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterDeleteUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterDeleteUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">never</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<a name="on" class="tsd-anchor"></a>
+					<h3>on</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">on&lt;T&gt;<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;connect&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphConnectCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphConnectCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;disconnect&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphDisconnectCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphDisconnectCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;query&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphQueryCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphQueryCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeGetEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeGetEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeGetEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeGetEntities&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeGetEntitiesCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeGetEntitiesCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeSaveEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeSaveEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeSaveEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterSaveEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterSaveEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterSaveEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeDeleteEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeDeleteEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeDeleteEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterDeleteEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterDeleteEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterDeleteEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeDeleteEntityByID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeDeleteEntityByIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeDeleteEntityByIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterDeleteEntityByID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterDeleteEntityByIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterDeleteEntityByIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeNewUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeNewUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeNewUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterNewUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterNewUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterNewUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeSetUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeSetUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeSetUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterSetUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterSetUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterSetUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeRenameUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeRenameUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeRenameUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterRenameUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterRenameUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterRenameUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeDeleteUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeDeleteUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeDeleteUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterDeleteUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterDeleteUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterDeleteUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L734">packages/nymph/src/Nymph.ts:734</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#NymphEventType" class="tsd-signature-type" data-tsd-kind="Type alias">NymphEventType</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">T</span></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;connect&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphConnectCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphConnectCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;disconnect&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphDisconnectCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphDisconnectCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;query&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphQueryCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphQueryCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeGetEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeGetEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeGetEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeGetEntities&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeGetEntitiesCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeGetEntitiesCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeSaveEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeSaveEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeSaveEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterSaveEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterSaveEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterSaveEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeDeleteEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeDeleteEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeDeleteEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterDeleteEntity&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterDeleteEntityCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterDeleteEntityCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeDeleteEntityByID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeDeleteEntityByIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeDeleteEntityByIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterDeleteEntityByID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterDeleteEntityByIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterDeleteEntityByIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeNewUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeNewUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeNewUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterNewUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterNewUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterNewUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeSetUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeSetUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeSetUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterSetUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterSetUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterSetUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeRenameUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeRenameUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeRenameUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterRenameUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterRenameUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterRenameUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;beforeDeleteUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphBeforeDeleteUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphBeforeDeleteUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-type">&quot;afterDeleteUID&quot;</span><span class="tsd-signature-symbol"> ? </span><a href="../modules/_nymphjs_nymph.html#NymphAfterDeleteUIDCallback" class="tsd-signature-type" data-tsd-kind="Type alias">NymphAfterDeleteUIDCallback</a><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-type">never</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-signature">
+									<ul class="tsd-signatures tsd-kind-type-literal">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="renameUID" class="tsd-anchor"></a>
+					<h3>renameUID</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">renameUID<span class="tsd-signature-symbol">(</span>oldName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, newName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L356">packages/nymph/src/Nymph.ts:356</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Rename a unique ID.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>oldName: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The old name.</p>
+									</div>
+								</li>
+								<li>
+									<h5>newName: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The new name.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>True on success, false on failure.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="rollback" class="tsd-anchor"></a>
+					<h3>rollback</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">rollback<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L248">packages/nymph/src/Nymph.ts:248</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Rollback the named transaction.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>True on success, false on failure.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="runQueryCallbacks" class="tsd-anchor"></a>
+					<h3>run<wbr>Query<wbr>Callbacks</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">run<wbr>Query<wbr>Callbacks<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#Options" class="tsd-signature-type" data-tsd-kind="Type alias">Options</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a><span class="tsd-signature-symbol">&gt;</span>, selectors<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#FormattedSelector" class="tsd-signature-type" data-tsd-kind="Type alias">FormattedSelector</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L207">packages/nymph/src/Nymph.ts:207</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Run all the query callbacks on a query.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="../modules/_nymphjs_nymph.html#Options" class="tsd-signature-type" data-tsd-kind="Type alias">Options</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>selectors: <a href="../modules/_nymphjs_nymph.html#FormattedSelector" class="tsd-signature-type" data-tsd-kind="Type alias">FormattedSelector</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="saveEntity" class="tsd-anchor"></a>
+					<h3>save<wbr>Entity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">save<wbr>Entity<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><a href="../interfaces/_nymphjs_nymph.EntityInterface.html" class="tsd-signature-type" data-tsd-kind="Interface">EntityInterface</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L382">packages/nymph/src/Nymph.ts:382</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Save an entity to the database.</p>
+								</div>
+								<p>If the entity has never been saved (has no GUID), a variable &quot;cdate&quot;
+								is set on it with the current Unix timestamp.</p>
+								<p>The variable &quot;mdate&quot; is set to the current Unix timestamp.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entity: <a href="../interfaces/_nymphjs_nymph.EntityInterface.html" class="tsd-signature-type" data-tsd-kind="Interface">EntityInterface</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The entity.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>True on success, false on failure.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setEntityClass" class="tsd-anchor"></a>
+					<h3>set<wbr>Entity<wbr>Class</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Entity<wbr>Class<span class="tsd-signature-symbol">(</span>className<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, entityClass<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L85">packages/nymph/src/Nymph.ts:85</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>className: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>entityClass: <a href="../modules/_nymphjs_nymph.html#EntityConstructor" class="tsd-signature-type" data-tsd-kind="Type alias">EntityConstructor</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setUID" class="tsd-anchor"></a>
+					<h3>setUID</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">setUID<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L313">packages/nymph/src/Nymph.ts:313</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the value of a UID.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The UID&#39;s name.</p>
+									</div>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The value.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>True on success, false on failure.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="startTransaction" class="tsd-anchor"></a>
+					<h3>start<wbr>Transaction</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">start<wbr>Transaction<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_nymphjs_nymph.Nymph.html" class="tsd-signature-type" data-tsd-kind="Class">Nymph</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/35d134d/packages/nymph/src/Nymph.ts#L230">packages/nymph/src/Nymph.ts:230</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Start an atomic transaction and returns a new instance of Nymph.</p>
+								</div>
+								<p>All proceeding changes using this new instance will wait to be written to
+									the database&#39;s permanent storage until commit() is called. You can also
+								undo all the changes since this function ran with rollback().</p>
+								<p>Transactions will nest as long as every name is unique. Internally, Nymph
+								uses names prefixed with &quot;nymph-&quot;.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_nymphjs_nymph.Nymph.html" class="tsd-signature-type" data-tsd-kind="Class">Nymph</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>True on success, false on failure.</p>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_client.html">@nymphjs/client</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_client_node.html">@nymphjs/client-<wbr>node</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_driver_mysql.html">@nymphjs/driver-<wbr>mysql</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_driver_postgresql.html">@nymphjs/driver-<wbr>postgresql</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_driver_sqlite3.html">@nymphjs/driver-<wbr>sqlite3</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/_nymphjs_nymph.html">@nymphjs/nymph</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_pubsub.html">@nymphjs/pubsub</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_query_parser.html">@nymphjs/query-<wbr>parser</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_server.html">@nymphjs/server</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_tilmeld.html">@nymphjs/tilmeld</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_tilmeld_client.html">@nymphjs/tilmeld-<wbr>client</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="_nymphjs_nymph.Nymph.html" class="tsd-kind-icon">Nymph</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#afterDeleteEntityByIDCallbacks" class="tsd-kind-icon">after<wbr>Delete<wbr>Entity<wbr>ByIDCallbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#afterDeleteEntityCallbacks" class="tsd-kind-icon">after<wbr>Delete<wbr>Entity<wbr>Callbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#afterDeleteUIDCallbacks" class="tsd-kind-icon">after<wbr>DeleteUIDCallbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#afterNewUIDCallbacks" class="tsd-kind-icon">after<wbr>NewUIDCallbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#afterRenameUIDCallbacks" class="tsd-kind-icon">after<wbr>RenameUIDCallbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#afterSaveEntityCallbacks" class="tsd-kind-icon">after<wbr>Save<wbr>Entity<wbr>Callbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#afterSetUIDCallbacks" class="tsd-kind-icon">after<wbr>SetUIDCallbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#beforeDeleteEntityByIDCallbacks" class="tsd-kind-icon">before<wbr>Delete<wbr>Entity<wbr>ByIDCallbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#beforeDeleteEntityCallbacks" class="tsd-kind-icon">before<wbr>Delete<wbr>Entity<wbr>Callbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#beforeDeleteUIDCallbacks" class="tsd-kind-icon">before<wbr>DeleteUIDCallbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#beforeGetEntitiesCallbacks" class="tsd-kind-icon">before<wbr>Get<wbr>Entities<wbr>Callbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#beforeGetEntityCallbacks" class="tsd-kind-icon">before<wbr>Get<wbr>Entity<wbr>Callbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#beforeNewUIDCallbacks" class="tsd-kind-icon">before<wbr>NewUIDCallbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#beforeRenameUIDCallbacks" class="tsd-kind-icon">before<wbr>RenameUIDCallbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#beforeSaveEntityCallbacks" class="tsd-kind-icon">before<wbr>Save<wbr>Entity<wbr>Callbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#beforeSetUIDCallbacks" class="tsd-kind-icon">before<wbr>SetUIDCallbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#config" class="tsd-kind-icon">config</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#connectCallbacks" class="tsd-kind-icon">connect<wbr>Callbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#disconnectCallbacks" class="tsd-kind-icon">disconnect<wbr>Callbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#driver" class="tsd-kind-icon">driver</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#entityClasses" class="tsd-kind-icon">entity<wbr>Classes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Nymph.html#queryCallbacks" class="tsd-kind-icon">query<wbr>Callbacks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#tilmeld" class="tsd-kind-icon">tilmeld</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#clone" class="tsd-kind-icon">clone</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#commit" class="tsd-kind-icon">commit</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#connect" class="tsd-kind-icon">connect</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#deleteEntity" class="tsd-kind-icon">delete<wbr>Entity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#deleteEntityByID" class="tsd-kind-icon">delete<wbr>Entity<wbr>ByID</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#deleteUID" class="tsd-kind-icon">deleteUID</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#disconnect" class="tsd-kind-icon">disconnect</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#export" class="tsd-kind-icon">export</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#exportPrint" class="tsd-kind-icon">export<wbr>Print</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+								<a href="_nymphjs_nymph.Nymph.html#getEntities" class="tsd-kind-icon">get<wbr>Entities</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+								<a href="_nymphjs_nymph.Nymph.html#getEntity" class="tsd-kind-icon">get<wbr>Entity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#getEntityClass" class="tsd-kind-icon">get<wbr>Entity<wbr>Class</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#getUID" class="tsd-kind-icon">getUID</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#import" class="tsd-kind-icon">import</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#inTransaction" class="tsd-kind-icon">in<wbr>Transaction</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#newUID" class="tsd-kind-icon">newUID</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+								<a href="_nymphjs_nymph.Nymph.html#off" class="tsd-kind-icon">off</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+								<a href="_nymphjs_nymph.Nymph.html#on" class="tsd-kind-icon">on</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#renameUID" class="tsd-kind-icon">renameUID</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#rollback" class="tsd-kind-icon">rollback</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#runQueryCallbacks" class="tsd-kind-icon">run<wbr>Query<wbr>Callbacks</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#saveEntity" class="tsd-kind-icon">save<wbr>Entity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#setEntityClass" class="tsd-kind-icon">set<wbr>Entity<wbr>Class</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#setUID" class="tsd-kind-icon">setUID</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Nymph.html#startTransaction" class="tsd-kind-icon">start<wbr>Transaction</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

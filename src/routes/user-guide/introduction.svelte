@@ -88,7 +88,7 @@
 
   <p>
     If you want to really dive deep into Nymph, you can also browse the <a
-      href="/api/latest"
+      href="/api/latest/index.html"
       rel="external">API docs</a
     >, which covers every part of Nymph's API.
   </p>
