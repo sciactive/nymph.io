@@ -6,12 +6,6 @@
 <section>
   <header class="major">
     <h1 style="font-size: 3em;">Nymph</h1>
-    <p>
-      Check out the <a
-        href="https://github.com/sciactive/nymphjs/tree/master/packages/nymph#readme"
-        >README</a
-      >.
-    </p>
   </header>
 
   <p>

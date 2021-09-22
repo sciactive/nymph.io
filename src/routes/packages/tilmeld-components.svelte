@@ -6,12 +6,6 @@
 <section>
   <header class="major">
     <h1 style="font-size: 3em;">Tilmeld Components</h1>
-    <p>
-      Check out the <a
-        href="https://github.com/sciactive/nymphjs/tree/master/packages/tilmeld-components#readme"
-        >README</a
-      >.
-    </p>
   </header>
 
   <p>
@@ -31,6 +25,16 @@
     language={bash}
     code={`npm install --save @nymphjs/tilmeld-components`}
   />
+
+  <header class="major">
+    <h2>Usage</h2>
+  </header>
+
+  <p>
+    You need to have an SMUI theme compiled and installed on your front end app.
+    If you're using Svelte, you need to have TypeScript support and you should
+    use the 'svelte' mainfield from package.json.
+  </p>
 </section>
 
 <script lang="ts">

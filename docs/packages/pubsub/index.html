@@ -24,16 +24,16 @@
 
 		
 
-		<link rel="modulepreload" href="/_app/start-703c34d8.js">
+		<link rel="modulepreload" href="/_app/start-ebb74390.js">
 		<link rel="modulepreload" href="/_app/chunks/vendor-836b274b.js">
 		<link rel="modulepreload" href="/_app/chunks/paths-6758d194.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-f5a59731.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-29a87631.js">
 		<link rel="modulepreload" href="/_app/chunks/Icon-7e579511.js">
-		<link rel="modulepreload" href="/_app/pages/packages/pubsub.svelte-e0ca2d68.js">
+		<link rel="modulepreload" href="/_app/pages/packages/pubsub.svelte-28ee5f44.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 
 		<script type="module">
-			import { start } from "/_app/start-703c34d8.js";
+			import { start } from "/_app/start-ebb74390.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
@@ -46,8 +46,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/_app/pages/__layout.svelte-f5a59731.js"),
-						import("/_app/pages/packages/pubsub.svelte-e0ca2d68.js")
+						import("/_app/pages/__layout.svelte-29a87631.js"),
+						import("/_app/pages/packages/pubsub.svelte-28ee5f44.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -75,9 +75,7 @@
 
     
 
-<section><header class="major"><h1 style="font-size: 3em;">PubSub Server</h1>
-    <p>Check out the <a href="https://github.com/sciactive/nymphjs/tree/master/packages/pubsub#readme">README</a>.
-    </p></header>
+<section><header class="major"><h1 style="font-size: 3em;">PubSub Server</h1></header>
 
   <p>The PubSub server provides a WebSocket server that allows Nymph to publish
     changes and the Nymph Client to subscribe to those changes. You can
@@ -89,7 +87,125 @@
   
   <pre class="hljs"><code><!-- HTML_TAG_START -->npm install --save @nymphjs/pubsub<!-- HTML_TAG_END --></code></pre>
 
-</section></div></div>
+
+  <header class="major"><h2>Usage</h2></header>
+
+  <p>Any Nymph instance will only publish changes if you initialize PubSub
+    publisher before Nymph is used! This step is <strong>absolutely required</strong> to have a working PubSub system.
+  </p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">import</span> SQLite3Driver <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/driver-sqlite3&#x27;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Nymph</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/nymph&#x27;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">PubSub</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/pubsub&#x27;</span>;
+
+<span class="hljs-keyword">const</span> pubSubConfig = {
+  <span class="hljs-attr">entries</span>: [<span class="hljs-string">&#x27;ws://yourpubsubserver.tld:8080/&#x27;</span>], <span class="hljs-comment">// This should be set to your PubSub server URL(s).</span>
+};
+
+<span class="hljs-keyword">const</span> nymph = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Nymph</span>(
+  {},
+  <span class="hljs-keyword">new</span> <span class="hljs-title function_">SQLite3Driver</span>({
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;:memory:&#x27;</span>, <span class="hljs-comment">// Put the correct driver/config here.</span>
+  })
+);
+<span class="hljs-title class_">PubSub</span>.<span class="hljs-title function_">initPublisher</span>(pubSubConfig, nymph);<!-- HTML_TAG_END --></code></pre>
+
+
+  <p>Now, on your PubSub server, you can use the createServer function to create
+    a new PubSub server using HTTP (without TLS). If you want, this can be done
+    on the same server you use as a REST server, with a different port.
+  </p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">import</span> SQLite3Driver <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/driver-sqlite3&#x27;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Nymph</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/nymph&#x27;</span>;
+<span class="hljs-keyword">import</span> createServer, { <span class="hljs-title class_">PubSub</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/pubsub&#x27;</span>;
+
+<span class="hljs-keyword">const</span> pubSubConfig = {
+  <span class="hljs-attr">originIsAllowed</span>: <span class="hljs-function">(<span class="hljs-params">origin</span>) =&gt;</span> {
+    <span class="hljs-comment">// Your logic to determine allowed origins goes here.</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+  },
+  <span class="hljs-attr">entries</span>: [<span class="hljs-string">&#x27;ws://yourpubsubserver.tld:8080/&#x27;</span>],
+};
+
+<span class="hljs-keyword">const</span> nymph = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Nymph</span>(
+  {},
+  <span class="hljs-keyword">new</span> <span class="hljs-title function_">SQLite3Driver</span>({
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;:memory:&#x27;</span>, <span class="hljs-comment">// Put the correct driver/config here.</span>
+  })
+);
+<span class="hljs-comment">// Don&#x27;t forget to do this; even here!</span>
+<span class="hljs-title class_">PubSub</span>.<span class="hljs-title function_">initPublisher</span>(pubSubConfig, nymph);
+
+<span class="hljs-keyword">const</span> pubsub = <span class="hljs-title function_">createServer</span>(<span class="hljs-number">8080</span>, pubSubConfig, nymph);<!-- HTML_TAG_END --></code></pre>
+
+
+  <p>If you need to provide custom handling in your server (like TLS), you can
+    use the PubSub class directly and provide it a WebSocket server instance.
+  </p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">import</span> http <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;http&#x27;</span>;
+<span class="hljs-keyword">import</span> { server <span class="hljs-keyword">as</span> <span class="hljs-title class_">WebSocketServer</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;websocket&#x27;</span>;
+<span class="hljs-keyword">import</span> SQLite3Driver <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/driver-sqlite3&#x27;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Nymph</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/nymph&#x27;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">PubSub</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/pubsub&#x27;</span>;
+
+<span class="hljs-keyword">const</span> pubSubConfig = {
+  <span class="hljs-attr">originIsAllowed</span>: <span class="hljs-function">(<span class="hljs-params">origin</span>) =&gt;</span> {
+    <span class="hljs-comment">// Your logic to determine allowed origins goes here.</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+  },
+  <span class="hljs-attr">entries</span>: [<span class="hljs-string">&#x27;ws://yourpubsubserver.tld:8080/&#x27;</span>],
+};
+
+<span class="hljs-comment">// Set up Nymph.</span>
+<span class="hljs-keyword">const</span> nymph = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Nymph</span>(
+  {},
+  <span class="hljs-keyword">new</span> <span class="hljs-title function_">SQLite3Driver</span>({
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;:memory:&#x27;</span>, <span class="hljs-comment">// Put the correct driver/config here.</span>
+  })
+);
+<span class="hljs-comment">// Don&#x27;t forget to do this; even here!</span>
+<span class="hljs-title class_">PubSub</span>.<span class="hljs-title function_">initPublisher</span>(pubSubConfig, nymph);
+
+<span class="hljs-comment">// Set up the PubSub server.</span>
+<span class="hljs-keyword">const</span> port = <span class="hljs-number">8080</span>;
+<span class="hljs-keyword">const</span> server = http.<span class="hljs-title function_">createServer</span>(<span class="hljs-function">(<span class="hljs-params">_request, response</span>) =&gt;</span> {
+  response.<span class="hljs-title function_">writeHead</span>(<span class="hljs-number">404</span>);
+  response.<span class="hljs-title function_">end</span>();
+});
+<span class="hljs-keyword">const</span> listener = server.<span class="hljs-title function_">listen</span>(port, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(
+    <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">toISOString</span>(),
+    <span class="hljs-string">`Nymph-PubSub server started listening on port <span class="hljs-subst">${port}</span>.`</span>
+  );
+});
+<span class="hljs-keyword">const</span> wsServer = <span class="hljs-keyword">new</span> <span class="hljs-title class_">WebSocketServer</span>({
+  <span class="hljs-attr">httpServer</span>: listener,
+  <span class="hljs-comment">// You should not use autoAcceptConnections for production</span>
+  <span class="hljs-comment">// applications, as it defeats all standard cross-origin protection</span>
+  <span class="hljs-comment">// facilities built into the protocol and the browser.  You should</span>
+  <span class="hljs-comment">// *always* verify the connection&#x27;s origin and decide whether or not</span>
+  <span class="hljs-comment">// to accept it.</span>
+  <span class="hljs-attr">autoAcceptConnections</span>: <span class="hljs-literal">false</span>,
+});
+
+<span class="hljs-keyword">const</span> pubsub = <span class="hljs-keyword">new</span> <span class="hljs-title class_">PubSub</span>(pubSubConfig, nymph, wsServer);<!-- HTML_TAG_END --></code></pre>
+
+
+  <header class="major"><h2>Options</h2></header>
+
+  <p>See the <a href="https://github.com/sciactive/nymphjs/tree/master/packages/pubsub/src/conf/d.ts" target="_blank" rel="external">config declaration file</a>.
+  </p>
+</section>
+
+    
+    <footer id="footer"><p class="copyright">© SciActive Inc. All rights reserved. Design by:
+        <a href="https://html5up.net">HTML5 UP</a>.
+      </p></footer></div></div>
 
 
 <div id="sidebar"><div class="inner">
@@ -138,12 +254,7 @@
           310 S Twin Oaks Valley Rd #107<br>
           PMB 422<br>
           San Marcos, CA 92078
-        </li></ul></section>
-
-    
-    <footer id="footer"><p class="copyright">© SciActive Inc. All rights reserved. Design by:
-        <a href="https://html5up.net">HTML5 UP</a>.
-      </p></footer></div>
+        </li></ul></section></div>
 
   
 </div>

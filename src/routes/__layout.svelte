@@ -45,6 +45,14 @@
     <Header />
 
     <slot />
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p class="copyright">
+        &copy; SciActive Inc. All rights reserved. Design by:
+        <a href="https://html5up.net">HTML5 UP</a>.
+      </p>
+    </footer>
   </div>
 </div>
 
@@ -173,14 +181,6 @@
         </li>
       </ul>
     </section>
-
-    <!-- Footer -->
-    <footer id="footer">
-      <p class="copyright">
-        &copy; SciActive Inc. All rights reserved. Design by:
-        <a href="https://html5up.net">HTML5 UP</a>.
-      </p>
-    </footer>
   </div>
 
   {#if smallWindow}

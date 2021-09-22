@@ -24,16 +24,16 @@
 
 		
 
-		<link rel="modulepreload" href="/_app/start-703c34d8.js">
+		<link rel="modulepreload" href="/_app/start-ebb74390.js">
 		<link rel="modulepreload" href="/_app/chunks/vendor-836b274b.js">
 		<link rel="modulepreload" href="/_app/chunks/paths-6758d194.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-f5a59731.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-29a87631.js">
 		<link rel="modulepreload" href="/_app/chunks/Icon-7e579511.js">
-		<link rel="modulepreload" href="/_app/pages/packages/query-parser.svelte-c0de5dea.js">
+		<link rel="modulepreload" href="/_app/pages/packages/query-parser.svelte-15b2c5b1.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 
 		<script type="module">
-			import { start } from "/_app/start-703c34d8.js";
+			import { start } from "/_app/start-ebb74390.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
@@ -46,8 +46,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/_app/pages/__layout.svelte-f5a59731.js"),
-						import("/_app/pages/packages/query-parser.svelte-c0de5dea.js")
+						import("/_app/pages/__layout.svelte-29a87631.js"),
+						import("/_app/pages/packages/query-parser.svelte-15b2c5b1.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -75,9 +75,7 @@
 
     
 
-<section><header class="major"><h1 style="font-size: 3em;">Query Parser</h1>
-    <p>Check out the <a href="https://github.com/sciactive/nymphjs/tree/master/packages/query-parser#readme">README</a>.
-    </p></header>
+<section><header class="major"><h1 style="font-size: 3em;">Query Parser</h1></header>
 
   <p>The Query Parser is a utility for creating complex Nymph entity queries from
     a simple text input. Essentially, it turns a string into a Nymph query.
@@ -88,7 +86,282 @@
   
   <pre class="hljs"><code><!-- HTML_TAG_START -->npm install --save @nymphjs/query-parser<!-- HTML_TAG_END --></code></pre>
 
-</section></div></div>
+
+  <header class="major"><h2>Usage</h2></header>
+
+  <p>The query parser will turn a string into an Options and Selectors array for
+    the Nymph Client. It has a syntax that allows for <em>most</em> features of a
+    Nymph query to be expressed in a text input.
+  </p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">import</span> queryParser <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/query-parser&#x27;</span>;
+
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">BlogPost</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./BlogPost&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">Category</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./Category&#x27;</span>;
+
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">doQuery</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> query =
+    <span class="hljs-string">&#x27;limit:4 foobar (| [archived] mdate&lt;&quot;2 weeks ago&quot;) category&lt;{cat Tech}&gt;&#x27;</span>;
+  <span class="hljs-keyword">const</span> [options, ...selectors] = <span class="hljs-title function_">queryParser</span>(
+    query,
+    <span class="hljs-title class_">BlogPost</span>,
+    [<span class="hljs-string">&#x27;title&#x27;</span>, <span class="hljs-string">&#x27;body&#x27;</span>],
+    {
+      <span class="hljs-attr">cat</span>: {
+        <span class="hljs-attr">class</span>: <span class="hljs-title class_">Category</span>,
+        <span class="hljs-attr">defaultFields</span>: [<span class="hljs-string">&#x27;name&#x27;</span>],
+      },
+    }
+  );
+  <span class="hljs-comment">/*
+  Options will be
+    {
+      class: BlogPost,
+      limit: 4
+    }
+
+  And selectors will be
+    [
+      {
+        type: &quot;|&quot;,
+        truthy: [
+          &quot;archived&quot;
+        ],
+        lt: [
+          [&quot;mdate&quot;, null, &quot;2 weeks ago&quot;]
+        ]
+      },
+      {
+        type: &quot;&amp;&quot;,
+        qref: [
+          &quot;category&quot;,
+          [
+            {
+              class: Category
+            },
+            {
+              type: &quot;|&quot;,
+              ilike: [&quot;name&quot;, &quot;%Tech%&quot;]
+            }
+          ]
+        ]
+      },
+      {
+        type: &quot;|&quot;,
+        ilike: [
+          [&quot;title&quot;, &quot;%foobar%&quot;],
+          [&quot;body&quot;, &quot;%foobar%&quot;]
+        ]
+      }
+    ]
+  */</span>
+  <span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(options, ...selectors);
+}<!-- HTML_TAG_END --></code></pre>
+
+
+  <header class="major"><h2>Usage</h2></header>
+
+  <p>You can set limit, offset, and reverse like this.</p>
+
+  <ul><li><code>limit:number</code></li>
+    <li><code>offset:number</code></li>
+    <li><code>reverse:true</code>, <code>reverse:false</code>,
+      <code>reverse:1</code>, or <code>reverse:0</code></li></ul>
+
+  <p>These must appear in the top level of the query (outside of any
+    parentheses).
+  </p>
+
+  <header class="major"><h2>Clauses</h2></header>
+
+  <p>These are the available clauses, and their syntax.</p>
+
+  <header><h3>equal and !equal</h3></header>
+
+  <p>Check for string or JSON representation equality.</p>
+
+  <ul><li><code>name=string</code> or <code>name!=string</code></li>
+    <li><code>name=&quot;string value&quot;</code> or <code>name!=&quot;string value&quot;</code>
+      <ul><li>(Use this if you have a space in your string, or if your string could
+          be interpreted as valid JSON. Escape double quotes with a leading
+          backslash.)
+        </li></ul></li>
+    <li><code>name=JSON</code> or <code>name!=JSON</code>
+      <ul><li>(Match a JSON encoded value (like <code>true</code>, <code>1</code>,
+          <code>[1,2,3]</code>, or <code>{&quot;prop&quot;:&quot;val&quot;}</code>).)
+        </li></ul></li></ul>
+
+  <header><h3>guid and !guid</h3></header>
+
+  <p>Check for entity GUID.</p>
+
+  <ul><li><code>{guid}</code> or <code>{!guid}</code></li></ul>
+
+  <header><h3>truthy and !truthy</h3></header>
+
+  <p>Check for truthiness.</p>
+
+  <ul><li><code>[name]</code> or <code>[!name]</code></li></ul>
+
+  <header><h3>ref and !ref</h3></header>
+
+  <p>Check for a reference to another entity.</p>
+
+  <ul><li><code>name&lt;{guid}&gt;</code> or <code>name!&lt;{guid}&gt;</code></li></ul>
+
+  <header><h3>qref and !qref</h3></header>
+
+  <p>Check for a reference to another entity using a query.</p>
+
+  <ul><li><code>name&lt;{refclassname inner query}&gt;</code> or
+      <code>name!&lt;{refclassname inner query}&gt;</code>
+      <ul><li>(Esacpe curly brackets with a leading backslash.)</li>
+        <li>(Requires a map of refclassname to their actual class and default
+          fields.)
+        </li></ul></li></ul>
+
+  <header><h3>contain and !contain</h3></header>
+
+  <p>Check for a JSON representation appearing within the JSON representation of
+    the named property.
+  </p>
+
+  <ul><li><code>name&lt;value&gt;</code> or
+      <code>name!&lt;value&gt;</code>
+      <ul><li>(Escape angle brackets with a leading backslash. If your value could
+          be interpreted as valid JSON, encode it as a JSON string and use the
+          JSON syntax instead.)
+        </li></ul></li>
+    <li><code>name&lt;JSON&gt;</code> or
+      <code>name!&lt;JSON&gt;</code>
+      <ul><li>(Search for a JSON encoded value (like <code>true</code>,
+          <code>1</code>,
+          <code>[1,2,3]</code>, or <code>{&quot;prop&quot;:&quot;val&quot;}</code>).)
+        </li></ul></li></ul>
+
+  <header><h3>match and !match</h3></header>
+
+  <p>Check for POSIX regex match.</p>
+
+  <ul><li><code>name~/pattern/</code> or <code>name!~/pattern/</code></li></ul>
+
+  <header><h3>imatch and !imatch</h3></header>
+
+  <p>Check for case insensitive POSIX regex match.</p>
+
+  <ul><li><code>name~/pattern/i</code> or <code>name!~/pattern/i</code></li></ul>
+
+  <header><h3>like and !like</h3></header>
+
+  <p>Check for pattern match where _ is single char wildcard and % is any length
+    wildcard.
+  </p>
+
+  <ul><li><code>name~pattern</code> or <code>name!~pattern</code></li>
+    <li><code>name~&quot;pattern&quot;</code> or <code>name!~&quot;pattern&quot;</code>
+      <ul><li>(Use this if you have a space in your pattern.)</li></ul></li></ul>
+
+  <header><h3>ilike and !ilike</h3></header>
+
+  <p>Check for case insensitive pattern match where _ is single char wildcard and
+    % is any length wildcard.
+  </p>
+
+  <ul><li><code>name~&quot;pattern&quot;i</code> or <code>name!~&quot;pattern&quot;i</code></li></ul>
+
+  <header><h3>gt</h3></header>
+
+  <p>Check a prop&#39;s value is greater than a given value.</p>
+
+  <ul><li><code>name&gt;number</code></li>
+    <li><code>name&gt;relative</code>
+      <ul><li>(A single relative time value like <code>now</code> or
+          <code>yesterday</code>.)
+        </li></ul></li>
+    <li><code>name&gt;&quot;relative time value&quot;</code>
+      <ul><li>(Use this for a time value with a space like <code>&quot;two days from now&quot;</code>,
+          <code>&quot;last thursday&quot;</code>, <code>&quot;+4 weeks&quot;</code>, or
+          <code>&quot;5 minutes ago&quot;</code>.)
+        </li></ul></li></ul>
+
+  <header><h3>gte</h3></header>
+
+  <p>Check a prop&#39;s value is greater than or equal to a given value.</p>
+
+  <ul><li><code>name&gt;=number</code></li>
+    <li><code>name&gt;=relative</code>
+      <ul><li>(A single relative time value like <code>now</code> or
+          <code>yesterday</code>.)
+        </li></ul></li>
+    <li><code>name&gt;=&quot;relative time value&quot;</code>
+      <ul><li>(Use this for a time value with a space like <code>&quot;two days from now&quot;</code>,
+          <code>&quot;last thursday&quot;</code>, <code>&quot;+4 weeks&quot;</code>, or
+          <code>&quot;5 minutes ago&quot;</code>.)
+        </li></ul></li></ul>
+
+  <header><h3>lt</h3></header>
+
+  <p>Check a prop&#39;s value is less than a given value.</p>
+
+  <ul><li><code>name&lt;number</code></li>
+    <li><code>name&lt;relative</code>
+      <ul><li>(A single relative time value like <code>now</code> or
+          <code>yesterday</code>.)
+        </li></ul></li>
+    <li><code>name&lt;&quot;relative time value&quot;</code>
+      <ul><li>(Use this for a time value with a space like <code>&quot;two days from now&quot;</code>,
+          <code>&quot;last thursday&quot;</code>, <code>&quot;+4 weeks&quot;</code>, or
+          <code>&quot;5 minutes ago&quot;</code>.)
+        </li></ul></li></ul>
+
+  <header><h3>lte</h3></header>
+
+  <p>Check a prop&#39;s value is less than or equal to a given value.</p>
+
+  <ul><li><code>name&lt;=number</code></li>
+    <li><code>name&lt;=relative</code>
+      <ul><li>(A single relative time value like <code>now</code> or
+          <code>yesterday</code>.)
+        </li></ul></li>
+    <li><code>name&lt;=&quot;relative time value&quot;</code>
+      <ul><li>(Use this for a time value with a space like <code>&quot;two days from now&quot;</code>,
+          <code>&quot;last thursday&quot;</code>, <code>&quot;+4 weeks&quot;</code>, or
+          <code>&quot;5 minutes ago&quot;</code>.)
+        </li></ul></li></ul>
+
+  <header class="major"><h2>Selectors</h2></header>
+
+  <p>You can specify nested selectors with different types using pairs of
+    parentheses. The first character (or two) inside the parentheses can be a
+    type: &quot;&amp;&quot;, &quot;!&amp;&quot;, &quot;|&quot;, &quot;!|&quot;, or &quot;!&quot; (the same as &quot;!&amp;&quot;).
+  </p>
+
+  <p>Here are some examples of nested selectors.</p>
+
+  <pre>Either enabled is truthy and abilities contains &quot;subscriber&quot;, or abilities contains &quot;lifelong-subscriber&quot;.
+
+(| ([enabled] abilities&lt;&quot;subscriber&quot;&gt;) abilities&lt;&quot;lifeline-subscriber&quot;&gt;)
+
+
+Published is not truthy and cdate is not greater than 6 months ago.
+
+(! [published] cdate&gt;&quot;6 months ago&quot;)</pre>
+
+  <header class="major"><h2>Default Fields</h2></header>
+
+  <p>Anything contained in the query (including in selector parentheses) that
+    doesn&#39;t match any of the options or clause syntaxes listed above will be
+    added (at the appropriate nesting level) to a selector with an <code>&quot;|&quot;</code>
+    type in an <code>ilike</code> clause surrounded by &quot;%&quot; characters for each
+    field passed in to the <code>defaultFields</code> argument.
+  </p>
+</section>
+
+    
+    <footer id="footer"><p class="copyright">© SciActive Inc. All rights reserved. Design by:
+        <a href="https://html5up.net">HTML5 UP</a>.
+      </p></footer></div></div>
 
 
 <div id="sidebar"><div class="inner">
@@ -137,12 +410,7 @@
           310 S Twin Oaks Valley Rd #107<br>
           PMB 422<br>
           San Marcos, CA 92078
-        </li></ul></section>
-
-    
-    <footer id="footer"><p class="copyright">© SciActive Inc. All rights reserved. Design by:
-        <a href="https://html5up.net">HTML5 UP</a>.
-      </p></footer></div>
+        </li></ul></section></div>
 
   
 </div>

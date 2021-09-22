@@ -24,16 +24,16 @@
 
 		
 
-		<link rel="modulepreload" href="/_app/start-703c34d8.js">
+		<link rel="modulepreload" href="/_app/start-ebb74390.js">
 		<link rel="modulepreload" href="/_app/chunks/vendor-836b274b.js">
 		<link rel="modulepreload" href="/_app/chunks/paths-6758d194.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-f5a59731.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-29a87631.js">
 		<link rel="modulepreload" href="/_app/chunks/Icon-7e579511.js">
-		<link rel="modulepreload" href="/_app/pages/packages/driver-sqlite3.svelte-9c8837ed.js">
+		<link rel="modulepreload" href="/_app/pages/packages/driver-sqlite3.svelte-c194d861.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 
 		<script type="module">
-			import { start } from "/_app/start-703c34d8.js";
+			import { start } from "/_app/start-ebb74390.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
@@ -46,8 +46,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/_app/pages/__layout.svelte-f5a59731.js"),
-						import("/_app/pages/packages/driver-sqlite3.svelte-9c8837ed.js")
+						import("/_app/pages/__layout.svelte-29a87631.js"),
+						import("/_app/pages/packages/driver-sqlite3.svelte-c194d861.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -75,9 +75,7 @@
 
     
 
-<section><header class="major"><h1 style="font-size: 3em;">SQLite3 Driver</h1>
-    <p>Check out the <a href="https://github.com/sciactive/nymphjs/tree/master/packages/driver-sqlite3#readme">README</a>.
-    </p></header>
+<section><header class="major"><h1 style="font-size: 3em;">SQLite3 Driver</h1></header>
 
   <p>The SQLite3 driver lets you configure Nymph to query and save data to a
     SQLite3 database. This includes an in memory SQLite3 database.
@@ -88,7 +86,36 @@
   
   <pre class="hljs"><code><!-- HTML_TAG_START -->npm install --save @nymphjs/driver-sqlite3<!-- HTML_TAG_END --></code></pre>
 
-</section></div></div>
+
+  <header class="major"><h2>Usage</h2></header>
+
+  <p>Supply an instance of this driver with its configuration to Nymph&#39;s
+    constructor.
+  </p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Nymph</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/nymph&#x27;</span>;
+<span class="hljs-keyword">import</span> SQLite3Driver <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/driver-sqlite3&#x27;</span>;
+
+<span class="hljs-keyword">const</span> sqliteConfig = {
+  <span class="hljs-attr">filename</span>: __dirname + <span class="hljs-string">&#x27;/mydatabase.db&#x27;</span>,
+};
+
+<span class="hljs-keyword">const</span> nymph = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Nymph</span>({}, <span class="hljs-keyword">new</span> <span class="hljs-title function_">SQLite3Driver</span>(sqliteConfig));
+
+<span class="hljs-comment">// All done. Nymph is ready to use.</span><!-- HTML_TAG_END --></code></pre>
+
+
+  <header class="major"><h2>Options</h2></header>
+
+  <p>See the <a href="https://github.com/sciactive/nymphjs/tree/master/packages/driver-sqlite3/src/conf/d.ts" target="_blank" rel="external">config declaration file</a>.
+  </p>
+</section>
+
+    
+    <footer id="footer"><p class="copyright">© SciActive Inc. All rights reserved. Design by:
+        <a href="https://html5up.net">HTML5 UP</a>.
+      </p></footer></div></div>
 
 
 <div id="sidebar"><div class="inner">
@@ -137,12 +164,7 @@
           310 S Twin Oaks Valley Rd #107<br>
           PMB 422<br>
           San Marcos, CA 92078
-        </li></ul></section>
-
-    
-    <footer id="footer"><p class="copyright">© SciActive Inc. All rights reserved. Design by:
-        <a href="https://html5up.net">HTML5 UP</a>.
-      </p></footer></div>
+        </li></ul></section></div>
 
   
 </div>

@@ -24,16 +24,16 @@
 
 		
 
-		<link rel="modulepreload" href="/_app/start-703c34d8.js">
+		<link rel="modulepreload" href="/_app/start-ebb74390.js">
 		<link rel="modulepreload" href="/_app/chunks/vendor-836b274b.js">
 		<link rel="modulepreload" href="/_app/chunks/paths-6758d194.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-f5a59731.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-29a87631.js">
 		<link rel="modulepreload" href="/_app/chunks/Icon-7e579511.js">
-		<link rel="modulepreload" href="/_app/pages/packages/tilmeld-client.svelte-11a5a135.js">
+		<link rel="modulepreload" href="/_app/pages/packages/tilmeld-client.svelte-b3027365.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 
 		<script type="module">
-			import { start } from "/_app/start-703c34d8.js";
+			import { start } from "/_app/start-ebb74390.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
@@ -46,8 +46,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/_app/pages/__layout.svelte-f5a59731.js"),
-						import("/_app/pages/packages/tilmeld-client.svelte-11a5a135.js")
+						import("/_app/pages/__layout.svelte-29a87631.js"),
+						import("/_app/pages/packages/tilmeld-client.svelte-b3027365.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -75,9 +75,7 @@
 
     
 
-<section><header class="major"><h1 style="font-size: 3em;">Tilmeld Client</h1>
-    <p>Check out the <a href="https://github.com/sciactive/nymphjs/tree/master/packages/tilmeld-client#readme">README</a>.
-    </p></header>
+<section><header class="major"><h1 style="font-size: 3em;">Tilmeld Client</h1></header>
 
   <p>The Tilmeld Client lets you register, login, and perform user account
     related functions remotely on a Nymph server.
@@ -88,7 +86,37 @@
   
   <pre class="hljs"><code><!-- HTML_TAG_START -->npm install --save @nymphjs/tilmeld-client<!-- HTML_TAG_END --></code></pre>
 
-</section></div></div>
+
+  <p>You can find UMD in <code>dist</code>, or TS source in <code>src</code>.
+  </p>
+
+  <header class="major"><h2>Usage</h2></header>
+
+  <p>The Tilmeld client contains the client versions of the <code>User</code> and
+    <code>Group</code>
+    entities. It also contains helpers, <code>getClientConfig</code>,
+    <code>login</code>, <code>register</code>, and <code>checkUsername</code>.
+  </p>
+
+  <p>Once you&#39;ve initialized Nymph Client, set the User and Group classes on it.
+  </p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Nymph</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/client&#x27;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">User</span>, <span class="hljs-title class_">Group</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/tilmeld-client&#x27;</span>;
+
+<span class="hljs-keyword">const</span> nymph = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Nymph</span>({
+  <span class="hljs-attr">restUrl</span>: <span class="hljs-string">&#x27;https://yournymphrestserver/path/to/your/endpoint&#x27;</span>,
+});
+nymph.<span class="hljs-title function_">setEntityClass</span>(<span class="hljs-title class_">User</span>.<span class="hljs-property">class</span>, <span class="hljs-title class_">User</span>);
+nymph.<span class="hljs-title function_">setEntityClass</span>(<span class="hljs-title class_">Group</span>.<span class="hljs-property">class</span>, <span class="hljs-title class_">Group</span>);<!-- HTML_TAG_END --></code></pre>
+
+</section>
+
+    
+    <footer id="footer"><p class="copyright">© SciActive Inc. All rights reserved. Design by:
+        <a href="https://html5up.net">HTML5 UP</a>.
+      </p></footer></div></div>
 
 
 <div id="sidebar"><div class="inner">
@@ -137,12 +165,7 @@
           310 S Twin Oaks Valley Rd #107<br>
           PMB 422<br>
           San Marcos, CA 92078
-        </li></ul></section>
-
-    
-    <footer id="footer"><p class="copyright">© SciActive Inc. All rights reserved. Design by:
-        <a href="https://html5up.net">HTML5 UP</a>.
-      </p></footer></div>
+        </li></ul></section></div>
 
   
 </div>

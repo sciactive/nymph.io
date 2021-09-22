@@ -24,16 +24,16 @@
 
 		
 
-		<link rel="modulepreload" href="/_app/start-703c34d8.js">
+		<link rel="modulepreload" href="/_app/start-ebb74390.js">
 		<link rel="modulepreload" href="/_app/chunks/vendor-836b274b.js">
 		<link rel="modulepreload" href="/_app/chunks/paths-6758d194.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-f5a59731.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-29a87631.js">
 		<link rel="modulepreload" href="/_app/chunks/Icon-7e579511.js">
-		<link rel="modulepreload" href="/_app/pages/packages/client.svelte-a355419b.js">
+		<link rel="modulepreload" href="/_app/pages/packages/client.svelte-eebc66ed.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 
 		<script type="module">
-			import { start } from "/_app/start-703c34d8.js";
+			import { start } from "/_app/start-ebb74390.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
@@ -46,8 +46,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/_app/pages/__layout.svelte-f5a59731.js"),
-						import("/_app/pages/packages/client.svelte-a355419b.js")
+						import("/_app/pages/__layout.svelte-29a87631.js"),
+						import("/_app/pages/packages/client.svelte-eebc66ed.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -75,9 +75,7 @@
 
     
 
-<section><header class="major"><h1 style="font-size: 3em;">Client</h1>
-    <p>Check out the <a href="https://github.com/sciactive/nymphjs/tree/master/packages/client#readme">README</a>.
-    </p></header>
+<section><header class="major"><h1 style="font-size: 3em;">Client</h1></header>
 
   <p>The Nymph Client allows you to query and push data to a Nymph REST server
     from the browser. You can also subscribe to entities and queries on a Nymph
@@ -89,7 +87,90 @@
   
   <pre class="hljs"><code><!-- HTML_TAG_START -->npm install --save @nymphjs/client<!-- HTML_TAG_END --></code></pre>
 
-</section></div></div>
+
+  <p>This package is the Nymph client for browsers. You can find UMD in <code>dist</code>, or TS source in <code>src</code>. There is also a
+    <strong><a href="/packages/client-node">Node.js client</a></strong>.
+  </p>
+
+  <header class="major"><h2>Usage</h2></header>
+
+  <p>Here&#39;s an overview:</p>
+
+  
+  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Nymph</span>, <span class="hljs-title class_">PubSub</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/client&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">Todo</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;Todo&#x27;</span>;
+
+<span class="hljs-keyword">const</span> nymphOptions = {
+  <span class="hljs-attr">restUrl</span>: <span class="hljs-string">&#x27;https://yournymphrestserver/path/to/your/endpoint&#x27;</span>,
+  <span class="hljs-attr">pubsubUrl</span>: <span class="hljs-string">&#x27;wss://yournymphpubsubserver&#x27;</span>,
+};
+<span class="hljs-keyword">const</span> nymph = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Nymph</span>(nymphOptions);
+<span class="hljs-keyword">const</span> pubsub = <span class="hljs-keyword">new</span> <span class="hljs-title class_">PubSub</span>(nymphOptions, nymph);
+nymph.<span class="hljs-title function_">setEntityClass</span>(<span class="hljs-title class_">Todo</span>.<span class="hljs-property">class</span>, <span class="hljs-title class_">Todo</span>);
+
+<span class="hljs-comment">// Now you can use Nymph and PubSub.</span>
+<span class="hljs-keyword">const</span> myTodo = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Todo</span>();
+myTodo.<span class="hljs-property">name</span> = <span class="hljs-string">&#x27;This is a new todo!&#x27;</span>;
+myTodo.<span class="hljs-property">done</span> = <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">await</span> myTodo.$save();
+
+<span class="hljs-keyword">let</span> allMyTodos = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>({ <span class="hljs-attr">class</span>: <span class="hljs-title class_">Todo</span> });
+
+<span class="hljs-keyword">let</span> subscription = pubsub.<span class="hljs-title function_">subscribeWith</span>(myTodo, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-comment">// When this is called, the entity will already contain new data from the</span>
+  <span class="hljs-comment">// publish event. If the entity is deleted, the GUID will be set to null.</span>
+  <span class="hljs-keyword">if</span> (myTodo.<span class="hljs-property">guid</span> != <span class="hljs-literal">null</span>) {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;Somebody touched my todo!&#x27;</span>);
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;Somebody deleted my todo!&#x27;</span>);
+    subscription.<span class="hljs-title function_">unsubscribe</span>();
+  }
+});
+
+<span class="hljs-comment">// ...</span>
+
+<span class="hljs-comment">// Subscribing to a query.</span>
+<span class="hljs-keyword">let</span> todos = [];
+<span class="hljs-keyword">let</span> userCount = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">let</span> subscription = pubsub.<span class="hljs-title function_">subscribeEntities</span>(
+  {
+    <span class="hljs-attr">class</span>: <span class="hljs-title class_">Todo</span>.<span class="hljs-property">class</span>,
+  },
+  {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
+    <span class="hljs-string">&#x27;!tag&#x27;</span>: <span class="hljs-string">&#x27;archived&#x27;</span>,
+  }
+)(
+  <span class="hljs-function">(<span class="hljs-params">update</span>) =&gt;</span> {
+    <span class="hljs-comment">// The first time this is called, `update` will be an array of Todo</span>
+    <span class="hljs-comment">// entities. After that, `update` will be a publish event object.</span>
+
+    <span class="hljs-comment">// This takes an existing array of entities and either updates it to match</span>
+    <span class="hljs-comment">// another array, or performs actions from a publish event object to update</span>
+    <span class="hljs-comment">// it.</span>
+    pubsub.<span class="hljs-title function_">updateArray</span>(todos, update);
+
+    <span class="hljs-comment">// `todos` is now up to date with the latest publishes from the server.</span>
+  },
+  <span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> <span class="hljs-title function_">alert</span>(err),
+  <span class="hljs-function">(<span class="hljs-params">count</span>) =&gt;</span> {
+    <span class="hljs-comment">// If you provide this callback, the server will send updates of how many</span>
+    <span class="hljs-comment">// clients are subscribed to this query.</span>
+    userCount = count;
+  }
+);
+
+<span class="hljs-comment">// ...</span>
+
+<span class="hljs-comment">// Remember to clean up your subscriptions when you no longer need them.</span>
+subscription.<span class="hljs-title function_">unsubscribe</span>();<!-- HTML_TAG_END --></code></pre>
+
+</section>
+
+    
+    <footer id="footer"><p class="copyright">© SciActive Inc. All rights reserved. Design by:
+        <a href="https://html5up.net">HTML5 UP</a>.
+      </p></footer></div></div>
 
 
 <div id="sidebar"><div class="inner">
@@ -138,12 +219,7 @@
           310 S Twin Oaks Valley Rd #107<br>
           PMB 422<br>
           San Marcos, CA 92078
-        </li></ul></section>
-
-    
-    <footer id="footer"><p class="copyright">© SciActive Inc. All rights reserved. Design by:
-        <a href="https://html5up.net">HTML5 UP</a>.
-      </p></footer></div>
+        </li></ul></section></div>
 
   
 </div>
