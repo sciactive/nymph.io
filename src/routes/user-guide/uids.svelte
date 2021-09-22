@@ -33,7 +33,7 @@
     language={typescript}
     code={`let entity = await Post.factory();
 
-entity.id = await Nymph.newUID('Blog/Post');
+entity.id = await nymph.newUID('Blog/Post');
 await entity.$save();`}
   />
 
@@ -46,6 +46,7 @@ await entity.$save();`}
   <p>
     Caution: If a UID is incremented, and the entity you're using it on can't be
     saved, there is no safe way to decrement the UID back to its previous value.
+    Therefore, you're advised to not use UIDs within transactions.
   </p>
 </section>
 

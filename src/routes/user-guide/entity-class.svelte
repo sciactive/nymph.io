@@ -72,13 +72,13 @@ await entity.foo.$save();
 await entity.$save();
 
 // Reset the entity to a copy just pulled from the DB.
-entity = await Nymph.getEntity(
+entity = await nymph.getEntity(
   { class: MyEntityClass },
   { type: '&', guid: entity.guid }
 );
 
 // Get a copy of the referenced entity.
-let instOfFoo = await Nymph.getEntity(
+let instOfFoo = await nymph.getEntity(
   { class: MyEntityClass },
   { type: '&', guid: entity.foo.guid }
 );
@@ -110,7 +110,7 @@ entity.foo = 'Old value.';
 await entity.$save();
 
 // Get a copy of the entity.
-const instOfEnt = await Nymph.getEntity(
+const instOfEnt = await nymph.getEntity(
   { class: MyEntityClass },
   { type: '&', guid: entity.guid }
 );
@@ -138,23 +138,23 @@ console.log(entity.foo); // Outputs 'New value.'`}
 // Save the entity.
 await entity.$save();
 // or
-await Nymph.saveEntity(entity);
+await nymph.saveEntity(entity);
 // or
-await Nymph.saveEntities([entity]);
+await nymph.saveEntities([entity]);
 
 // (Client only.) Save only the data that has changed.
 await entity.$patch();
 // or
-await Nymph.patchEntity(entity);
+await nymph.patchEntity(entity);
 // or
-await Nymph.patchEntities([entity]);
+await nymph.patchEntities([entity]);
 
 // Delete the entity.
 await entity.$delete();
 // or
-await Nymph.deleteEntity(entity);
+await nymph.deleteEntity(entity);
 // or
-await Nymph.deleteEntities([entity]);`}
+await nymph.deleteEntities([entity]);`}
   />
 
   <p>
@@ -280,7 +280,7 @@ class Todo extends Entity<TodoData> {
   // ...
 
   static async archiveAllDone(onlyOlderThanDay: boolean): Promise<boolean> {
-    return await Todo.serverCallStatic('archiveAllDone', [onlyOlderThanDay]);
+    return await this.serverCallStatic('archiveAllDone', [onlyOlderThanDay]);
   }
 
   async $archive(): Promise<boolean> {

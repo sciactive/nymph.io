@@ -58,8 +58,9 @@
 
   <p>
     If an entity is referenced in another entity's property, the class is saved
-    along with the GUID. When this property is accessed later, Nymph will
-    retrieve the referenced entity using the saved class.
+    along with the GUID. When this property is accessed after the top level
+    entity is pulled from the DB, Nymph will retrieve the referenced entity
+    using the saved class.
   </p>
 
   <p>

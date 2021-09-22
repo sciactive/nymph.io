@@ -32,7 +32,7 @@
   <Highlight
     language={typescript}
     code={`let smiths: (User & UserData)[] = [];
-PubSub.subscribeEntities(
+pubsub.subscribeEntities(
   {
     class: User
   },
@@ -48,7 +48,7 @@ PubSub.subscribeEntities(
     // The updateArray function will add any newly matching entities,
     // update any existing entities that have changed, and remove any
     // entities that no longer match (including deleted entities).
-    PubSub.updateArray(smiths, update);
+    pubsub.updateArray(smiths, update);
   },
   (e) => {
     alert('Error: ' + e.textStatus);
@@ -64,7 +64,7 @@ PubSub.subscribeEntities(
   <Highlight
     language={typescript}
     code={`let smiths: (User & UserData)[] = [];
-PubSub.subscribeEntities(
+pubsub.subscribeEntities(
   {
     class: User
   },
@@ -74,7 +74,7 @@ PubSub.subscribeEntities(
   }
 )(
   (update) => {
-    PubSub.updateArray(smiths, update);
+    pubsub.updateArray(smiths, update);
   },
   (e) => {
     alert('Error: ' + e.textStatus);
@@ -96,7 +96,7 @@ PubSub.subscribeEntities(
   <Highlight
     language={typescript}
     code={`let smiths: (User & UserData)[] = [];
-let subscription = PubSub.subscribeEntities(
+let subscription = pubsub.subscribeEntities(
   {
     class: User
   },
@@ -105,12 +105,12 @@ let subscription = PubSub.subscribeEntities(
     like: ['name', '% Smith']
   }
 )((update) => {
-  PubSub.updateArray(smiths, update);
+  pubsub.updateArray(smiths, update);
 });
 
-let unsubscribe = () => {
+onDestroy(() => {
   subscription.unsubscribe();
-};`}
+});`}
   />
 
   <p>
@@ -123,7 +123,7 @@ let unsubscribe = () => {
 
   <Highlight
     language={typescript}
-    code={`let subscription = PubSub.subscribeWith(
+    code={`let subscription = pubsub.subscribeWith(
   smithEntity,
   () => {
     if (smithEntity.guid == null) {
@@ -142,9 +142,9 @@ let unsubscribe = () => {
   }
 );
 
-let unsubscribe = () => {
+onDestroy(() => {
   subscription.unsubscribe();
-};`}
+});`}
   />
 
   <p>

@@ -60,7 +60,7 @@ if (cronUser.guid == null) {
       <tbody>
         <tr>
           <td>class</td>
-          <td>T extends Entity</td>
+          <td>typeof Entity</td>
           <td>Entity</td>
           <td
             >The class used to create each entity. It must have a <code
@@ -333,7 +333,7 @@ if (cronUser.guid == null) {
           >
           <td
             ><code
-              >{"entity.foo = await Nymph.getEntity({class: Entity}, {type: '&', equal: ['name', 'Foobar']})"}</code
+              >{"entity.foo = await nymph.getEntity({class: Entity}, {type: '&', equal: ['name', 'Foobar']})"}</code
             ></td
           >
         </tr>
@@ -385,14 +385,14 @@ if (cronUser.guid == null) {
 
   <Highlight
     language={typescript}
-    code={`const entity = await Nymph.getEntity({ class: FoobarBaz });`}
+    code={`const entity = await nymph.getEntity({ class: FoobarBaz });`}
   />
 
   <p>Get the latest FoobarBaz entity.</p>
 
   <Highlight
     language={typescript}
-    code={`const entity = await Nymph.getEntity({
+    code={`const entity = await nymph.getEntity({
   class: FoobarBaz,
   reverse: true
 });`}
@@ -402,7 +402,7 @@ if (cronUser.guid == null) {
 
   <Highlight
     language={typescript}
-    code={`const entities = await Nymph.getEntities(
+    code={`const entities = await nymph.getEntities(
   {
     class: FoobarBaz
   },
@@ -417,7 +417,7 @@ if (cronUser.guid == null) {
 
   <Highlight
     language={typescript}
-    code={`const entities = await Nymph.getEntities(
+    code={`const entities = await nymph.getEntities(
   {
     class: FoobarBaz,
     reverse: true,
@@ -434,7 +434,7 @@ if (cronUser.guid == null) {
 
   <Highlight
     language={typescript}
-    code={`const entities = await Nymph.getEntities(
+    code={`const entities = await nymph.getEntities(
   {
     class: FoobarBaz,
     reverse: true,
@@ -452,7 +452,7 @@ if (cronUser.guid == null) {
 
   <Highlight
     language={typescript}
-    code={`const entities = await Nymph.getEntities(
+    code={`const entities = await nymph.getEntities(
   {
     class: FoobarBaz
   },
@@ -468,7 +468,7 @@ if (cronUser.guid == null) {
 
   <Highlight
     language={typescript}
-    code={`const entities = await Nymph.getEntities(
+    code={`const entities = await nymph.getEntities(
   {
     class: FoobarBaz
   },
@@ -486,7 +486,7 @@ if (cronUser.guid == null) {
 
   <Highlight
     language={typescript}
-    code={`const entities = await Nymph.getEntities(
+    code={`const entities = await nymph.getEntities(
   {
     class: FoobarBaz
   },
@@ -512,7 +512,7 @@ if (cronUser.guid == null) {
 
   <Highlight
     language={typescript}
-    code={`const entities = await Nymph.getEntities(
+    code={`const entities = await nymph.getEntities(
   {
     class: FoobarBaz
   },
@@ -531,7 +531,7 @@ if (cronUser.guid == null) {
 
   <Highlight
     language={typescript}
-    code={`const entities = await Nymph.getEntities(
+    code={`const entities = await nymph.getEntities(
   {
     class: FoobarBaz
   },
@@ -550,7 +550,7 @@ if (cronUser.guid == null) {
 
   <Highlight
     language={typescript}
-    code={`const entities = await Nymph.getEntities(
+    code={`const entities = await nymph.getEntities(
   {
     class: FoobarBaz
   },
@@ -570,7 +570,7 @@ if (cronUser.guid == null) {
 
   <Highlight
     language={typescript}
-    code={`const entities = await Nymph.getEntities(
+    code={`const entities = await nymph.getEntities(
   { class: FoobarBaz },
   { type: '&', tag: 'baz' },
   {
@@ -593,7 +593,7 @@ if (cronUser.guid == null) {
 
   <Highlight
     language={typescript}
-    code={`const entities = await Nymph.getEntities(
+    code={`const entities = await nymph.getEntities(
   { class: FoobarBaz },
   {
     type: '&',

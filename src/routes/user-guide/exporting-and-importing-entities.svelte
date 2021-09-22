@@ -29,13 +29,13 @@
   <Highlight
     language={typescript}
     code={`// Export entities to a file.
-Nymph.export(filename);
+nymph.export(filename);
 
 // Export entities to the console.
-Nymph.exportPrint();
+nymph.exportPrint();
 
 // Import entities from a file.
-Nymph.import(filename);`}
+nymph.import(filename);`}
   />
 
   <p>

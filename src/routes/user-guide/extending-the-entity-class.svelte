@@ -100,7 +100,8 @@ export class Todo extends Entity<TodoData> {
   }
 }
 
-Nymph.setEntityClass(Todo.class, Todo);`}
+// Elsewhere, after initializing Nymph.
+nymph.setEntityClass(Todo.class, Todo);`}
     />
   </div>
 
@@ -139,7 +140,8 @@ export class Todo extends Entity<TodoData> {
   }
 }
 
-Nymph.setEntityClass(Todo.class, Todo);`}
+// Elsewhere, after initializing Nymph.
+nymph.setEntityClass(Todo.class, Todo);`}
     />
   </div>
 

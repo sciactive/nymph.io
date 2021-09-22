@@ -6,6 +6,12 @@
 <section>
   <header class="major">
     <h1 style="font-size: 3em;">Nymph</h1>
+    <p>
+      Check out the <a
+        href="https://github.com/sciactive/nymphjs/tree/master/packages/nymph#readme"
+        >README</a
+      >.
+    </p>
   </header>
 
   <p>
@@ -24,10 +30,10 @@
   </header>
 
   <p>
-    To use Nymph, you need a database driver. Nymph provides a <a
+    To use Nymph, you need a database driver. Nymph.js provides a <a
       href="{base}/packages/driver-mysql">MySQL driver</a
-    >
-    and a <a href="{base}/packages/driver-sqlite3">SQLite3 driver</a>.
+    >, <a href="{base}/packages/driver-postgresql">PostgreSQL driver</a>, and a
+    <a href="{base}/packages/driver-sqlite3">SQLite3 driver</a>.
   </p>
 
   <header class="major">
@@ -50,17 +56,18 @@ const mysqlConfig = {
   password: 'your_password',
 };
 
-Nymph.init({}, new MySQLDriver(mysqlConfig));
+const nymph = new Nymph({}, new MySQLDriver(mysqlConfig));
+nymph.setEntityClass(Todo.class, Todo);
 
 // You are set up. Now you can use entity classes like \`Todo\` to store data,
 // and Nymph's query methods like \`getEntities\` to retrieve them.
 
 async function run() {
-  const myEntity = new Todo();
+  const myEntity = await Todo.factory();
   myEntity.text = 'Get it done!';
   await myEntity.$save();
 
-  const otherPendingTodos = await Nymph.getEntities(
+  const otherPendingTodos = await nymph.getEntities(
     { class: Todo },
     { type: '&', '!guid': myEntity.guid, equal: ['done', false] }
   );
@@ -78,7 +85,7 @@ async function run() {
   <Highlight
     language={typescript}
     code={`// Todo.ts
-import { Nymph, Entity } from '@nymphjs/nymph';
+import { Entity } from '@nymphjs/nymph';
 
 export type TodoData = {
   text: string;
@@ -107,9 +114,18 @@ export default class Todo extends Entity<TodoData> {
       this.$data.done = false;
     }
   }
-}
 
-Nymph.setEntityClass(Todo.class, Todo);`}
+  async $getOtherTodos() {
+    // this.$nymph (or this.nymph in a static function) is the instance of Nymph
+    // this entity was loaded with. Creating transactions will create a new
+    // instance of Nymph, so it could be a transactional instance.
+    const otherTodos = await this.$nymph.getEntities(
+      { class: Todo },
+      { type: '!&', guid: this.guid }
+    );
+    return otherTodos;
+  }
+}`}
   />
 
   <header class="major">

@@ -24,16 +24,16 @@
 
 		
 
-		<link rel="modulepreload" href="/_app/start-5e0b05ef.js">
+		<link rel="modulepreload" href="/_app/start-703c34d8.js">
 		<link rel="modulepreload" href="/_app/chunks/vendor-836b274b.js">
 		<link rel="modulepreload" href="/_app/chunks/paths-6758d194.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-38daf93b.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-f5a59731.js">
 		<link rel="modulepreload" href="/_app/chunks/Icon-7e579511.js">
-		<link rel="modulepreload" href="/_app/pages/user-guide/entity-class.svelte-8c863222.js">
+		<link rel="modulepreload" href="/_app/pages/user-guide/entity-class.svelte-f9a9121d.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 
 		<script type="module">
-			import { start } from "/_app/start-5e0b05ef.js";
+			import { start } from "/_app/start-703c34d8.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
@@ -46,8 +46,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/_app/pages/__layout.svelte-38daf93b.js"),
-						import("/_app/pages/user-guide/entity-class.svelte-8c863222.js")
+						import("/_app/pages/__layout.svelte-f5a59731.js"),
+						import("/_app/pages/user-guide/entity-class.svelte-f9a9121d.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -131,13 +131,13 @@ entity.<span class="hljs-property">foo</span>.<span class="hljs-property">bar</s
 <span class="hljs-keyword">await</span> entity.$save();
 
 <span class="hljs-comment">// Reset the entity to a copy just pulled from the DB.</span>
-entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">getEntity</span>(
+entity = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntity</span>(
   { <span class="hljs-attr">class</span>: <span class="hljs-title class_">MyEntityClass</span> },
   { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>, <span class="hljs-attr">guid</span>: entity.<span class="hljs-property">guid</span> }
 );
 
 <span class="hljs-comment">// Get a copy of the referenced entity.</span>
-<span class="hljs-keyword">let</span> instOfFoo = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">getEntity</span>(
+<span class="hljs-keyword">let</span> instOfFoo = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntity</span>(
   { <span class="hljs-attr">class</span>: <span class="hljs-title class_">MyEntityClass</span> },
   { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>, <span class="hljs-attr">guid</span>: entity.<span class="hljs-property">foo</span>.<span class="hljs-property">guid</span> }
 );
@@ -167,7 +167,7 @@ entity.<span class="hljs-property">foo</span> = <span class="hljs-string">&#x27;
 <span class="hljs-keyword">await</span> entity.$save();
 
 <span class="hljs-comment">// Get a copy of the entity.</span>
-<span class="hljs-keyword">const</span> instOfEnt = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">getEntity</span>(
+<span class="hljs-keyword">const</span> instOfEnt = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntity</span>(
   { <span class="hljs-attr">class</span>: <span class="hljs-title class_">MyEntityClass</span> },
   { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>, <span class="hljs-attr">guid</span>: entity.<span class="hljs-property">guid</span> }
 );
@@ -193,23 +193,23 @@ instOfEnt.<span class="hljs-property">foo</span> = <span class="hljs-string">&#x
 <span class="hljs-comment">// Save the entity.</span>
 <span class="hljs-keyword">await</span> entity.$save();
 <span class="hljs-comment">// or</span>
-<span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">saveEntity</span>(entity);
+<span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">saveEntity</span>(entity);
 <span class="hljs-comment">// or</span>
-<span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">saveEntities</span>([entity]);
+<span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">saveEntities</span>([entity]);
 
 <span class="hljs-comment">// (Client only.) Save only the data that has changed.</span>
 <span class="hljs-keyword">await</span> entity.$patch();
 <span class="hljs-comment">// or</span>
-<span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">patchEntity</span>(entity);
+<span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">patchEntity</span>(entity);
 <span class="hljs-comment">// or</span>
-<span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">patchEntities</span>([entity]);
+<span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">patchEntities</span>([entity]);
 
 <span class="hljs-comment">// Delete the entity.</span>
 <span class="hljs-keyword">await</span> entity.$delete();
 <span class="hljs-comment">// or</span>
-<span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">deleteEntity</span>(entity);
+<span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">deleteEntity</span>(entity);
 <span class="hljs-comment">// or</span>
-<span class="hljs-keyword">await</span> <span class="hljs-title class_">Nymph</span>.<span class="hljs-title function_">deleteEntities</span>([entity]);<!-- HTML_TAG_END --></code></pre>
+<span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">deleteEntities</span>([entity]);<!-- HTML_TAG_END --></code></pre>
 
 
   <p>Entities can&#39;t be checked using the <code>==</code> operator. Instead, you can
@@ -310,7 +310,7 @@ Couldn&#x27;t archive &quot;</span> + todo.<span class="hljs-property">name</spa
   <span class="hljs-comment">// ...</span>
 
   <span class="hljs-keyword">static</span> <span class="hljs-keyword">async</span> <span class="hljs-title function_">archiveAllDone</span>(<span class="hljs-attr">onlyOlderThanDay</span>: <span class="hljs-built_in">boolean</span>): <span class="hljs-title class_">Promise</span>&lt;<span class="hljs-built_in">boolean</span>&gt; {
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-title class_">Todo</span>.<span class="hljs-title function_">serverCallStatic</span>(<span class="hljs-string">&#x27;archiveAllDone&#x27;</span>, [onlyOlderThanDay]);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">serverCallStatic</span>(<span class="hljs-string">&#x27;archiveAllDone&#x27;</span>, [onlyOlderThanDay]);
   }
 
   <span class="hljs-keyword">async</span> $archive(): <span class="hljs-title class_">Promise</span>&lt;<span class="hljs-built_in">boolean</span>&gt; {
@@ -350,6 +350,7 @@ Couldn&#x27;t archive &quot;</span> + todo.<span class="hljs-property">name</spa
         <li><span class="opener">Packages</span>
           <ul><li><a href="/packages/nymph">Nymph Core</a></li>
             <li><a href="/packages/driver-mysql">MySQL Driver</a></li>
+            <li><a href="/packages/driver-postgresql">PostgreSQL Driver</a></li>
             <li><a href="/packages/driver-sqlite3">SQLite3 Driver</a></li>
             <li><a href="/packages/server">REST Server</a></li>
             <li><a href="/packages/pubsub">PubSub Server</a></li>
@@ -357,6 +358,7 @@ Couldn&#x27;t archive &quot;</span> + todo.<span class="hljs-property">name</spa
             <li><a href="/packages/client-node">Node Client</a></li>
             <li><a href="/packages/tilmeld">Tilmeld</a></li>
             <li><a href="/packages/tilmeld-client">Tilmeld Client</a></li>
+            <li><a href="/packages/tilmeld-components">Tilmeld Components</a></li>
             <li><a href="/packages/tilmeld-setup">Tilmeld Setup</a></li>
             <li><a href="/packages/query-parser">Query Parser</a></li></ul></li>
         <li><a href="/legacy/index.html" rel="external">Legacy Website</a></li></ul></nav>
@@ -364,7 +366,7 @@ Couldn&#x27;t archive &quot;</span> + todo.<span class="hljs-property">name</spa
     
     <section><header class="major"><h2>Get in touch</h2></header>
       <p>Nymph is a product of SciActive Inc. You can contact SciActive by email
-        or US post, or follow on Twitter.
+        or post, or follow on Twitter.
       </p>
       <ul class="contact"><li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg>
           <a href="https://twitter.com/SciActive" target="_blank">@SciActive on Twitter</a></li>

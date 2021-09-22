@@ -30,12 +30,14 @@
   </ul>
 
   <p>
-    Not all databases that Nymph supports (namely, MySQL using the MyISAM
-    engine) can use transactions, so the <code>startTransaction</code> method will
-    return false if transactions aren't supported.
+    <code>startTransaction</code> will return a new instance of Nymph. For the rest
+    of the transaction, until it is committed or rolled back, you should use this
+    instance. It will be tied to a specific connection to the database.
   </p>
 
   <p>
+    Not all databases that Nymph supports (namely, MySQL with an engine that
+    doesn't support transactions, like the MyISAM engine) can use transactions.
     To ensure data consistency, it's highly recommended to use a configuration
     that supports transactions.
   </p>

@@ -38,7 +38,7 @@ if (someBlogPost.guid == null) {
     code={`blogPost.$addTag('super-post');
 await blogPost.$save();
 
-let superPosts = await Nymph.getEntities(
+let superPosts = await nymph.getEntities(
   { class: BlogPost.class },
   { type: '&', tag: 'super-post' }
 );

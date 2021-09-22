@@ -1,10 +1,17 @@
 <svelte:head>
   <title>Tilmeld Client - Packages - Nymph</title>
+  {@html github}
 </svelte:head>
 
 <section>
   <header class="major">
     <h1 style="font-size: 3em;">Tilmeld Client</h1>
+    <p>
+      Check out the <a
+        href="https://github.com/sciactive/nymphjs/tree/master/packages/tilmeld-client#readme"
+        >README</a
+      >.
+    </p>
   </header>
 
   <p>
@@ -25,4 +32,5 @@
 <script lang="ts">
   import Highlight from 'svelte-highlight';
   import bash from 'svelte-highlight/src/languages/bash';
+  import github from 'svelte-highlight/src/styles/github';
 </script>

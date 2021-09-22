@@ -121,6 +121,9 @@
           <ul>
             <li><a href="{base}/packages/nymph">Nymph Core</a></li>
             <li><a href="{base}/packages/driver-mysql">MySQL Driver</a></li>
+            <li>
+              <a href="{base}/packages/driver-postgresql">PostgreSQL Driver</a>
+            </li>
             <li><a href="{base}/packages/driver-sqlite3">SQLite3 Driver</a></li>
             <li><a href="{base}/packages/server">REST Server</a></li>
             <li><a href="{base}/packages/pubsub">PubSub Server</a></li>
@@ -128,6 +131,10 @@
             <li><a href="{base}/packages/client-node">Node Client</a></li>
             <li><a href="{base}/packages/tilmeld">Tilmeld</a></li>
             <li><a href="{base}/packages/tilmeld-client">Tilmeld Client</a></li>
+            <li>
+              <a href="{base}/packages/tilmeld-components">Tilmeld Components</a
+              >
+            </li>
             <li><a href="{base}/packages/tilmeld-setup">Tilmeld Setup</a></li>
             <li><a href="{base}/packages/query-parser">Query Parser</a></li>
           </ul>
@@ -143,7 +150,7 @@
       </header>
       <p>
         Nymph is a product of SciActive Inc. You can contact SciActive by email
-        or US post, or follow on Twitter.
+        or post, or follow on Twitter.
       </p>
       <ul class="contact">
         <li class="icon">

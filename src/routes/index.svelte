@@ -59,8 +59,8 @@
         <p>
           Nymph's publish/subscribe server makes it easy to build <strong
             >collaborative</strong
-          > apps. Subscribing to queries and entities is a powerful feature that
-          will get your collaboritive features working quickly and easily.
+          > apps. You can subscribe to complex queries from the client and be notified
+          when the queries' results have changed.
         </p>
       </div>
     </article>
@@ -81,28 +81,22 @@
   <header class="major">
     <h2>Framework Ready</h2>
     <p>
-      Nymph is very easy to integrate into Angular, React, Ember, Svelte, and
+      Nymph is very easy to integrate into React, Svelte, Angular, Ember, and
       more.
     </p>
   </header>
 
   <p>
     Nymph's easy querying on the server and client makes it perfect for building
-    complex apps with any backend and frontend framework. Because you don't have
-    to write SQL, almost all of your logic can be on the client side, if you
-    prefer. That means fewer round trips, more responsive interfaces, and
-    happier customers.
+    complex apps with any frontend framework. Because you don't have to write
+    SQL, almost all of your logic can be on the client side, if you prefer. You
+    can also use backend logic in the client as if it were written on the
+    front-end with automatic asynchronous server calls.
   </p>
   <p>
-    Creating a new type of entity is simple in Nymph. You can code your logic on
-    the server or client side, and access it all the same. If you're already
-    invested in a data store, Nymph's REST server package makes it easy to
-    integrate anywhere in your app.
-  </p>
-  <p>
-    It's not just for frontend. Nymph will integrate with any Node.js server
-    frameworks that can accept, or run side by side with, Express apps. Nymph is
-    designed to be flexible.
+    Nymph's REST server package makes it easy to integrate anywhere in your app.
+    It provides an Express middleware that you can place on any arbitrary
+    endpoint.
   </p>
 </section>
 
