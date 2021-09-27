@@ -1,0 +1,1691 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Entity | Nymph.js - v1.0.0-alpha.4</title>
+	<meta name="description" content="Documentation for Nymph.js - v1.0.0-alpha.4">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">Nymph.js - v1.0.0-alpha.4</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">Nymph.js - v1.0.0-alpha.4</a>
+				</li>
+				<li>
+					<a href="../modules/_nymphjs_nymph.html">@nymphjs/nymph</a>
+				</li>
+				<li>
+					<a href="_nymphjs_nymph.Entity.html">Entity</a>
+				</li>
+			</ul>
+			<h1>Class Entity&lt;T&gt;</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Database abstraction object.</p>
+					</div>
+					<p>Provides a way to access, manipulate, and store data in Nymph.</p>
+					<p>The GUID is not set until the entity is saved. GUIDs must be unique forever,
+						even after deletion. It&#39;s the job of the Nymph DB driver to make sure no two
+						entities ever have the same GUID. This is generally done by using a large
+					randomly generated ID.</p>
+					<p>Each entity class has an etype that determines which table(s) in the database
+						it belongs to. If two entity classes have the same etype, their data will be
+						stored in the same table(s). This isn&#39;t a good idea, however, because
+					references to an entity store a class name, not an etype.</p>
+					<p>Tags are used to classify entities. Where an etype is used to separate data
+						by tables, tags can be used to separate entities within a table. You can
+						define specific tags to be protected, meaning they cannot be added/removed
+						from the client. It can be useful to allow user defined tags, such as for
+					blog posts.</p>
+					<p>Simply calling $delete() will not unset the entity. It will still take up
+						memory. Likewise, simply calling unset will not delete the entity from the
+					DB.</p>
+					<p>Some notes about $equals() and $is(), the replacements for &quot;==&quot;:</p>
+					<p>The == operator will likely not give you the result you want, since any yet
+						to be unserialized data causes == to return false when you probably want it
+					to return true.</p>
+					<p>$equals() performs a more strict comparison of the entity to another. Use
+						$equals() instead of the == operator when you want to check both the entities
+						they represent, and the data inside them. In order to return true for
+					$equals(), the entity and object must meet the following criteria:</p>
+					<ul>
+						<li>They must be entities.</li>
+						<li>They must have equal GUIDs, or both must have no GUID.</li>
+						<li>They must be instances of the same class.</li>
+						<li>Their data must be equal.</li>
+					</ul>
+					<p>$is() performs a less strict comparison of the entity to another. Use $is()
+						instead of the == operator when the entity&#39;s data may have been changed, but
+						you only care if they represent the same entity. In order to return true, the
+					entity and object must meet the following criteria:</p>
+					<ul>
+						<li>They must be entities.</li>
+						<li>They must have equal GUIDs, or both must have no GUID.</li>
+						<li>If they have no GUIDs, their data must be equal.</li>
+					</ul>
+					<p>Some notes about saving entities in other entity&#39;s properties:</p>
+					<p>Entities use references in the DB to store an entity in their properties. The
+					reference is stored as an array with the values:</p>
+					<ul>
+						<li>0 =&gt; The string &#39;nymph_entity_reference&#39;</li>
+						<li>1 =&gt; The referenced entity&#39;s GUID.</li>
+						<li>2 =&gt; The referenced entity&#39;s class name.</li>
+					</ul>
+					<p>Since the referenced entity&#39;s class name (meaning the <code>class</code> static
+						property, not the name of the class itself) is stored in the reference on the
+						parent entity, if you change the class name in an update, you need to
+					reassign all referenced entities of that class and resave.</p>
+					<p>When an entity is loaded, it does not request its referenced entities from
+						Nymph. Instead, it creates instances without data called sleeping references.
+						When you first access an entity&#39;s data, if it is a sleeping reference, it
+						will fill its data from the DB. You can call clearCache() to turn all the
+					entities back into sleeping references.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#EntityData" class="tsd-signature-type" data-tsd-kind="Type alias">EntityData</a> = <a href="../modules/_nymphjs_nymph.html#EntityData" class="tsd-signature-type" data-tsd-kind="Type alias">EntityData</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Entity</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/_nymphjs_nymph.EntityInterface.html" class="tsd-signature-type" data-tsd-kind="Interface">EntityInterface</a></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter"><a href="_nymphjs_nymph.Entity.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_nymphjs_nymph.Entity.html#_allowlistData" class="tsd-kind-icon">$allowlist<wbr>Data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_nymphjs_nymph.Entity.html#_allowlistTags" class="tsd-kind-icon">$allowlist<wbr>Tags</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_nymphjs_nymph.Entity.html#_clientEnabledMethods" class="tsd-kind-icon">$client<wbr>Enabled<wbr>Methods</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_nymphjs_nymph.Entity.html#_data" class="tsd-kind-icon">$data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_nymphjs_nymph.Entity.html#_dataHandler" class="tsd-kind-icon">$data<wbr>Handler</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_nymphjs_nymph.Entity.html#_dataStore" class="tsd-kind-icon">$data<wbr>Store</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Entity.html#_isASleepingReference" class="tsd-kind-icon">$isASleeping<wbr>Reference</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_nymph" class="tsd-kind-icon">$nymph</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Entity.html#_originalAcValues" class="tsd-kind-icon">$original<wbr>AcValues</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_nymphjs_nymph.Entity.html#_privateData" class="tsd-kind-icon">$private<wbr>Data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_nymphjs_nymph.Entity.html#_protectedData" class="tsd-kind-icon">$protected<wbr>Data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_nymphjs_nymph.Entity.html#_protectedTags" class="tsd-kind-icon">$protected<wbr>Tags</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_nymphjs_nymph.Entity.html#_sdata" class="tsd-kind-icon">$sdata</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Entity.html#_skipAc" class="tsd-kind-icon">$skip<wbr>Ac</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_nymph.Entity.html#_sleepingReference" class="tsd-kind-icon">$sleeping<wbr>Reference</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#cdate" class="tsd-kind-icon">cdate</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#guid" class="tsd-kind-icon">guid</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#mdate" class="tsd-kind-icon">mdate</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#tags" class="tsd-kind-icon">tags</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_nymphjs_nymph.Entity.html#ETYPE" class="tsd-kind-icon">ETYPE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_nymphjs_nymph.Entity.html#class" class="tsd-kind-icon">class</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_nymphjs_nymph.Entity.html#clientEnabledStaticMethods" class="tsd-kind-icon">client<wbr>Enabled<wbr>Static<wbr>Methods</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_nymphjs_nymph.Entity.html#nymph" class="tsd-kind-icon">nymph</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_nymphjs_nymph.Entity.html#searchRestrictedData" class="tsd-kind-icon">search<wbr>Restricted<wbr>Data</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_addTag" class="tsd-kind-icon">$add<wbr>Tag</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_arraySearch" class="tsd-kind-icon">$array<wbr>Search</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_clearCache" class="tsd-kind-icon">$clear<wbr>Cache</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_delete" class="tsd-kind-icon">$delete</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_equals" class="tsd-kind-icon">$equals</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_getClientEnabledMethods" class="tsd-kind-icon">$get<wbr>Client<wbr>Enabled<wbr>Methods</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_getData" class="tsd-kind-icon">$get<wbr>Data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_getOriginalAcValues" class="tsd-kind-icon">$get<wbr>Original<wbr>AcValues</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_getSData" class="tsd-kind-icon">$getSData</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_getTags" class="tsd-kind-icon">$get<wbr>Tags</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_getValidatable" class="tsd-kind-icon">$get<wbr>Validatable</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_hasTag" class="tsd-kind-icon">$has<wbr>Tag</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_inArray" class="tsd-kind-icon">$in<wbr>Array</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_is" class="tsd-kind-icon">$is</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_jsonAcceptData" class="tsd-kind-icon">$json<wbr>Accept<wbr>Data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_jsonAcceptPatch" class="tsd-kind-icon">$json<wbr>Accept<wbr>Patch</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_putData" class="tsd-kind-icon">$put<wbr>Data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="_nymphjs_nymph.Entity.html#_referenceSleep" class="tsd-kind-icon">$reference<wbr>Sleep</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="_nymphjs_nymph.Entity.html#_referenceWake" class="tsd-kind-icon">$reference<wbr>Wake</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_refresh" class="tsd-kind-icon">$refresh</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_removeTag" class="tsd-kind-icon">$remove<wbr>Tag</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_save" class="tsd-kind-icon">$save</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_toReference" class="tsd-kind-icon">$to<wbr>Reference</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#_useSkipAc" class="tsd-kind-icon">$use<wbr>Skip<wbr>Ac</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_nymph.Entity.html#toJSON" class="tsd-kind-icon">toJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_nymphjs_nymph.Entity.html#factory" class="tsd-kind-icon">factory</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_nymphjs_nymph.Entity.html#factoryReference" class="tsd-kind-icon">factory<wbr>Reference</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_nymphjs_nymph.Entity.html#factorySync" class="tsd-kind-icon">factory<wbr>Sync</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Entity&lt;T&gt;<span class="tsd-signature-symbol">(</span>guid<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_nymphjs_nymph.Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L205">packages/nymph/src/Entity.ts:205</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Load an entity.</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#EntityData" class="tsd-signature-type" data-tsd-kind="Type alias">EntityData</a> = <a href="../modules/_nymphjs_nymph.html#EntityData" class="tsd-signature-type" data-tsd-kind="Type alias">EntityData</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> guid: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The ID of the entity to load, undefined for a new entity.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_nymphjs_nymph.Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_allowlistData" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> <span class="tsd-flag ts-flagOptional">Optional</span> $allowlist<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">$allowlist<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L171">packages/nymph/src/Entity.ts:171</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If this is defined, then it lists the only properties that will be
+							accepted from incoming JSON. Any other properties will be ignored.</p>
+						</div>
+						<p>If you use an allowlist, you don&#39;t need to use protectedData, since you
+						can simply leave those entries out of allowlistData.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_allowlistTags" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> <span class="tsd-flag ts-flagOptional">Optional</span> $allowlist<wbr>Tags</h3>
+					<div class="tsd-signature tsd-kind-icon">$allowlist<wbr>Tags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L182">packages/nymph/src/Entity.ts:182</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If this is defined, then it lists the only tags that will be accepted from
+							incoming JSON. Any other tags will be ignored.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_clientEnabledMethods" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> $client<wbr>Enabled<wbr>Methods</h3>
+					<div class="tsd-signature tsd-kind-icon">$client<wbr>Enabled<wbr>Methods<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L186">packages/nymph/src/Entity.ts:186</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The names of methods allowed to be called by the frontend with serverCall.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_data" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> $data</h3>
+					<div class="tsd-signature tsd-kind-icon">$data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L131">packages/nymph/src/Entity.ts:131</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The data proxy object.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_dataHandler" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> $data<wbr>Handler</h3>
+					<div class="tsd-signature tsd-kind-icon">$data<wbr>Handler<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L119">packages/nymph/src/Entity.ts:119</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The data proxy handler.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_dataStore" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> $data<wbr>Store</h3>
+					<div class="tsd-signature tsd-kind-icon">$data<wbr>Store<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L123">packages/nymph/src/Entity.ts:123</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The actual data store.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_isASleepingReference" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> $isASleeping<wbr>Reference</h3>
+					<div class="tsd-signature tsd-kind-icon">$isASleeping<wbr>Reference<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L135">packages/nymph/src/Entity.ts:135</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether this instance is a sleeping reference.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="_nymph" class="tsd-anchor"></a>
+					<h3>$nymph</h3>
+					<div class="tsd-signature tsd-kind-icon">$nymph<span class="tsd-signature-symbol">:</span> <a href="_nymphjs_nymph.Nymph.html" class="tsd-signature-type" data-tsd-kind="Class">Nymph</a></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_nymph">$nymph</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L111">packages/nymph/src/Entity.ts:111</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The instance of Nymph to use for queries.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_originalAcValues" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> $original<wbr>AcValues</h3>
+					<div class="tsd-signature tsd-kind-icon">$original<wbr>AcValues<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../modules/_nymphjs_nymph.html#ACProperties" class="tsd-signature-type" data-tsd-kind="Type alias">ACProperties</a><span class="tsd-signature-symbol"> = null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L199">packages/nymph/src/Entity.ts:199</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The AC properties&#39; values when the entity was loaded.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_privateData" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> $private<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">$private<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L148">packages/nymph/src/Entity.ts:148</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Properties that will not be serialized into JSON with toJSON(). This
+								can be considered a denylist, because these properties will not be set
+							with incoming JSON.</p>
+						</div>
+						<p>Clients CAN still determine what is in these properties, unless they are
+						also listed in searchRestrictedData.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_protectedData" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> $protected<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">$protected<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L163">packages/nymph/src/Entity.ts:163</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Properties that can only be modified by server side code. They will still
+								be visible on the frontend, unlike $privateData, but any changes to them
+							that come from the frontend will be ignored.</p>
+						</div>
+						<p>In addition to what&#39;s listed here, the &#39;user&#39; and &#39;group&#39; properties will
+						be filtered for non-admins when Tilmeld is being used.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_protectedTags" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> $protected<wbr>Tags</h3>
+					<div class="tsd-signature tsd-kind-icon">$protected<wbr>Tags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L177">packages/nymph/src/Entity.ts:177</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Tags that can only be added/removed by server side code. They will still be
+								visible on the frontend, but any changes to them that come from the
+							frontend will be ignored.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="_sdata" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> $sdata</h3>
+					<div class="tsd-signature tsd-kind-icon">$sdata<span class="tsd-signature-symbol">:</span> <a href="../modules/_nymphjs_nymph.html#SerializedEntityData" class="tsd-signature-type" data-tsd-kind="Type alias">SerializedEntityData</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L127">packages/nymph/src/Entity.ts:127</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The actual sdata store.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_skipAc" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> $skip<wbr>Ac</h3>
+					<div class="tsd-signature tsd-kind-icon">$skip<wbr>Ac<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L195">packages/nymph/src/Entity.ts:195</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether to use &quot;skipAc&quot; when accessing entity references.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_sleepingReference" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> $sleeping<wbr>Reference</h3>
+					<div class="tsd-signature tsd-kind-icon">$sleeping<wbr>Reference<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../modules/_nymphjs_nymph.html#EntityReference" class="tsd-signature-type" data-tsd-kind="Type alias">EntityReference</a><span class="tsd-signature-symbol"> = null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L139">packages/nymph/src/Entity.ts:139</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The reference to use to wake.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="cdate" class="tsd-anchor"></a>
+					<h3>cdate</h3>
+					<div class="tsd-signature tsd-kind-icon">cdate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = null</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#cdate">cdate</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L113">packages/nymph/src/Entity.ts:113</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The creation date of the entity as a Unix timestamp in milliseconds.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="guid" class="tsd-anchor"></a>
+					<h3>guid</h3>
+					<div class="tsd-signature tsd-kind-icon">guid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = null</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#guid">guid</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L112">packages/nymph/src/Entity.ts:112</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The entity&#39;s Globally Unique ID.</p>
+						</div>
+						<p>This is a 12 byte number represented as a lower case HEX string (24
+						characters).</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="mdate" class="tsd-anchor"></a>
+					<h3>mdate</h3>
+					<div class="tsd-signature tsd-kind-icon">mdate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = null</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#mdate">mdate</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L114">packages/nymph/src/Entity.ts:114</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The modified date of the entity as a Unix timestamp in milliseconds.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="tags" class="tsd-anchor"></a>
+					<h3>tags</h3>
+					<div class="tsd-signature tsd-kind-icon">tags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#tags">tags</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L115">packages/nymph/src/Entity.ts:115</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Array of the entity&#39;s tags.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="ETYPE" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> ETYPE</h3>
+					<div class="tsd-signature tsd-kind-icon">ETYPE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x27;entity&#x27;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L102">packages/nymph/src/Entity.ts:102</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A unique name for this type of entity used to separate its data from other
+							types of entities in the database.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="class" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> class</h3>
+					<div class="tsd-signature tsd-kind-icon">class<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x27;Entity&#x27;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L109">packages/nymph/src/Entity.ts:109</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The lookup name for this entity.</p>
+						</div>
+						<p>This is used for reference arrays (and sleeping references) and client
+						requests.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="clientEnabledStaticMethods" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> client<wbr>Enabled<wbr>Static<wbr>Methods</h3>
+					<div class="tsd-signature tsd-kind-icon">client<wbr>Enabled<wbr>Static<wbr>Methods<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L191">packages/nymph/src/Entity.ts:191</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The names of static methods allowed to be called by the frontend with
+							serverCallStatic.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="nymph" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> nymph</h3>
+					<div class="tsd-signature tsd-kind-icon">nymph<span class="tsd-signature-symbol">:</span> <a href="_nymphjs_nymph.Nymph.html" class="tsd-signature-type" data-tsd-kind="Class">Nymph</a><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L97">packages/nymph/src/Entity.ts:97</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The instance of Nymph to use for queries.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="searchRestrictedData" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> search<wbr>Restricted<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">search<wbr>Restricted<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L154">packages/nymph/src/Entity.ts:154</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Properties that will not be searchable from the frontend. If the frontend
+								includes any of these properties in any of their clauses, they will be
+							filtered out before the search is executed.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_addTag" class="tsd-anchor"></a>
+					<h3>$add<wbr>Tag</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$add<wbr>Tag<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>tags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_addTag">$addTag</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L385">packages/nymph/src/Entity.ts:385</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add one or more tags.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>tags: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_arraySearch" class="tsd-anchor"></a>
+					<h3>$array<wbr>Search</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$array<wbr>Search<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>, strict<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_arraySearch">$arraySearch</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L394">packages/nymph/src/Entity.ts:394</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Search the array for this object and return the corresponding index.</p>
+								</div>
+								<p>If <code>strict</code> is false, <code>is()</code> is used to compare. If <code>strict</code> is true,
+								<code>equals()</code> is used.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>array: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>strict: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_clearCache" class="tsd-anchor"></a>
+					<h3>$clear<wbr>Cache</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$clear<wbr>Cache<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_clearCache">$clearCache</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L409">packages/nymph/src/Entity.ts:409</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Replace any referenced entities in the data with sleeping references.</p>
+								</div>
+								<p>Calling this function ensures that the next time a referenced entity is
+								accessed, it will be retrieved from the DB (unless it is in Nymph&#39;s cache).</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_delete" class="tsd-anchor"></a>
+					<h3>$delete</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$delete<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_delete">$delete</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L419">packages/nymph/src/Entity.ts:419</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Delete the object from storage.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_equals" class="tsd-anchor"></a>
+					<h3>$equals</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$equals<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_equals">$equals</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L425">packages/nymph/src/Entity.ts:425</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Perform a more strict comparison of this object to another.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_getClientEnabledMethods" class="tsd-anchor"></a>
+					<h3>$get<wbr>Client<wbr>Enabled<wbr>Methods</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$get<wbr>Client<wbr>Enabled<wbr>Methods<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_getClientEnabledMethods">$getClientEnabledMethods</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L415">packages/nymph/src/Entity.ts:415</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the client enabled methods.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_getData" class="tsd-anchor"></a>
+					<h3>$get<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$get<wbr>Data<span class="tsd-signature-symbol">(</span>includeSData<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_getData">$getData</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L450">packages/nymph/src/Entity.ts:450</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Used to retrieve the data object.</p>
+								</div>
+								<p>This should only be used by Nymph to save the data into storage.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>includeSData: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_getOriginalAcValues" class="tsd-anchor"></a>
+					<h3>$get<wbr>Original<wbr>AcValues</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$get<wbr>Original<wbr>AcValues<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#ACProperties" class="tsd-signature-type" data-tsd-kind="Type alias">ACProperties</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_getOriginalAcValues">$getOriginalAcValues</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L468">packages/nymph/src/Entity.ts:468</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the original values of the AC properties.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_nymphjs_nymph.html#ACProperties" class="tsd-signature-type" data-tsd-kind="Type alias">ACProperties</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_getSData" class="tsd-anchor"></a>
+					<h3>$getSData</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$getSData<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#SerializedEntityData" class="tsd-signature-type" data-tsd-kind="Type alias">SerializedEntityData</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_getSData">$getSData</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L462">packages/nymph/src/Entity.ts:462</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Used to retrieve the serialized data object.</p>
+								</div>
+								<p>This should only be used by Nymph to save the data object into storage.</p>
+								<p>This method is used by Nymph to avoid unserializing data that hasn&#39;t been
+								requested yet.</p>
+								<p>It should always be called after getData().</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_nymphjs_nymph.html#SerializedEntityData" class="tsd-signature-type" data-tsd-kind="Type alias">SerializedEntityData</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_getTags" class="tsd-anchor"></a>
+					<h3>$get<wbr>Tags</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$get<wbr>Tags<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_getTags">$getTags</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L501">packages/nymph/src/Entity.ts:501</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the entity&#39;s tags.</p>
+								</div>
+								<p>Using this instead of accessing the <code>tags</code> prop directly will wake sleeping
+								references.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_getValidatable" class="tsd-anchor"></a>
+					<h3>$get<wbr>Validatable</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$get<wbr>Validatable<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_getValidatable">$getValidatable</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L485">packages/nymph/src/Entity.ts:485</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get an object that holds the same data as the entity.</p>
+								</div>
+								<p>This provides an object that can be validated.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_hasTag" class="tsd-anchor"></a>
+					<h3>$has<wbr>Tag</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$has<wbr>Tag<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>tags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_hasTag">$hasTag</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L507">packages/nymph/src/Entity.ts:507</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check that the entity has all of the given tags.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>tags: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_inArray" class="tsd-anchor"></a>
+					<h3>$in<wbr>Array</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$in<wbr>Array<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>, strict<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_inArray">$inArray</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L521">packages/nymph/src/Entity.ts:521</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check whether this object is in an array.</p>
+								</div>
+								<p>If <code>strict</code> is false, <code>is()</code> is used to compare. If <code>strict</code> is true,
+								<code>equals()</code> is used.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>array: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>strict: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_is" class="tsd-anchor"></a>
+					<h3>$is</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$is<span class="tsd-signature-symbol">(</span>object<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_is">$is</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L525">packages/nymph/src/Entity.ts:525</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Perform a less strict comparison of this object to another.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>object: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_jsonAcceptData" class="tsd-anchor"></a>
+					<h3>$json<wbr>Accept<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$json<wbr>Accept<wbr>Data<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#EntityJson" class="tsd-signature-type" data-tsd-kind="Type alias">EntityJson</a>, allowConflict<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_jsonAcceptData">$jsonAcceptData</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L544">packages/nymph/src/Entity.ts:544</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Accept JSON data from the client.</p>
+								</div>
+								<p>This function uses the security protection lists:</p>
+								<ul>
+									<li>$protectedTags</li>
+									<li>$protectedData</li>
+									<li>$allowlistTags</li>
+									<li>$allowlistData</li>
+								</ul>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>input: <a href="../modules/_nymphjs_nymph.html#EntityJson" class="tsd-signature-type" data-tsd-kind="Type alias">EntityJson</a></h5>
+								</li>
+								<li>
+									<h5>allowConflict: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_jsonAcceptPatch" class="tsd-anchor"></a>
+					<h3>$json<wbr>Accept<wbr>Patch</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$json<wbr>Accept<wbr>Patch<span class="tsd-signature-symbol">(</span>patch<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#EntityPatch" class="tsd-signature-type" data-tsd-kind="Type alias">EntityPatch</a>, allowConflict<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_jsonAcceptPatch">$jsonAcceptPatch</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L625">packages/nymph/src/Entity.ts:625</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Accept JSON patch from the client.</p>
+								</div>
+								<p>This function uses the security protection lists:</p>
+								<ul>
+									<li>$protectedTags</li>
+									<li>$protectedData</li>
+									<li>$allowlistTags</li>
+									<li>$allowlistData</li>
+								</ul>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>patch: <a href="../modules/_nymphjs_nymph.html#EntityPatch" class="tsd-signature-type" data-tsd-kind="Type alias">EntityPatch</a></h5>
+								</li>
+								<li>
+									<h5>allowConflict: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_putData" class="tsd-anchor"></a>
+					<h3>$put<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$put<wbr>Data<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#EntityData" class="tsd-signature-type" data-tsd-kind="Type alias">EntityData</a>, sdata<span class="tsd-signature-symbol">?: </span><a href="../modules/_nymphjs_nymph.html#SerializedEntityData" class="tsd-signature-type" data-tsd-kind="Type alias">SerializedEntityData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_putData">$putData</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L693">packages/nymph/src/Entity.ts:693</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Used to set the data.</p>
+								</div>
+								<p>This should only be used by Nymph to push the data from storage.</p>
+								<p><code>sdata</code> is used by Nymph to avoid unserializing data that hasn&#39;t been
+								requested yet.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>data: <a href="../modules/_nymphjs_nymph.html#EntityData" class="tsd-signature-type" data-tsd-kind="Type alias">EntityData</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> sdata: <a href="../modules/_nymphjs_nymph.html#SerializedEntityData" class="tsd-signature-type" data-tsd-kind="Type alias">SerializedEntityData</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="_referenceSleep" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> $reference<wbr>Sleep</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">$reference<wbr>Sleep<span class="tsd-signature-symbol">(</span>reference<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#EntityReference" class="tsd-signature-type" data-tsd-kind="Type alias">EntityReference</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L721">packages/nymph/src/Entity.ts:721</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set up a sleeping reference.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>reference: <a href="../modules/_nymphjs_nymph.html#EntityReference" class="tsd-signature-type" data-tsd-kind="Type alias">EntityReference</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="_referenceWake" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> $reference<wbr>Wake</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">$reference<wbr>Wake<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L750">packages/nymph/src/Entity.ts:750</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Wake from a sleeping reference.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>True on success, false on failure.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_refresh" class="tsd-anchor"></a>
+					<h3>$refresh</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$refresh<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">0</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_refresh">$refresh</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L775">packages/nymph/src/Entity.ts:775</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Refresh the object from storage. (Bypasses Nymph&#39;s cache.)</p>
+								</div>
+								<p>If the object has been deleted from storage, the database cannot be
+								reached, or a database error occurs, <code>refresh()</code> will return 0.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">0</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_removeTag" class="tsd-anchor"></a>
+					<h3>$remove<wbr>Tag</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$remove<wbr>Tag<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>tags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_removeTag">$removeTag</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L799">packages/nymph/src/Entity.ts:799</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Remove one or more tags.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>tags: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_save" class="tsd-anchor"></a>
+					<h3>$save</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$save<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_save">$save</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L805">packages/nymph/src/Entity.ts:805</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Save the object to storage.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_toReference" class="tsd-anchor"></a>
+					<h3>$to<wbr>Reference</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$to<wbr>Reference<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_nymphjs_nymph.Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../modules/_nymphjs_nymph.html#EntityReference" class="tsd-signature-type" data-tsd-kind="Type alias">EntityReference</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_toReference">$toReference</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L811">packages/nymph/src/Entity.ts:811</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return a Nymph Entity Reference for this entity.</p>
+								</div>
+								<p>If the entity hasn&#39;t been saved yet (and has no GUID), it will be
+								returned instead.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="_nymphjs_nymph.Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../modules/_nymphjs_nymph.html#EntityReference" class="tsd-signature-type" data-tsd-kind="Type alias">EntityReference</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="_useSkipAc" class="tsd-anchor"></a>
+					<h3>$use<wbr>Skip<wbr>Ac</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">$use<wbr>Skip<wbr>Ac<span class="tsd-signature-symbol">(</span>skipAc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_nymphjs_nymph.EntityInterface.html">EntityInterface</a>.<a href="../interfaces/_nymphjs_nymph.EntityInterface.html#_useSkipAc">$useSkipAc</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L825">packages/nymph/src/Entity.ts:825</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set whether to use &quot;skipAc&quot; when accessing entity references.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>skipAc: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="toJSON" class="tsd-anchor"></a>
+					<h3>toJSON</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">toJSON<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../modules/_nymphjs_nymph.html#EntityReference" class="tsd-signature-type" data-tsd-kind="Type alias">EntityReference</a><span class="tsd-signature-symbol"> | </span><a href="../modules/_nymphjs_nymph.html#EntityJson" class="tsd-signature-type" data-tsd-kind="Type alias">EntityJson</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L364">packages/nymph/src/Entity.ts:364</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../modules/_nymphjs_nymph.html#EntityReference" class="tsd-signature-type" data-tsd-kind="Type alias">EntityReference</a><span class="tsd-signature-symbol"> | </span><a href="../modules/_nymphjs_nymph.html#EntityJson" class="tsd-signature-type" data-tsd-kind="Type alias">EntityJson</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="factory" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> factory</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">factory<span class="tsd-signature-symbol">(</span>guid<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_nymphjs_nymph.EntityInterface.html" class="tsd-signature-type" data-tsd-kind="Interface">EntityInterface</a><span class="tsd-signature-symbol"> | </span><a href="_nymphjs_nymph.Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_nymphjs_nymph.html#EntityData" class="tsd-signature-type" data-tsd-kind="Type alias">EntityData</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L338">packages/nymph/src/Entity.ts:338</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> guid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_nymphjs_nymph.EntityInterface.html" class="tsd-signature-type" data-tsd-kind="Interface">EntityInterface</a><span class="tsd-signature-symbol"> | </span><a href="_nymphjs_nymph.Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_nymphjs_nymph.html#EntityData" class="tsd-signature-type" data-tsd-kind="Type alias">EntityData</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="factoryReference" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> factory<wbr>Reference</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">factory<wbr>Reference<span class="tsd-signature-symbol">(</span>reference<span class="tsd-signature-symbol">: </span><a href="../modules/_nymphjs_nymph.html#EntityReference" class="tsd-signature-type" data-tsd-kind="Type alias">EntityReference</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_nymphjs_nymph.Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_nymphjs_nymph.html#EntityData" class="tsd-signature-type" data-tsd-kind="Type alias">EntityData</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L358">packages/nymph/src/Entity.ts:358</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>reference: <a href="../modules/_nymphjs_nymph.html#EntityReference" class="tsd-signature-type" data-tsd-kind="Type alias">EntityReference</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_nymphjs_nymph.Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_nymphjs_nymph.html#EntityData" class="tsd-signature-type" data-tsd-kind="Type alias">EntityData</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="factorySync" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> factory<wbr>Sync</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">factory<wbr>Sync<span class="tsd-signature-symbol">(</span>guid<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_nymphjs_nymph.Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_nymphjs_nymph.html#EntityData" class="tsd-signature-type" data-tsd-kind="Type alias">EntityData</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/nymph/src/Entity.ts#L354">packages/nymph/src/Entity.ts:354</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> guid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_nymphjs_nymph.Entity.html" class="tsd-signature-type" data-tsd-kind="Class">Entity</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_nymphjs_nymph.html#EntityData" class="tsd-signature-type" data-tsd-kind="Type alias">EntityData</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_client.html">@nymphjs/client</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_client_node.html">@nymphjs/client-<wbr>node</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_driver_mysql.html">@nymphjs/driver-<wbr>mysql</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_driver_postgresql.html">@nymphjs/driver-<wbr>postgresql</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_driver_sqlite3.html">@nymphjs/driver-<wbr>sqlite3</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/_nymphjs_nymph.html">@nymphjs/nymph</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_pubsub.html">@nymphjs/pubsub</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_query_parser.html">@nymphjs/query-<wbr>parser</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_server.html">@nymphjs/server</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_tilmeld.html">@nymphjs/tilmeld</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_tilmeld_client.html">@nymphjs/tilmeld-<wbr>client</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="_nymphjs_nymph.Entity.html" class="tsd-kind-icon">Entity</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
+								<a href="_nymphjs_nymph.Entity.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="_nymphjs_nymph.Entity.html#_allowlistData" class="tsd-kind-icon">$allowlist<wbr>Data</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="_nymphjs_nymph.Entity.html#_allowlistTags" class="tsd-kind-icon">$allowlist<wbr>Tags</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="_nymphjs_nymph.Entity.html#_clientEnabledMethods" class="tsd-kind-icon">$client<wbr>Enabled<wbr>Methods</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="_nymphjs_nymph.Entity.html#_data" class="tsd-kind-icon">$data</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="_nymphjs_nymph.Entity.html#_dataHandler" class="tsd-kind-icon">$data<wbr>Handler</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="_nymphjs_nymph.Entity.html#_dataStore" class="tsd-kind-icon">$data<wbr>Store</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Entity.html#_isASleepingReference" class="tsd-kind-icon">$isASleeping<wbr>Reference</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_nymph" class="tsd-kind-icon">$nymph</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Entity.html#_originalAcValues" class="tsd-kind-icon">$original<wbr>AcValues</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="_nymphjs_nymph.Entity.html#_privateData" class="tsd-kind-icon">$private<wbr>Data</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="_nymphjs_nymph.Entity.html#_protectedData" class="tsd-kind-icon">$protected<wbr>Data</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="_nymphjs_nymph.Entity.html#_protectedTags" class="tsd-kind-icon">$protected<wbr>Tags</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="_nymphjs_nymph.Entity.html#_sdata" class="tsd-kind-icon">$sdata</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Entity.html#_skipAc" class="tsd-kind-icon">$skip<wbr>Ac</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_nymph.Entity.html#_sleepingReference" class="tsd-kind-icon">$sleeping<wbr>Reference</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#cdate" class="tsd-kind-icon">cdate</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#guid" class="tsd-kind-icon">guid</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#mdate" class="tsd-kind-icon">mdate</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#tags" class="tsd-kind-icon">tags</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_nymphjs_nymph.Entity.html#ETYPE" class="tsd-kind-icon">ETYPE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_nymphjs_nymph.Entity.html#class" class="tsd-kind-icon">class</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_nymphjs_nymph.Entity.html#clientEnabledStaticMethods" class="tsd-kind-icon">client<wbr>Enabled<wbr>Static<wbr>Methods</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_nymphjs_nymph.Entity.html#nymph" class="tsd-kind-icon">nymph</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_nymphjs_nymph.Entity.html#searchRestrictedData" class="tsd-kind-icon">search<wbr>Restricted<wbr>Data</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_addTag" class="tsd-kind-icon">$add<wbr>Tag</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_arraySearch" class="tsd-kind-icon">$array<wbr>Search</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_clearCache" class="tsd-kind-icon">$clear<wbr>Cache</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_delete" class="tsd-kind-icon">$delete</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_equals" class="tsd-kind-icon">$equals</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_getClientEnabledMethods" class="tsd-kind-icon">$get<wbr>Client<wbr>Enabled<wbr>Methods</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_getData" class="tsd-kind-icon">$get<wbr>Data</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_getOriginalAcValues" class="tsd-kind-icon">$get<wbr>Original<wbr>AcValues</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_getSData" class="tsd-kind-icon">$getSData</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_getTags" class="tsd-kind-icon">$get<wbr>Tags</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_getValidatable" class="tsd-kind-icon">$get<wbr>Validatable</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_hasTag" class="tsd-kind-icon">$has<wbr>Tag</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_inArray" class="tsd-kind-icon">$in<wbr>Array</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_is" class="tsd-kind-icon">$is</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_jsonAcceptData" class="tsd-kind-icon">$json<wbr>Accept<wbr>Data</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_jsonAcceptPatch" class="tsd-kind-icon">$json<wbr>Accept<wbr>Patch</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_putData" class="tsd-kind-icon">$put<wbr>Data</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="_nymphjs_nymph.Entity.html#_referenceSleep" class="tsd-kind-icon">$reference<wbr>Sleep</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="_nymphjs_nymph.Entity.html#_referenceWake" class="tsd-kind-icon">$reference<wbr>Wake</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_refresh" class="tsd-kind-icon">$refresh</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_removeTag" class="tsd-kind-icon">$remove<wbr>Tag</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_save" class="tsd-kind-icon">$save</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_toReference" class="tsd-kind-icon">$to<wbr>Reference</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#_useSkipAc" class="tsd-kind-icon">$use<wbr>Skip<wbr>Ac</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_nymph.Entity.html#toJSON" class="tsd-kind-icon">toJSON</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="_nymphjs_nymph.Entity.html#factory" class="tsd-kind-icon">factory</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="_nymphjs_nymph.Entity.html#factoryReference" class="tsd-kind-icon">factory<wbr>Reference</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="_nymphjs_nymph.Entity.html#factorySync" class="tsd-kind-icon">factory<wbr>Sync</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

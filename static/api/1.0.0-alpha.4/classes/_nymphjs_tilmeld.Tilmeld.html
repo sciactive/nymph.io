@@ -1,0 +1,998 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Tilmeld | Nymph.js - v1.0.0-alpha.4</title>
+	<meta name="description" content="Documentation for Nymph.js - v1.0.0-alpha.4">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">Nymph.js - v1.0.0-alpha.4</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">Nymph.js - v1.0.0-alpha.4</a>
+				</li>
+				<li>
+					<a href="../modules/_nymphjs_tilmeld.html">@nymphjs/tilmeld</a>
+				</li>
+				<li>
+					<a href="_nymphjs_tilmeld.Tilmeld.html">Tilmeld</a>
+				</li>
+			</ul>
+			<h1>Class Tilmeld</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A user and group system for Nymph.js.</p>
+					</div>
+					<p>Written by Hunter Perrin for SciActive.</p>
+					<dl class="tsd-comment-tags">
+						<dt>author</dt>
+						<dd><p>Hunter Perrin <a href="mailto:hperrin@gmail.com">hperrin@gmail.com</a></p>
+						</dd>
+						<dt>copyright</dt>
+						<dd><p>SciActive Inc</p>
+						</dd>
+						<dt>see</dt>
+						<dd><p><a href="http://nymph.io/">http://nymph.io/</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Tilmeld</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><span class="tsd-signature-type">TilmeldInterface</span></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#Group" class="tsd-kind-icon">Group</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#User" class="tsd-kind-icon">User</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#config" class="tsd-kind-icon">config</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#currentUser" class="tsd-kind-icon">current<wbr>User</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#nymph" class="tsd-kind-icon">nymph</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#request" class="tsd-kind-icon">request</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#response" class="tsd-kind-icon">response</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_tilmeld.Tilmeld.html#skipAuthenticate" class="tsd-kind-icon">skip<wbr>Authenticate</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#addAccessControlSelectors" class="tsd-kind-icon">add<wbr>Access<wbr>Control<wbr>Selectors</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#authenticate" class="tsd-kind-icon">authenticate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#checkClientUIDPermissions" class="tsd-kind-icon">check<wbr>ClientUIDPermissions</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#checkPermissions" class="tsd-kind-icon">check<wbr>Permissions</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#clearSession" class="tsd-kind-icon">clear<wbr>Session</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#clone" class="tsd-kind-icon">clone</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#extractToken" class="tsd-kind-icon">extract<wbr>Token</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#fillSession" class="tsd-kind-icon">fill<wbr>Session</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#gatekeeper" class="tsd-kind-icon">gatekeeper</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#init" class="tsd-kind-icon">init</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_nymphjs_tilmeld.Tilmeld.html#initAccessControl" class="tsd-kind-icon">init<wbr>Access<wbr>Control</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#login" class="tsd-kind-icon">login</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_nymphjs_tilmeld.Tilmeld.html#logout" class="tsd-kind-icon">logout</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Tilmeld<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_nymphjs_tilmeld.Config.html" class="tsd-signature-type" data-tsd-kind="Interface">Config</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>jwtSecret<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_nymphjs_tilmeld.Tilmeld.html" class="tsd-signature-type" data-tsd-kind="Class">Tilmeld</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L79">packages/tilmeld/src/Tilmeld.ts:79</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a new instance of Tilmeld.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>config: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_nymphjs_tilmeld.Config.html" class="tsd-signature-type" data-tsd-kind="Interface">Config</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>jwtSecret<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The Tilmeld configuration.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_nymphjs_tilmeld.Tilmeld.html" class="tsd-signature-type" data-tsd-kind="Class">Tilmeld</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="Group" class="tsd-anchor"></a>
+					<h3>Group</h3>
+					<div class="tsd-signature tsd-kind-icon">Group<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">typeof </span><a href="_nymphjs_tilmeld.Group.html" class="tsd-signature-type" data-tsd-kind="Class">Group</a><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L50">packages/tilmeld/src/Tilmeld.ts:50</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The group class for this instance of Tilmeld.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="User" class="tsd-anchor"></a>
+					<h3>User</h3>
+					<div class="tsd-signature tsd-kind-icon">User<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">typeof </span><a href="_nymphjs_tilmeld.User.html" class="tsd-signature-type" data-tsd-kind="Class">User</a><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L45">packages/tilmeld/src/Tilmeld.ts:45</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The user class for this instance of Tilmeld.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="config" class="tsd-anchor"></a>
+					<h3>config</h3>
+					<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_nymphjs_tilmeld.Config.html" class="tsd-signature-type" data-tsd-kind="Interface">Config</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L35">packages/tilmeld/src/Tilmeld.ts:35</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The Tilmeld config.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="currentUser" class="tsd-anchor"></a>
+					<h3>current<wbr>User</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>User<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><a href="_nymphjs_tilmeld.User.html" class="tsd-signature-type" data-tsd-kind="Class">User</a><span class="tsd-signature-symbol"> &amp; </span><a href="../modules/_nymphjs_tilmeld.html#UserData" class="tsd-signature-type" data-tsd-kind="Type alias">UserData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> = null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L40">packages/tilmeld/src/Tilmeld.ts:40</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The currently logged in user.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="nymph" class="tsd-anchor"></a>
+					<h3>nymph</h3>
+					<div class="tsd-signature tsd-kind-icon">nymph<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">default</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of TilmeldInterface.nymph</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L30">packages/tilmeld/src/Tilmeld.ts:30</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The Nymph instance.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="request" class="tsd-anchor"></a>
+					<h3>request</h3>
+					<div class="tsd-signature tsd-kind-icon">request<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Request</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ParamsDictionary</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ParsedQs</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = null</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of TilmeldInterface.request</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L66">packages/tilmeld/src/Tilmeld.ts:66</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If you will be performing authentication functions (logging in/out), you
+							should set these so Tilmeld can read and write cookies and headers.</p>
+						</div>
+						<p>If you want the user to be authenticated with the cookie and/or header they
+							provide, you should set at least the request. It&#39;s better to set both, so
+						the JWT can be updated if needed.</p>
+						<p>After you set these, call <code>authenticate()</code> to read user authentication data
+						from them and fill the user&#39;s session.</p>
+						<p>If you want to support cookie based authentication (which still requires an
+						XSRF token for security), you should enable the cookie parser middleware.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="response" class="tsd-anchor"></a>
+					<h3>response</h3>
+					<div class="tsd-signature tsd-kind-icon">response<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = null</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of TilmeldInterface.response</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L67">packages/tilmeld/src/Tilmeld.ts:67</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="skipAuthenticate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> skip<wbr>Authenticate</h3>
+					<div class="tsd-signature tsd-kind-icon">skip<wbr>Authenticate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L72">packages/tilmeld/src/Tilmeld.ts:72</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Skip the authenticate step of initialization.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addAccessControlSelectors" class="tsd-anchor"></a>
+					<h3>add<wbr>Access<wbr>Control<wbr>Selectors</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Access<wbr>Control<wbr>Selectors<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Options</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EntityConstructor</span><span class="tsd-signature-symbol">&gt;</span>, selectors<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">FormattedSelector</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L421">packages/tilmeld/src/Tilmeld.ts:421</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add selectors to a list of options and selectors which will limit results
+									to only entities the current user has access to.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <span class="tsd-signature-type">Options</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">EntityConstructor</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>selectors: <span class="tsd-signature-type">FormattedSelector</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="authenticate" class="tsd-anchor"></a>
+					<h3>authenticate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">authenticate<span class="tsd-signature-symbol">(</span>skipXsrfToken<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of TilmeldInterface.authenticate</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L858">packages/tilmeld/src/Tilmeld.ts:858</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check for a TILMELDAUTH token, and, if set, authenticate from it.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>skipXsrfToken: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Skip the XSRF token check.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>True if a user was authenticated, false on any failure.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="checkClientUIDPermissions" class="tsd-anchor"></a>
+					<h3>check<wbr>ClientUIDPermissions</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">check<wbr>ClientUIDPermissions<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, type<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TilmeldAccessLevels</span>, user<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><a href="_nymphjs_tilmeld.User.html" class="tsd-signature-type" data-tsd-kind="Class">User</a><span class="tsd-signature-symbol"> &amp; </span><a href="../modules/_nymphjs_tilmeld.html#UserData" class="tsd-signature-type" data-tsd-kind="Type alias">UserData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of TilmeldInterface.checkClientUIDPermissions</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L744">packages/tilmeld/src/Tilmeld.ts:744</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check a UID&#39;s permissions for a user.</p>
+								</div>
+								<a href="#this-only-checks-automatically-for-client-requests" id="this-only-checks-automatically-for-client-requests" style="color: inherit; text-decoration: none;">
+									<h2>THIS ONLY CHECKS AUTOMATICALLY FOR CLIENT REQUESTS.</h2>
+								</a>
+								<p>UID functions on the Node.js side are not checked automatically. This
+									function is only run automatically for UID functions run from the client.
+									You should call this function manually if you&#39;re running a UID function on
+								the Node.js side and you want it gated.</p>
+								<p>This will check the Tilmeld config and the user&#39;s abilities.</p>
+								<ul>
+									<li>READ_ACCESS, the UID is listed in clientReadableUIDs or the user has the
+									&quot;uid/get/nameofuid&quot; ability.</li>
+									<li>WRITE_ACCESS, the UID is listed in clientEnabledUIDs or the user has the
+									&quot;uid/new/nameofuid&quot; ability.</li>
+									<li>FULL_ACCESS, the UID is listed in clientSetabledUIDs or the user has the
+									&quot;uid/set/nameofuid&quot; ability.</li>
+								</ul>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The UID to check.</p>
+									</div>
+								</li>
+								<li>
+									<h5>type: <span class="tsd-signature-type">TilmeldAccessLevels</span><span class="tsd-signature-symbol"> = ...</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The lowest level of permission to consider a pass.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> user: <span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><a href="_nymphjs_tilmeld.User.html" class="tsd-signature-type" data-tsd-kind="Class">User</a><span class="tsd-signature-symbol"> &amp; </span><a href="../modules/_nymphjs_tilmeld.html#UserData" class="tsd-signature-type" data-tsd-kind="Type alias">UserData</a><span class="tsd-signature-symbol">)</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The user to check permissions for. If null, uses the current user. If false, checks for public access.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>Whether the current user has at least <code>type</code> permission for the UID.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="checkPermissions" class="tsd-anchor"></a>
+					<h3>check<wbr>Permissions</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">check<wbr>Permissions<span class="tsd-signature-symbol">(</span>entity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EntityInterface</span><span class="tsd-signature-symbol"> &amp; </span><a href="../modules/_nymphjs_tilmeld.html#AccessControlData" class="tsd-signature-type" data-tsd-kind="Type alias">AccessControlData</a>, type<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TilmeldAccessLevels</span>, user<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><a href="_nymphjs_tilmeld.User.html" class="tsd-signature-type" data-tsd-kind="Class">User</a><span class="tsd-signature-symbol"> &amp; </span><a href="../modules/_nymphjs_tilmeld.html#UserData" class="tsd-signature-type" data-tsd-kind="Type alias">UserData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L603">packages/tilmeld/src/Tilmeld.ts:603</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check an entity&#39;s permissions for a user.</p>
+								</div>
+								<p>This will check the AC (Access Control) properties of the entity. These
+								include the following properties:</p>
+								<ul>
+									<li>acUser</li>
+									<li>acGroup</li>
+									<li>acOther</li>
+									<li>acRead</li>
+									<li>acWrite</li>
+									<li>acFull</li>
+								</ul>
+								<p>&quot;acUser&quot; refers to the entity&#39;s owner, &quot;acGroup&quot; refers to all users in the
+									entity&#39;s group and all ancestor groups, and &quot;acOther&quot; refers to any user
+								who doesn&#39;t fit these descriptions.</p>
+								<p>Each of these properties should be either NO_ACCESS, READ_ACCESS,
+								WRITE_ACCESS, or FULL_ACCESS.</p>
+								<ul>
+									<li>NO_ACCESS - the user has no access to the entity.</li>
+									<li>READ_ACCESS, the user has read access to the entity.</li>
+									<li>WRITE_ACCESS, the user has read and write access to the entity, but can&#39;t
+									delete it, change its access controls, or change its ownership.</li>
+									<li>FULL_ACCESS, the user has read, write, and delete access to the entity,
+									as well as being able to manage its access controls and ownership.</li>
+								</ul>
+								<p>These properties defaults to:</p>
+								<ul>
+									<li>acUser = TilmeldAccessLevels.FULL_ACCESS</li>
+									<li>acGroup = TilmeldAccessLevels.READ_ACCESS</li>
+									<li>acOther = TilmeldAccessLevels.NO_ACCESS</li>
+								</ul>
+								<p>&quot;acRead&quot;, &quot;acWrite&quot;, and &quot;acFull&quot; are arrays of users and/or groups that
+								also have those permissions.</p>
+								<p>Only users with FULL_ACCESS have the ability to change any of the ac*,
+								user, and group properties.</p>
+								<p>The following conditions will result in different checks, which determine
+								whether the check passes:</p>
+								<ul>
+									<li>The user has the &quot;system/admin&quot; ability. (Always true.)</li>
+									<li>It is a user or group. (True for READ_ACCESS or Tilmeld admins.)</li>
+									<li>The entity has no &quot;user&quot; and no &quot;group&quot;. (Always true.)</li>
+									<li>No user is logged in. (Check other AC.)</li>
+									<li>The entity is the user. (Always true.)</li>
+									<li>It is the user&#39;s primary group. (True for READ_ACCESS.)</li>
+									<li>The user or its groups are listed in &quot;acRead&quot;. (True for READ_ACCESS.)</li>
+									<li>The user or its groups are listed in &quot;acWrite&quot;. (True for READ_ACCESS and
+									WRITE_ACCESS.)</li>
+									<li>The user or its groups are listed in &quot;acFull&quot;. (Always true.)</li>
+									<li>Its &quot;user&quot; is the user. (It is owned by the user.) (Check user AC.)</li>
+									<li>Its &quot;group&quot; is the user&#39;s primary group. (Check group AC.)</li>
+									<li>Its &quot;group&quot; is one of the user&#39;s secondary groups. (Check group AC.)</li>
+									<li>Its &quot;group&quot; is a descendant of one of the user&#39;s groups. (Check group
+									AC.)</li>
+									<li>None of the above. (Check other AC.)</li>
+								</ul>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>entity: <span class="tsd-signature-type">EntityInterface</span><span class="tsd-signature-symbol"> &amp; </span><a href="../modules/_nymphjs_tilmeld.html#AccessControlData" class="tsd-signature-type" data-tsd-kind="Type alias">AccessControlData</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The entity to check.</p>
+									</div>
+								</li>
+								<li>
+									<h5>type: <span class="tsd-signature-type">TilmeldAccessLevels</span><span class="tsd-signature-symbol"> = ...</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The lowest level of permission to consider a pass.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> user: <span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><a href="_nymphjs_tilmeld.User.html" class="tsd-signature-type" data-tsd-kind="Class">User</a><span class="tsd-signature-symbol"> &amp; </span><a href="../modules/_nymphjs_tilmeld.html#UserData" class="tsd-signature-type" data-tsd-kind="Type alias">UserData</a><span class="tsd-signature-symbol">)</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The user to check permissions for. If null, uses the current user. If false, checks for public access.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>Whether the current user has at least <code>type</code> permission for the entity.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clearSession" class="tsd-anchor"></a>
+					<h3>clear<wbr>Session</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clear<wbr>Session<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of TilmeldInterface.clearSession</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L811">packages/tilmeld/src/Tilmeld.ts:811</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Clear session user data.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clone" class="tsd-anchor"></a>
+					<h3>clone</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clone<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_nymphjs_tilmeld.Tilmeld.html" class="tsd-signature-type" data-tsd-kind="Class">Tilmeld</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of TilmeldInterface.clone</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L87">packages/tilmeld/src/Tilmeld.ts:87</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This is used internally by Nymph. Don&#39;t call it yourself.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="_nymphjs_tilmeld.Tilmeld.html" class="tsd-signature-type" data-tsd-kind="Class">Tilmeld</a></h4>
+							<p>A clone of this instance.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="extractToken" class="tsd-anchor"></a>
+					<h3>extract<wbr>Token</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">extract<wbr>Token<span class="tsd-signature-symbol">(</span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><a href="_nymphjs_tilmeld.User.html" class="tsd-signature-type" data-tsd-kind="Class">User</a><span class="tsd-signature-symbol"> &amp; </span><a href="../modules/_nymphjs_tilmeld.html#UserData" class="tsd-signature-type" data-tsd-kind="Type alias">UserData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of TilmeldInterface.extractToken</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L831">packages/tilmeld/src/Tilmeld.ts:831</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Validate and extract the user from a token.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>token: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The authentication token.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><a href="_nymphjs_tilmeld.User.html" class="tsd-signature-type" data-tsd-kind="Class">User</a><span class="tsd-signature-symbol"> &amp; </span><a href="../modules/_nymphjs_tilmeld.html#UserData" class="tsd-signature-type" data-tsd-kind="Type alias">UserData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>The user on success, null on failure.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="fillSession" class="tsd-anchor"></a>
+					<h3>fill<wbr>Session</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">fill<wbr>Session<span class="tsd-signature-symbol">(</span>user<span class="tsd-signature-symbol">: </span><a href="_nymphjs_tilmeld.User.html" class="tsd-signature-type" data-tsd-kind="Class">User</a><span class="tsd-signature-symbol"> &amp; </span><a href="../modules/_nymphjs_tilmeld.html#UserData" class="tsd-signature-type" data-tsd-kind="Type alias">UserData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of TilmeldInterface.fillSession</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L792">packages/tilmeld/src/Tilmeld.ts:792</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fill session user data.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>user: <a href="_nymphjs_tilmeld.User.html" class="tsd-signature-type" data-tsd-kind="Class">User</a><span class="tsd-signature-symbol"> &amp; </span><a href="../modules/_nymphjs_tilmeld.html#UserData" class="tsd-signature-type" data-tsd-kind="Type alias">UserData</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The user.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gatekeeper" class="tsd-anchor"></a>
+					<h3>gatekeeper</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">gatekeeper<span class="tsd-signature-symbol">(</span>ability<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of TilmeldInterface.gatekeeper</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L142">packages/tilmeld/src/Tilmeld.ts:142</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check to see if the current user has an ability.</p>
+								</div>
+								<p>If <code>ability</code> is undefined, it will check to see if a user is currently
+								logged in.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> ability: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The ability.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>Whether the user has the given ability.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="init" class="tsd-anchor"></a>
+					<h3>init</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">init<span class="tsd-signature-symbol">(</span>nymph<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">default</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of TilmeldInterface.init</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L104">packages/tilmeld/src/Tilmeld.ts:104</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Initialize Tilmeld.</p>
+								</div>
+								<p>This is meant to be called internally by Nymph. Don&#39;t call this directly.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>nymph: <span class="tsd-signature-type">default</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The Nymph instance.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="initAccessControl" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> init<wbr>Access<wbr>Control</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">init<wbr>Access<wbr>Control<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L149">packages/tilmeld/src/Tilmeld.ts:149</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="login" class="tsd-anchor"></a>
+					<h3>login</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">login<span class="tsd-signature-symbol">(</span>user<span class="tsd-signature-symbol">: </span><a href="_nymphjs_tilmeld.User.html" class="tsd-signature-type" data-tsd-kind="Class">User</a><span class="tsd-signature-symbol"> &amp; </span><a href="../modules/_nymphjs_tilmeld.html#UserData" class="tsd-signature-type" data-tsd-kind="Type alias">UserData</a>, sendAuthHeader<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L927">packages/tilmeld/src/Tilmeld.ts:927</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Logs the given user into the system.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>user: <a href="_nymphjs_tilmeld.User.html" class="tsd-signature-type" data-tsd-kind="Class">User</a><span class="tsd-signature-symbol"> &amp; </span><a href="../modules/_nymphjs_tilmeld.html#UserData" class="tsd-signature-type" data-tsd-kind="Type alias">UserData</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The user.</p>
+									</div>
+								</li>
+								<li>
+									<h5>sendAuthHeader: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>When true, a custom header with the auth token will be sent.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>True on success, false on failure.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="logout" class="tsd-anchor"></a>
+					<h3>logout</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">logout<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sciactive/nymphjs/blob/1722018/packages/tilmeld/src/Tilmeld.ts#L953">packages/tilmeld/src/Tilmeld.ts:953</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Logs the current user out of the system.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_client.html">@nymphjs/client</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_client_node.html">@nymphjs/client-<wbr>node</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_driver_mysql.html">@nymphjs/driver-<wbr>mysql</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_driver_postgresql.html">@nymphjs/driver-<wbr>postgresql</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_driver_sqlite3.html">@nymphjs/driver-<wbr>sqlite3</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_nymph.html">@nymphjs/nymph</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_pubsub.html">@nymphjs/pubsub</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_query_parser.html">@nymphjs/query-<wbr>parser</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_server.html">@nymphjs/server</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/_nymphjs_tilmeld.html">@nymphjs/tilmeld</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_nymphjs_tilmeld_client.html">@nymphjs/tilmeld-<wbr>client</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="_nymphjs_tilmeld.AbleObject.html" class="tsd-kind-icon">Able<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_nymphjs_tilmeld.AccessControlError.html" class="tsd-kind-icon">Access<wbr>Control<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_nymphjs_tilmeld.BadDataError.html" class="tsd-kind-icon">Bad<wbr>Data<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_nymphjs_tilmeld.BadEmailError.html" class="tsd-kind-icon">Bad<wbr>Email<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_nymphjs_tilmeld.BadUsernameError.html" class="tsd-kind-icon">Bad<wbr>Username<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_nymphjs_tilmeld.CouldNotChangeDefaultPrimaryGroupError.html" class="tsd-kind-icon">Could<wbr>Not<wbr>Change<wbr>Default<wbr>Primary<wbr>Group<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_nymphjs_tilmeld.EmailChangeRateLimitExceededError.html" class="tsd-kind-icon">Email<wbr>Change<wbr>Rate<wbr>Limit<wbr>Exceeded<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_nymphjs_tilmeld.Group.html" class="tsd-kind-icon">Group</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="_nymphjs_tilmeld.Tilmeld.html" class="tsd-kind-icon">Tilmeld</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#Group" class="tsd-kind-icon">Group</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#User" class="tsd-kind-icon">User</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#config" class="tsd-kind-icon">config</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#currentUser" class="tsd-kind-icon">current<wbr>User</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#nymph" class="tsd-kind-icon">nymph</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#request" class="tsd-kind-icon">request</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#response" class="tsd-kind-icon">response</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#skipAuthenticate" class="tsd-kind-icon">skip<wbr>Authenticate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#addAccessControlSelectors" class="tsd-kind-icon">add<wbr>Access<wbr>Control<wbr>Selectors</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#authenticate" class="tsd-kind-icon">authenticate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#checkClientUIDPermissions" class="tsd-kind-icon">check<wbr>ClientUIDPermissions</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#checkPermissions" class="tsd-kind-icon">check<wbr>Permissions</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#clearSession" class="tsd-kind-icon">clear<wbr>Session</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#clone" class="tsd-kind-icon">clone</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#extractToken" class="tsd-kind-icon">extract<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#fillSession" class="tsd-kind-icon">fill<wbr>Session</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#gatekeeper" class="tsd-kind-icon">gatekeeper</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#init" class="tsd-kind-icon">init</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#initAccessControl" class="tsd-kind-icon">init<wbr>Access<wbr>Control</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#login" class="tsd-kind-icon">login</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_nymphjs_tilmeld.Tilmeld.html#logout" class="tsd-kind-icon">logout</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_nymphjs_tilmeld.User.html" class="tsd-kind-icon">User</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_nymphjs_tilmeld.Config.html" class="tsd-kind-icon">Config</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="../modules/_nymphjs_tilmeld.html#AccessControlData" class="tsd-kind-icon">Access<wbr>Control<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="../modules/_nymphjs_tilmeld.html#GroupData" class="tsd-kind-icon">Group<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="../modules/_nymphjs_tilmeld.html#UserData" class="tsd-kind-icon">User<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-property tsd-parent-kind-module">
+						<a href="../modules/_nymphjs_tilmeld.html#ConfigDefaults" class="tsd-kind-icon">Config<wbr>Defaults</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
