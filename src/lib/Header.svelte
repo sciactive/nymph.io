@@ -1,7 +1,7 @@
 <!-- Header -->
 <header id="header">
   <div class="logo">
-    <a href="{base}/" class="logo"><strong>Nymph</strong></a>
+    <a href="{base}/" class="logo"><strong>Nymph.js</strong></a>
   </div>
   <ul class="icons">
     <li>

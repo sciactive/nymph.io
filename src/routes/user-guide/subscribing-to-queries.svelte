@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Subscribing to Queries - User Guide - Nymph</title>
+  <title>Subscribing to Queries - User Guide - Nymph.js</title>
   {@html github}
 </svelte:head>
 

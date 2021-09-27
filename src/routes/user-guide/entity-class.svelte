@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Entity Class - User Guide - Nymph</title>
+  <title>Entity Class - User Guide - Nymph.js</title>
   {@html github}
 </svelte:head>
 
@@ -42,7 +42,7 @@ entity.$hasTag('foo'); // False`}
   />
 
   <p>
-    In Node.js, entitis that have been saved inside another entity's property
+    In Node.js, entities that have been saved inside another entity's property
     are loaded as "sleeping references". This means their data is not actually
     pulled from the database. It will "wake up" when you first try to access
     something other than its GUID.

@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Query Parser - Packages - Nymph</title>
+  <title>Query Parser - Packages - Nymph.js</title>
   {@html github}
 </svelte:head>
 

@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Transactions - User Guide - Nymph</title>
+  <title>Transactions - User Guide - Nymph.js</title>
 </svelte:head>
 
 <section>

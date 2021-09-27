@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Entity Querying - User Guide - Nymph</title>
+  <title>Entity Querying - User Guide - Nymph.js</title>
   {@html github}
 </svelte:head>
 

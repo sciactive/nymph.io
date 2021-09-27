@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Exporting and Importing Entities - User Guide - Nymph</title>
+  <title>Exporting and Importing Entities - User Guide - Nymph.js</title>
   {@html github}
 </svelte:head>
 

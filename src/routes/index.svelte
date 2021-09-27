@@ -1,11 +1,11 @@
 <svelte:head>
-  <title>Nymph - JavaScript Data Objects</title>
+  <title>Nymph.js - JavaScript Data Objects</title>
 </svelte:head>
 
 <section id="banner">
   <div class="content">
     <header>
-      <h1>Nymph</h1>
+      <h1>Nymph.js</h1>
       <p>Object relational mapper for Node.js and the browser.</p>
     </header>
     <p>
@@ -19,7 +19,7 @@
         <a
           href="https://github.com/sciactive/nymphjs"
           target="_blank"
-          class="button big">Learn More</a
+          class="button big">Nymph.js on GitHub</a
         >
       </li>
     </ul>

@@ -147,7 +147,6 @@
             <li><a href="{base}/packages/query-parser">Query Parser</a></li>
           </ul>
         </li>
-        <li><a href="/legacy/index.html" rel="external">Legacy Website</a></li>
       </ul>
     </nav>
 

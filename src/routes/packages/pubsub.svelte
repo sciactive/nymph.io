@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>PubSub Server - Packages - Nymph</title>
+  <title>PubSub Server - Packages - Nymph.js</title>
   {@html github}
 </svelte:head>
 

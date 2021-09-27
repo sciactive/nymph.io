@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>UIDs - User Guide - Nymph</title>
+  <title>UIDs - User Guide - Nymph.js</title>
   {@html github}
 </svelte:head>
 

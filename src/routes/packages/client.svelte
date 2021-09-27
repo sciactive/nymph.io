@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Client - Packages - Nymph</title>
+  <title>Client - Packages - Nymph.js</title>
   {@html github}
 </svelte:head>
 

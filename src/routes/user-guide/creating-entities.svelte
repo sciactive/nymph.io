@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Creating Entities - User Guide - Nymph</title>
+  <title>Creating Entities - User Guide - Nymph.js</title>
   {@html github}
 </svelte:head>
 

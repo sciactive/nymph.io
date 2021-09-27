@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>MySQL Driver - Packages - Nymph</title>
+  <title>MySQL Driver - Packages - Nymph.js</title>
   {@html github}
 </svelte:head>
 

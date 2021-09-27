@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Extending the Entity Class - User Guide - Nymph</title>
+  <title>Extending the Entity Class - User Guide - Nymph.js</title>
   {@html github}
 </svelte:head>
 

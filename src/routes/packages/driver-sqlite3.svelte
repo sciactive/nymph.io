@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>SQLite3 Driver - Packages - Nymph</title>
+  <title>SQLite3 Driver - Packages - Nymph.js</title>
   {@html github}
 </svelte:head>
 

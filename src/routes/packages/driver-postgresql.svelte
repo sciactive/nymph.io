@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>PostgreSQL Driver - Packages - Nymph</title>
+  <title>PostgreSQL Driver - Packages - Nymph.js</title>
   {@html github}
 </svelte:head>
 
