@@ -101,8 +101,7 @@
               <a href="{base}/user-guide/entity-class">Entity Class</a>
             </li>
             <li>
-              <a href="{base}/user-guide/extending-the-entity-class"
-                >Extending the Entity Class</a
+              <a href="{base}/user-guide/defining-entities">Defining Entities</a
               >
             </li>
             <li>
@@ -112,8 +111,7 @@
               <a href="{base}/user-guide/transactions">Transactions</a>
             </li>
             <li>
-              <a href="{base}/user-guide/exporting-and-importing-entities"
-                >Exporting and Importing Entities</a
+              <a href="{base}/user-guide/export-and-import">Export and Import</a
               >
             </li>
           </ul>
