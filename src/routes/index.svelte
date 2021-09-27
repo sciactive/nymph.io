@@ -6,13 +6,13 @@
   <div class="content">
     <header>
       <h1>Nymph.js</h1>
-      <p>Object relational mapper for Node.js and the browser.</p>
+      <p>JavaScript data objects for Node.js and the browser.</p>
     </header>
     <p>
       Nymph is an object relational mapper for collaborative web apps. Nymph
       runs in Node.js and provides a REST server with clients built for Node.js
-      and the browser. Nymph is written in TypeScript. It allows rapid
-      prototyping as well as production ready speed and features.
+      and the browser. It allows rapid prototyping and production ready speed
+      and features.
     </p>
     <ul class="actions">
       <li>
@@ -30,6 +30,14 @@
   <header class="major">
     <h2>Features</h2>
   </header>
+  <p>
+    Imagine writing a SQL query on the frontend and saying, "update this array
+    whenever the results for this query change." Now imagine instead of SQL,
+    your query is a simple JSON structure and has automatic access control built
+    right in. Imagine having all your logic on the frontend, or the backend if
+    you prefer, because you work with the data all the same. If you haven't
+    guessed yet, you're imagining Nymph.
+  </p>
   <div class="features">
     <article>
       <span class="icon"><Icon path={mdiSpeedometer} /></span>
@@ -79,7 +87,7 @@
 
 <section>
   <header class="major">
-    <h2>Framework Ready</h2>
+    <h2>Framework Agnostic</h2>
     <p>
       Nymph is very easy to integrate into React, Svelte, Angular, Ember, and
       more.
@@ -97,6 +105,12 @@
     Nymph's REST server package makes it easy to integrate anywhere in your app.
     It provides an Express middleware that you can place on any arbitrary
     endpoint.
+  </p>
+  <p>
+    Nymph's PubSub server package makes synchronizing your client with pushed
+    changes from the server super easy. With a reactive framework on the
+    frontend, your UI will update in near real time to changes to any entities
+    that match your subscribed queries.
   </p>
 </section>
 

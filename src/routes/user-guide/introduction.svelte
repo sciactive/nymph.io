@@ -40,20 +40,18 @@
   <p>
     All entities are given a globally unique identifier (GUID), which is a
     random, cryptographically secure, 12 byte integer, encoded in a 24
-    character, lowercase HEX string. Since these are generated randomly, and
-    quite large, there should never be any two entities in any Nymph
-    installation with the same GUIDs (unless that's done on purpose). Nymph also
-    provides UIDs, which are sequential and can be used to number entities (or
-    anything else). UIDs can be used to provide a more visibly pleasing
-    identifier for entities.
+    character, lowercase HEX string. Since these are random and quite large,
+    there should never be any two entities in any Nymph installation with the
+    same GUIDs (unless that's done on purpose). Nymph also provides UIDs, which
+    are sequential and can be used to number entities (or anything else).
   </p>
 
   <p>
     Using Nymph, nearly all of an app's business logic can be written on either
     the client side or the server side, since you interact with data the same
     way in each. Anything that relies on access control can be handled on the
-    server side where Tilmeld, Nymph's optional user/group and access control
-    manager, provides security.
+    server side where Tilmeld, Nymph's optional user/group manager, provides
+    access control.
   </p>
 
   <p>
@@ -94,7 +92,7 @@
   </p>
 
   <p>
-    If you need help with the old version of Nymph, that ran on PHP, you can
+    If you need help with the old version of Nymph that ran on PHP, you can
     browse the <a href="/api/legacy/3.0.0/index.html" rel="external"
       >Legacy API docs</a
     >.

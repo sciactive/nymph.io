@@ -308,9 +308,9 @@ const success = await todo.$archive();`}
     </div>
     <div class="col-6 col-12-small" style="text-align: end;">
       <a
-        href="{base}/user-guide/extending-the-entity-class"
+        href="{base}/user-guide/defining-entities"
         class="button"
-        style="margin: .5em;">Next: Ext. the Entity Class</a
+        style="margin: .5em;">Next: Defining Entities</a
       >
     </div>
   </div>

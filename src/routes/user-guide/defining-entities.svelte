@@ -1,11 +1,11 @@
 <svelte:head>
-  <title>Extending the Entity Class - User Guide - Nymph.js</title>
+  <title>Defining Entities - User Guide - Nymph.js</title>
   {@html github}
 </svelte:head>
 
 <section>
   <header class="major">
-    <h1 style="font-size: 3em;">Extending the Entity Class</h1>
+    <h1 style="font-size: 3em;">Defining Entities</h1>
   </header>
 
   <p>
@@ -21,7 +21,10 @@
     <div style="text-align: end;">Extending Entity in Node.js</div>
     <Highlight
       language={typescript}
-      code={`export type TodoData = {
+      code={`import { Entity, Selector } from '@nymphjs/nymph';
+import Joi from 'joi';
+
+export type TodoData = {
   name?: string;
   done?: boolean;
 };
@@ -61,10 +64,11 @@ export class Todo extends Entity<TodoData> {
   }
 
   async $save() {
-    if (!Tilmeld.gatekeeper()) {
+    if (!this.$nymph.tilmeld?.gatekeeper()) {
       // Only allow logged in users to save.
       throw new Error('You are not logged in.');
     }
+
     // Validate the entity's data.
     Joi.attempt(
       this.$getValidatable(),
@@ -86,22 +90,42 @@ export class Todo extends Entity<TodoData> {
             Joi.string()
               .pattern(/[\x01-\x1F\x7F]/, {
                 name: 'control characters',
-                invert: true
+                invert: true,
               })
               .min(1)
           )
           .required(),
         name: Joi.string().trim(false).min(1).required(),
-        done: Joi.boolean().required()
+        done: Joi.boolean().required(),
       }),
       'Invalid Todo: '
     );
+
+    // Check that this is not a duplicate Todo.
+    const selector: Selector = {
+      type: '&',
+      equal: ['name', this.$data.name],
+    };
+    if (this.guid) {
+      selector['!guid'] = this.guid;
+    }
+    if (
+      await this.$nymph.getEntity(
+        {
+          class: this.constructor as typeof Todo,
+        },
+        selector
+      )
+    ) {
+      throw new Error('There is already a todo for that.');
+    }
+
     return await super.$save();
   }
 }
 
 // Elsewhere, after initializing Nymph.
-nymph.setEntityClass(Todo.class, Todo);`}
+nymph.addEntityClass(Todo);`}
     />
   </div>
 
@@ -109,7 +133,9 @@ nymph.setEntityClass(Todo.class, Todo);`}
     <div style="text-align: end;">Extending Entity in the Client</div>
     <Highlight
       language={typescript}
-      code={`export type TodoData = {
+      code={`import { Entity } from '@nymphjs/client';
+
+export type TodoData = {
   name?: string;
   done?: boolean;
 };
@@ -141,7 +167,7 @@ export class Todo extends Entity<TodoData> {
 }
 
 // Elsewhere, after initializing Nymph.
-nymph.setEntityClass(Todo.class, Todo);`}
+nymph.addEntityClass(Todo);`}
     />
   </div>
 
@@ -149,8 +175,22 @@ nymph.setEntityClass(Todo.class, Todo);`}
     In both cases, defaults are set in the constructor. In this case, the <code
       >done</code
     >
-    property is set to false and the <code>name</code> property is set to an empty
-    string.
+    property is set to false and the <code>name</code> property is set to an
+    empty string. You can see that from within the methods of an entity, the
+    entity's data (other than guid, cdate, mdate, and tags) are accessed from
+    <code>this.$data</code>. The
+    <code>$data</code> part is not necessary outside of the entity's own methods.
+  </p>
+
+  <p>
+    You'll also notice that when using Nymph from within an entity's methods,
+    there is an instance of Nymph available in <code>this.$nymph</code> (or
+    <code>this.nymph</code> in static methods). Using this instance is
+    <strong>especially important in Node.js</strong> for Nymph transactions and Tilmeld
+    authentication. These instances will know which user is logged in and add appropriate
+    permission checks, and will maintain a persistent DB connection during a transaction.
+    On the client, it is less important to use these instances, unless you run multiple
+    instances of the Nymph client in your app.
   </p>
 
   <p>
@@ -174,7 +214,8 @@ nymph.setEntityClass(Todo.class, Todo);`}
   <p>
     On each the Node.js class and the client class, the class name is set in the <code
       >class</code
-    > static property. This class name should match on each side.
+    > static property. This class name should match on each side. It is how Nymph
+    maps the client class to the Node.js class and vice versa.
   </p>
 
   <p>

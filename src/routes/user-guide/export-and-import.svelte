@@ -1,18 +1,18 @@
 <svelte:head>
-  <title>Exporting and Importing Entities - User Guide - Nymph.js</title>
+  <title>Export and Import - User Guide - Nymph.js</title>
   {@html github}
 </svelte:head>
 
 <section>
   <header class="major">
-    <h1 style="font-size: 3em;">Exporting and Importing Entities</h1>
+    <h1 style="font-size: 3em;">Export and Import</h1>
   </header>
 
   <p>
-    Nymph provides a method for exporting and importing entities, regardless of
-    which driver is currently in use. This allows backup, restore, duplication,
-    or transferring an entire database of entities, even with different database
-    drivers.
+    Nymph provides a method for exporting and importing its entities and UIDs,
+    regardless of which driver is currently in use. This allows backup, restore,
+    duplication, or transferring an entire database, even with different
+    database drivers.
   </p>
 
   <p>Nymph has the following methods for exporting and importing entities.</p>
@@ -39,7 +39,7 @@ nymph.import(filename);`}
   />
 
   <p>
-    The format of an entity export file is simple, and readable by all drivers.
+    The format of a Nymph export file is simple, and readable by all drivers.
     The file extension, nex, stands for Nymph Entity eXchange.
   </p>
 

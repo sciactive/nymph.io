@@ -8,14 +8,19 @@
   </header>
 
   <p>
-    In Node.js, Nymph supports nested transactions. Nothing will be written to
-    the database's permanent storage until the highest level transaction is
-    committed. When you start a transaction, you give it a name, then you can
-    commit or roll back that transaction, by name. This means if you're doing
-    transactions recursively, you should use a counter in your name. Nymph uses
-    internal transactions that start with the "nymph-" prefix. You should be
-    sure to commit or rollback transactions in the reverse order that they were
-    started, or you might run into trouble.
+    In Node.js, Nymph supports nested transactions. Nothing will be permanently
+    written to the database's storage until the highest level transaction is
+    committed. When a nested transaction is rolled back, the database will be in
+    the state where the transaction above it started that nested transaction.
+  </p>
+
+  <p>
+    When you start a transaction, you give it a name, then you can commit or
+    roll back that transaction, by name. This means if you're doing transactions
+    recursively, you should use a counter in your name. Nymph uses internal
+    transactions that start with the "nymph-" prefix, so don't use that. You
+    should be sure to commit or rollback transactions in the reverse order that
+    they were started, or you might run into trouble.
   </p>
 
   <p><code>Nymph</code> has the following methods for managing transactions.</p>
@@ -36,6 +41,15 @@
   </p>
 
   <p>
+    When you start a new transaction, entities retrieved from that transaction's
+    Nymph instance will have that instance within their static <code>nymph</code
+    >
+    property and instance <code>$nymph</code> property. As long as the entity code
+    always uses these instances, every query and change should occur within that
+    transaction.
+  </p>
+
+  <p>
     Not all databases that Nymph supports (namely, MySQL with an engine that
     doesn't support transactions, like the MyISAM engine) can use transactions.
     To ensure data consistency, it's highly recommended to use a configuration
@@ -52,9 +66,9 @@
     </div>
     <div class="col-6 col-12-small" style="text-align: end;">
       <a
-        href="{base}/user-guide/exporting-and-importing-entities"
+        href="{base}/user-guide/export-and-import"
         class="button"
-        style="margin: .5em;">Next: Exp. and Imp. Entities</a
+        style="margin: .5em;">Next: Export and Import</a
       >
     </div>
   </div>

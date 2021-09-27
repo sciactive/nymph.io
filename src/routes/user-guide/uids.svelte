@@ -38,15 +38,21 @@ await entity.$save();`}
   />
 
   <p>
-    You probably don't want to allow UIDs from the client. Then a malicious user
-    can reset the UID. Instead, from the server side, you can create a UID when
-    the entity is saved.
+    You probably don't want to allow any UIDs from the client. Then a malicious
+    user can mess with the UID. Instead, from the server side, you can create a
+    UID when the entity is saved. You can also gate UIDs using abilities like
+    "uid/get/nameofuid", "uid/new/nameofuid", and "uid/set/nameofuid". These
+    abilities are <strong>only</strong> checked for client queries. If you're
+    using UIDs from Node.js and want to gate them, use the
+    <code>checkClientUIDPermissions</code> method on Tilmeld.
   </p>
 
   <p>
     Caution: If a UID is incremented, and the entity you're using it on can't be
     saved, there is no safe way to decrement the UID back to its previous value.
-    Therefore, you're advised to not use UIDs within transactions.
+    Therefore, you're advised to not use UIDs within transactions. (You can use
+    your top-level instance of Nymph to make a query outside of your
+    transaction.)
   </p>
 </section>
 
@@ -54,9 +60,9 @@ await entity.$save();`}
   <div class="row">
     <div class="col-6 col-12-small">
       <a
-        href="{base}/user-guide/extending-the-entity-class"
+        href="{base}/user-guide/defining-entities"
         class="button"
-        style="margin: .5em;">Previous: Ext. the Entity Class</a
+        style="margin: .5em;">Previous: Defining Entities</a
       >
     </div>
     <div class="col-6 col-12-small" style="text-align: end;">
