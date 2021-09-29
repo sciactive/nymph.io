@@ -24,16 +24,16 @@
 
 		
 
-		<link rel="modulepreload" href="/_app/start-26b661e4.js">
+		<link rel="modulepreload" href="/_app/start-57f34020.js">
 		<link rel="modulepreload" href="/_app/chunks/vendor-836b274b.js">
 		<link rel="modulepreload" href="/_app/chunks/paths-6758d194.js">
 		<link rel="modulepreload" href="/_app/pages/__layout.svelte-9388811c.js">
 		<link rel="modulepreload" href="/_app/chunks/Icon-7e579511.js">
-		<link rel="modulepreload" href="/_app/pages/user-guide/defining-entities.svelte-c870af5a.js">
+		<link rel="modulepreload" href="/_app/pages/user-guide/defining-entities.svelte-dd6406f1.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 
 		<script type="module">
-			import { start } from "/_app/start-26b661e4.js";
+			import { start } from "/_app/start-57f34020.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
@@ -47,7 +47,7 @@
 					error: null,
 					nodes: [
 						import("/_app/pages/__layout.svelte-9388811c.js"),
-						import("/_app/pages/user-guide/defining-entities.svelte-c870af5a.js")
+						import("/_app/pages/user-guide/defining-entities.svelte-dd6406f1.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -152,7 +152,7 @@
         <span class="hljs-attr">tags</span>: <span class="hljs-title class_">Joi</span>.<span class="hljs-title function_">array</span>()
           .<span class="hljs-title function_">items</span>(
             <span class="hljs-title class_">Joi</span>.<span class="hljs-title function_">string</span>()
-              .<span class="hljs-title function_">pattern</span>(<span class="hljs-regexp">/[-]/</span>, {
+              .<span class="hljs-title function_">pattern</span>(<span class="hljs-regexp">/[\x01-\x1F\x7F]/</span>, {
                 <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;control characters&#x27;</span>,
                 <span class="hljs-attr">invert</span>: <span class="hljs-literal">true</span>,
               })
