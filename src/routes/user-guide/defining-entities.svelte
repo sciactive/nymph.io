@@ -21,7 +21,8 @@
     <div style="text-align: end;">Extending Entity in Node.js</div>
     <Highlight
       language={typescript}
-      code={`import { Entity, Selector } from '@nymphjs/nymph';
+      code={`import { Entity, Selector, nymphJoiProps } from '@nymphjs/nymph';
+import { tilmeldJoiProps } from '@nymphjs/tilmeld';
 import Joi from 'joi';
 
 export type TodoData = {
@@ -73,29 +74,10 @@ export class Todo extends Entity<TodoData> {
     Joi.attempt(
       this.$getValidatable(),
       Joi.object().keys({
-        guid: Joi.alternatives()
-          .try(
-            Joi.any().only().allow(null),
-            Joi.string().trim(false).length(24).hex()
-          )
-          .required(),
-        cdate: Joi.alternatives()
-          .try(Joi.any().only().allow(null), Joi.number())
-          .required(),
-        mdate: Joi.alternatives()
-          .try(Joi.any().only().allow(null), Joi.number())
-          .required(),
-        tags: Joi.array()
-          .items(
-            Joi.string()
-              .pattern(/[\\x01-\\x1F\\x7F]/, {
-                name: 'control characters',
-                invert: true,
-              })
-              .min(1)
-          )
-          .required(),
-        name: Joi.string().trim(false).min(1).required(),
+        ...nymphJoiProps,
+        ...tilmeldJoiProps,
+
+        name: Joi.string().trim(false).required(),
         done: Joi.boolean().required(),
       }),
       'Invalid Todo: '

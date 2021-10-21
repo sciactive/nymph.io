@@ -165,6 +165,16 @@ async function doQuery() {
   </ul>
 
   <header>
+    <h3>tag and !tag</h3>
+  </header>
+
+  <p>Check for a tag.</p>
+
+  <ul>
+    <li><code>&lt;tag&gt;</code> or <code>&lt;!tag&gt;</code></li>
+  </ul>
+
+  <header>
     <h3>truthy and !truthy</h3>
   </header>
 
