@@ -142,6 +142,7 @@
               >
             </li>
             <li><a href="{base}/packages/tilmeld-setup">Tilmeld Setup</a></li>
+            <li><a href="{base}/packages/sorter">Entity Sorter</a></li>
             <li><a href="{base}/packages/query-parser">Query Parser</a></li>
           </ul>
         </li>
