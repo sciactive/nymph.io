@@ -40,19 +40,18 @@ import BlogPost from './BlogPost';
 import Category from './Category';
 
 async function doQuery() {
-  const query =
-    'limit:4 foobar (| [archived] mdate<"2 weeks ago") category<{cat Tech}>';
-  const [options, ...selectors] = queryParser(
-    query,
-    BlogPost,
-    ['title', 'body'],
-    {
+  const [options, ...selectors] = queryParser({
+    query:
+      'limit:4 foobar (| [archived] mdate<"2 weeks ago") category<{cat Tech}>',
+    entityClass: BlogPost,
+    defaultFields: ['title', 'body'],
+    qrefMap: {
       cat: {
         class: Category,
         defaultFields: ['name'],
       },
-    }
-  );
+    },
+  });
   /*
   Options will be
     {
@@ -60,7 +59,7 @@ async function doQuery() {
       limit: 4
     }
 
-  And selectors will be
+  And selectors will be (equivalent to)
     [
       {
         type: "|",
@@ -449,12 +448,22 @@ Published is not truthy and cdate is not greater than 6 months ago.
 
   <p>
     Anything contained in the query (including in selector parentheses) that
-    doesn't match any of the options or clause syntaxes listed above will be
-    added (at the appropriate nesting level) to a selector with an <code
-      >"|"</code
-    >
-    type in an <code>ilike</code> clause surrounded by "%" characters for each
-    field passed in to the <code>defaultFields</code> argument.
+    doesn't match any of the options or clause syntaxes listed above (bare query
+    parts) will be added (at the appropriate nesting level) to a selector with
+    an <code>"|"</code> type in an <code>ilike</code> clause surrounded by "%"
+    characters for each field passed in to the <code>defaultFields</code> argument.
+  </p>
+
+  <header class="major">
+    <h2>Bare Query Handler</h2>
+  </header>
+
+  <p>
+    You can also supply a function in the option <code>bareHandler</code> that
+    will handle bare query parts instead of the "Default Fields" behavior
+    described above. It will receive three arguments, the query parts, the
+    entity class, and the default fields entry for that class. It should return
+    a partial selector that will replace or extend the <code>"|"</code> selector.
   </p>
 </section>
 

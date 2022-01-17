@@ -35,8 +35,8 @@
     whenever the results for this query change." Now imagine instead of SQL,
     your query is a simple JSON structure and has automatic access control built
     right in. Imagine having all your logic on the frontend, or the backend if
-    you prefer, because you work with the data all the same. If you haven't
-    guessed yet, you're imagining Nymph.
+    you prefer, because you work with the data all the same. You're imagining
+    Nymph.
   </p>
   <div class="features">
     <article>
