@@ -14,19 +14,18 @@
     "format": "prettier --ignore-unknown --write --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "@mdi/js": "^5.9.55",
-    "@sveltejs/adapter-static": "^1.0.0-next.16",
+    "@mdi/js": "^6.5.95",
+    "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
-    "prettier": "~2.2.1",
-    "prettier-plugin-svelte": "^2.3.1",
-    "sass": "^1.38.0",
-    "svelte": "^3.34.0",
-    "svelte-check": "^2.0.0",
-    "svelte-highlight": "^3.2.0",
-    "svelte-preprocess": "^4.0.0",
-    "tslib": "^2.0.0",
-    "typescript": "^4.0.0"
+    "prettier": "~2.5.1",
+    "prettier-plugin-svelte": "^2.6.0",
+    "sass": "^1.48.0",
+    "svelte": "^3.46.2",
+    "svelte-check": "^2.3.0",
+    "svelte-highlight": "^5.2.0",
+    "svelte-preprocess": "^4.10.2",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.4"
   },
-  "type": "module",
-  "dependencies": {}
+  "type": "module"
 }
