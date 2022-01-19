@@ -116,6 +116,19 @@
 
 <section>
   <header class="major">
+    <h2>Full API Docs</h2>
+  </header>
+
+  <p>
+    If you want to really dive deep into Nymph, you can also browse the <a
+      href="/api/latest/index.html"
+      rel="external">API docs</a
+    >, which covers every part of Nymph's API.
+  </p>
+</section>
+
+<section>
+  <header class="major">
     <h2>Migration</h2>
   </header>
 
