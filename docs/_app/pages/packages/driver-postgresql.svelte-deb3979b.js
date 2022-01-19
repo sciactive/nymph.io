@@ -1,0 +1,17 @@
+import{S as _e,i as ye,s as ve,a2 as le,a7 as Ee,a3 as $e,a4 as Se,l as he,k as h,e as o,t as i,w as ie,N as Pe,a5 as He,d as s,m as c,c as n,a as l,h as d,x as ce,f as qe,b as _,a6 as be,H as e,g as de,y as pe,I as je,q as me,o as ge,B as ue}from"../../chunks/vendor-57c99eaa.js";function we(fe){let m,P,N,t,y,v,Q,A,H,k,C,E,q,I,R,g,T,$,b,O,U,j,z,B,u,F,S,w,G,J,f,K,p,M,V,x;return g=new le({props:{language:Ee,code:"npm install --save @nymphjs/driver-postgresql"}}),u=new le({props:{language:$e,code:`import { Nymph } from '@nymphjs/nymph';
+import PostgreSQLDriver from '@nymphjs/driver-postgresql';
+
+const postgresqlConfig = {
+  host: 'your_db_host',
+  database: 'your_database',
+  user: 'your_user',
+  password: 'your_password',
+};
+
+const nymph = new Nymph({}, new PostgreSQLDriver(postgresqlConfig));
+
+// All done. Nymph is ready to use.`}}),{c(){m=new Se,P=he(),N=h(),t=o("section"),y=o("header"),v=o("h1"),Q=i("PostgreSQL Driver"),A=h(),H=o("p"),k=i(`The PostgreSQL driver lets you configure Nymph to query and save data to a
+    Postgres database.`),C=h(),E=o("header"),q=o("h2"),I=i("Installation"),R=h(),ie(g.$$.fragment),T=h(),$=o("header"),b=o("h2"),O=i("Usage"),U=h(),j=o("p"),z=i(`Supply an instance of this driver with its configuration to Nymph's
+    constructor.`),B=h(),ie(u.$$.fragment),F=h(),S=o("header"),w=o("h2"),G=i("Options"),J=h(),f=o("p"),K=i("See the "),p=o("a"),M=i("config declaration file"),V=i("."),this.h()},l(r){const D=Pe('[data-svelte="svelte-xt0lgh"]',document.head);m=He(D),P=he(),D.forEach(s),N=c(r),t=n(r,"SECTION",{});var a=l(t);y=n(a,"HEADER",{class:!0});var W=l(y);v=n(W,"H1",{style:!0});var X=l(v);Q=d(X,"PostgreSQL Driver"),X.forEach(s),W.forEach(s),A=c(a),H=n(a,"P",{});var Y=l(H);k=d(Y,`The PostgreSQL driver lets you configure Nymph to query and save data to a
+    Postgres database.`),Y.forEach(s),C=c(a),E=n(a,"HEADER",{class:!0});var Z=l(E);q=n(Z,"H2",{});var ee=l(q);I=d(ee,"Installation"),ee.forEach(s),Z.forEach(s),R=c(a),ce(g.$$.fragment,a),T=c(a),$=n(a,"HEADER",{class:!0});var te=l($);b=n(te,"H2",{});var ae=l(b);O=d(ae,"Usage"),ae.forEach(s),te.forEach(s),U=c(a),j=n(a,"P",{});var se=l(j);z=d(se,`Supply an instance of this driver with its configuration to Nymph's
+    constructor.`),se.forEach(s),B=c(a),ce(u.$$.fragment,a),F=c(a),S=n(a,"HEADER",{class:!0});var re=l(S);w=n(re,"H2",{});var oe=l(w);G=d(oe,"Options"),oe.forEach(s),re.forEach(s),J=c(a),f=n(a,"P",{});var L=l(f);K=d(L,"See the "),p=n(L,"A",{href:!0,target:!0,rel:!0});var ne=l(p);M=d(ne,"config declaration file"),ne.forEach(s),V=d(L,"."),L.forEach(s),a.forEach(s),this.h()},h(){document.title="PostgreSQL Driver - Packages - Nymph.js",m.a=P,qe(v,"font-size","3em"),_(y,"class","major"),_(E,"class","major"),_($,"class","major"),_(S,"class","major"),_(p,"href","https://github.com/sciactive/nymphjs/tree/master/packages/driver-postgresql/src/conf/d.ts"),_(p,"target","_blank"),_(p,"rel","external")},m(r,D){m.m(be,document.head),e(document.head,P),de(r,N,D),de(r,t,D),e(t,y),e(y,v),e(v,Q),e(t,A),e(t,H),e(H,k),e(t,C),e(t,E),e(E,q),e(q,I),e(t,R),pe(g,t,null),e(t,T),e(t,$),e($,b),e(b,O),e(t,U),e(t,j),e(j,z),e(t,B),pe(u,t,null),e(t,F),e(t,S),e(S,w),e(w,G),e(t,J),e(t,f),e(f,K),e(f,p),e(p,M),e(f,V),x=!0},p:je,i(r){x||(me(g.$$.fragment,r),me(u.$$.fragment,r),x=!0)},o(r){ge(g.$$.fragment,r),ge(u.$$.fragment,r),x=!1},d(r){s(P),r&&m.d(),r&&s(N),r&&s(t),ue(g),ue(u)}}}class Ne extends _e{constructor(m){super();ye(this,m,null,we,ve,{})}}export{Ne as default};

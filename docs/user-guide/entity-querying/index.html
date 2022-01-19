@@ -21,43 +21,34 @@
   Outdated base version: https://github.com/primer/github-syntax-light
   Current colors taken from GitHub's CSS
 */.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}</style><!-- HTML_TAG_END -->
-
-		
-
-		<link rel="modulepreload" href="/_app/start-f0d45a0a.js">
-		<link rel="modulepreload" href="/_app/chunks/vendor-836b274b.js">
-		<link rel="modulepreload" href="/_app/chunks/paths-6758d194.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-2479e4e0.js">
-		<link rel="modulepreload" href="/_app/chunks/Icon-7e579511.js">
-		<link rel="modulepreload" href="/_app/pages/user-guide/entity-querying.svelte-33f7e848.js">
-		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
-
-		<script type="module">
-			import { start } from "/_app/start-f0d45a0a.js";
-			start({
-				target: document.querySelector("body"),
-				paths: {"base":"","assets":""},
-				session: {},
-				host: location.host,
-				route: true,
-				spa: false,
-				trailing_slash: "never",
-				hydrate: {
-					status: 200,
-					error: null,
-					nodes: [
-						import("/_app/pages/__layout.svelte-2479e4e0.js"),
-						import("/_app/pages/user-guide/entity-querying.svelte-33f7e848.js")
-					],
-					page: {
-						host: location.host, // TODO this is redundant
-						path: "/user-guide/entity-querying",
-						query: new URLSearchParams(""),
+	<link rel="stylesheet" href="/_app/assets/vendor-47c9022a.css">
+	<link rel="modulepreload" href="/_app/start-72409d61.js">
+	<link rel="modulepreload" href="/_app/chunks/vendor-57c99eaa.js">
+	<link rel="modulepreload" href="/_app/chunks/paths-396f020f.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-3eaf2589.js">
+	<link rel="modulepreload" href="/_app/chunks/Icon-68f09f50.js">
+	<link rel="modulepreload" href="/_app/pages/user-guide/entity-querying.svelte-b714008f.js">
+			<script type="module">
+				import { start } from "/_app/start-72409d61.js";
+				start({
+					target: document.querySelector("body"),
+					paths: {"base":"","assets":""},
+					session: {},
+					route: true,
+					spa: false,
+					trailing_slash: "never",
+					hydrate: {
+						status: 200,
+						error: null,
+						nodes: [
+							import("/_app/pages/__layout.svelte-3eaf2589.js"),
+						import("/_app/pages/user-guide/entity-querying.svelte-b714008f.js")
+						],
+						url: new URL("http://prerender/user-guide/entity-querying"),
 						params: {}
 					}
-				}
-			});
-		</script>
+				});
+			</script>
   </head>
   <body class="is-preload">
     
@@ -90,7 +81,7 @@
   </p>
 
   
-  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-comment">// FoobarBaz expects a GUID.</span>
+  <pre data-language="typescript" class=" svelte-nstrv8"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-comment">// FoobarBaz expects a GUID.</span>
 <span class="hljs-keyword">const</span> baz = <span class="hljs-keyword">await</span> <span class="hljs-title class_">FoobarBaz</span>.<span class="hljs-title function_">factory</span>(guid);
 <span class="hljs-keyword">if</span> (baz.<span class="hljs-property">guid</span> == <span class="hljs-literal">null</span>) {
   <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;Can&#x27;t find the Foobar Baz!&quot;</span>);
@@ -272,7 +263,7 @@
   </p>
 
   
-  <pre class="hljs"><code><!-- HTML_TAG_START -->{
+  <pre data-language="typescript" class=" svelte-nstrv8"><code class="hljs"><!-- HTML_TAG_START -->{
   <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
   <span class="hljs-attr">gte</span>: [<span class="hljs-string">&#x27;cdate&#x27;</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">&#x27;-1 day&#x27;</span>]
 }<!-- HTML_TAG_END --></code></pre>
@@ -287,13 +278,13 @@
   <p>Get the first FoobarBaz entity.</p>
 
   
-  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntity</span>({ <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span> });<!-- HTML_TAG_END --></code></pre>
+  <pre data-language="typescript" class=" svelte-nstrv8"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntity</span>({ <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span> });<!-- HTML_TAG_END --></code></pre>
 
 
   <p>Get the latest FoobarBaz entity.</p>
 
   
-  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntity</span>({
+  <pre data-language="typescript" class=" svelte-nstrv8"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntity</span>({
   <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>,
   <span class="hljs-attr">reverse</span>: <span class="hljs-literal">true</span>
 });<!-- HTML_TAG_END --></code></pre>
@@ -302,7 +293,7 @@
   <p>Get all baz tagged entities, using the FoobarBaz class.</p>
 
   
-  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+  <pre data-language="typescript" class=" svelte-nstrv8"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
   },
@@ -316,7 +307,7 @@
   <p>Get the five last created bar and baz tagged entities.</p>
 
   
-  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+  <pre data-language="typescript" class=" svelte-nstrv8"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>,
     <span class="hljs-attr">reverse</span>: <span class="hljs-literal">true</span>,
@@ -332,7 +323,7 @@
   <p>Get the five last modified bar and baz tagged entities.</p>
 
   
-  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+  <pre data-language="typescript" class=" svelte-nstrv8"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>,
     <span class="hljs-attr">reverse</span>: <span class="hljs-literal">true</span>,
@@ -349,7 +340,7 @@
   <p>Get baz tagged entities with names.</p>
 
   
-  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+  <pre data-language="typescript" class=" svelte-nstrv8"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
   },
@@ -364,7 +355,7 @@
   <p>Get baz tagged entities without names.</p>
 
   
-  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+  <pre data-language="typescript" class=" svelte-nstrv8"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
   },
@@ -380,7 +371,7 @@
   </p>
 
   
-  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+  <pre data-language="typescript" class=" svelte-nstrv8"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
   },
@@ -405,7 +396,7 @@
   <p>Get baz tagged entities with either first names or last names.</p>
 
   
-  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+  <pre data-language="typescript" class=" svelte-nstrv8"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
   },
@@ -423,7 +414,7 @@
   <p>Get baz tagged entities created since yesterday.</p>
 
   
-  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+  <pre data-language="typescript" class=" svelte-nstrv8"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
   },
@@ -440,7 +431,7 @@
   </p>
 
   
-  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+  <pre data-language="typescript" class=" svelte-nstrv8"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
   },
@@ -458,7 +449,7 @@
   </p>
 
   
-  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+  <pre data-language="typescript" class=" svelte-nstrv8"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   { <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span> },
   { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>, <span class="hljs-attr">tag</span>: <span class="hljs-string">&#x27;baz&#x27;</span> },
   {
@@ -479,7 +470,7 @@
   </p>
 
   
-  <pre class="hljs"><code><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+  <pre data-language="typescript" class=" svelte-nstrv8"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   { <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span> },
   {
     <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
@@ -562,9 +553,6 @@
   
 </div>
 
-
-
-	
 
   </body>
 </html>
