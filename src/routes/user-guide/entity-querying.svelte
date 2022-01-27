@@ -104,10 +104,11 @@ if (cronUser.guid == null) {
         </tr>
         <tr>
           <td>return</td>
-          <td>'entity' | 'guid'</td>
+          <td>'entity' | 'guid' | 'count'</td>
           <td>'entity'</td>
           <td
-            >What to return, the entities with their data or just the GUIDs.</td
+            >What to return, the entities with their data, just the GUIDs, or
+            just a count.</td
           >
         </tr>
         <tr>
