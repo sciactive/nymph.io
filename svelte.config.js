@@ -11,13 +11,7 @@ const config = {
     adapter: adapter({
       pages: 'docs',
       assets: 'docs'
-    }),
-    target: 'body',
-    vite: {
-      optimizeDeps: {
-        include: ['highlight.js/lib/core']
-      }
-    }
+    })
   }
 };
 
