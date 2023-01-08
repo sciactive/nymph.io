@@ -137,9 +137,9 @@ export default class Todo extends Entity<TodoData> {
 
 <script lang="ts">
   import Highlight from 'svelte-highlight';
-  import bash from 'svelte-highlight/src/languages/bash';
-  import typescript from 'svelte-highlight/src/languages/typescript';
-  import github from 'svelte-highlight/src/styles/github';
+  import bash from 'svelte-highlight/languages/bash';
+  import typescript from 'svelte-highlight/languages/typescript';
+  import github from 'svelte-highlight/styles/github';
 
   import { base } from '$app/paths';
 </script>

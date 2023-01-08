@@ -230,8 +230,8 @@ nymph.addEntityClass(Todo);`}
 
 <script lang="ts">
   import Highlight from 'svelte-highlight';
-  import typescript from 'svelte-highlight/src/languages/typescript';
-  import github from 'svelte-highlight/src/styles/github';
+  import typescript from 'svelte-highlight/languages/typescript';
+  import github from 'svelte-highlight/styles/github';
 
   import { base } from '$app/paths';
 </script>
