@@ -122,7 +122,7 @@
 
   <p>
     If you want to really dive deep into Nymph, you can also browse the <a
-      href="/api/latest/index.html"
+      href="/api/latest/"
       rel="external">API docs</a
     >, which covers every part of Nymph's API.
   </p>
@@ -135,7 +135,7 @@
 
   <p>
     In 2021, Nymph was migrated from PHP to Node.js. You can also visit <a
-      href="/legacy/index.html"
+      href="/legacy/"
       rel="external">the site for the legacy version</a
     >.
   </p>

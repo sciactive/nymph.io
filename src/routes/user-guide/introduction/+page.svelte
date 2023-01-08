@@ -86,16 +86,14 @@
 
   <p>
     If you want to really dive deep into Nymph, you can also browse the <a
-      href="/api/latest/index.html"
+      href="/api/latest/"
       rel="external">API docs</a
     >, which covers every part of Nymph's API.
   </p>
 
   <p>
     If you need help with the old version of Nymph that ran on PHP, you can
-    browse the <a href="/api/legacy/3.0.0/index.html" rel="external"
-      >Legacy API docs</a
-    >.
+    browse the <a href="/api/legacy/3.0.0/" rel="external">Legacy API docs</a>.
   </p>
 </section>
 

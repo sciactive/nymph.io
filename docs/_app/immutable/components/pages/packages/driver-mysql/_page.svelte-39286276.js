@@ -1,0 +1,17 @@
+import{S as _e,i as ge,s as ve,R as Ee,e as le,a as h,k as o,q as i,w as he,E as Se,T as $e,h as r,c,l as n,m as l,r as m,x as ie,p as we,n as _,C as e,b as ce,y as me,B as He,f as de,t as pe,z as fe}from"../../../../chunks/index-8e853c83.js";import{H as ue,g as be}from"../../../../chunks/github-07e092b5.js";import{b as je}from"../../../../chunks/bash-2b754df6.js";import{t as qe}from"../../../../chunks/typescript-7dd1ec19.js";function De(ye){let p,w,M,t,g,v,x,A,H,C,P,E,b,R,T,f,k,S,j,I,O,q,z,U,u,B,$,D,F,G,y,J,d,K,V,N;return f=new ue({props:{language:je,code:"npm install --save @nymphjs/driver-mysql"}}),u=new ue({props:{language:qe,code:`import { Nymph } from '@nymphjs/nymph';
+import MySQLDriver from '@nymphjs/driver-mysql';
+
+const mysqlConfig = {
+  host: 'your_db_host',
+  database: 'your_database',
+  user: 'your_user',
+  password: 'your_password',
+};
+
+const nymph = new Nymph({}, new MySQLDriver(mysqlConfig));
+
+// All done. Nymph is ready to use.`}}),{c(){p=new Ee(!1),w=le(),M=h(),t=o("section"),g=o("header"),v=o("h1"),x=i("MySQL Driver"),A=h(),H=o("p"),C=i(`The MySQL driver lets you configure Nymph to query and save data to a MySQL
+    database.`),P=h(),E=o("header"),b=o("h2"),R=i("Installation"),T=h(),he(f.$$.fragment),k=h(),S=o("header"),j=o("h2"),I=i("Usage"),O=h(),q=o("p"),z=i(`Supply an instance of this driver with its configuration to Nymph's
+    constructor.`),U=h(),he(u.$$.fragment),B=h(),$=o("header"),D=o("h2"),F=i("Options"),G=h(),y=o("p"),J=i("See the "),d=o("a"),K=i("config declaration file"),V=i("."),this.h()},l(s){const L=Se("svelte-vuwwx9",document.head);p=$e(L,!1),w=le(),L.forEach(r),M=c(s),t=n(s,"SECTION",{});var a=l(t);g=n(a,"HEADER",{class:!0});var W=l(g);v=n(W,"H1",{style:!0});var X=l(v);x=m(X,"MySQL Driver"),X.forEach(r),W.forEach(r),A=c(a),H=n(a,"P",{});var Y=l(H);C=m(Y,`The MySQL driver lets you configure Nymph to query and save data to a MySQL
+    database.`),Y.forEach(r),P=c(a),E=n(a,"HEADER",{class:!0});var Z=l(E);b=n(Z,"H2",{});var ee=l(b);R=m(ee,"Installation"),ee.forEach(r),Z.forEach(r),T=c(a),ie(f.$$.fragment,a),k=c(a),S=n(a,"HEADER",{class:!0});var te=l(S);j=n(te,"H2",{});var ae=l(j);I=m(ae,"Usage"),ae.forEach(r),te.forEach(r),O=c(a),q=n(a,"P",{});var re=l(q);z=m(re,`Supply an instance of this driver with its configuration to Nymph's
+    constructor.`),re.forEach(r),U=c(a),ie(u.$$.fragment,a),B=c(a),$=n(a,"HEADER",{class:!0});var se=l($);D=n(se,"H2",{});var oe=l(D);F=m(oe,"Options"),oe.forEach(r),se.forEach(r),G=c(a),y=n(a,"P",{});var Q=l(y);J=m(Q,"See the "),d=n(Q,"A",{href:!0,target:!0,rel:!0});var ne=l(d);K=m(ne,"config declaration file"),ne.forEach(r),V=m(Q,"."),Q.forEach(r),a.forEach(r),this.h()},h(){document.title="MySQL Driver - Packages - Nymph.js",p.a=w,we(v,"font-size","3em"),_(g,"class","major"),_(E,"class","major"),_(S,"class","major"),_($,"class","major"),_(d,"href","https://github.com/sciactive/nymphjs/tree/master/packages/driver-mysql/src/conf/d.ts"),_(d,"target","_blank"),_(d,"rel","external")},m(s,L){p.m(be,document.head),e(document.head,w),ce(s,M,L),ce(s,t,L),e(t,g),e(g,v),e(v,x),e(t,A),e(t,H),e(H,C),e(t,P),e(t,E),e(E,b),e(b,R),e(t,T),me(f,t,null),e(t,k),e(t,S),e(S,j),e(j,I),e(t,O),e(t,q),e(q,z),e(t,U),me(u,t,null),e(t,B),e(t,$),e($,D),e(D,F),e(t,G),e(t,y),e(y,J),e(y,d),e(d,K),e(y,V),N=!0},p:He,i(s){N||(de(f.$$.fragment,s),de(u.$$.fragment,s),N=!0)},o(s){pe(f.$$.fragment,s),pe(u.$$.fragment,s),N=!1},d(s){r(w),s&&p.d(),s&&r(M),s&&r(t),fe(f),fe(u)}}}class xe extends _e{constructor(p){super(),ge(this,p,null,De,ve,{})}}export{xe as default};
