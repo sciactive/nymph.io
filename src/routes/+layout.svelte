@@ -176,6 +176,14 @@
       </p>
       <ul class="contact">
         <li class="icon">
+          <Icon path={mdiMastodon} />
+          <a
+            href="https://port87.social/@hperrin"
+            target="_blank"
+            rel="noreferrer">@hperrin on Mastodon</a
+          >
+        </li>
+        <li class="icon">
           <Icon path={mdiTwitter} />
           <a
             href="https://twitter.com/SciActive"
@@ -218,7 +226,13 @@
 
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { mdiEmail, mdiMapMarker, mdiMenu, mdiTwitter } from '@mdi/js';
+  import {
+    mdiEmail,
+    mdiMapMarker,
+    mdiMenu,
+    mdiMastodon,
+    mdiTwitter
+  } from '@mdi/js';
   import { base, assets } from '$app/paths';
   import Header from '$lib/Header.svelte';
   import Icon from '$lib/Icon.svelte';
