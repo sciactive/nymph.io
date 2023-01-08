@@ -44,6 +44,7 @@ nymph.import(filename);`}
   </p>
 
   <Highlight
+    language={plaintext}
     code={`#nex2
 # The above line must be the first thing in the file.
 # Comments begin with #
@@ -88,6 +89,7 @@ nymph.import(filename);`}
 <script lang="ts">
   import Highlight from 'svelte-highlight';
   import typescript from 'svelte-highlight/languages/typescript';
+  import plaintext from 'svelte-highlight/languages/plaintext';
   import github from 'svelte-highlight/styles/github';
 
   import { base } from '$app/paths';
