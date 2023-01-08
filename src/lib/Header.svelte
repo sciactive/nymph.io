@@ -8,6 +8,7 @@
       <a
         href="https://twitter.com/SciActive"
         target="_blank"
+        rel="noreferrer"
         class="icon brands"
         title="Twitter"><Icon path={mdiTwitter} /></a
       >
@@ -16,6 +17,7 @@
       <a
         href="https://github.com/sciactive/nymphjs"
         target="_blank"
+        rel="noreferrer"
         class="icon brands"
         title="GitHub"><Icon path={mdiGithub} /></a
       >

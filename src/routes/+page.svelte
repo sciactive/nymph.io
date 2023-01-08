@@ -19,6 +19,7 @@
         <a
           href="https://github.com/sciactive/nymphjs"
           target="_blank"
+          rel="noreferrer"
           class="button big">Nymph.js on GitHub</a
         >
       </li>

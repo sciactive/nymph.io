@@ -10,7 +10,7 @@
 
   <p>
     The Nymph Node Client let's you do everything the Nymph Client does, but
-    from Node.js instead of the browser.
+    from Node.JS instead of the browser.
   </p>
 
   <header class="major">
@@ -24,6 +24,11 @@
       >dist</code
     >, or TS source in <code>src</code>. There is also a
     <strong><a href="{base}/packages/client">browser client</a></strong>.
+  </p>
+
+  <p>
+    This package provides fetch and WebSocket ponyfills to Nymph and handles
+    Tilmeld auth tokens.
   </p>
 
   <header class="major">

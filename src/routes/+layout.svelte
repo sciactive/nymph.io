@@ -40,7 +40,11 @@
 </svelte:head>
 
 <!-- Main -->
-<div id="main" on:click={() => setSidebarInactive()}>
+<div
+  id="main"
+  on:click={setSidebarInactive}
+  on:keypress={(event) => event.key === 'Enter' || setSidebarInactive()}
+>
   <div class="inner">
     <Header />
 
@@ -60,7 +64,8 @@
 <div
   id="sidebar"
   class:inactive={sidebarInactive}
-  on:click={handleSidebarLinkClick}
+  on:click={handleSidebarLinkActivate}
+  on:keypress={handleSidebarLinkActivate}
 >
   <div class="inner">
     <!-- Logo -->
@@ -76,12 +81,16 @@
       <ul>
         <li><a href="{base}/">Homepage</a></li>
         <li>
-          <span
+          <a
+            href="javascript:void(0);"
             class="opener"
             class:active={submenu === 'user-guide'}
             on:click={() =>
               (submenu = submenu === 'user-guide' ? null : 'user-guide')}
-            >User Guide</span
+            on:keypress={(event) =>
+              event.key === 'Enter' &&
+              (submenu = submenu === 'user-guide' ? null : 'user-guide')}
+            >User Guide</a
           >
           <ul>
             <li><a href="{base}/user-guide/introduction">Introduction</a></li>
@@ -117,12 +126,16 @@
           </ul>
         </li>
         <li>
-          <span
+          <a
+            href="javascript:void(0);"
             class="opener"
             class:active={submenu === 'packages'}
             on:click={() =>
               (submenu = submenu === 'packages' ? null : 'packages')}
-            >Packages</span
+            on:keypress={(event) =>
+              event.key === 'Enter' &&
+              (submenu = submenu === 'packages' ? null : 'packages')}
+            >Packages</a
           >
           <ul>
             <li><a href="{base}/packages/nymph">Nymph Core</a></li>
@@ -144,6 +157,9 @@
             <li><a href="{base}/packages/tilmeld-setup">Tilmeld Setup</a></li>
             <li><a href="{base}/packages/sorter">Entity Sorter</a></li>
             <li><a href="{base}/packages/query-parser">Query Parser</a></li>
+            <li>
+              <a href="{base}/packages/guid">GUID / Unique Code Generator</a>
+            </li>
           </ul>
         </li>
       </ul>
@@ -161,8 +177,10 @@
       <ul class="contact">
         <li class="icon">
           <Icon path={mdiTwitter} />
-          <a href="https://twitter.com/SciActive" target="_blank"
-            >@SciActive on Twitter</a
+          <a
+            href="https://twitter.com/SciActive"
+            target="_blank"
+            rel="noreferrer">@SciActive on Twitter</a
           >
         </li>
         <li class="icon">
@@ -244,7 +262,7 @@
     sidebarInactive = smallWindow;
   }
 
-  function handleSidebarLinkClick(event: MouseEvent) {
+  function handleSidebarLinkActivate(event: MouseEvent | KeyboardEvent) {
     if ('href' in event.target) {
       setSidebarInactive();
     }
