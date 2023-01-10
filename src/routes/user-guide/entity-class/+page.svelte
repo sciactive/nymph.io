@@ -32,7 +32,7 @@
 
   <Highlight
     language={typescript}
-    code={`const entity = await MyEntityClass.factory();
+    code={`const entity = await MyEntity.factory();
 
 entity.$addTag('foo', 'bar');
 entity.$hasTag('foo'); // True
@@ -65,21 +65,21 @@ entity.$hasTag('foo'); // False`}
   <Highlight
     language={typescript}
     code={`// Create some entities.
-let entity = await MyEntityClass.factory();
-entity.foo = await MyEntityClass.factory();
+let entity = await MyEntity.factory();
+entity.foo = await MyEntity.factory();
 entity.foo.bar = 'Old value.';
 await entity.foo.$save();
 await entity.$save();
 
 // Reset the entity to a copy just pulled from the DB.
 entity = await nymph.getEntity(
-  { class: MyEntityClass },
+  { class: MyEntity },
   { type: '&', guid: entity.guid }
 );
 
 // Get a copy of the referenced entity.
 let instOfFoo = await nymph.getEntity(
-  { class: MyEntityClass },
+  { class: MyEntity },
   { type: '&', guid: entity.foo.guid }
 );
 // And change a value on it.
@@ -105,13 +105,13 @@ console.log(entity.foo.bar); // Outputs 'New value.'`}
   <Highlight
     language={typescript}
     code={`// Create an entity.
-const entity = await MyEntityClass.factory();
+const entity = await MyEntity.factory();
 entity.foo = 'Old value.';
 await entity.$save();
 
 // Get a copy of the entity.
 const instOfEnt = await nymph.getEntity(
-  { class: MyEntityClass },
+  { class: MyEntity },
   { type: '&', guid: entity.guid }
 );
 // And change a value on it.
@@ -133,7 +133,7 @@ console.log(entity.foo); // Outputs 'New value.'`}
 
   <Highlight
     language={typescript}
-    code={`const entity = await MyEntityClass.factory();
+    code={`const entity = await MyEntity.factory();
 
 // Save the entity.
 await entity.$save();
@@ -169,31 +169,31 @@ await nymph.deleteEntities([entity]);`}
       <ul>
         <li>They must be entities.</li>
         <li>They must have equal GUIDs, or both can have no GUID.</li>
-        <li>If they have no GUIDs, their data must be equal.</li>
+        <li>If they have no GUIDs, their data and tags must be equal.</li>
       </ul>
     </li>
     <li>
       <code>$equals</code> - Perform a more strict comparison of two entities
-      (basically a GUID + class + data check). To return true, the entities must
+      (basically a GUID + data + tags check). To return true, the entities must
       meet the following criteria.
       <ul>
         <li>They must be entities.</li>
         <li>They must have equal GUIDs, or both can have no GUID.</li>
-        <li>They must be instances of the same class.</li>
-        <li>Their data must be equal.</li>
+        <li>Their data and tags must be equal.</li>
       </ul>
     </li>
     <li>
       <code>$inArray</code> - Check whether the entity is in an array. Takes two
       arguments, the array and a boolean <code>strict</code>. If
       <code>strict</code>
-      is false, the function uses <code>$is</code> to compare, and if it's true,
-      the function uses <code>$equals</code>.
+      is false or undefined, the function uses <code>$is</code> to compare, and
+      if it's true, the function uses <code>$equals</code>.
     </li>
     <li>
       <code>$arraySearch</code> - Search an array for the entity and return the
       corresponding key. Takes two arguments, the array and a boolean
-      <code>strict</code>. If <code>strict</code> is false, the function uses
+      <code>strict</code>. If <code>strict</code> is false or undefined, the
+      function uses
       <code>$is</code>
       to compare, and if it's true, the function uses <code>$equals</code>. This
       method may return 0, which evaluates to false, so you should use
@@ -205,14 +205,17 @@ await nymph.deleteEntities([entity]);`}
   <Highlight
     language={typescript}
     code={`// Assuming the entity with GUID 'a4c1591d6ea91c8450d2d360' exists.
-let entity = await MyEntityClass.factory('a4c1591d6ea91c8450d2d360');
-let entity2 = await MyEntityClass.factory('a4c1591d6ea91c8450d2d360');
+let entity = await MyEntity.factory('a4c1591d6ea91c8450d2d360');
+let entity2 = await MyEntity.factory('a4c1591d6ea91c8450d2d360');
+
+entity.$is(entity2); // True
+entity.$equals(entity2); // True
 
 entity2.someProp = 'some new value';
 entity.$is(entity2); // True
 entity.$equals(entity2); // False
 
-const arr = [null, null, entity];
+const arr = [null, null, entity2];
 entity.$arraySearch(arr); // 2
 entity.$inArray(arr); // True
 entity.$arraySearch(arr, true); // -1
@@ -292,7 +295,7 @@ class Todo extends Entity<TodoData> {
 const success = await Todo.archiveAllDone(true);
 
 // And
-const todo = await Todo.factory();
+const todo = await Todo.factory(someGuid);
 const success = await todo.$archive();`}
   />
 </section>

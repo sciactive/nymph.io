@@ -39,39 +39,31 @@
 
   <p>
     Once you've initialized Nymph Client, set the User and Group classes on it.
+    Then initialize the new User class with the Nymph instance. (This allows the
+    class to set up authentication listeners.)
   </p>
 
   <Highlight
     language={typescript}
     code={`import { Nymph } from '@nymphjs/client';
-import { User, Group } from '@nymphjs/tilmeld-client';
+import {
+  User as UserClass,
+  Group as GroupClass,
+} from '@nymphjs/tilmeld-client';
 
 const nymph = new Nymph({
   restUrl: 'https://yournymphrestserver/path/to/your/endpoint',
 });
-nymph.addEntityClass(User);
-nymph.addEntityClass(Group);`}
+const User = nymph.addEntityClass(UserClass);
+const Group = nymph.addEntityClass(GroupClass);
+User.init(nymph);`}
   />
 
   <p>
-    If you're running more than one instance of Nymph client, you can clone the
-    classes and add those instead. This will keep event listeners and Tilmeld
-    client config separated.
+    If you're running more than one instance of Nymph client, be sure to use the
+    classes returned by <code>addEntityClass</code>, so as not to accidentally
+    submit entities from one instances to another instance.
   </p>
-
-  <Highlight
-    language={typescript}
-    code={`import { Nymph } from '@nymphjs/client';
-import { User, Group } from '@nymphjs/tilmeld-client';
-
-const nymph = new Nymph({
-  restUrl: 'https://yournymphrestserver/path/to/your/endpoint',
-});
-const UserClone = User.clone();
-nymph.addEntityClass(UserClone);
-const GroupClone = Group.clone();
-nymph.addEntityClass(GroupClone);`}
-  />
 </section>
 
 <script lang="ts">

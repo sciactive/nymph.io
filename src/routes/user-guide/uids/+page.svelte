@@ -50,9 +50,7 @@ await entity.$save();`}
   <p>
     Caution: If a UID is incremented, and the entity you're using it on can't be
     saved, there is no safe way to decrement the UID back to its previous value.
-    Therefore, you're advised to not use UIDs within transactions. (You can use
-    your top-level instance of Nymph to make a query outside of your
-    transaction.)
+    It's much better to just throw away that UID.
   </p>
 </section>
 

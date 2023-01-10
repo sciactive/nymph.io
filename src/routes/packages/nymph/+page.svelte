@@ -41,7 +41,7 @@
     code={`// main.ts
 import { Nymph } from '@nymphjs/nymph';
 import MySQLDriver from '@nymphjs/driver-mysql';
-import Todo from './Todo';
+import TodoClass from './Todo';
 
 const mysqlConfig = {
   host: 'your_db_host',
@@ -50,8 +50,10 @@ const mysqlConfig = {
   password: 'your_password',
 };
 
+// Create a new instance of Nymph.
 const nymph = new Nymph({}, new MySQLDriver(mysqlConfig));
-nymph.addEntityClass(Todo);
+// addEntityClass returns the class you should use for this instance of Nymph.
+const Todo = nymph.addEntityClass(TodoClass);
 
 // You are set up. Now you can use entity classes like \`Todo\` to store data,
 // and Nymph's query methods like \`getEntities\` to retrieve them.
@@ -130,7 +132,7 @@ export default class Todo extends Entity<TodoData> {
     See the <a
       href="https://github.com/sciactive/nymphjs/tree/master/packages/nymph/src/conf/d.ts"
       target="_blank"
-      rel="external">config declaration file</a
+      rel="external noreferrer">config declaration file</a
     >.
   </p>
 </section>

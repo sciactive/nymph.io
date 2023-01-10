@@ -20,8 +20,7 @@
   <ul>
     <li><code>export</code> - Export entities to a file.</li>
     <li>
-      <code>exportPrint</code> - Export entities to the client as a downloadable
-      file.
+      <code>exportPrint</code> - Export entities to the console.
     </li>
     <li><code>import</code> - Import entities from a file.</li>
   </ul>

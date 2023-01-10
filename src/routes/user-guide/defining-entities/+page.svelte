@@ -77,7 +77,7 @@ export class Todo extends Entity<TodoData> {
         ...nymphJoiProps,
         ...tilmeldJoiProps,
 
-        name: Joi.string().trim(false).required(),
+        name: Joi.string().trim(false).max(500, 'utf8').required(),
         done: Joi.boolean().required(),
       }),
       'Invalid Todo: '
@@ -107,7 +107,8 @@ export class Todo extends Entity<TodoData> {
 }
 
 // Elsewhere, after initializing Nymph.
-nymph.addEntityClass(Todo);`}
+import { Todo as TodoClass } from './Todo.js';
+const Todo = nymph.addEntityClass(TodoClass);`}
     />
   </div>
 
@@ -149,16 +150,15 @@ export class Todo extends Entity<TodoData> {
 }
 
 // Elsewhere, after initializing Nymph.
-nymph.addEntityClass(Todo);`}
+import { Todo as TodoClass } from './Todo.js';
+const Todo = nymph.addEntityClass(TodoClass);`}
     />
   </div>
 
   <p>
-    In both cases, defaults are set in the constructor. In this case, the <code
-      >done</code
-    >
+    In both cases, defaults are set in the constructor (the <code>done</code>
     property is set to false and the <code>name</code> property is set to an
-    empty string. You can see that from within the methods of an entity, the
+    empty string). You can see that from within the methods of an entity, the
     entity's data (other than guid, cdate, mdate, and tags) are accessed from
     <code>this.$data</code>. The
     <code>$data</code> part is not necessary outside of the entity's own methods.
@@ -167,12 +167,11 @@ nymph.addEntityClass(Todo);`}
   <p>
     You'll also notice that when using Nymph from within an entity's methods,
     there is an instance of Nymph available in <code>this.$nymph</code> (or
-    <code>this.nymph</code> in static methods). Using this instance is
-    <strong>especially important in Node.js</strong> for Nymph transactions and Tilmeld
-    authentication. These instances will know which user is logged in and add appropriate
-    permission checks, and will maintain a persistent DB connection during a transaction.
-    On the client, it is less important to use these instances, unless you run multiple
-    instances of the Nymph client in your app.
+    <code>this.nymph</code> in static methods). In Node.js, these instances will
+    know which user is logged in and add appropriate permission checks, and will
+    maintain a persistent DB connection during a transaction. On the client, these
+    instances will know how to communicate with the configured REST server. Basically,
+    you have to use these instances.
   </p>
 
   <p>
@@ -189,12 +188,12 @@ nymph.addEntityClass(Todo);`}
     static property in Node.js determine which methods and static methods can be
     called from the client using <code>$serverCall</code> and
     <code>serverCallStatic</code>. In the client class, the
-    <code>return await this.$serverCall('archive', []);</code> statement takes advantage
+    <code>return await this.$serverCall('$archive', []);</code> statement takes advantage
     of this feature.
   </p>
 
   <p>
-    On each the Node.js class and the client class, the class name is set in the <code
+    On both the Node.js class and the client class, the class name is set in the <code
       >class</code
     > static property. This class name should match on each side. It is how Nymph
     maps the client class to the Node.js class and vice versa.
@@ -203,10 +202,10 @@ nymph.addEntityClass(Todo);`}
   <p>
     Finally, in Node.js, the <code>Todo</code> class validates all of its data
     in the <code>$save</code> method using
-    <a href="https://joi.dev/" target="_blank">Joi</a>. Without this validation,
-    a malicious user could send invalid data types or even megabytes worth of
-    data in an entity. Any validation library should support validation in Nymph
-    using the <code>$getValidatable</code> method. The
+    <a href="https://joi.dev/" target="_blank" rel="noreferrer">Joi</a>. Without
+    this validation, a malicious user could send invalid data types or even
+    megabytes worth of data in an entity. Any validation library should support
+    validation in Nymph using the <code>$getValidatable</code> method. The
     <code>$allowlistData</code> property will ensure no extra properties are set.
   </p>
 </section>

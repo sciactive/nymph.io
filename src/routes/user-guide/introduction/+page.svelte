@@ -28,7 +28,7 @@
     prototyping in Nymph very easy. Then when you're ready to launch to
     production, you would use a validation library to enforce a schema for your
     entities.
-    <a href="https://joi.dev/" target="_blank">Joi</a>
+    <a href="https://joi.dev/" target="_blank" rel="noreferrer">Joi</a>
     is a good one. You can do this in the
     <code>$save</code>
     method on your entities before calling
@@ -55,10 +55,10 @@
   </p>
 
   <p>
-    If an entity is referenced in another entity's property, the class is saved
-    along with the GUID. When this property is accessed after the top level
-    entity is pulled from the DB, Nymph will retrieve the referenced entity
-    using the saved class.
+    If an entity is referenced in another entity's property, the class name is
+    saved along with the GUID. When this property is accessed after the top
+    level entity is pulled from the DB, Nymph will retrieve the referenced
+    entity using the saved class.
   </p>
 
   <p>

@@ -116,8 +116,8 @@ if (cronUser.guid == null) {
           <td>string</td>
           <td>undefined</td>
           <td
-            >Will be 'client' if the query came from a REST request, 'pubsub'
-            from the PubSub server.</td
+            >Will be 'client' if the query came from a REST request or the
+            PubSub server. (Maily used in Tilmeld for access control.)</td
           >
         </tr>
         <tr>
@@ -136,7 +136,7 @@ if (cronUser.guid == null) {
           <td
             >If true, Tilmeld will not filter returned entities according to
             access controls. (If Tilmeld is installed.) (This is always set to
-            false by the REST endpoint.)</td
+            false by the REST endpoint and PubSub server.)</td
           >
         </tr>
       </tbody>
@@ -232,8 +232,8 @@ if (cronUser.guid == null) {
         <tr>
           <td>equal</td>
           <td
-            >The named property is defined and equal (their JSON strings are
-            identical).</td
+            >The named property is defined and equals the value (their JSON
+            strings are identical).</td
           >
           <td><code>{"{type: '&', equal: ['foo', 0]}"}</code></td>
           <td><code>{'entity.foo = 0'}</code></td>
@@ -360,7 +360,8 @@ if (cronUser.guid == null) {
     a third element. If value is null and the third element is a string, the
     third element will be used with <a
       href="https://locutus.io/php/datetime/strtotime/"
-      target="_blank">Locutus' strtotime function</a
+      target="_blank"
+      rel="noreferrer">Locutus' strtotime function</a
     > to set the value to a relative timestamp. For example, the following selector
     will look for all entities that were created in the last day.
   </p>
@@ -528,7 +529,7 @@ if (cronUser.guid == null) {
 );`}
   />
 
-  <p>Get baz tagged entities created since yesterday.</p>
+  <p>Get baz tagged entities created in the last day.</p>
 
   <Highlight
     language={typescript}
