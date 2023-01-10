@@ -13,7 +13,7 @@
     />
     <meta http-equiv="content-security-policy" content="">
 		<link href="../../_app/immutable/assets/github-30db5443.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../_app/immutable/start-c237db37.js">
+		<link rel="modulepreload" href="../../_app/immutable/start-31ee7123.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/index-8e853c83.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/singletons-8a880416.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/paths-b4419565.js">
@@ -21,7 +21,7 @@
 		<link rel="modulepreload" href="../../_app/immutable/chunks/Icon-19c981cb.js">
 		<link rel="modulepreload" href="../../_app/immutable/modules/pages/_layout.ts-5612100c.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/_layout-79cb23d1.js">
-		<link rel="modulepreload" href="../../_app/immutable/components/pages/packages/sorter/_page.svelte-3bf74ddd.js">
+		<link rel="modulepreload" href="../../_app/immutable/components/pages/packages/sorter/_page.svelte-5d945c07.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/github-07e092b5.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/bash-2b754df6.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/typescript-7dd1ec19.js"><title>Entity Sorter - Packages - Nymph.js</title><!-- HEAD_svelte-6i6yy0_START --><meta name="description" content="Object relational mapper for Node.js and the browser"><meta property="og:title" content="Nymph"><meta property="og:type" content="website"><meta property="og:url" content="http://nymph.io/"><meta property="og:image" content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png"><meta property="og:site_name" content="Nymph"><meta property="fb:admins" content="508999194"><meta property="og:description" content="Object relational mapper for Node.js and the browser"><link rel="icon" href="/images/cropped-logo-32x32.png" sizes="32x32"><link rel="icon" href="/images/cropped-logo-192x192.png" sizes="192x192"><link rel="apple-touch-icon" href="/images/cropped-logo-180x180.png"><meta name="msapplication-TileImage" content="/images/cropped-logo-270x270.png"><link rel="stylesheet" href="/css/main.css"><!-- HEAD_svelte-6i6yy0_END --><!-- HEAD_svelte-1wc9pbr_START --><!-- HTML_TAG_START --><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
@@ -72,7 +72,7 @@
   <pre data-language="typescript" class=" svelte-d72vtw"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Nymph</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/nymph&#x27;</span>;
 <span class="hljs-comment">// or</span>
 <span class="hljs-keyword">import</span> { <span class="hljs-title class_">Nymph</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/client&#x27;</span>;
-<span class="hljs-keyword">import</span> <span class="hljs-title class_">Page</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;Page&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">PageClass</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;Page&#x27;</span>;
 
 <span class="hljs-keyword">import</span> { <span class="hljs-title class_">Sorter</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/sorter&#x27;</span>;
 
@@ -80,7 +80,7 @@
   <span class="hljs-comment">// the options for your Nymph instance.</span>
 };
 <span class="hljs-keyword">const</span> nymph = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Nymph</span>(nymphOptions);
-nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">Page</span>);
+<span class="hljs-keyword">const</span> <span class="hljs-title class_">Page</span> = nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">PageClass</span>);
 
 <span class="hljs-keyword">let</span> pages = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>({ <span class="hljs-attr">class</span>: <span class="hljs-title class_">Page</span> });
 
@@ -204,14 +204,14 @@ sorter.<span class="hljs-title function_">hsort</span>(<span class="hljs-string"
 </div>
 
 
-		<script type="module" data-sveltekit-hydrate="1ajw33k">
-			import { start } from "../../_app/immutable/start-c237db37.js";
+		<script type="module" data-sveltekit-hydrate="1a0hour">
+			import { start } from "../../_app/immutable/start-31ee7123.js";
 
 			start({
 				env: {},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="1ajw33k"]').parentNode,
-				version: "1673206684458",
+				target: document.querySelector('[data-sveltekit-hydrate="1a0hour"]').parentNode,
+				version: "1673374808010",
 				hydrate: {
 					node_ids: [0, 13],
 					data: [null,null],

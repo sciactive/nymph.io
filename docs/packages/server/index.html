@@ -13,7 +13,7 @@
     />
     <meta http-equiv="content-security-policy" content="">
 		<link href="../../_app/immutable/assets/github-30db5443.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../_app/immutable/start-c237db37.js">
+		<link rel="modulepreload" href="../../_app/immutable/start-31ee7123.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/index-8e853c83.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/singletons-8a880416.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/paths-b4419565.js">
@@ -21,7 +21,7 @@
 		<link rel="modulepreload" href="../../_app/immutable/chunks/Icon-19c981cb.js">
 		<link rel="modulepreload" href="../../_app/immutable/modules/pages/_layout.ts-5612100c.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/_layout-79cb23d1.js">
-		<link rel="modulepreload" href="../../_app/immutable/components/pages/packages/server/_page.svelte-fa7dfa80.js">
+		<link rel="modulepreload" href="../../_app/immutable/components/pages/packages/server/_page.svelte-49909baa.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/github-07e092b5.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/bash-2b754df6.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/typescript-7dd1ec19.js"><title>REST Server - Packages - Nymph.js</title><!-- HEAD_svelte-6i6yy0_START --><meta name="description" content="Object relational mapper for Node.js and the browser"><meta property="og:title" content="Nymph"><meta property="og:type" content="website"><meta property="og:url" content="http://nymph.io/"><meta property="og:image" content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png"><meta property="og:site_name" content="Nymph"><meta property="fb:admins" content="508999194"><meta property="og:description" content="Object relational mapper for Node.js and the browser"><link rel="icon" href="/images/cropped-logo-32x32.png" sizes="32x32"><link rel="icon" href="/images/cropped-logo-192x192.png" sizes="192x192"><link rel="apple-touch-icon" href="/images/cropped-logo-180x180.png"><meta name="msapplication-TileImage" content="/images/cropped-logo-270x270.png"><link rel="stylesheet" href="/css/main.css"><!-- HEAD_svelte-6i6yy0_END --><!-- HEAD_svelte-vfb9fs_START --><!-- HTML_TAG_START --><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
@@ -80,7 +80,7 @@
 <span class="hljs-keyword">import</span> createServer <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/server&#x27;</span>;
 
 <span class="hljs-comment">// Import all the entities you will be using on the server.</span>
-<span class="hljs-keyword">import</span> <span class="hljs-title class_">MyEntity</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./entities/MyEntity&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">MyEntityClass</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./entities/MyEntity&#x27;</span>;
 
 <span class="hljs-comment">// Configure Nymph.</span>
 <span class="hljs-keyword">const</span> nymph = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Nymph</span>(
@@ -89,7 +89,7 @@
     <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;:memory:&#x27;</span>,
   })
 );
-nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">MyEntity</span>);
+<span class="hljs-keyword">const</span> <span class="hljs-title class_">MyEntity</span> = nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">MyEntityClass</span>);
 
 <span class="hljs-comment">// Create your Express app.</span>
 <span class="hljs-keyword">const</span> app = <span class="hljs-title function_">express</span>();
@@ -114,14 +114,14 @@ app.<span class="hljs-title function_">listen</span>(<span class="hljs-number">8
   
   <pre data-language="typescript" class=" svelte-d72vtw"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Nymph</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/client&#x27;</span>;
 
-<span class="hljs-keyword">import</span> <span class="hljs-title class_">MyEntity</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./entities/MyEntityClient&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">MyEntityClass</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./entities/MyEntityClient&#x27;</span>;
 
 <span class="hljs-keyword">const</span> nymph = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Nymph</span>({
   <span class="hljs-comment">// You should configure your Express server to</span>
   <span class="hljs-comment">// use HTTPS, but you don&#x27;t have to.</span>
   <span class="hljs-attr">restUrl</span>: <span class="hljs-string">&#x27;https://mydomain.tld/rest&#x27;</span>,
 });
-nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">MyEntity</span>);<!-- HTML_TAG_END --></code></pre>
+<span class="hljs-keyword">const</span> <span class="hljs-title class_">MyEntity</span> = nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">MyEntityClass</span>);<!-- HTML_TAG_END --></code></pre>
 
 </section>
 
@@ -186,14 +186,14 @@ nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs
 </div>
 
 
-		<script type="module" data-sveltekit-hydrate="1t5uvlx">
-			import { start } from "../../_app/immutable/start-c237db37.js";
+		<script type="module" data-sveltekit-hydrate="d7457p">
+			import { start } from "../../_app/immutable/start-31ee7123.js";
 
 			start({
 				env: {},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="1t5uvlx"]').parentNode,
-				version: "1673206684458",
+				target: document.querySelector('[data-sveltekit-hydrate="d7457p"]').parentNode,
+				version: "1673374808010",
 				hydrate: {
 					node_ids: [0, 12],
 					data: [null,null],

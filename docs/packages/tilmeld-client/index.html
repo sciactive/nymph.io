@@ -13,7 +13,7 @@
     />
     <meta http-equiv="content-security-policy" content="">
 		<link href="../../_app/immutable/assets/github-30db5443.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../_app/immutable/start-c237db37.js">
+		<link rel="modulepreload" href="../../_app/immutable/start-31ee7123.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/index-8e853c83.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/singletons-8a880416.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/paths-b4419565.js">
@@ -21,7 +21,7 @@
 		<link rel="modulepreload" href="../../_app/immutable/chunks/Icon-19c981cb.js">
 		<link rel="modulepreload" href="../../_app/immutable/modules/pages/_layout.ts-5612100c.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/_layout-79cb23d1.js">
-		<link rel="modulepreload" href="../../_app/immutable/components/pages/packages/tilmeld-client/_page.svelte-52014e87.js">
+		<link rel="modulepreload" href="../../_app/immutable/components/pages/packages/tilmeld-client/_page.svelte-c8d67f28.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/github-07e092b5.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/bash-2b754df6.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/typescript-7dd1ec19.js"><title>Tilmeld Client - Packages - Nymph.js</title><!-- HEAD_svelte-6i6yy0_START --><meta name="description" content="Object relational mapper for Node.js and the browser"><meta property="og:title" content="Nymph"><meta property="og:type" content="website"><meta property="og:url" content="http://nymph.io/"><meta property="og:image" content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png"><meta property="og:site_name" content="Nymph"><meta property="fb:admins" content="508999194"><meta property="og:description" content="Object relational mapper for Node.js and the browser"><link rel="icon" href="/images/cropped-logo-32x32.png" sizes="32x32"><link rel="icon" href="/images/cropped-logo-192x192.png" sizes="192x192"><link rel="apple-touch-icon" href="/images/cropped-logo-180x180.png"><meta name="msapplication-TileImage" content="/images/cropped-logo-270x270.png"><link rel="stylesheet" href="/css/main.css"><!-- HEAD_svelte-6i6yy0_END --><!-- HEAD_svelte-1baconj_START --><!-- HTML_TAG_START --><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
@@ -76,36 +76,29 @@
   </p>
 
   <p>Once you&#39;ve initialized Nymph Client, set the User and Group classes on it.
+    Then initialize the new User class with the Nymph instance. (This allows the
+    class to set up authentication listeners.)
   </p>
 
   
   <pre data-language="typescript" class=" svelte-d72vtw"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Nymph</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/client&#x27;</span>;
-<span class="hljs-keyword">import</span> { <span class="hljs-title class_">User</span>, <span class="hljs-title class_">Group</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/tilmeld-client&#x27;</span>;
+<span class="hljs-keyword">import</span> {
+  <span class="hljs-title class_">User</span> <span class="hljs-keyword">as</span> <span class="hljs-title class_">UserClass</span>,
+  <span class="hljs-title class_">Group</span> <span class="hljs-keyword">as</span> <span class="hljs-title class_">GroupClass</span>,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/tilmeld-client&#x27;</span>;
 
 <span class="hljs-keyword">const</span> nymph = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Nymph</span>({
   <span class="hljs-attr">restUrl</span>: <span class="hljs-string">&#x27;https://yournymphrestserver/path/to/your/endpoint&#x27;</span>,
 });
-nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">User</span>);
-nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">Group</span>);<!-- HTML_TAG_END --></code></pre>
+<span class="hljs-keyword">const</span> <span class="hljs-title class_">User</span> = nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">UserClass</span>);
+<span class="hljs-keyword">const</span> <span class="hljs-title class_">Group</span> = nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">GroupClass</span>);
+<span class="hljs-title class_">User</span>.<span class="hljs-title function_">init</span>(nymph);<!-- HTML_TAG_END --></code></pre>
 
 
-  <p>If you&#39;re running more than one instance of Nymph client, you can clone the
-    classes and add those instead. This will keep event listeners and Tilmeld
-    client config separated.
+  <p>If you&#39;re running more than one instance of Nymph client, be sure to use the
+    classes returned by <code>addEntityClass</code>, so as not to accidentally
+    submit entities from one instances to another instance.
   </p>
-
-  
-  <pre data-language="typescript" class=" svelte-d72vtw"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Nymph</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/client&#x27;</span>;
-<span class="hljs-keyword">import</span> { <span class="hljs-title class_">User</span>, <span class="hljs-title class_">Group</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/tilmeld-client&#x27;</span>;
-
-<span class="hljs-keyword">const</span> nymph = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Nymph</span>({
-  <span class="hljs-attr">restUrl</span>: <span class="hljs-string">&#x27;https://yournymphrestserver/path/to/your/endpoint&#x27;</span>,
-});
-<span class="hljs-keyword">const</span> <span class="hljs-title class_">UserClone</span> = <span class="hljs-title class_">User</span>.<span class="hljs-title function_">clone</span>();
-nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">UserClone</span>);
-<span class="hljs-keyword">const</span> <span class="hljs-title class_">GroupClone</span> = <span class="hljs-title class_">Group</span>.<span class="hljs-title function_">clone</span>();
-nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">GroupClone</span>);<!-- HTML_TAG_END --></code></pre>
-
 </section>
 
     
@@ -169,14 +162,14 @@ nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs
 </div>
 
 
-		<script type="module" data-sveltekit-hydrate="16bl2s7">
-			import { start } from "../../_app/immutable/start-c237db37.js";
+		<script type="module" data-sveltekit-hydrate="lnz7uy">
+			import { start } from "../../_app/immutable/start-31ee7123.js";
 
 			start({
 				env: {},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="16bl2s7"]').parentNode,
-				version: "1673206684458",
+				target: document.querySelector('[data-sveltekit-hydrate="lnz7uy"]').parentNode,
+				version: "1673374808010",
 				hydrate: {
 					node_ids: [0, 15],
 					data: [null,null],

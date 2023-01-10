@@ -13,7 +13,7 @@
     />
     <meta http-equiv="content-security-policy" content="">
 		<link href="../../_app/immutable/assets/github-30db5443.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../_app/immutable/start-c237db37.js">
+		<link rel="modulepreload" href="../../_app/immutable/start-31ee7123.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/index-8e853c83.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/singletons-8a880416.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/paths-b4419565.js">
@@ -21,7 +21,7 @@
 		<link rel="modulepreload" href="../../_app/immutable/chunks/Icon-19c981cb.js">
 		<link rel="modulepreload" href="../../_app/immutable/modules/pages/_layout.ts-5612100c.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/_layout-79cb23d1.js">
-		<link rel="modulepreload" href="../../_app/immutable/components/pages/user-guide/entity-class/_page.svelte-2bd69704.js">
+		<link rel="modulepreload" href="../../_app/immutable/components/pages/user-guide/entity-class/_page.svelte-59056c79.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/github-07e092b5.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/typescript-7dd1ec19.js"><title>Entity Class - User Guide - Nymph.js</title><!-- HEAD_svelte-6i6yy0_START --><meta name="description" content="Object relational mapper for Node.js and the browser"><meta property="og:title" content="Nymph"><meta property="og:type" content="website"><meta property="og:url" content="http://nymph.io/"><meta property="og:image" content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png"><meta property="og:site_name" content="Nymph"><meta property="fb:admins" content="508999194"><meta property="og:description" content="Object relational mapper for Node.js and the browser"><link rel="icon" href="/images/cropped-logo-32x32.png" sizes="32x32"><link rel="icon" href="/images/cropped-logo-192x192.png" sizes="192x192"><link rel="apple-touch-icon" href="/images/cropped-logo-180x180.png"><meta name="msapplication-TileImage" content="/images/cropped-logo-270x270.png"><link rel="stylesheet" href="/css/main.css"><!-- HEAD_svelte-6i6yy0_END --><!-- HEAD_svelte-24q1tq_START --><!-- HTML_TAG_START --><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
   Theme: GitHub
@@ -73,7 +73,7 @@
   </p>
 
   
-  <pre data-language="typescript" class=" svelte-d72vtw"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntityClass</span>.<span class="hljs-title function_">factory</span>();
+  <pre data-language="typescript" class=" svelte-d72vtw"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntity</span>.<span class="hljs-title function_">factory</span>();
 
 entity.$addTag(<span class="hljs-string">&#x27;foo&#x27;</span>, <span class="hljs-string">&#x27;bar&#x27;</span>);
 entity.$hasTag(<span class="hljs-string">&#x27;foo&#x27;</span>); <span class="hljs-comment">// True</span>
@@ -100,21 +100,21 @@ entity.$hasTag(<span class="hljs-string">&#x27;foo&#x27;</span>); <span class="h
 
   
   <pre data-language="typescript" class=" svelte-d72vtw"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-comment">// Create some entities.</span>
-<span class="hljs-keyword">let</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntityClass</span>.<span class="hljs-title function_">factory</span>();
-entity.<span class="hljs-property">foo</span> = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntityClass</span>.<span class="hljs-title function_">factory</span>();
+<span class="hljs-keyword">let</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntity</span>.<span class="hljs-title function_">factory</span>();
+entity.<span class="hljs-property">foo</span> = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntity</span>.<span class="hljs-title function_">factory</span>();
 entity.<span class="hljs-property">foo</span>.<span class="hljs-property">bar</span> = <span class="hljs-string">&#x27;Old value.&#x27;</span>;
 <span class="hljs-keyword">await</span> entity.<span class="hljs-property">foo</span>.$save();
 <span class="hljs-keyword">await</span> entity.$save();
 
 <span class="hljs-comment">// Reset the entity to a copy just pulled from the DB.</span>
 entity = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntity</span>(
-  { <span class="hljs-attr">class</span>: <span class="hljs-title class_">MyEntityClass</span> },
+  { <span class="hljs-attr">class</span>: <span class="hljs-title class_">MyEntity</span> },
   { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>, <span class="hljs-attr">guid</span>: entity.<span class="hljs-property">guid</span> }
 );
 
 <span class="hljs-comment">// Get a copy of the referenced entity.</span>
 <span class="hljs-keyword">let</span> instOfFoo = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntity</span>(
-  { <span class="hljs-attr">class</span>: <span class="hljs-title class_">MyEntityClass</span> },
+  { <span class="hljs-attr">class</span>: <span class="hljs-title class_">MyEntity</span> },
   { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>, <span class="hljs-attr">guid</span>: entity.<span class="hljs-property">foo</span>.<span class="hljs-property">guid</span> }
 );
 <span class="hljs-comment">// And change a value on it.</span>
@@ -138,13 +138,13 @@ entity.$clearCache();
 
   
   <pre data-language="typescript" class=" svelte-d72vtw"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-comment">// Create an entity.</span>
-<span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntityClass</span>.<span class="hljs-title function_">factory</span>();
+<span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntity</span>.<span class="hljs-title function_">factory</span>();
 entity.<span class="hljs-property">foo</span> = <span class="hljs-string">&#x27;Old value.&#x27;</span>;
 <span class="hljs-keyword">await</span> entity.$save();
 
 <span class="hljs-comment">// Get a copy of the entity.</span>
 <span class="hljs-keyword">const</span> instOfEnt = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntity</span>(
-  { <span class="hljs-attr">class</span>: <span class="hljs-title class_">MyEntityClass</span> },
+  { <span class="hljs-attr">class</span>: <span class="hljs-title class_">MyEntity</span> },
   { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>, <span class="hljs-attr">guid</span>: entity.<span class="hljs-property">guid</span> }
 );
 <span class="hljs-comment">// And change a value on it.</span>
@@ -164,7 +164,7 @@ instOfEnt.<span class="hljs-property">foo</span> = <span class="hljs-string">&#x
   </p>
 
   
-  <pre data-language="typescript" class=" svelte-d72vtw"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntityClass</span>.<span class="hljs-title function_">factory</span>();
+  <pre data-language="typescript" class=" svelte-d72vtw"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntity</span>.<span class="hljs-title function_">factory</span>();
 
 <span class="hljs-comment">// Save the entity.</span>
 <span class="hljs-keyword">await</span> entity.$save();
@@ -196,23 +196,23 @@ instOfEnt.<span class="hljs-property">foo</span> = <span class="hljs-string">&#x
       following criteria.
       <ul><li>They must be entities.</li>
         <li>They must have equal GUIDs, or both can have no GUID.</li>
-        <li>If they have no GUIDs, their data must be equal.</li></ul></li>
+        <li>If they have no GUIDs, their data and tags must be equal.</li></ul></li>
     <li><code>$equals</code> - Perform a more strict comparison of two entities
-      (basically a GUID + class + data check). To return true, the entities must
+      (basically a GUID + data + tags check). To return true, the entities must
       meet the following criteria.
       <ul><li>They must be entities.</li>
         <li>They must have equal GUIDs, or both can have no GUID.</li>
-        <li>They must be instances of the same class.</li>
-        <li>Their data must be equal.</li></ul></li>
+        <li>Their data and tags must be equal.</li></ul></li>
     <li><code>$inArray</code> - Check whether the entity is in an array. Takes two
       arguments, the array and a boolean <code>strict</code>. If
       <code>strict</code>
-      is false, the function uses <code>$is</code> to compare, and if it&#39;s true,
-      the function uses <code>$equals</code>.
+      is false or undefined, the function uses <code>$is</code> to compare, and
+      if it&#39;s true, the function uses <code>$equals</code>.
     </li>
     <li><code>$arraySearch</code> - Search an array for the entity and return the
       corresponding key. Takes two arguments, the array and a boolean
-      <code>strict</code>. If <code>strict</code> is false, the function uses
+      <code>strict</code>. If <code>strict</code> is false or undefined, the
+      function uses
       <code>$is</code>
       to compare, and if it&#39;s true, the function uses <code>$equals</code>. This
       method may return 0, which evaluates to false, so you should use
@@ -222,14 +222,17 @@ instOfEnt.<span class="hljs-property">foo</span> = <span class="hljs-string">&#x
 
   
   <pre data-language="typescript" class=" svelte-d72vtw"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-comment">// Assuming the entity with GUID &#x27;a4c1591d6ea91c8450d2d360&#x27; exists.</span>
-<span class="hljs-keyword">let</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntityClass</span>.<span class="hljs-title function_">factory</span>(<span class="hljs-string">&#x27;a4c1591d6ea91c8450d2d360&#x27;</span>);
-<span class="hljs-keyword">let</span> entity2 = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntityClass</span>.<span class="hljs-title function_">factory</span>(<span class="hljs-string">&#x27;a4c1591d6ea91c8450d2d360&#x27;</span>);
+<span class="hljs-keyword">let</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntity</span>.<span class="hljs-title function_">factory</span>(<span class="hljs-string">&#x27;a4c1591d6ea91c8450d2d360&#x27;</span>);
+<span class="hljs-keyword">let</span> entity2 = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntity</span>.<span class="hljs-title function_">factory</span>(<span class="hljs-string">&#x27;a4c1591d6ea91c8450d2d360&#x27;</span>);
+
+entity.$is(entity2); <span class="hljs-comment">// True</span>
+entity.$equals(entity2); <span class="hljs-comment">// True</span>
 
 entity2.<span class="hljs-property">someProp</span> = <span class="hljs-string">&#x27;some new value&#x27;</span>;
 entity.$is(entity2); <span class="hljs-comment">// True</span>
 entity.$equals(entity2); <span class="hljs-comment">// False</span>
 
-<span class="hljs-keyword">const</span> arr = [<span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, entity];
+<span class="hljs-keyword">const</span> arr = [<span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, entity2];
 entity.$arraySearch(arr); <span class="hljs-comment">// 2</span>
 entity.$inArray(arr); <span class="hljs-comment">// True</span>
 entity.$arraySearch(arr, <span class="hljs-literal">true</span>); <span class="hljs-comment">// -1</span>
@@ -298,7 +301,7 @@ Couldn&#x27;t archive &quot;</span> + todo.<span class="hljs-property">name</spa
 <span class="hljs-keyword">const</span> success = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Todo</span>.<span class="hljs-title function_">archiveAllDone</span>(<span class="hljs-literal">true</span>);
 
 <span class="hljs-comment">// And</span>
-<span class="hljs-keyword">const</span> todo = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Todo</span>.<span class="hljs-title function_">factory</span>();
+<span class="hljs-keyword">const</span> todo = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Todo</span>.<span class="hljs-title function_">factory</span>(someGuid);
 <span class="hljs-keyword">const</span> success = <span class="hljs-keyword">await</span> todo.$archive();<!-- HTML_TAG_END --></code></pre>
 </section>
 
@@ -367,14 +370,14 @@ Couldn&#x27;t archive &quot;</span> + todo.<span class="hljs-property">name</spa
 </div>
 
 
-		<script type="module" data-sveltekit-hydrate="9bl64x">
-			import { start } from "../../_app/immutable/start-c237db37.js";
+		<script type="module" data-sveltekit-hydrate="1maaqlr">
+			import { start } from "../../_app/immutable/start-31ee7123.js";
 
 			start({
 				env: {},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="9bl64x"]').parentNode,
-				version: "1673206684458",
+				target: document.querySelector('[data-sveltekit-hydrate="1maaqlr"]').parentNode,
+				version: "1673374808010",
 				hydrate: {
 					node_ids: [0, 20],
 					data: [null,null],

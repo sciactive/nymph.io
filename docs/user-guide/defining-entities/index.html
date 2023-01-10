@@ -13,7 +13,7 @@
     />
     <meta http-equiv="content-security-policy" content="">
 		<link href="../../_app/immutable/assets/github-30db5443.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../_app/immutable/start-c237db37.js">
+		<link rel="modulepreload" href="../../_app/immutable/start-31ee7123.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/index-8e853c83.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/singletons-8a880416.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/paths-b4419565.js">
@@ -21,7 +21,7 @@
 		<link rel="modulepreload" href="../../_app/immutable/chunks/Icon-19c981cb.js">
 		<link rel="modulepreload" href="../../_app/immutable/modules/pages/_layout.ts-5612100c.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/_layout-79cb23d1.js">
-		<link rel="modulepreload" href="../../_app/immutable/components/pages/user-guide/defining-entities/_page.svelte-342a3e8a.js">
+		<link rel="modulepreload" href="../../_app/immutable/components/pages/user-guide/defining-entities/_page.svelte-5e8cd0bd.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/github-07e092b5.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/typescript-7dd1ec19.js"><title>Defining Entities - User Guide - Nymph.js</title><!-- HEAD_svelte-6i6yy0_START --><meta name="description" content="Object relational mapper for Node.js and the browser"><meta property="og:title" content="Nymph"><meta property="og:type" content="website"><meta property="og:url" content="http://nymph.io/"><meta property="og:image" content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png"><meta property="og:site_name" content="Nymph"><meta property="fb:admins" content="508999194"><meta property="og:description" content="Object relational mapper for Node.js and the browser"><link rel="icon" href="/images/cropped-logo-32x32.png" sizes="32x32"><link rel="icon" href="/images/cropped-logo-192x192.png" sizes="192x192"><link rel="apple-touch-icon" href="/images/cropped-logo-180x180.png"><meta name="msapplication-TileImage" content="/images/cropped-logo-270x270.png"><link rel="stylesheet" href="/css/main.css"><!-- HEAD_svelte-6i6yy0_END --><!-- HEAD_svelte-1kddyis_START --><!-- HTML_TAG_START --><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
   Theme: GitHub
@@ -117,7 +117,7 @@
         ...nymphJoiProps,
         ...tilmeldJoiProps,
 
-        <span class="hljs-attr">name</span>: <span class="hljs-title class_">Joi</span>.<span class="hljs-title function_">string</span>().<span class="hljs-title function_">trim</span>(<span class="hljs-literal">false</span>).required(),
+        <span class="hljs-attr">name</span>: <span class="hljs-title class_">Joi</span>.<span class="hljs-title function_">string</span>().<span class="hljs-title function_">trim</span>(<span class="hljs-literal">false</span>).<span class="hljs-title function_">max</span>(<span class="hljs-number">500</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>).required(),
         <span class="hljs-attr">done</span>: <span class="hljs-title class_">Joi</span>.<span class="hljs-title function_">boolean</span>().required(),
       }),
       <span class="hljs-string">&#x27;Invalid Todo: &#x27;</span>
@@ -147,7 +147,8 @@
 }
 
 <span class="hljs-comment">// Elsewhere, after initializing Nymph.</span>
-nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">Todo</span>);<!-- HTML_TAG_END --></code></pre>
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Todo</span> <span class="hljs-keyword">as</span> <span class="hljs-title class_">TodoClass</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./Todo.js&#x27;</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-title class_">Todo</span> = nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">TodoClass</span>);<!-- HTML_TAG_END --></code></pre>
 </div>
 
   <div><div style="text-align: end;">Extending Entity in the Client</div>
@@ -186,12 +187,13 @@ nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs
 }
 
 <span class="hljs-comment">// Elsewhere, after initializing Nymph.</span>
-nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">Todo</span>);<!-- HTML_TAG_END --></code></pre>
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Todo</span> <span class="hljs-keyword">as</span> <span class="hljs-title class_">TodoClass</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./Todo.js&#x27;</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-title class_">Todo</span> = nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">TodoClass</span>);<!-- HTML_TAG_END --></code></pre>
 </div>
 
-  <p>In both cases, defaults are set in the constructor. In this case, the <code>done</code>
+  <p>In both cases, defaults are set in the constructor (the <code>done</code>
     property is set to false and the <code>name</code> property is set to an
-    empty string. You can see that from within the methods of an entity, the
+    empty string). You can see that from within the methods of an entity, the
     entity&#39;s data (other than guid, cdate, mdate, and tags) are accessed from
     <code>this.$data</code>. The
     <code>$data</code> part is not necessary outside of the entity&#39;s own methods.
@@ -199,12 +201,11 @@ nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs
 
   <p>You&#39;ll also notice that when using Nymph from within an entity&#39;s methods,
     there is an instance of Nymph available in <code>this.$nymph</code> (or
-    <code>this.nymph</code> in static methods). Using this instance is
-    <strong>especially important in Node.js</strong> for Nymph transactions and Tilmeld
-    authentication. These instances will know which user is logged in and add appropriate
-    permission checks, and will maintain a persistent DB connection during a transaction.
-    On the client, it is less important to use these instances, unless you run multiple
-    instances of the Nymph client in your app.
+    <code>this.nymph</code> in static methods). In Node.js, these instances will
+    know which user is logged in and add appropriate permission checks, and will
+    maintain a persistent DB connection during a transaction. On the client, these
+    instances will know how to communicate with the configured REST server. Basically,
+    you have to use these instances.
   </p>
 
   <p>In Node.js, the etype is set to <code>&quot;todo&quot;</code>. The etype of an entity
@@ -219,20 +220,20 @@ nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs
     static property in Node.js determine which methods and static methods can be
     called from the client using <code>$serverCall</code> and
     <code>serverCallStatic</code>. In the client class, the
-    <code>return await this.$serverCall(&#39;archive&#39;, []);</code> statement takes advantage
+    <code>return await this.$serverCall(&#39;$archive&#39;, []);</code> statement takes advantage
     of this feature.
   </p>
 
-  <p>On each the Node.js class and the client class, the class name is set in the <code>class</code> static property. This class name should match on each side. It is how Nymph
+  <p>On both the Node.js class and the client class, the class name is set in the <code>class</code> static property. This class name should match on each side. It is how Nymph
     maps the client class to the Node.js class and vice versa.
   </p>
 
   <p>Finally, in Node.js, the <code>Todo</code> class validates all of its data
     in the <code>$save</code> method using
-    <a href="https://joi.dev/" target="_blank">Joi</a>. Without this validation,
-    a malicious user could send invalid data types or even megabytes worth of
-    data in an entity. Any validation library should support validation in Nymph
-    using the <code>$getValidatable</code> method. The
+    <a href="https://joi.dev/" target="_blank" rel="noreferrer">Joi</a>. Without
+    this validation, a malicious user could send invalid data types or even
+    megabytes worth of data in an entity. Any validation library should support
+    validation in Nymph using the <code>$getValidatable</code> method. The
     <code>$allowlistData</code> property will ensure no extra properties are set.
   </p></section>
 
@@ -301,14 +302,14 @@ nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs
 </div>
 
 
-		<script type="module" data-sveltekit-hydrate="1a9dqb9">
-			import { start } from "../../_app/immutable/start-c237db37.js";
+		<script type="module" data-sveltekit-hydrate="1gin7td">
+			import { start } from "../../_app/immutable/start-31ee7123.js";
 
 			start({
 				env: {},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="1a9dqb9"]').parentNode,
-				version: "1673206684458",
+				target: document.querySelector('[data-sveltekit-hydrate="1gin7td"]').parentNode,
+				version: "1673374808010",
 				hydrate: {
 					node_ids: [0, 19],
 					data: [null,null],

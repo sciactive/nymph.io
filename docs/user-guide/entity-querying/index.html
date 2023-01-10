@@ -13,7 +13,7 @@
     />
     <meta http-equiv="content-security-policy" content="">
 		<link href="../../_app/immutable/assets/github-30db5443.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../_app/immutable/start-c237db37.js">
+		<link rel="modulepreload" href="../../_app/immutable/start-31ee7123.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/index-8e853c83.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/singletons-8a880416.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/paths-b4419565.js">
@@ -21,7 +21,7 @@
 		<link rel="modulepreload" href="../../_app/immutable/chunks/Icon-19c981cb.js">
 		<link rel="modulepreload" href="../../_app/immutable/modules/pages/_layout.ts-5612100c.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/_layout-79cb23d1.js">
-		<link rel="modulepreload" href="../../_app/immutable/components/pages/user-guide/entity-querying/_page.svelte-98e1a6d1.js">
+		<link rel="modulepreload" href="../../_app/immutable/components/pages/user-guide/entity-querying/_page.svelte-193f87b2.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/github-07e092b5.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/typescript-7dd1ec19.js"><title>Entity Querying - User Guide - Nymph.js</title><!-- HEAD_svelte-6i6yy0_START --><meta name="description" content="Object relational mapper for Node.js and the browser"><meta property="og:title" content="Nymph"><meta property="og:type" content="website"><meta property="og:url" content="http://nymph.io/"><meta property="og:image" content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png"><meta property="og:site_name" content="Nymph"><meta property="fb:admins" content="508999194"><meta property="og:description" content="Object relational mapper for Node.js and the browser"><link rel="icon" href="/images/cropped-logo-32x32.png" sizes="32x32"><link rel="icon" href="/images/cropped-logo-192x192.png" sizes="192x192"><link rel="apple-touch-icon" href="/images/cropped-logo-180x180.png"><meta name="msapplication-TileImage" content="/images/cropped-logo-270x270.png"><link rel="stylesheet" href="/css/main.css"><!-- HEAD_svelte-6i6yy0_END --><!-- HEAD_svelte-13nmepq_START --><!-- HTML_TAG_START --><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
   Theme: GitHub
@@ -119,8 +119,8 @@
         <tr><td>source</td>
           <td>string</td>
           <td>undefined</td>
-          <td>Will be &#39;client&#39; if the query came from a REST request, &#39;pubsub&#39;
-            from the PubSub server.</td></tr>
+          <td>Will be &#39;client&#39; if the query came from a REST request or the
+            PubSub server. (Maily used in Tilmeld for access control.)</td></tr>
         <tr><td>skipCache</td>
           <td>boolean</td>
           <td>false</td>
@@ -131,7 +131,7 @@
           <td>false</td>
           <td>If true, Tilmeld will not filter returned entities according to
             access controls. (If Tilmeld is installed.) (This is always set to
-            false by the REST endpoint.)</td></tr></tbody></table></div>
+            false by the REST endpoint and PubSub server.)</td></tr></tbody></table></div>
 
   <p>Every argument following the Options is a Selector object. They contain
     clauses and a type. An entity must match each selector to be returned. There
@@ -182,8 +182,8 @@
           <td><code>{type: '&amp;', truthy: 'foo'}</code></td>
           <td><code>entity.foo = 1</code></td></tr>
         <tr><td>equal</td>
-          <td>The named property is defined and equal (their JSON strings are
-            identical).</td>
+          <td>The named property is defined and equals the value (their JSON
+            strings are identical).</td>
           <td><code>{type: '&amp;', equal: ['foo', 0]}</code></td>
           <td><code>entity.foo = 0</code></td></tr>
         <tr><td>contain</td>
@@ -244,7 +244,7 @@
 
   <p>The clauses &quot;equal&quot;, &quot;contain&quot;, &quot;gt&quot;, &quot;gte&quot;, &quot;lt&quot;, and &quot;lte&quot; can also accept
     a third element. If value is null and the third element is a string, the
-    third element will be used with <a href="https://locutus.io/php/datetime/strtotime/" target="_blank">Locutus&#39; strtotime function</a> to set the value to a relative timestamp. For example, the following selector
+    third element will be used with <a href="https://locutus.io/php/datetime/strtotime/" target="_blank" rel="noreferrer">Locutus&#39; strtotime function</a> to set the value to a relative timestamp. For example, the following selector
     will look for all entities that were created in the last day.
   </p>
 
@@ -397,7 +397,7 @@
 );<!-- HTML_TAG_END --></code></pre>
 
 
-  <p>Get baz tagged entities created since yesterday.</p>
+  <p>Get baz tagged entities created in the last day.</p>
 
   
   <pre data-language="typescript" class=" svelte-d72vtw"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
@@ -543,14 +543,14 @@
 </div>
 
 
-		<script type="module" data-sveltekit-hydrate="eluhe8">
-			import { start } from "../../_app/immutable/start-c237db37.js";
+		<script type="module" data-sveltekit-hydrate="1xofdb4">
+			import { start } from "../../_app/immutable/start-31ee7123.js";
 
 			start({
 				env: {},
 				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="eluhe8"]').parentNode,
-				version: "1673206684458",
+				target: document.querySelector('[data-sveltekit-hydrate="1xofdb4"]').parentNode,
+				version: "1673374808010",
 				hydrate: {
 					node_ids: [0, 21],
 					data: [null,null],
