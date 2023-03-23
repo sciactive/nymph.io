@@ -50,10 +50,10 @@
   </p>
 
   <p>
-    Not all databases that Nymph supports (namely, MySQL with an engine that
-    doesn't support transactions, like the MyISAM engine) can use transactions.
-    To ensure data consistency, it's highly recommended to use a configuration
-    that supports transactions.
+    Not all databases that Nymph supports (specifically, MySQL with an engine
+    that doesn't support transactions, like the MyISAM engine) can use
+    transactions. To ensure data consistency, it's highly recommended to use a
+    configuration that supports transactions.
   </p>
 </section>
 

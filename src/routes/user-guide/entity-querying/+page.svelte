@@ -92,15 +92,18 @@ if (cronUser.guid == null) {
           <td>boolean</td>
           <td>false</td>
           <td
-            >If true, entities will be retrieved from newest to oldest (with
-            regard to <code>sort</code>).</td
+            >If true, entities will be retrieved from newest to oldest/largest
+            to smallest (with regard to <code>sort</code>).</td
           >
         </tr>
         <tr>
           <td>sort</td>
-          <td>'cdate' | 'mdate'</td>
+          <td>'cdate' | 'mdate' | string</td>
           <td>'cdate'</td>
-          <td>How to sort the entities.</td>
+          <td
+            >How to sort the entities. Should be "cdate", "mdate", or the name
+            of a property.</td
+          >
         </tr>
         <tr>
           <td>return</td>
@@ -117,7 +120,7 @@ if (cronUser.guid == null) {
           <td>undefined</td>
           <td
             >Will be 'client' if the query came from a REST request or the
-            PubSub server. (Maily used in Tilmeld for access control.)</td
+            PubSub server. (Mainly used in Tilmeld for access control.)</td
           >
         </tr>
         <tr>
