@@ -15,15 +15,6 @@
     </li>
     <li>
       <a
-        href="https://twitter.com/SciActive"
-        target="_blank"
-        rel="noreferrer"
-        class="icon brands"
-        title="Twitter"><Icon path={mdiTwitter} /></a
-      >
-    </li>
-    <li>
-      <a
         href="https://github.com/sciactive/nymphjs"
         target="_blank"
         rel="noreferrer"
@@ -35,7 +26,7 @@
 </header>
 
 <script lang="ts">
-  import { mdiMastodon, mdiTwitter, mdiGithub } from '@mdi/js';
+  import { mdiMastodon, mdiGithub } from '@mdi/js';
   import { base } from '$app/paths';
   import Icon from '$lib/Icon.svelte';
 </script>

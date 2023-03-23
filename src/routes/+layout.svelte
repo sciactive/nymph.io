@@ -172,7 +172,7 @@
       </header>
       <p>
         Nymph is a product of SciActive Inc. You can contact SciActive by email
-        or post, or follow on Twitter.
+        or post, or follow on Mastodon.
       </p>
       <ul class="contact">
         <li class="icon">
@@ -180,15 +180,7 @@
           <a
             href="https://port87.social/@hperrin"
             target="_blank"
-            rel="noreferrer">@hperrin on Mastodon</a
-          >
-        </li>
-        <li class="icon">
-          <Icon path={mdiTwitter} />
-          <a
-            href="https://twitter.com/SciActive"
-            target="_blank"
-            rel="noreferrer">@SciActive on Twitter</a
+            rel="noreferrer">@hperrin@port87.social on Mastodon</a
           >
         </li>
         <li class="icon">
@@ -226,13 +218,7 @@
 
 <script lang="ts">
   import { onMount } from 'svelte';
-  import {
-    mdiEmail,
-    mdiMapMarker,
-    mdiMenu,
-    mdiMastodon,
-    mdiTwitter
-  } from '@mdi/js';
+  import { mdiEmail, mdiMapMarker, mdiMenu, mdiMastodon } from '@mdi/js';
   import { base, assets } from '$app/paths';
   import Header from '$lib/Header.svelte';
   import Icon from '$lib/Icon.svelte';
