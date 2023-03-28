@@ -16,10 +16,10 @@
   "devDependencies": {
     "@mdi/js": "^7.2.96",
     "@sveltejs/adapter-static": "^2.0.1",
-    "@sveltejs/kit": "^1.13.0",
-    "prettier": "~2.8.6",
+    "@sveltejs/kit": "^1.14.0",
+    "prettier": "~2.8.7",
     "prettier-plugin-svelte": "^2.10.0",
-    "sass": "^1.59.3",
+    "sass": "^1.60.0",
     "svelte": "^3.57.0",
     "svelte-check": "^3.1.4",
     "svelte-highlight": "^7.2.0",
