@@ -81,17 +81,7 @@
       <ul>
         <li><a href="{base}/">Homepage</a></li>
         <li>
-          <a
-            href="javascript:void(0);"
-            class="opener"
-            class:active={submenu === 'user-guide'}
-            on:click={() =>
-              (submenu = submenu === 'user-guide' ? null : 'user-guide')}
-            on:keypress={(event) =>
-              event.key === 'Enter' &&
-              (submenu = submenu === 'user-guide' ? null : 'user-guide')}
-            >User Guide</a
-          >
+          <span class="opener static">User Guide</span>
           <ul>
             <li><a href="{base}/user-guide/introduction">Introduction</a></li>
             <li>
@@ -126,17 +116,7 @@
           </ul>
         </li>
         <li>
-          <a
-            href="javascript:void(0);"
-            class="opener"
-            class:active={submenu === 'packages'}
-            on:click={() =>
-              (submenu = submenu === 'packages' ? null : 'packages')}
-            on:keypress={(event) =>
-              event.key === 'Enter' &&
-              (submenu = submenu === 'packages' ? null : 'packages')}
-            >Packages</a
-          >
+          <span class="opener static">Packages</span>
           <ul>
             <li><a href="{base}/packages/nymph">Nymph Core</a></li>
             <li><a href="{base}/packages/driver-mysql">MySQL Driver</a></li>
@@ -224,7 +204,6 @@
   import Icon from '$lib/Icon.svelte';
 
   let email: HTMLAnchorElement;
-  let submenu: string | null = null;
   let sidebarInactive = false;
   let smallWindow = false;
 

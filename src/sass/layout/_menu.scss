@@ -22,13 +22,16 @@
     span {
       border-bottom: 0;
       color: inherit;
-      cursor: pointer;
       display: block;
       font-size: 0.9em;
       padding: 0.625em 0;
 
-      &:hover {
-        color: _palette(accent);
+      &:not(.static) {
+        cursor: pointer;
+
+        &:hover {
+          color: _palette(accent);
+        }
       }
 
       &.opener {
@@ -39,7 +42,7 @@
         -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
         position: relative;
 
-        &:before {
+        &:not(.static):before {
           @include vendor(
             'transition',
             (
@@ -61,20 +64,21 @@
           width: 0.7em;
         }
 
-        &:hover {
+        &:not(.static):hover {
           &:before {
             color: _palette(accent);
           }
         }
 
-        &.active {
+        &.active,
+        &.static {
           & + ul {
             display: block;
           }
+        }
 
-          &:before {
-            @include vendor('transform', 'rotate(225deg)');
-          }
+        &.active:before {
+          @include vendor('transform', 'rotate(225deg)');
         }
       }
     }
