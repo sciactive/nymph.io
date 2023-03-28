@@ -57,21 +57,15 @@
   </p>
 </section>
 
-<section>
-  <div class="row">
-    <div class="col-6 col-12-small">
-      <a href="{base}/user-guide/uids" class="button" style="margin: .5em;"
-        >Previous: UIDs</a
-      >
-    </div>
-    <div class="col-6 col-12-small" style="text-align: end;">
-      <a
-        href="{base}/user-guide/export-and-import"
-        class="button"
-        style="margin: .5em;">Next: Export and Import</a
-      >
-    </div>
-  </div>
+<section class="page-steps">
+  <a href="{base}/user-guide/uids" class="button" style="margin: .5em;"
+    >Previous: UIDs</a
+  >
+  <a
+    href="{base}/user-guide/export-and-import"
+    class="button"
+    style="margin: .5em;">Next: Export and Import</a
+  >
 </section>
 
 <script lang="ts">

@@ -118,23 +118,13 @@ console.log(entity.foo.bar); // Outputs undefined.`}
   </p>
 </section>
 
-<section>
-  <div class="row">
-    <div class="col-6 col-12-small">
-      <a
-        href="{base}/user-guide/introduction"
-        class="button"
-        style="margin: .5em;">Previous: Introduction</a
-      >
-    </div>
-    <div class="col-6 col-12-small" style="text-align: end;">
-      <a
-        href="{base}/user-guide/entity-querying"
-        class="button"
-        style="margin: .5em;">Next: Entity Querying</a
-      >
-    </div>
-  </div>
+<section class="page-steps">
+  <a href="{base}/user-guide/introduction" class="button"
+    >Previous: Introduction</a
+  >
+  <a href="{base}/user-guide/entity-querying" class="button"
+    >Next: Entity Querying</a
+  >
 </section>
 
 <script lang="ts">

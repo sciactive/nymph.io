@@ -72,17 +72,11 @@ nymph.import(filename);`}
   />
 </section>
 
-<section>
-  <div class="row">
-    <div class="col-6 col-12-small">
-      <a
-        href="{base}/user-guide/transactions"
-        class="button"
-        style="margin: .5em;">Previous: Transactions</a
-      >
-    </div>
-    <div class="col-6 col-12-small" style="text-align: end;" />
-  </div>
+<section class="page-steps">
+  <a href="{base}/user-guide/transactions" class="button" style="margin: .5em;"
+    >Previous: Transactions</a
+  >
+  <span />
 </section>
 
 <script lang="ts">

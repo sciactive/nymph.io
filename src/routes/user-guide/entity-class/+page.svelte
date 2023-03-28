@@ -300,23 +300,17 @@ const success = await todo.$archive();`}
   />
 </section>
 
-<section>
-  <div class="row">
-    <div class="col-6 col-12-small">
-      <a
-        href="{base}/user-guide/subscribing-to-queries"
-        class="button"
-        style="margin: .5em;">Previous: Subscribing to Queries</a
-      >
-    </div>
-    <div class="col-6 col-12-small" style="text-align: end;">
-      <a
-        href="{base}/user-guide/defining-entities"
-        class="button"
-        style="margin: .5em;">Next: Defining Entities</a
-      >
-    </div>
-  </div>
+<section class="page-steps">
+  <a
+    href="{base}/user-guide/subscribing-to-queries"
+    class="button"
+    style="margin: .5em;">Previous: Subscribing to Queries</a
+  >
+  <a
+    href="{base}/user-guide/defining-entities"
+    class="button"
+    style="margin: .5em;">Next: Defining Entities</a
+  >
 </section>
 
 <script lang="ts">

@@ -161,23 +161,15 @@ onDestroy(() => {
   </p>
 </section>
 
-<section>
-  <div class="row">
-    <div class="col-6 col-12-small">
-      <a
-        href="{base}/user-guide/entity-querying"
-        class="button"
-        style="margin: .5em;">Previous: Entity Querying</a
-      >
-    </div>
-    <div class="col-6 col-12-small" style="text-align: end;">
-      <a
-        href="{base}/user-guide/entity-class"
-        class="button"
-        style="margin: .5em;">Next: Entity Class</a
-      >
-    </div>
-  </div>
+<section class="page-steps">
+  <a
+    href="{base}/user-guide/entity-querying"
+    class="button"
+    style="margin: .5em;">Previous: Entity Querying</a
+  >
+  <a href="{base}/user-guide/entity-class" class="button" style="margin: .5em;"
+    >Next: Entity Class</a
+  >
 </section>
 
 <script lang="ts">

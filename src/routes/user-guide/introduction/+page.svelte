@@ -97,17 +97,13 @@
   </p>
 </section>
 
-<section>
-  <div class="row">
-    <div class="col-6 col-12-small" />
-    <div class="col-6 col-12-small" style="text-align: end;">
-      <a
-        href="{base}/user-guide/creating-entities"
-        class="button"
-        style="margin: .5em;">Next: Creating Entities</a
-      >
-    </div>
-  </div>
+<section class="page-steps">
+  <span />
+  <a
+    href="{base}/user-guide/creating-entities"
+    class="button"
+    style="margin: .5em;">Next: Creating Entities</a
+  >
 </section>
 
 <script lang="ts">

@@ -54,23 +54,15 @@ await entity.$save();`}
   </p>
 </section>
 
-<section>
-  <div class="row">
-    <div class="col-6 col-12-small">
-      <a
-        href="{base}/user-guide/defining-entities"
-        class="button"
-        style="margin: .5em;">Previous: Defining Entities</a
-      >
-    </div>
-    <div class="col-6 col-12-small" style="text-align: end;">
-      <a
-        href="{base}/user-guide/transactions"
-        class="button"
-        style="margin: .5em;">Next: Transactions</a
-      >
-    </div>
-  </div>
+<section class="page-steps">
+  <a
+    href="{base}/user-guide/defining-entities"
+    class="button"
+    style="margin: .5em;">Previous: Defining Entities</a
+  >
+  <a href="{base}/user-guide/transactions" class="button" style="margin: .5em;"
+    >Next: Transactions</a
+  >
 </section>
 
 <script lang="ts">

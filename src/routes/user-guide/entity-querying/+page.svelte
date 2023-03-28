@@ -621,23 +621,17 @@ if (cronUser.guid == null) {
   />
 </section>
 
-<section>
-  <div class="row">
-    <div class="col-6 col-12-small">
-      <a
-        href="{base}/user-guide/creating-entities"
-        class="button"
-        style="margin: .5em;">Previous: Creating Entities</a
-      >
-    </div>
-    <div class="col-6 col-12-small" style="text-align: end;">
-      <a
-        href="{base}/user-guide/subscribing-to-queries"
-        class="button"
-        style="margin: .5em;">Next: Subscribing to Queries</a
-      >
-    </div>
-  </div>
+<section class="page-steps">
+  <a
+    href="{base}/user-guide/creating-entities"
+    class="button"
+    style="margin: .5em;">Previous: Creating Entities</a
+  >
+  <a
+    href="{base}/user-guide/subscribing-to-queries"
+    class="button"
+    style="margin: .5em;">Next: Subscribing to Queries</a
+  >
 </section>
 
 <script lang="ts">
