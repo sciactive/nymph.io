@@ -2520,6 +2520,21 @@ button:disabled,
   }
 }
 
+.page-steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+.page-steps > * {
+  flex-basis: 0;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+}
+
 /* Wrapper */
 body {
   display: -moz-flex;
@@ -2892,13 +2907,16 @@ body {
 #menu ul span {
   border-bottom: 0;
   color: inherit;
-  cursor: pointer;
   display: block;
   font-size: 0.9em;
   padding: 0.625em 0;
 }
-#menu ul a:hover,
-#menu ul span:hover {
+#menu ul a:not(.static),
+#menu ul span:not(.static) {
+  cursor: pointer;
+}
+#menu ul a:not(.static):hover,
+#menu ul span:not(.static):hover {
   color: #4260a6;
 }
 #menu ul a.opener,
@@ -2910,8 +2928,8 @@ body {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   position: relative;
 }
-#menu ul a.opener:before,
-#menu ul span.opener:before {
+#menu ul a.opener:not(.static):before,
+#menu ul span.opener:not(.static):before {
   -moz-transition: color 0.2s ease-in-out, -moz-transform 0.2s ease-in-out;
   -webkit-transition: color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
   -ms-transition: color 0.2s ease-in-out, -ms-transform 0.2s ease-in-out;
@@ -2932,12 +2950,13 @@ body {
   height: 0.7em;
   width: 0.7em;
 }
-#menu ul a.opener:hover:before,
-#menu ul span.opener:hover:before {
+#menu ul a.opener:not(.static):hover:before,
+#menu ul span.opener:not(.static):hover:before {
   color: #4260a6;
 }
-#menu ul a.opener.active + ul,
-#menu ul span.opener.active + ul {
+#menu ul a.opener.active + ul, #menu ul a.opener.static + ul,
+#menu ul span.opener.active + ul,
+#menu ul span.opener.static + ul {
   display: block;
 }
 #menu ul a.opener.active:before,
