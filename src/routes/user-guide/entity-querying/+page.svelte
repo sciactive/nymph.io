@@ -453,6 +453,27 @@ if (cronUser.guid == null) {
 );`}
   />
 
+  <p>
+    Get the third page of sorted by name, baz tagged entities (if pages are 5
+    entities long).
+  </p>
+
+  <Highlight
+    language={typescript}
+    code={`const entities = await nymph.getEntities(
+  {
+    class: FoobarBaz,
+    limit: 5,
+    offset: 10,
+    sort: 'name'
+  },
+  {
+    type: '&',
+    tag: ['baz']
+  }
+);`}
+  />
+
   <p>Get baz tagged entities with names.</p>
 
   <Highlight
@@ -549,8 +570,8 @@ if (cronUser.guid == null) {
   />
 
   <p>
-    Get baz tagged entities with names, who either make not greater than 8
-    dollars pay or are under 22.
+    Get baz tagged entities with names, who either make only up to 8 dollars pay
+    or are under 22.
   </p>
 
   <Highlight
@@ -581,12 +602,12 @@ if (cronUser.guid == null) {
   {
     type: '|',
     equal: [
-      ['name', 'Clark'],
-      ['name', 'James']
+      ['firstName', 'Clark'],
+      ['firstName', 'James']
     ],
     match: [
-      ['name', 'Chris(topher)?'],
-      ['name', 'Ja(ke|cob)']
+      ['firstName', '^Chris(topher)?$'],
+      ['firstName', '^Ja(ke|cob)$']
     ]
   }
 );`}

@@ -71,12 +71,6 @@ entity.foo.bar = 'Old value.';
 await entity.foo.$save();
 await entity.$save();
 
-// Reset the entity to a copy just pulled from the DB.
-entity = await nymph.getEntity(
-  { class: MyEntity },
-  { type: '&', guid: entity.guid }
-);
-
 // Get a copy of the referenced entity.
 let instOfFoo = await nymph.getEntity(
   { class: MyEntity },

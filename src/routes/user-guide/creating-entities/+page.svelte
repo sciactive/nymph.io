@@ -105,9 +105,15 @@ console.log(entity.foo.bar); // Outputs undefined.`}
     When an entity is loaded, it does not request its referenced entities from
     Nymph. Instead, it creates instances without data called "sleeping
     references". When you first access an entity's data (in Node.js), if it is a
-    sleeping reference, it will fill its data from the DB. You can call
-    <code>$clearCache</code> in Node.js or <code>$refresh</code> in the client to
-    turn all the entities back into sleeping references.
+    sleeping reference, it will fill its data from the DB synchronously. You can
+    call <code>$clearCache</code> in Node.js or <code>$refresh</code> in the client
+    to turn all the entities back into sleeping references.
+  </p>
+
+  <p>
+    Keep in mind that because Nymph is making a synchronous database call when
+    you access a referenced entity's data, you may get thrown errors. You should
+    surround access to data like this in a try/catch block.
   </p>
 
   <p>

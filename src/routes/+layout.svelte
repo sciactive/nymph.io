@@ -208,7 +208,7 @@
   let smallWindow = false;
 
   onMount(() => {
-    const contactEmail = ['gmail.com', 'hperrin'].reverse().join('@');
+    const contactEmail = ['sciactive.com', 'hperrin'].reverse().join('@');
     email.href = 'mailto:' + contactEmail;
     email.textContent = contactEmail;
 
