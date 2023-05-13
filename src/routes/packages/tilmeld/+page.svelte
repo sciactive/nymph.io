@@ -75,6 +75,37 @@ const { User, Group } = tilmeld;`}
       rel="external">config declaration file</a
     >.
   </p>
+
+  <header class="major">
+    <h2>Abilities</h2>
+  </header>
+
+  <p>There are a few abilities that Tilmeld uses internally:</p>
+
+  <ul>
+    <li>
+      <code>system/admin</code> - A user with this ability has **all** abilities.
+    </li>
+    <li>
+      <code>tilmeld/admin</code> - Allow the user to manage and edit other user's
+      account and group information and grant/revoke abilities.
+    </li>
+    <li>
+      <code>tilmeld/switch</code> - Allow the user to switch to other users (log
+      in as them without their password).
+    </li>
+    <li><code>uid/get/[name]</code> - Allow the user to read the named UID.</li>
+    <li>
+      <code>uid/new/[name]</code> - Allow the user to read, create, and increment
+      the named UID.
+    </li>
+    <li>
+      <code>uid/set/[name]</code> - Allow the user to read, create, increment, set,
+      and delete the named UID.
+    </li>
+  </ul>
+
+  <p>The admin and switch abilities cannot be inherited from groups.</p>
 </section>
 
 <script lang="ts">
