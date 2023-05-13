@@ -13,17 +13,15 @@
     />
     <meta http-equiv="content-security-policy" content="">
 		<link href="../../_app/immutable/assets/github.c47a857b.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../_app/immutable/entry/start.5e2d7388.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/index.2f30a1c2.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/singletons.36dfde60.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/paths.bf9fd3ad.js">
-		<link rel="modulepreload" href="../../_app/immutable/entry/app.9dadf15e.js">
-		<link rel="modulepreload" href="../../_app/immutable/entry/_layout.svelte.e55a0823.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/Icon.6a0d47f8.js">
-		<link rel="modulepreload" href="../../_app/immutable/entry/_layout.ts.822e9be0.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/_layout.79cb23d1.js">
-		<link rel="modulepreload" href="../../_app/immutable/entry/user-guide-entity-querying-page.svelte.287e485c.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/github.8af4b809.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.f2fe2cce.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.d7cc8d8b.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/singletons.500c5b85.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/paths.3059cfc3.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.1ad30235.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.11035073.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Icon.b8c1070a.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/21.ba2b5c8a.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/github.df9008b1.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/typescript.7dd1ec19.js"><title>Entity Querying - User Guide - Nymph.js</title><!-- HEAD_svelte-6i6yy0_START --><meta name="description" content="Object relational mapper for Node.js and the browser"><meta property="og:title" content="Nymph"><meta property="og:type" content="website"><meta property="og:url" content="http://nymph.io/"><meta property="og:image" content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png"><meta property="og:site_name" content="Nymph"><meta property="fb:admins" content="508999194"><meta property="og:description" content="Object relational mapper for Node.js and the browser"><link rel="icon" href="/images/cropped-logo-32x32.png" sizes="32x32"><link rel="icon" href="/images/cropped-logo-192x192.png" sizes="192x192"><link rel="apple-touch-icon" href="/images/cropped-logo-180x180.png"><meta name="msapplication-TileImage" content="/images/cropped-logo-270x270.png"><link rel="stylesheet" href="/css/main.css"><!-- HEAD_svelte-6i6yy0_END --><!-- HEAD_svelte-13nmepq_START --><!-- HTML_TAG_START --><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
   Theme: GitHub
   Description: Light theme as seen on github.com
@@ -324,6 +322,25 @@
 );<!-- HTML_TAG_END --></code></pre>
 
 
+  <p>Get the third page of sorted by name, baz tagged entities (if pages are 5
+    entities long).
+  </p>
+
+  
+  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+  {
+    <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>,
+    <span class="hljs-attr">limit</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">offset</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-attr">sort</span>: <span class="hljs-string">&#x27;name&#x27;</span>
+  },
+  {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
+    <span class="hljs-attr">tag</span>: [<span class="hljs-string">&#x27;baz&#x27;</span>]
+  }
+);<!-- HTML_TAG_END --></code></pre>
+
+
   <p>Get baz tagged entities with names.</p>
 
   
@@ -413,8 +430,8 @@
 );<!-- HTML_TAG_END --></code></pre>
 
 
-  <p>Get baz tagged entities with names, who either make not greater than 8
-    dollars pay or are under 22.
+  <p>Get baz tagged entities with names, who either make only up to 8 dollars pay
+    or are under 22.
   </p>
 
   
@@ -442,12 +459,12 @@
   {
     <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;|&#x27;</span>,
     <span class="hljs-attr">equal</span>: [
-      [<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;Clark&#x27;</span>],
-      [<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;James&#x27;</span>]
+      [<span class="hljs-string">&#x27;firstName&#x27;</span>, <span class="hljs-string">&#x27;Clark&#x27;</span>],
+      [<span class="hljs-string">&#x27;firstName&#x27;</span>, <span class="hljs-string">&#x27;James&#x27;</span>]
     ],
     <span class="hljs-attr">match</span>: [
-      [<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;Chris(topher)?&#x27;</span>],
-      [<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;Ja(ke|cob)&#x27;</span>]
+      [<span class="hljs-string">&#x27;firstName&#x27;</span>, <span class="hljs-string">&#x27;^Chris(topher)?$&#x27;</span>],
+      [<span class="hljs-string">&#x27;firstName&#x27;</span>, <span class="hljs-string">&#x27;^Ja(ke|cob)$&#x27;</span>]
     ]
   }
 );<!-- HTML_TAG_END --></code></pre>
@@ -545,19 +562,20 @@
 			
 			<script>
 				{
-					__sveltekit_1qpdcd7 = {
-						env: {},
+					__sveltekit_8kvpve = {
 						base: new URL("../..", location).pathname.slice(0, -1),
-						element: document.currentScript.parentElement
+						env: {}
 					};
+
+					const element = document.currentScript.parentElement;
 
 					const data = [null,null];
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.5e2d7388.js"),
-						import("../../_app/immutable/entry/app.9dadf15e.js")
+						import("../../_app/immutable/entry/start.f2fe2cce.js"),
+						import("../../_app/immutable/entry/app.1ad30235.js")
 					]).then(([kit, app]) => {
-						kit.start(app, __sveltekit_1qpdcd7.element, {
+						kit.start(app, element, {
 							node_ids: [0, 21],
 							data,
 							form: null,
