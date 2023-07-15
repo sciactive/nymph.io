@@ -11,18 +11,19 @@
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
-    <meta http-equiv="content-security-policy" content="">
+    
 		<link href="../../_app/immutable/assets/github.c47a857b.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../_app/immutable/entry/start.f2fe2cce.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/index.d7cc8d8b.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/singletons.500c5b85.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/paths.3059cfc3.js">
-		<link rel="modulepreload" href="../../_app/immutable/entry/app.1ad30235.js">
-		<link rel="modulepreload" href="../../_app/immutable/nodes/0.11035073.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/Icon.b8c1070a.js">
-		<link rel="modulepreload" href="../../_app/immutable/nodes/20.bae89e4a.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/github.df9008b1.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/typescript.7dd1ec19.js"><title>Entity Class - User Guide - Nymph.js</title><!-- HEAD_svelte-6i6yy0_START --><meta name="description" content="Object relational mapper for Node.js and the browser"><meta property="og:title" content="Nymph"><meta property="og:type" content="website"><meta property="og:url" content="http://nymph.io/"><meta property="og:image" content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png"><meta property="og:site_name" content="Nymph"><meta property="fb:admins" content="508999194"><meta property="og:description" content="Object relational mapper for Node.js and the browser"><link rel="icon" href="/images/cropped-logo-32x32.png" sizes="32x32"><link rel="icon" href="/images/cropped-logo-192x192.png" sizes="192x192"><link rel="apple-touch-icon" href="/images/cropped-logo-180x180.png"><meta name="msapplication-TileImage" content="/images/cropped-logo-270x270.png"><link rel="stylesheet" href="/css/main.css"><!-- HEAD_svelte-6i6yy0_END --><!-- HEAD_svelte-24q1tq_START --><!-- HTML_TAG_START --><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.f85d7925.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.d7e45cc8.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/singletons.b767b388.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/paths.dbb47c61.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.3df4c651.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.77720afb.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.18b2f822.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Icon.050ff215.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/20.9d44ce15.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/github.64534d2c.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/typescript.09c48802.js"><title>Entity Class - User Guide - Nymph.js</title><!-- HEAD_svelte-6i6yy0_START --><meta name="description" content="Object relational mapper for Node.js and the browser"><meta property="og:title" content="Nymph"><meta property="og:type" content="website"><meta property="og:url" content="http://nymph.io/"><meta property="og:image" content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png"><meta property="og:site_name" content="Nymph"><meta property="fb:admins" content="508999194"><meta property="og:description" content="Object relational mapper for Node.js and the browser"><link rel="icon" href="/images/cropped-logo-32x32.png" sizes="32x32"><link rel="icon" href="/images/cropped-logo-192x192.png" sizes="192x192"><link rel="apple-touch-icon" href="/images/cropped-logo-180x180.png"><meta name="msapplication-TileImage" content="/images/cropped-logo-270x270.png"><link rel="stylesheet" href="/css/main.css"><!-- HEAD_svelte-6i6yy0_END --><!-- HEAD_svelte-24q1tq_START --><!-- HTML_TAG_START --><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
   Theme: GitHub
   Description: Light theme as seen on github.com
   Author: github.com
@@ -34,70 +35,28 @@
 */.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}</style><!-- HTML_TAG_END --><!-- HEAD_svelte-24q1tq_END -->
   </head>
   <body class="is-preload">
-    
-
-
-
-
-
-
-<div id="main"><div class="inner">
-<header id="header"><div class="logo"><a href="/" class="logo"><strong>Nymph.js</strong></a></div>
-  <ul class="icons"><li><a href="https://port87.social/@hperrin" target="_blank" rel="noreferrer" class="icon brands" title="Mastodon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M20.94,14C20.66,15.41 18.5,16.96 15.97,17.26C14.66,17.41 13.37,17.56 12,17.5C9.75,17.39 8,16.96 8,16.96V17.58C8.32,19.8 10.22,19.93 12.03,20C13.85,20.05 15.47,19.54 15.47,19.54L15.55,21.19C15.55,21.19 14.27,21.87 12,22C10.75,22.07 9.19,21.97 7.38,21.5C3.46,20.45 2.78,16.26 2.68,12L2.67,8.57C2.67,4.23 5.5,2.96 5.5,2.96C6.95,2.3 9.41,2 11.97,2H12.03C14.59,2 17.05,2.3 18.5,2.96C18.5,2.96 21.33,4.23 21.33,8.57C21.33,8.57 21.37,11.78 20.94,14M18,8.91C18,7.83 17.7,7 17.15,6.35C16.59,5.72 15.85,5.39 14.92,5.39C13.86,5.39 13.05,5.8 12.5,6.62L12,7.5L11.5,6.62C10.94,5.8 10.14,5.39 9.07,5.39C8.15,5.39 7.41,5.72 6.84,6.35C6.29,7 6,7.83 6,8.91V14.17H8.1V9.06C8.1,8 8.55,7.44 9.46,7.44C10.46,7.44 10.96,8.09 10.96,9.37V12.16H13.03V9.37C13.03,8.09 13.53,7.44 14.54,7.44C15.44,7.44 15.89,8 15.89,9.06V14.17H18V8.91Z"></path></svg></a></li>
-    <li><a href="https://github.com/sciactive/nymphjs" target="_blank" rel="noreferrer" class="icon brands" title="GitHub"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path></svg></a></li></ul>
-</header>
-
-    
-
-<section><header class="major"><h1 style="font-size: 3em;">Entity Class</h1></header>
-
-  <p>Entities in Nymph work pretty much like regular objects, and this is due to
+         <div id="main"><div class="inner"> <header id="header"><div class="logo"><a href="/" class="logo"><strong data-svelte-h="svelte-ygq1qh">Nymph.js</strong></a></div> <ul class="icons"><li><a href="https://port87.social/@hperrin" target="_blank" rel="noreferrer" class="icon brands" title="Mastodon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M20.94,14C20.66,15.41 18.5,16.96 15.97,17.26C14.66,17.41 13.37,17.56 12,17.5C9.75,17.39 8,16.96 8,16.96V17.58C8.32,19.8 10.22,19.93 12.03,20C13.85,20.05 15.47,19.54 15.47,19.54L15.55,21.19C15.55,21.19 14.27,21.87 12,22C10.75,22.07 9.19,21.97 7.38,21.5C3.46,20.45 2.78,16.26 2.68,12L2.67,8.57C2.67,4.23 5.5,2.96 5.5,2.96C6.95,2.3 9.41,2 11.97,2H12.03C14.59,2 17.05,2.3 18.5,2.96C18.5,2.96 21.33,4.23 21.33,8.57C21.33,8.57 21.37,11.78 20.94,14M18,8.91C18,7.83 17.7,7 17.15,6.35C16.59,5.72 15.85,5.39 14.92,5.39C13.86,5.39 13.05,5.8 12.5,6.62L12,7.5L11.5,6.62C10.94,5.8 10.14,5.39 9.07,5.39C8.15,5.39 7.41,5.72 6.84,6.35C6.29,7 6,7.83 6,8.91V14.17H8.1V9.06C8.1,8 8.55,7.44 9.46,7.44C10.46,7.44 10.96,8.09 10.96,9.37V12.16H13.03V9.37C13.03,8.09 13.53,7.44 14.54,7.44C15.44,7.44 15.89,8 15.89,9.06V14.17H18V8.91Z"></path></svg></a></li> <li><a href="https://github.com/sciactive/nymphjs" target="_blank" rel="noreferrer" class="icon brands" title="GitHub"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path></svg></a></li></ul> </header>  <section><header class="major" data-svelte-h="svelte-og671h"><h1 style="font-size: 3em;">Entity Class</h1></header> <p data-svelte-h="svelte-110h7us">Entities in Nymph work pretty much like regular objects, and this is due to
     the Entity class. The Entity class constructor returns a proxy to allow
     accessing data on it just like a regular object while keeping track of
     changes and only unserializing data from the DB when it&#39;s first accessed.
     Instance methods and properties begin with &quot;$&quot; to differentiate them from
-    data.
-  </p>
-
-  <p>In the client, assigning a property internally marks that property as
+    data.</p> <p data-svelte-h="svelte-y8afi6">In the client, assigning a property internally marks that property as
     &quot;dirty&quot;, and calling <code>$patch</code> will push just the changed
-    properties up to the server, whereas <code>$save</code> would push all properties.
-  </p>
-
-  <p>Entities can be organized using tags. To add, remove, and check tags, the
+    properties up to the server, whereas <code>$save</code> would push all properties.</p> <p data-svelte-h="svelte-i83m4k">Entities can be organized using tags. To add, remove, and check tags, the
     methods <code>$addTag</code>, <code>$removeTag</code>, and
     <code>$hasTag</code> are used, respectively. Each takes any number of tags as
-    arguments.
-  </p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntity</span>.<span class="hljs-title function_">factory</span>();
+    arguments.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntity</span>.<span class="hljs-title function_">factory</span>();
 
 entity.$addTag(<span class="hljs-string">&#x27;foo&#x27;</span>, <span class="hljs-string">&#x27;bar&#x27;</span>);
 entity.$hasTag(<span class="hljs-string">&#x27;foo&#x27;</span>); <span class="hljs-comment">// True</span>
 
 entity.$removeTag(<span class="hljs-string">&#x27;foo&#x27;</span>, <span class="hljs-string">&#x27;bar&#x27;</span>);
-entity.$hasTag(<span class="hljs-string">&#x27;foo&#x27;</span>); <span class="hljs-comment">// False</span><!-- HTML_TAG_END --></code></pre>
-
-
-  <p>In Node.js, entities that have been saved inside another entity&#39;s property
-    are loaded as &quot;sleeping references&quot;. This means their data is not actually
-    pulled from the database. It will &quot;wake up&quot; when you first try to access
-    something other than its GUID.
-  </p>
-
-  <p>In the client, there are still sleeping references, but they can&#39;t be loaded
-    synchronously. Instead, they are loaded with the <code>$ready</code> method,
-    or by using the <code>$readyAll</code> method on the entity that contains them.
-  </p>
-
-  <p>To clear the cache of referenced entities, so that the next time one is
-    accessed it will be pulled from the database, use the <code>$clearCache</code>
-    method in Node.js and the <code>$refresh</code> method in the client.
-  </p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-comment">// Create some entities.</span>
+entity.$hasTag(<span class="hljs-string">&#x27;foo&#x27;</span>); <span class="hljs-comment">// False</span><!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-ndkimk">Entities that have been saved inside another entity&#39;s property are loaded as
+    &quot;sleeping references&quot;. This means their data is not actually pulled from the
+    database/server. It will &quot;wake up&quot; when you use <code>$wake</code> on it or
+    <code>$wakeAll</code> on the entity that contains it.</p> <p data-svelte-h="svelte-1b8l87g">To clear the cache of referenced entities, so that the next time one is
+    awoken, it will be pulled from the database, use the <code>$clearCache</code>
+    method in Node.js or the <code>$refresh</code> method in the client.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-comment">// Create some entities.</span>
 <span class="hljs-keyword">let</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntity</span>.<span class="hljs-title function_">factory</span>();
 entity.<span class="hljs-property">foo</span> = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntity</span>.<span class="hljs-title function_">factory</span>();
 entity.<span class="hljs-property">foo</span>.<span class="hljs-property">bar</span> = <span class="hljs-string">&#x27;Old value.&#x27;</span>;
@@ -116,20 +75,14 @@ instOfFoo.<span class="hljs-property">bar</span> = <span class="hljs-string">&#x
 <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(entity.<span class="hljs-property">foo</span>.<span class="hljs-property">bar</span>); <span class="hljs-comment">// Outputs &#x27;Old value.&#x27;</span>
 <span class="hljs-comment">// If on Node.js</span>
 entity.$clearCache();
+<span class="hljs-keyword">await</span> entity.<span class="hljs-property">foo</span>.$wake();
 <span class="hljs-comment">// Else if on the client</span>
 <span class="hljs-keyword">await</span> entity.$refresh();
-<span class="hljs-keyword">await</span> entity.<span class="hljs-property">foo</span>.$ready();
+<span class="hljs-keyword">await</span> entity.<span class="hljs-property">foo</span>.$wake();
 <span class="hljs-comment">// End if</span>
-<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(entity.<span class="hljs-property">foo</span>.<span class="hljs-property">bar</span>); <span class="hljs-comment">// Outputs &#x27;New value.&#x27;</span><!-- HTML_TAG_END --></code></pre>
-
-
-  <p>Much like clearing the entity cache, you may need to refresh the entity&#39;s
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(entity.<span class="hljs-property">foo</span>.<span class="hljs-property">bar</span>); <span class="hljs-comment">// Outputs &#x27;New value.&#x27;</span><!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-bvqxix">Much like clearing the entity cache, you may need to refresh the entity&#39;s
     own data in Node.js. Use the <code>$refresh</code> method, just like in the client,
-    for this.
-  </p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-comment">// Create an entity.</span>
+    for this.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-comment">// Create an entity.</span>
 <span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntity</span>.<span class="hljs-title function_">factory</span>();
 entity.<span class="hljs-property">foo</span> = <span class="hljs-string">&#x27;Old value.&#x27;</span>;
 <span class="hljs-keyword">await</span> entity.$save();
@@ -145,18 +98,11 @@ instOfEnt.<span class="hljs-property">foo</span> = <span class="hljs-string">&#x
 
 <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(entity.<span class="hljs-property">foo</span>); <span class="hljs-comment">// Outputs &#x27;Old value.&#x27;</span>
 <span class="hljs-keyword">await</span> entity.$refresh();
-<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(entity.<span class="hljs-property">foo</span>); <span class="hljs-comment">// Outputs &#x27;New value.&#x27;</span><!-- HTML_TAG_END --></code></pre>
-
-
-  <p>To save an entity, use the <code>$save</code> method. Likewise, to delete
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(entity.<span class="hljs-property">foo</span>); <span class="hljs-comment">// Outputs &#x27;New value.&#x27;</span><!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-m1pah4">To save an entity, use the <code>$save</code> method. Likewise, to delete
     the entity, use the <code>$delete</code> method. You can also call the
     <code>saveEntity</code>,
     <code>deleteEntity</code>, and <code>deleteEntityByID</code> methods of
-    <code>Nymph</code>. The <code>Entity</code> class uses these methods.
-  </p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntity</span>.<span class="hljs-title function_">factory</span>();
+    <code>Nymph</code>. The <code>Entity</code> class uses these methods.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntity</span>.<span class="hljs-title function_">factory</span>();
 
 <span class="hljs-comment">// Save the entity.</span>
 <span class="hljs-keyword">await</span> entity.$save();
@@ -177,31 +123,19 @@ instOfEnt.<span class="hljs-property">foo</span> = <span class="hljs-string">&#x
 <span class="hljs-comment">// or</span>
 <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">deleteEntity</span>(entity);
 <span class="hljs-comment">// or</span>
-<span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">deleteEntities</span>([entity]);<!-- HTML_TAG_END --></code></pre>
-
-
-  <p>Entities can&#39;t be checked using the <code>==</code> operator. Instead, you can
-    use the following entity methods.
-  </p>
-  <ul><li><code>$is</code> - Perform a less strict comparison of two entities
+<span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">deleteEntities</span>([entity]);<!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-ofuybv">Entities can&#39;t be checked using the <code>==</code> operator. Instead, you can
+    use the following entity methods.</p> <ul data-svelte-h="svelte-1rb1wt6"><li><code>$is</code> - Perform a less strict comparison of two entities
       (basically a GUID check). To return true, the entities must meet the
       following criteria.
-      <ul><li>They must be entities.</li>
-        <li>They must have equal GUIDs, or both can have no GUID.</li>
-        <li>If they have no GUIDs, their data and tags must be equal.</li></ul></li>
-    <li><code>$equals</code> - Perform a more strict comparison of two entities
+      <ul><li>They must be entities.</li> <li>They must have equal GUIDs, or both can have no GUID.</li> <li>If they have no GUIDs, their data and tags must be equal.</li></ul></li> <li><code>$equals</code> - Perform a more strict comparison of two entities
       (basically a GUID + data + tags check). To return true, the entities must
-      meet the following criteria.
-      <ul><li>They must be entities.</li>
-        <li>They must have equal GUIDs, or both can have no GUID.</li>
-        <li>Their data and tags must be equal.</li></ul></li>
-    <li><code>$inArray</code> - Check whether the entity is in an array. Takes two
+      meet the following criteria. Unlike <code>$is</code>, this method can&#39;t be
+      used on sleeping references.
+      <ul><li>They must be entities.</li> <li>They must have equal GUIDs, or both can have no GUID.</li> <li>Their data and tags must be equal.</li></ul></li> <li><code>$inArray</code> - Check whether the entity is in an array. Takes two
       arguments, the array and a boolean <code>strict</code>. If
       <code>strict</code>
       is false or undefined, the function uses <code>$is</code> to compare, and
-      if it&#39;s true, the function uses <code>$equals</code>.
-    </li>
-    <li><code>$arraySearch</code> - Search an array for the entity and return the
+      if it&#39;s true, the function uses <code>$equals</code>.</li> <li><code>$arraySearch</code> - Search an array for the entity and return the
       corresponding key. Takes two arguments, the array and a boolean
       <code>strict</code>. If <code>strict</code> is false or undefined, the
       function uses
@@ -209,11 +143,7 @@ instOfEnt.<span class="hljs-property">foo</span> = <span class="hljs-string">&#x
       to compare, and if it&#39;s true, the function uses <code>$equals</code>. This
       method may return 0, which evaluates to false, so you should use
       <code>$inArray</code> if you are only checking whether the entity is in the
-      array.
-    </li></ul>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-comment">// Assuming the entity with GUID &#x27;a4c1591d6ea91c8450d2d360&#x27; exists.</span>
+      array.</li></ul>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-comment">// Assuming the entity with GUID &#x27;a4c1591d6ea91c8450d2d360&#x27; exists.</span>
 <span class="hljs-keyword">let</span> entity = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntity</span>.<span class="hljs-title function_">factory</span>(<span class="hljs-string">&#x27;a4c1591d6ea91c8450d2d360&#x27;</span>);
 <span class="hljs-keyword">let</span> entity2 = <span class="hljs-keyword">await</span> <span class="hljs-title class_">MyEntity</span>.<span class="hljs-title function_">factory</span>(<span class="hljs-string">&#x27;a4c1591d6ea91c8450d2d360&#x27;</span>);
 
@@ -228,44 +158,21 @@ entity.$equals(entity2); <span class="hljs-comment">// False</span>
 entity.$arraySearch(arr); <span class="hljs-comment">// 2</span>
 entity.$inArray(arr); <span class="hljs-comment">// True</span>
 entity.$arraySearch(arr, <span class="hljs-literal">true</span>); <span class="hljs-comment">// -1</span>
-entity.$inArray(arr, <span class="hljs-literal">true</span>); <span class="hljs-comment">// false</span><!-- HTML_TAG_END --></code></pre>
-
-
-  <p>Client side Nymph entities can use the <code>$serverCall</code> method to
+entity.$inArray(arr, <span class="hljs-literal">true</span>); <span class="hljs-comment">// false</span><!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-17ufvy7">Client side Nymph entities can use the <code>$serverCall</code> method to
     call methods on a server side instance of the entity.
-    <code>$serverCall</code> expects three parameters.
-  </p>
-
-  <ul><li><code>method</code> - the name of the method to call on the server side object.
-    </li>
-    <li><code>params</code> - an array of the parameters to pass to the method.
-    </li>
-    <li><code>stateless</code> - if set to true, the method won&#39;t update the entity
-      with the returned server side representation.
-    </li></ul>
-
-  <p>Normally, when you use this method, just before the promise is fulfilled,
+    <code>$serverCall</code> expects three parameters.</p> <ul data-svelte-h="svelte-11n6zj9"><li><code>method</code> - the name of the method to call on the server side object.</li> <li><code>params</code> - an array of the parameters to pass to the method.</li> <li><code>stateless</code> - if set to true, the method won&#39;t update the entity
+      with the returned server side representation.</li></ul> <p data-svelte-h="svelte-7sz2fh">Normally, when you use this method, just before the promise is fulfilled,
     the entity&#39;s data will be replaced with that of the entity on the server
     side after the method was run. This will cause any awoken entities in the
     data of your entity to be replaced with sleeping entities, so you will have
     to run <code>$readyAll</code> again. If you know that the server side method
     will not change any of the data on the entity, you can set
-    <code>stateless</code> to true.
-  </p>
-
-  <p>You can also call static methods on the server with <code>serverCallStatic</code>.
-  </p>
-
-  <p>In order to be called from the client side, the method must be listed in the
+    <code>stateless</code> to true.</p> <p data-svelte-h="svelte-h3sxmn">You can also call static methods on the server with <code>serverCallStatic</code>.</p> <p data-svelte-h="svelte-xe32i4">In order to be called from the client side, the method must be listed in the
     <code>$clientEnabledMethods</code> or
     <code>clientEnabledStaticMethods</code> property in the Node.js class. This
     guards against a user submitting tailored requests to perform potentially
     dangerous tasks on the server side. If the method is not listed, the request
-    will fail with a <code>403 Forbidden</code> status.
-  </p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-comment">// You can use $serverCall and serverCallStatic directly.</span>
+    will fail with a <code>403 Forbidden</code> status.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-comment">// You can use $serverCall and serverCallStatic directly.</span>
 <span class="hljs-keyword">try</span> {
   <span class="hljs-keyword">const</span> <span class="hljs-attr">success</span>: <span class="hljs-built_in">boolean</span> = <span class="hljs-keyword">await</span> todo.$serverCall(<span class="hljs-string">&#x27;$archive&#x27;</span>, []);
   <span class="hljs-keyword">if</span> (!success) {
@@ -294,76 +201,17 @@ Couldn&#x27;t archive &quot;</span> + todo.<span class="hljs-property">name</spa
 
 <span class="hljs-comment">// And</span>
 <span class="hljs-keyword">const</span> todo = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Todo</span>.<span class="hljs-title function_">factory</span>(someGuid);
-<span class="hljs-keyword">const</span> success = <span class="hljs-keyword">await</span> todo.$archive();<!-- HTML_TAG_END --></code></pre>
-</section>
-
-<section class="page-steps"><a href="/user-guide/subscribing-to-queries" class="button" style="margin: .5em;">Previous: Subscribing to Queries</a>
-  <a href="/user-guide/defining-entities" class="button" style="margin: .5em;">Next: Defining Entities</a>
-</section>
-
-    
-    <footer id="footer"><p class="copyright">© SciActive Inc. All rights reserved. Design by:
-        <a href="https://html5up.net">HTML5 UP</a>.
-      </p></footer></div></div>
-
-
-<div id="sidebar"><div class="inner">
-    <section id="top-panel" class="alt"><div class="title"><img class="logo" src="/images/web-logo.png" alt="SciActive">
-        <span class="name">SciActive</span></div></section>
-
-    
-    <nav id="menu"><ul><li><a href="/">Homepage</a></li>
-        <li><span class="opener static">User Guide</span>
-          <ul><li><a href="/user-guide/introduction">Introduction</a></li>
-            <li><a href="/user-guide/creating-entities">Creating Entities</a></li>
-            <li><a href="/user-guide/entity-querying">Entity Querying</a></li>
-            <li><a href="/user-guide/subscribing-to-queries">Subscribing to Queries</a></li>
-            <li><a href="/user-guide/entity-class">Entity Class</a></li>
-            <li><a href="/user-guide/defining-entities">Defining Entities</a></li>
-            <li><a href="/user-guide/uids">UIDs</a></li>
-            <li><a href="/user-guide/transactions">Transactions</a></li>
-            <li><a href="/user-guide/export-and-import">Export and Import</a></li></ul></li>
-        <li><span class="opener static">Packages</span>
-          <ul><li><a href="/packages/nymph">Nymph Core</a></li>
-            <li><a href="/packages/driver-mysql">MySQL Driver</a></li>
-            <li><a href="/packages/driver-postgresql">PostgreSQL Driver</a></li>
-            <li><a href="/packages/driver-sqlite3">SQLite3 Driver</a></li>
-            <li><a href="/packages/server">REST Server</a></li>
-            <li><a href="/packages/pubsub">PubSub Server</a></li>
-            <li><a href="/packages/client">Client</a></li>
-            <li><a href="/packages/client-node">Node Client</a></li>
-            <li><a href="/packages/tilmeld">Tilmeld</a></li>
-            <li><a href="/packages/tilmeld-client">Tilmeld Client</a></li>
-            <li><a href="/packages/tilmeld-components">Tilmeld Components</a></li>
-            <li><a href="/packages/tilmeld-setup">Tilmeld Setup</a></li>
-            <li><a href="/packages/sorter">Entity Sorter</a></li>
-            <li><a href="/packages/query-parser">Query Parser</a></li>
-            <li><a href="/packages/guid">GUID / Unique Code Generator</a></li></ul></li></ul></nav>
-
-    
-    <section><header class="major"><h2>Get in touch</h2></header>
-      <p>Nymph is a product of SciActive Inc. You can contact SciActive by email
-        or post, or follow on Mastodon.
-      </p>
-      <ul class="contact"><li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M20.94,14C20.66,15.41 18.5,16.96 15.97,17.26C14.66,17.41 13.37,17.56 12,17.5C9.75,17.39 8,16.96 8,16.96V17.58C8.32,19.8 10.22,19.93 12.03,20C13.85,20.05 15.47,19.54 15.47,19.54L15.55,21.19C15.55,21.19 14.27,21.87 12,22C10.75,22.07 9.19,21.97 7.38,21.5C3.46,20.45 2.78,16.26 2.68,12L2.67,8.57C2.67,4.23 5.5,2.96 5.5,2.96C6.95,2.3 9.41,2 11.97,2H12.03C14.59,2 17.05,2.3 18.5,2.96C18.5,2.96 21.33,4.23 21.33,8.57C21.33,8.57 21.37,11.78 20.94,14M18,8.91C18,7.83 17.7,7 17.15,6.35C16.59,5.72 15.85,5.39 14.92,5.39C13.86,5.39 13.05,5.8 12.5,6.62L12,7.5L11.5,6.62C10.94,5.8 10.14,5.39 9.07,5.39C8.15,5.39 7.41,5.72 6.84,6.35C6.29,7 6,7.83 6,8.91V14.17H8.1V9.06C8.1,8 8.55,7.44 9.46,7.44C10.46,7.44 10.96,8.09 10.96,9.37V12.16H13.03V9.37C13.03,8.09 13.53,7.44 14.54,7.44C15.44,7.44 15.89,8 15.89,9.06V14.17H18V8.91Z"></path></svg>
-          <a href="https://port87.social/@hperrin" target="_blank" rel="noreferrer">@hperrin@port87.social on Mastodon</a></li>
-        <li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"></path></svg>
-          <a href="mailto:someone@example.com">(loading...)</a></li>
-        <li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path></svg>
+<span class="hljs-keyword">const</span> success = <span class="hljs-keyword">await</span> todo.$archive();<!-- HTML_TAG_END --></code></pre> </section> <section class="page-steps"><a href="/user-guide/subscribing-to-queries" class="button" style="margin: .5em;">Previous: Subscribing to Queries</a> <a href="/user-guide/defining-entities" class="button" style="margin: .5em;">Next: Defining Entities</a> </section>  <footer id="footer" data-svelte-h="svelte-12j9vpf"><p class="copyright">© SciActive Inc. All rights reserved. Design by:
+        <a href="https://html5up.net">HTML5 UP</a>.</p></footer></div></div>  <div id="sidebar"><div class="inner"> <section id="top-panel" class="alt"><div class="title"><img class="logo" src="/images/web-logo.png" alt="SciActive"> <span class="name" data-svelte-h="svelte-1ym2tgr">SciActive</span></div></section>  <nav id="menu"><ul><li><a href="/">Homepage</a></li> <li><span class="opener static" data-svelte-h="svelte-60cxqh">User Guide</span> <ul><li><a href="/user-guide/introduction">Introduction</a></li> <li><a href="/user-guide/creating-entities">Creating Entities</a></li> <li><a href="/user-guide/entity-querying">Entity Querying</a></li> <li><a href="/user-guide/subscribing-to-queries">Subscribing to Queries</a></li> <li><a href="/user-guide/entity-class">Entity Class</a></li> <li><a href="/user-guide/defining-entities">Defining Entities</a></li> <li><a href="/user-guide/uids">UIDs</a></li> <li><a href="/user-guide/transactions">Transactions</a></li> <li><a href="/user-guide/export-and-import">Export and Import</a></li></ul></li> <li><span class="opener static" data-svelte-h="svelte-5ppnrj">Packages</span> <ul><li><a href="/packages/nymph">Nymph Core</a></li> <li><a href="/packages/driver-mysql">MySQL Driver</a></li> <li><a href="/packages/driver-postgresql">PostgreSQL Driver</a></li> <li><a href="/packages/driver-sqlite3">SQLite3 Driver</a></li> <li><a href="/packages/server">REST Server</a></li> <li><a href="/packages/pubsub">PubSub Server</a></li> <li><a href="/packages/client">Client</a></li> <li><a href="/packages/client-node">Node Client</a></li> <li><a href="/packages/tilmeld">Tilmeld</a></li> <li><a href="/packages/tilmeld-client">Tilmeld Client</a></li> <li><a href="/packages/tilmeld-components">Tilmeld Components</a></li> <li><a href="/packages/tilmeld-setup">Tilmeld Setup</a></li> <li><a href="/packages/sorter">Entity Sorter</a></li> <li><a href="/packages/query-parser">Query Parser</a></li> <li><a href="/packages/guid">GUID / Unique Code Generator</a></li></ul></li></ul></nav>  <section><header class="major" data-svelte-h="svelte-grs083"><h2>Get in touch</h2></header> <p data-svelte-h="svelte-1l9tx70">Nymph is a product of SciActive Inc. You can contact SciActive by email
+        or post, or follow on Mastodon.</p> <ul class="contact"><li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M20.94,14C20.66,15.41 18.5,16.96 15.97,17.26C14.66,17.41 13.37,17.56 12,17.5C9.75,17.39 8,16.96 8,16.96V17.58C8.32,19.8 10.22,19.93 12.03,20C13.85,20.05 15.47,19.54 15.47,19.54L15.55,21.19C15.55,21.19 14.27,21.87 12,22C10.75,22.07 9.19,21.97 7.38,21.5C3.46,20.45 2.78,16.26 2.68,12L2.67,8.57C2.67,4.23 5.5,2.96 5.5,2.96C6.95,2.3 9.41,2 11.97,2H12.03C14.59,2 17.05,2.3 18.5,2.96C18.5,2.96 21.33,4.23 21.33,8.57C21.33,8.57 21.37,11.78 20.94,14M18,8.91C18,7.83 17.7,7 17.15,6.35C16.59,5.72 15.85,5.39 14.92,5.39C13.86,5.39 13.05,5.8 12.5,6.62L12,7.5L11.5,6.62C10.94,5.8 10.14,5.39 9.07,5.39C8.15,5.39 7.41,5.72 6.84,6.35C6.29,7 6,7.83 6,8.91V14.17H8.1V9.06C8.1,8 8.55,7.44 9.46,7.44C10.46,7.44 10.96,8.09 10.96,9.37V12.16H13.03V9.37C13.03,8.09 13.53,7.44 14.54,7.44C15.44,7.44 15.89,8 15.89,9.06V14.17H18V8.91Z"></path></svg> <a href="https://port87.social/@hperrin" target="_blank" rel="noreferrer" data-svelte-h="svelte-2tjg6n">@hperrin@port87.social on Mastodon</a></li> <li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"></path></svg> <a href="mailto:someone@example.com" data-svelte-h="svelte-1duywns">(loading...)</a></li> <li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path></svg>
           SciActive Inc<br>
           310 S Twin Oaks Valley Rd #107<br>
           PMB 422<br>
-          San Marcos, CA 92078
-        </li></ul></section></div>
-
-  
-</div>
-
-
+          San Marcos, CA 92078</li></ul></section></div>  </div> 
 			
 			<script>
 				{
-					__sveltekit_8kvpve = {
+					__sveltekit_11368d0 = {
 						base: new URL("../..", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -373,8 +221,8 @@ Couldn&#x27;t archive &quot;</span> + todo.<span class="hljs-property">name</spa
 					const data = [null,null];
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.f2fe2cce.js"),
-						import("../../_app/immutable/entry/app.1ad30235.js")
+						import("../../_app/immutable/entry/start.f85d7925.js"),
+						import("../../_app/immutable/entry/app.3df4c651.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 20],

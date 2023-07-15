@@ -1,3 +1,0 @@
-
-var ApiGen = ApiGen || {};
-ApiGen.elements = [["c","Nymph\\DataObjectInterface"],["c","Nymph\\Drivers\\DriverInterface"],["c","Nymph\\Drivers\\DriverTrait"],["c","Nymph\\Drivers\\MySQLDriver"],["c","Nymph\\Drivers\\PostgreSQLDriver"],["c","Nymph\\Drivers\\SQLite3Driver"],["c","Nymph\\Entity"],["c","Nymph\\EntityInterface"],["c","Nymph\\Exceptions\\EntityClassNotFoundException"],["c","Nymph\\Exceptions\\EntityCorruptedException"],["c","Nymph\\Exceptions\\EntityInvalidDataException"],["c","Nymph\\Exceptions\\InvalidParametersException"],["c","Nymph\\Exceptions\\NotConfiguredException"],["c","Nymph\\Exceptions\\QueryFailedException"],["c","Nymph\\Exceptions\\UnableToConnectException"],["c","Nymph\\Nymph"],["c","Nymph\\REST"]];

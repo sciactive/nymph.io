@@ -11,18 +11,19 @@
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
-    <meta http-equiv="content-security-policy" content="">
+    
 		<link href="../../_app/immutable/assets/github.c47a857b.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../_app/immutable/entry/start.f2fe2cce.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/index.d7cc8d8b.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/singletons.500c5b85.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/paths.3059cfc3.js">
-		<link rel="modulepreload" href="../../_app/immutable/entry/app.1ad30235.js">
-		<link rel="modulepreload" href="../../_app/immutable/nodes/0.11035073.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/Icon.b8c1070a.js">
-		<link rel="modulepreload" href="../../_app/immutable/nodes/21.ba2b5c8a.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/github.df9008b1.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/typescript.7dd1ec19.js"><title>Entity Querying - User Guide - Nymph.js</title><!-- HEAD_svelte-6i6yy0_START --><meta name="description" content="Object relational mapper for Node.js and the browser"><meta property="og:title" content="Nymph"><meta property="og:type" content="website"><meta property="og:url" content="http://nymph.io/"><meta property="og:image" content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png"><meta property="og:site_name" content="Nymph"><meta property="fb:admins" content="508999194"><meta property="og:description" content="Object relational mapper for Node.js and the browser"><link rel="icon" href="/images/cropped-logo-32x32.png" sizes="32x32"><link rel="icon" href="/images/cropped-logo-192x192.png" sizes="192x192"><link rel="apple-touch-icon" href="/images/cropped-logo-180x180.png"><meta name="msapplication-TileImage" content="/images/cropped-logo-270x270.png"><link rel="stylesheet" href="/css/main.css"><!-- HEAD_svelte-6i6yy0_END --><!-- HEAD_svelte-13nmepq_START --><!-- HTML_TAG_START --><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.f85d7925.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.d7e45cc8.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/singletons.b767b388.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/paths.dbb47c61.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.3df4c651.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.77720afb.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.18b2f822.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Icon.050ff215.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/21.17ce2276.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/github.64534d2c.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/typescript.09c48802.js"><title>Entity Querying - User Guide - Nymph.js</title><!-- HEAD_svelte-6i6yy0_START --><meta name="description" content="Object relational mapper for Node.js and the browser"><meta property="og:title" content="Nymph"><meta property="og:type" content="website"><meta property="og:url" content="http://nymph.io/"><meta property="og:image" content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png"><meta property="og:site_name" content="Nymph"><meta property="fb:admins" content="508999194"><meta property="og:description" content="Object relational mapper for Node.js and the browser"><link rel="icon" href="/images/cropped-logo-32x32.png" sizes="32x32"><link rel="icon" href="/images/cropped-logo-192x192.png" sizes="192x192"><link rel="apple-touch-icon" href="/images/cropped-logo-180x180.png"><meta name="msapplication-TileImage" content="/images/cropped-logo-270x270.png"><link rel="stylesheet" href="/css/main.css"><!-- HEAD_svelte-6i6yy0_END --><!-- HEAD_svelte-13nmepq_START --><!-- HTML_TAG_START --><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
   Theme: GitHub
   Description: Light theme as seen on github.com
   Author: github.com
@@ -34,37 +35,12 @@
 */.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}</style><!-- HTML_TAG_END --><!-- HEAD_svelte-13nmepq_END -->
   </head>
   <body class="is-preload">
-    
-
-
-
-
-
-
-<div id="main"><div class="inner">
-<header id="header"><div class="logo"><a href="/" class="logo"><strong>Nymph.js</strong></a></div>
-  <ul class="icons"><li><a href="https://port87.social/@hperrin" target="_blank" rel="noreferrer" class="icon brands" title="Mastodon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M20.94,14C20.66,15.41 18.5,16.96 15.97,17.26C14.66,17.41 13.37,17.56 12,17.5C9.75,17.39 8,16.96 8,16.96V17.58C8.32,19.8 10.22,19.93 12.03,20C13.85,20.05 15.47,19.54 15.47,19.54L15.55,21.19C15.55,21.19 14.27,21.87 12,22C10.75,22.07 9.19,21.97 7.38,21.5C3.46,20.45 2.78,16.26 2.68,12L2.67,8.57C2.67,4.23 5.5,2.96 5.5,2.96C6.95,2.3 9.41,2 11.97,2H12.03C14.59,2 17.05,2.3 18.5,2.96C18.5,2.96 21.33,4.23 21.33,8.57C21.33,8.57 21.37,11.78 20.94,14M18,8.91C18,7.83 17.7,7 17.15,6.35C16.59,5.72 15.85,5.39 14.92,5.39C13.86,5.39 13.05,5.8 12.5,6.62L12,7.5L11.5,6.62C10.94,5.8 10.14,5.39 9.07,5.39C8.15,5.39 7.41,5.72 6.84,6.35C6.29,7 6,7.83 6,8.91V14.17H8.1V9.06C8.1,8 8.55,7.44 9.46,7.44C10.46,7.44 10.96,8.09 10.96,9.37V12.16H13.03V9.37C13.03,8.09 13.53,7.44 14.54,7.44C15.44,7.44 15.89,8 15.89,9.06V14.17H18V8.91Z"></path></svg></a></li>
-    <li><a href="https://github.com/sciactive/nymphjs" target="_blank" rel="noreferrer" class="icon brands" title="GitHub"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path></svg></a></li></ul>
-</header>
-
-    
-
-<section><header class="major"><h1 style="font-size: 3em;">Entity Querying</h1></header>
-
-  <p>The real power behind Nymph is the entity querying system.</p>
-
-  <header class="major"><h2>Factory Method</h2></header>
-
-  <p>The <code>Entity</code> class&#39;s factory method can take a GUID as an
+         <div id="main"><div class="inner"> <header id="header"><div class="logo"><a href="/" class="logo"><strong data-svelte-h="svelte-ygq1qh">Nymph.js</strong></a></div> <ul class="icons"><li><a href="https://port87.social/@hperrin" target="_blank" rel="noreferrer" class="icon brands" title="Mastodon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M20.94,14C20.66,15.41 18.5,16.96 15.97,17.26C14.66,17.41 13.37,17.56 12,17.5C9.75,17.39 8,16.96 8,16.96V17.58C8.32,19.8 10.22,19.93 12.03,20C13.85,20.05 15.47,19.54 15.47,19.54L15.55,21.19C15.55,21.19 14.27,21.87 12,22C10.75,22.07 9.19,21.97 7.38,21.5C3.46,20.45 2.78,16.26 2.68,12L2.67,8.57C2.67,4.23 5.5,2.96 5.5,2.96C6.95,2.3 9.41,2 11.97,2H12.03C14.59,2 17.05,2.3 18.5,2.96C18.5,2.96 21.33,4.23 21.33,8.57C21.33,8.57 21.37,11.78 20.94,14M18,8.91C18,7.83 17.7,7 17.15,6.35C16.59,5.72 15.85,5.39 14.92,5.39C13.86,5.39 13.05,5.8 12.5,6.62L12,7.5L11.5,6.62C10.94,5.8 10.14,5.39 9.07,5.39C8.15,5.39 7.41,5.72 6.84,6.35C6.29,7 6,7.83 6,8.91V14.17H8.1V9.06C8.1,8 8.55,7.44 9.46,7.44C10.46,7.44 10.96,8.09 10.96,9.37V12.16H13.03V9.37C13.03,8.09 13.53,7.44 14.54,7.44C15.44,7.44 15.89,8 15.89,9.06V14.17H18V8.91Z"></path></svg></a></li> <li><a href="https://github.com/sciactive/nymphjs" target="_blank" rel="noreferrer" class="icon brands" title="GitHub"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path></svg></a></li></ul> </header>  <section><header class="major" data-svelte-h="svelte-1icpcsf"><h1 style="font-size: 3em;">Entity Querying</h1></header> <p data-svelte-h="svelte-1fqfh7l">The real power behind Nymph is the entity querying system.</p> <header class="major" data-svelte-h="svelte-32rkd2"><h2>Factory Method</h2></header> <p data-svelte-h="svelte-573aj2">The <code>Entity</code> class&#39; factory method can take a GUID as an
     argument. You can provide other factory functions that can take things as
     well. For example, the <code>User</code> class in Tilmeld has a
     <code>factoryUsername</code> method that takes a username. The method will return
     a new entity if the queried entity is not found. You can determine if it was
-    found by checking that its GUID is not null.
-  </p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-comment">// FoobarBaz expects a GUID.</span>
+    found by checking that its GUID is not null.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-comment">// FoobarBaz expects a GUID.</span>
 <span class="hljs-keyword">const</span> baz = <span class="hljs-keyword">await</span> <span class="hljs-title class_">FoobarBaz</span>.<span class="hljs-title function_">factory</span>(guid);
 <span class="hljs-keyword">if</span> (baz.<span class="hljs-property">guid</span> == <span class="hljs-literal">null</span>) {
   <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;Can&#x27;t find the Foobar Baz!&quot;</span>);
@@ -74,211 +50,40 @@
 <span class="hljs-keyword">const</span> cronUser = <span class="hljs-keyword">await</span> <span class="hljs-title class_">User</span>.<span class="hljs-title function_">factoryUsername</span>(<span class="hljs-string">&#x27;cron&#x27;</span>);
 <span class="hljs-keyword">if</span> (cronUser.<span class="hljs-property">guid</span> == <span class="hljs-literal">null</span>) {
   <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;Can&#x27;t find the cron user!&quot;</span>);
-}<!-- HTML_TAG_END --></code></pre>
-
-
-  <header class="major"><h2>Nymph&#39;s Query Language</h2></header>
-
-  <p>The powerful way of querying entities is Nymph&#39;s <code>getEntities</code>
-    and <code>getEntity</code> methods. The first argument is an Options object.
-  </p>
-
-  <div class="table-wrapper"><table><thead><tr><th>Option</th>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Description</th></tr></thead>
-      <tbody><tr><td>class</td>
-          <td>typeof Entity</td>
-          <td>Entity</td>
-          <td>The class used to create each entity. It must have a <code>factory</code> static method that returns a new instance.</td></tr>
-        <tr><td>limit</td>
-          <td>number</td>
-          <td>undefined</td>
-          <td>The limit of entities to be returned. Not needed when using <code>getEntity</code>, as it always returns only one.</td></tr>
-        <tr><td>offset</td>
-          <td>number</td>
-          <td>0</td>
-          <td>The offset from the first matching entity, in order, to start
-            retrieving.</td></tr>
-        <tr><td>reverse</td>
-          <td>boolean</td>
-          <td>false</td>
-          <td>If true, entities will be retrieved from newest to oldest/largest
-            to smallest (with regard to <code>sort</code>).</td></tr>
-        <tr><td>sort</td>
-          <td>&#39;cdate&#39; | &#39;mdate&#39; | string</td>
-          <td>&#39;cdate&#39;</td>
-          <td>How to sort the entities. Should be &quot;cdate&quot;, &quot;mdate&quot;, or the name
-            of a property.</td></tr>
-        <tr><td>return</td>
-          <td>&#39;entity&#39; | &#39;guid&#39; | &#39;count&#39;</td>
-          <td>&#39;entity&#39;</td>
-          <td>What to return, the entities with their data, just the GUIDs, or
-            just a count.</td></tr>
-        <tr><td>source</td>
-          <td>string</td>
-          <td>undefined</td>
-          <td>Will be &#39;client&#39; if the query came from a REST request or the
-            PubSub server. (Mainly used in Tilmeld for access control.)</td></tr>
-        <tr><td>skipCache</td>
-          <td>boolean</td>
-          <td>false</td>
-          <td>If true, Nymph will skip the cache and retrieve the entity from the
-            DB.</td></tr>
-        <tr><td>skipAc</td>
-          <td>boolean</td>
-          <td>false</td>
-          <td>If true, Tilmeld will not filter returned entities according to
+}<!-- HTML_TAG_END --></code></pre>  <header class="major" data-svelte-h="svelte-1ueal5j"><h2>Nymph&#39;s Query Language</h2></header> <p data-svelte-h="svelte-3b2tnp">The powerful way of querying entities is Nymph&#39;s <code>getEntities</code>
+    and <code>getEntity</code> methods. The first argument is an Options object.</p> <div class="table-wrapper" data-svelte-h="svelte-5ub6ai"><table><thead><tr><th>Option</th> <th>Type</th> <th>Default</th> <th>Description</th></tr></thead> <tbody><tr><td>class</td> <td>typeof Entity</td> <td>Entity</td> <td>The class used to create each entity. It must have a <code>factory</code> static method that returns a new instance.</td></tr> <tr><td>limit</td> <td>number</td> <td>undefined</td> <td>The limit of entities to be returned. Not needed when using <code>getEntity</code>, as it always returns only one.</td></tr> <tr><td>offset</td> <td>number</td> <td>0</td> <td>The offset from the first matching entity, in order, to start
+            retrieving.</td></tr> <tr><td>reverse</td> <td>boolean</td> <td>false</td> <td>If true, entities will be retrieved from newest to oldest/largest
+            to smallest (with regard to <code>sort</code>).</td></tr> <tr><td>sort</td> <td>&#39;cdate&#39; | &#39;mdate&#39; | string</td> <td>&#39;cdate&#39;</td> <td>How to sort the entities. Should be &quot;cdate&quot;, &quot;mdate&quot;, or the name
+            of a property.</td></tr> <tr><td>return</td> <td>&#39;entity&#39; | &#39;guid&#39; | &#39;count&#39;</td> <td>&#39;entity&#39;</td> <td>What to return, the entities with their data, just the GUIDs, or
+            just a count.</td></tr> <tr><td>source</td> <td>string</td> <td>undefined</td> <td>Will be &#39;client&#39; if the query came from a REST request or the
+            PubSub server. (Mainly used in Tilmeld for access control.)</td></tr> <tr><td>skipCache</td> <td>boolean</td> <td>false</td> <td>If true, Nymph will skip the cache and retrieve the entity from the
+            DB.</td></tr> <tr><td>skipAc</td> <td>boolean</td> <td>false</td> <td>If true, Tilmeld will not filter returned entities according to
             access controls. (If Tilmeld is installed.) (This is always set to
-            false by the REST endpoint and PubSub server.)</td></tr></tbody></table></div>
-
-  <p>Every argument following the Options is a Selector object. They contain
+            false by the REST endpoint and PubSub server.)</td></tr></tbody></table></div> <p data-svelte-h="svelte-rds32m">Every argument following the Options is a Selector object. They contain
     clauses and a type. An entity must match each selector to be returned. There
-    are four selector types, and they are defined on the <code>type</code> property.
-  </p>
-
-  <div class="table-wrapper"><table><thead><tr><th>Type</th>
-          <th>Name</th>
-          <th>Description</th></tr></thead>
-      <tbody><tr><td>&amp;</td>
-          <td>And</td>
-          <td>All clauses in the selector must match.</td></tr>
-        <tr><td>|</td>
-          <td>Or</td>
-          <td>At least one clause in the selector must match.</td></tr>
-        <tr><td>!&amp;</td>
-          <td>Not And</td>
-          <td>All clauses in the selector must not match.</td></tr>
-        <tr><td>!|</td>
-          <td>Not Or</td>
-          <td>At least one clause in the selector must not match.</td></tr></tbody></table></div>
-
-  <p>The other properties of the Selector are clauses. Clauses use the form <code>name: value</code>, or
+    are four selector types, and they are defined on the <code>type</code> property.</p> <div class="table-wrapper" data-svelte-h="svelte-c9fp49"><table><thead><tr><th>Type</th> <th>Name</th> <th>Description</th></tr></thead> <tbody><tr><td>&amp;</td> <td>And</td> <td>All clauses in the selector must match.</td></tr> <tr><td>|</td> <td>Or</td> <td>At least one clause in the selector must match.</td></tr> <tr><td>!&amp;</td> <td>Not And</td> <td>All clauses in the selector must not match.</td></tr> <tr><td>!|</td> <td>Not Or</td> <td>At least one clause in the selector must not match.</td></tr></tbody></table></div> <p data-svelte-h="svelte-12ho7vi">The other properties of the Selector are clauses. Clauses use the form <code>name: value</code>, or
     <code>name: [value1, value2, ...]</code>. They can be negated by prepending
     a bang (!) to the name, like <code>&#39;!name&#39;: value</code>. A clause that has
     multiple values is considered as multiple clauses in terms of matching for
-    &quot;or&quot; selectors.
-  </p>
-
-  <div class="table-wrapper"><table><thead><tr><th>Property</th>
-          <th>Description</th>
-          <th>Example</th>
-          <th>Works On</th></tr></thead>
-      <tbody><tr><td>guid</td>
-          <td>The entity&#39;s GUID is equal.</td>
-          <td><code>{type: '&amp;', guid: '790229ae527f1511b3120b71'}</code></td>
-          <td><code>entity.guid = '790229ae527f1511b3120b71'</code></td></tr>
-        <tr><td>tag</td>
-          <td>The entity has the tag.</td>
-          <td><code>{type: '&amp;', tag: 'foobar'}</code></td>
-          <td><code>entity.$addTag('foobar')</code></td></tr>
-        <tr><td>defined</td>
-          <td>The named property is not undefined.</td>
-          <td><code>{type: '&amp;', defined: 'foo'}</code></td>
-          <td><code>entity.foo = 0</code></td></tr>
-        <tr><td>truthy</td>
-          <td>The named property evaluates to true.</td>
-          <td><code>{type: '&amp;', truthy: 'foo'}</code></td>
-          <td><code>entity.foo = 1</code></td></tr>
-        <tr><td>equal</td>
-          <td>The named property is defined and equals the value (their JSON
-            strings are identical).</td>
-          <td><code>{type: '&amp;', equal: ['foo', 0]}</code></td>
-          <td><code>entity.foo = 0</code></td></tr>
-        <tr><td>contain</td>
-          <td>The named property contains the value (its JSON string is found
-            within the property&#39;s JSON string).</td>
-          <td><code>{type: '&amp;', array: ['foo', 'bar']}</code></td>
-          <td><code>entity.foo = ['bar', 'baz']</code></td></tr>
-        <tr><td>match</td>
-          <td>The named property matches. Uses POSIX RegExp. Case sensitive. Must
-            *not* be surrounded by any delimiters.</td>
-          <td><code>{type: '&amp;', match: ['foo', 'bar.*z']}</code></td>
-          <td><code>entity.foo = 'foobarbaz'</code></td></tr>
-        <tr><td>imatch</td>
-          <td>The named property matches. Uses POSIX RegExp. Case insensitive.
-            Must *not* be surrounded by any delimiters.</td>
-          <td><code>{type: '&amp;', imatch: ['foo', 'BaR.*Z']}</code></td>
-          <td><code>entity.foo = 'foobarbaz'</code></td></tr>
-        <tr><td>like</td>
-          <td>The named property matches. Uses % for variable length wildcard and
-            _ for single character wildcard. Case sensitive.</td>
-          <td><code>{type: '&amp;', like: ['foo', 'f%bar_az']}</code></td>
-          <td><code>entity.foo = 'foobarbaz'</code></td></tr>
-        <tr><td>ilike</td>
-          <td>The named property matches. Uses % for variable length wildcard and
-            _ for single character wildcard. Case insensitive.</td>
-          <td><code>{type: '&amp;', ilike: ['foo', 'F%bAr_aZ']}</code></td>
-          <td><code>entity.foo = 'foobarbaz'</code></td></tr>
-        <tr><td>gt</td>
-          <td>The named property is greater than the value.</td>
-          <td><code>{type: '&amp;', gt: ['foo', 5]}</code></td>
-          <td><code>entity.foo = 6</code></td></tr>
-        <tr><td>gte</td>
-          <td>The named property is greater than or equal to the value.</td>
-          <td><code>{type: '&amp;', gte: ['foo', 6]}</code></td>
-          <td><code>entity.foo = 6</code></td></tr>
-        <tr><td>lt</td>
-          <td>The named property is less than the value.</td>
-          <td><code>{type: '&amp;', lt: ['foo', 7]}</code></td>
-          <td><code>entity.foo = 6</code></td></tr>
-        <tr><td>lte</td>
-          <td>The named property is less than or equal to the value.</td>
-          <td><code>{type: '&amp;', lte: ['foo', 6]}</code></td>
-          <td><code>entity.foo = 6</code></td></tr>
-        <tr><td>ref</td>
-          <td>The named property is the entity or contains the entity.</td>
-          <td><code>{type: '&amp;', ref: ['foo', '790229ae527f1511b3120b71']}</code></td>
-          <td><code>entity.foo = await Entity.factory('790229ae527f1511b3120b71')</code></td></tr>
-        <tr><td>qref</td>
-          <td>The named property is an entity that matches the query or contains
-            an entity that matches the query.</td>
-          <td><code>{type: '&amp;', qref: ['foo', [{class: Entity}, {type: '&amp;', equal: ['name', 'Foobar']}]]}</code></td>
-          <td><code>entity.foo = await nymph.getEntity({class: Entity}, {type: '&amp;', equal: ['name', 'Foobar']})</code></td></tr>
-        <tr><td>selector</td>
-          <td>A selector. (Keep in mind, you can also use an array of these, just
-            like any other clause.)</td>
-          <td><code>{type: '&amp;', selector: {type: '|', tag: ['foo', 'bar']}}</code></td>
-          <td><code>entity.$addTag('bar')</code></td></tr></tbody></table></div>
-
-  <p>The clauses &quot;equal&quot;, &quot;contain&quot;, &quot;gt&quot;, &quot;gte&quot;, &quot;lt&quot;, and &quot;lte&quot; can also accept
+    &quot;or&quot; selectors.</p> <div class="table-wrapper"><table><thead data-svelte-h="svelte-wlou51"><tr><th>Property</th> <th>Description</th> <th>Example</th> <th>Works On</th></tr></thead> <tbody><tr><td data-svelte-h="svelte-zjrq6v">guid</td> <td data-svelte-h="svelte-b3ee33">The entity&#39;s GUID is equal.</td> <td><code>{type: '&amp;', guid: '790229ae527f1511b3120b71'}</code></td> <td><code>entity.guid = '790229ae527f1511b3120b71'</code></td></tr> <tr><td data-svelte-h="svelte-utrf0q">tag</td> <td data-svelte-h="svelte-zd5t41">The entity has the tag.</td> <td><code>{type: '&amp;', tag: 'foobar'}</code></td> <td><code>entity.$addTag('foobar')</code></td></tr> <tr><td data-svelte-h="svelte-18x05u9">defined</td> <td data-svelte-h="svelte-1sqmq84">The named property is not undefined.</td> <td><code>{type: '&amp;', defined: 'foo'}</code></td> <td><code>entity.foo = 0</code></td></tr> <tr><td data-svelte-h="svelte-q7284i">truthy</td> <td data-svelte-h="svelte-10sz97g">The named property evaluates to true.</td> <td><code>{type: '&amp;', truthy: 'foo'}</code></td> <td><code>entity.foo = 1</code></td></tr> <tr><td data-svelte-h="svelte-xyy646">equal</td> <td data-svelte-h="svelte-1rng31s">The named property is defined and equals the value (their JSON
+            strings are identical).</td> <td><code>{type: '&amp;', equal: ['foo', 0]}</code></td> <td><code>entity.foo = 0</code></td></tr> <tr><td data-svelte-h="svelte-1dvad2e">contain</td> <td data-svelte-h="svelte-1fl9nv8">The named property contains the value (its JSON string is found
+            within the property&#39;s JSON string).</td> <td><code>{type: '&amp;', array: ['foo', 'bar']}</code></td> <td><code>entity.foo = ['bar', 'baz']</code></td></tr> <tr><td data-svelte-h="svelte-h38ctp">match</td> <td data-svelte-h="svelte-1kk9bx5">The named property matches. Uses POSIX RegExp. Case sensitive. Must
+            *not* be surrounded by any delimiters.</td> <td><code>{type: '&amp;', match: ['foo', 'bar.*z']}</code></td> <td><code>entity.foo = 'foobarbaz'</code></td></tr> <tr><td data-svelte-h="svelte-x6n2mu">imatch</td> <td data-svelte-h="svelte-w9bvkk">The named property matches. Uses POSIX RegExp. Case insensitive.
+            Must *not* be surrounded by any delimiters.</td> <td><code>{type: '&amp;', imatch: ['foo', 'BaR.*Z']}</code></td> <td><code>entity.foo = 'foobarbaz'</code></td></tr> <tr><td data-svelte-h="svelte-1kydywp">like</td> <td data-svelte-h="svelte-16sns6g">The named property matches. Uses % for variable length wildcard and
+            _ for single character wildcard. Case sensitive.</td> <td><code>{type: '&amp;', like: ['foo', 'f%bar_az']}</code></td> <td><code>entity.foo = 'foobarbaz'</code></td></tr> <tr><td data-svelte-h="svelte-1q4dvgq">ilike</td> <td data-svelte-h="svelte-qjzux9">The named property matches. Uses % for variable length wildcard and
+            _ for single character wildcard. Case insensitive.</td> <td><code>{type: '&amp;', ilike: ['foo', 'F%bAr_aZ']}</code></td> <td><code>entity.foo = 'foobarbaz'</code></td></tr> <tr><td data-svelte-h="svelte-q513jt">gt</td> <td data-svelte-h="svelte-12almsc">The named property is greater than the value.</td> <td><code>{type: '&amp;', gt: ['foo', 5]}</code></td> <td><code>entity.foo = 6</code></td></tr> <tr><td data-svelte-h="svelte-1nllf6w">gte</td> <td data-svelte-h="svelte-1cr22em">The named property is greater than or equal to the value.</td> <td><code>{type: '&amp;', gte: ['foo', 6]}</code></td> <td><code>entity.foo = 6</code></td></tr> <tr><td data-svelte-h="svelte-pznn9q">lt</td> <td data-svelte-h="svelte-f9fs8x">The named property is less than the value.</td> <td><code>{type: '&amp;', lt: ['foo', 7]}</code></td> <td><code>entity.foo = 6</code></td></tr> <tr><td data-svelte-h="svelte-1noldbj">lte</td> <td data-svelte-h="svelte-1ys40pf">The named property is less than or equal to the value.</td> <td><code>{type: '&amp;', lte: ['foo', 6]}</code></td> <td><code>entity.foo = 6</code></td></tr> <tr><td data-svelte-h="svelte-1f8pzwh">ref</td> <td data-svelte-h="svelte-16nmna1">The named property is the entity or contains the entity.</td> <td><code>{type: '&amp;', ref: ['foo', '790229ae527f1511b3120b71']}</code></td> <td><code>entity.foo = await Entity.factory('790229ae527f1511b3120b71')</code></td></tr> <tr><td data-svelte-h="svelte-qyl9gq">qref</td> <td data-svelte-h="svelte-42cvq9">The named property is an entity that matches the query or contains
+            an entity that matches the query.</td> <td><code>{type: '&amp;', qref: ['foo', [{class: Entity}, {type: '&amp;', equal: ['name', 'Foobar']}]]}</code></td> <td><code>entity.foo = await nymph.getEntity({class: Entity}, {type: '&amp;', equal: ['name', 'Foobar']})</code></td></tr> <tr><td data-svelte-h="svelte-hxhsl7">selector</td> <td data-svelte-h="svelte-duos4g">A selector. (Keep in mind, you can also use an array of these, just
+            like any other clause.)</td> <td><code>{type: '&amp;', selector: {type: '|', tag: ['foo', 'bar']}}</code></td> <td><code>entity.$addTag('bar')</code></td></tr></tbody></table></div> <p data-svelte-h="svelte-1kyrj43">The clauses &quot;equal&quot;, &quot;contain&quot;, &quot;gt&quot;, &quot;gte&quot;, &quot;lt&quot;, and &quot;lte&quot; can also accept
     a third element. If value is null and the third element is a string, the
     third element will be used with <a href="https://locutus.io/php/datetime/strtotime/" target="_blank" rel="noreferrer">Locutus&#39; strtotime function</a> to set the value to a relative timestamp. For example, the following selector
-    will look for all entities that were created in the last day.
-  </p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START -->{
+    will look for all entities that were created in the last day.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START -->{
   <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
   <span class="hljs-attr">gte</span>: [<span class="hljs-string">&#x27;cdate&#x27;</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">&#x27;-1 day&#x27;</span>]
-}<!-- HTML_TAG_END --></code></pre>
-
-
-  <header class="major"><h2>Querying Examples</h2></header>
-
-  <p>So putting it all together, you can specify the options and selectors to
-    find the exact entities you want.
-  </p>
-
-  <p>Get the first FoobarBaz entity.</p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntity</span>({ <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span> });<!-- HTML_TAG_END --></code></pre>
-
-
-  <p>Get the latest FoobarBaz entity.</p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntity</span>({
+}<!-- HTML_TAG_END --></code></pre>  <header class="major" data-svelte-h="svelte-jpfs90"><h2>Querying Examples</h2></header> <p data-svelte-h="svelte-139klyl">So putting it all together, you can specify the options and selectors to
+    find the exact entities you want.</p> <p data-svelte-h="svelte-1kgoqeo">Get the first FoobarBaz entity.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntity</span>({ <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span> });<!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-cp7oix">Get the latest FoobarBaz entity.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entity = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntity</span>({
   <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>,
   <span class="hljs-attr">reverse</span>: <span class="hljs-literal">true</span>
-});<!-- HTML_TAG_END --></code></pre>
-
-
-  <p>Get all baz tagged entities, using the FoobarBaz class.</p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+});<!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-359lmc">Get all baz tagged entities, using the FoobarBaz class.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
   },
@@ -286,13 +91,7 @@
     <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
     <span class="hljs-attr">tag</span>: <span class="hljs-string">&#x27;baz&#x27;</span>
   }
-);<!-- HTML_TAG_END --></code></pre>
-
-
-  <p>Get the five last created bar and baz tagged entities.</p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+);<!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-y4dokz">Get the five last created bar and baz tagged entities.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>,
     <span class="hljs-attr">reverse</span>: <span class="hljs-literal">true</span>,
@@ -302,13 +101,7 @@
     <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
     <span class="hljs-attr">tag</span>: [<span class="hljs-string">&#x27;bar&#x27;</span>, <span class="hljs-string">&#x27;baz&#x27;</span>]
   }
-);<!-- HTML_TAG_END --></code></pre>
-
-
-  <p>Get the five last modified bar and baz tagged entities.</p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+);<!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-9ltm1a">Get the five last modified bar and baz tagged entities.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>,
     <span class="hljs-attr">reverse</span>: <span class="hljs-literal">true</span>,
@@ -319,15 +112,8 @@
     <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
     <span class="hljs-attr">tag</span>: [<span class="hljs-string">&#x27;bar&#x27;</span>, <span class="hljs-string">&#x27;baz&#x27;</span>]
   }
-);<!-- HTML_TAG_END --></code></pre>
-
-
-  <p>Get the third page of sorted by name, baz tagged entities (if pages are 5
-    entities long).
-  </p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+);<!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-1earz9t">Get the third page of sorted by name, baz tagged entities (if pages are 5
+    entities long).</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>,
     <span class="hljs-attr">limit</span>: <span class="hljs-number">5</span>,
@@ -338,13 +124,7 @@
     <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
     <span class="hljs-attr">tag</span>: [<span class="hljs-string">&#x27;baz&#x27;</span>]
   }
-);<!-- HTML_TAG_END --></code></pre>
-
-
-  <p>Get baz tagged entities with names.</p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+);<!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-lhyg20">Get baz tagged entities with names.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
   },
@@ -353,13 +133,7 @@
     <span class="hljs-attr">tag</span>: <span class="hljs-string">&#x27;baz&#x27;</span>,
     <span class="hljs-attr">defined</span>: <span class="hljs-string">&#x27;name&#x27;</span>
   }
-);<!-- HTML_TAG_END --></code></pre>
-
-
-  <p>Get baz tagged entities without names.</p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+);<!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-k44fog">Get baz tagged entities without names.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
   },
@@ -368,14 +142,7 @@
     <span class="hljs-attr">tag</span>: <span class="hljs-string">&#x27;baz&#x27;</span>,
     <span class="hljs-string">&#x27;!defined&#x27;</span>: <span class="hljs-string">&#x27;name&#x27;</span>
   }
-);<!-- HTML_TAG_END --></code></pre>
-
-
-  <p>Get baz tagged entities without names or bar tagged entities with names.
-  </p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+);<!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-4jtw0z">Get baz tagged entities without names or bar tagged entities with names.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
   },
@@ -394,13 +161,7 @@
       }
     ]
   }
-);<!-- HTML_TAG_END --></code></pre>
-
-
-  <p>Get baz tagged entities with either first names or last names.</p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+);<!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-1uwezc0">Get baz tagged entities with either first names or last names.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
   },
@@ -412,13 +173,7 @@
     <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;|&#x27;</span>,
     <span class="hljs-attr">defined</span>: [<span class="hljs-string">&#x27;firstName&#x27;</span>, <span class="hljs-string">&#x27;lastName&#x27;</span>]
   }
-);<!-- HTML_TAG_END --></code></pre>
-
-
-  <p>Get baz tagged entities created in the last day.</p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+);<!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-1khclo2">Get baz tagged entities created in the last day.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
   },
@@ -427,15 +182,8 @@
     <span class="hljs-attr">tag</span>: <span class="hljs-string">&#x27;baz&#x27;</span>,
     <span class="hljs-attr">gt</span>: [<span class="hljs-string">&#x27;cdate&#x27;</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">&#x27;-1 day&#x27;</span>]
   }
-);<!-- HTML_TAG_END --></code></pre>
-
-
-  <p>Get baz tagged entities with names, who either make only up to 8 dollars pay
-    or are under 22.
-  </p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+);<!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-utkf3b">Get baz tagged entities with names, who either make only up to 8 dollars pay
+    or are under 22.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span>
   },
@@ -445,15 +193,8 @@
     <span class="hljs-attr">gte</span>: [<span class="hljs-string">&#x27;age&#x27;</span>, <span class="hljs-number">22</span>],
     <span class="hljs-attr">gt</span>: [<span class="hljs-string">&#x27;pay&#x27;</span>, <span class="hljs-number">8</span>]
   }
-);<!-- HTML_TAG_END --></code></pre>
-
-
-  <p>Get baz tagged entities named Clark, James, Chris, Christopher, Jake, or
-    Jacob.
-  </p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+);<!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-1sdwrs5">Get baz tagged entities named Clark, James, Chris, Christopher, Jake, or
+    Jacob.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   { <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span> },
   { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>, <span class="hljs-attr">tag</span>: <span class="hljs-string">&#x27;baz&#x27;</span> },
   {
@@ -467,14 +208,7 @@
       [<span class="hljs-string">&#x27;firstName&#x27;</span>, <span class="hljs-string">&#x27;^Ja(ke|cob)$&#x27;</span>]
     ]
   }
-);<!-- HTML_TAG_END --></code></pre>
-
-
-  <p>Get baz tagged entities that belong to any user named &quot;John&quot; or &quot;James&quot;.
-  </p>
-
-  
-  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
+);<!-- HTML_TAG_END --></code></pre>  <p data-svelte-h="svelte-1g02ke1">Get baz tagged entities that belong to any user named &quot;John&quot; or &quot;James&quot;.</p>  <pre data-language="typescript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">const</span> entities = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
   { <span class="hljs-attr">class</span>: <span class="hljs-title class_">FoobarBaz</span> },
   {
     <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
@@ -493,76 +227,17 @@
       ]
     ]
   }
-);<!-- HTML_TAG_END --></code></pre>
-</section>
-
-<section class="page-steps"><a href="/user-guide/creating-entities" class="button" style="margin: .5em;">Previous: Creating Entities</a>
-  <a href="/user-guide/subscribing-to-queries" class="button" style="margin: .5em;">Next: Subscribing to Queries</a>
-</section>
-
-    
-    <footer id="footer"><p class="copyright">© SciActive Inc. All rights reserved. Design by:
-        <a href="https://html5up.net">HTML5 UP</a>.
-      </p></footer></div></div>
-
-
-<div id="sidebar"><div class="inner">
-    <section id="top-panel" class="alt"><div class="title"><img class="logo" src="/images/web-logo.png" alt="SciActive">
-        <span class="name">SciActive</span></div></section>
-
-    
-    <nav id="menu"><ul><li><a href="/">Homepage</a></li>
-        <li><span class="opener static">User Guide</span>
-          <ul><li><a href="/user-guide/introduction">Introduction</a></li>
-            <li><a href="/user-guide/creating-entities">Creating Entities</a></li>
-            <li><a href="/user-guide/entity-querying">Entity Querying</a></li>
-            <li><a href="/user-guide/subscribing-to-queries">Subscribing to Queries</a></li>
-            <li><a href="/user-guide/entity-class">Entity Class</a></li>
-            <li><a href="/user-guide/defining-entities">Defining Entities</a></li>
-            <li><a href="/user-guide/uids">UIDs</a></li>
-            <li><a href="/user-guide/transactions">Transactions</a></li>
-            <li><a href="/user-guide/export-and-import">Export and Import</a></li></ul></li>
-        <li><span class="opener static">Packages</span>
-          <ul><li><a href="/packages/nymph">Nymph Core</a></li>
-            <li><a href="/packages/driver-mysql">MySQL Driver</a></li>
-            <li><a href="/packages/driver-postgresql">PostgreSQL Driver</a></li>
-            <li><a href="/packages/driver-sqlite3">SQLite3 Driver</a></li>
-            <li><a href="/packages/server">REST Server</a></li>
-            <li><a href="/packages/pubsub">PubSub Server</a></li>
-            <li><a href="/packages/client">Client</a></li>
-            <li><a href="/packages/client-node">Node Client</a></li>
-            <li><a href="/packages/tilmeld">Tilmeld</a></li>
-            <li><a href="/packages/tilmeld-client">Tilmeld Client</a></li>
-            <li><a href="/packages/tilmeld-components">Tilmeld Components</a></li>
-            <li><a href="/packages/tilmeld-setup">Tilmeld Setup</a></li>
-            <li><a href="/packages/sorter">Entity Sorter</a></li>
-            <li><a href="/packages/query-parser">Query Parser</a></li>
-            <li><a href="/packages/guid">GUID / Unique Code Generator</a></li></ul></li></ul></nav>
-
-    
-    <section><header class="major"><h2>Get in touch</h2></header>
-      <p>Nymph is a product of SciActive Inc. You can contact SciActive by email
-        or post, or follow on Mastodon.
-      </p>
-      <ul class="contact"><li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M20.94,14C20.66,15.41 18.5,16.96 15.97,17.26C14.66,17.41 13.37,17.56 12,17.5C9.75,17.39 8,16.96 8,16.96V17.58C8.32,19.8 10.22,19.93 12.03,20C13.85,20.05 15.47,19.54 15.47,19.54L15.55,21.19C15.55,21.19 14.27,21.87 12,22C10.75,22.07 9.19,21.97 7.38,21.5C3.46,20.45 2.78,16.26 2.68,12L2.67,8.57C2.67,4.23 5.5,2.96 5.5,2.96C6.95,2.3 9.41,2 11.97,2H12.03C14.59,2 17.05,2.3 18.5,2.96C18.5,2.96 21.33,4.23 21.33,8.57C21.33,8.57 21.37,11.78 20.94,14M18,8.91C18,7.83 17.7,7 17.15,6.35C16.59,5.72 15.85,5.39 14.92,5.39C13.86,5.39 13.05,5.8 12.5,6.62L12,7.5L11.5,6.62C10.94,5.8 10.14,5.39 9.07,5.39C8.15,5.39 7.41,5.72 6.84,6.35C6.29,7 6,7.83 6,8.91V14.17H8.1V9.06C8.1,8 8.55,7.44 9.46,7.44C10.46,7.44 10.96,8.09 10.96,9.37V12.16H13.03V9.37C13.03,8.09 13.53,7.44 14.54,7.44C15.44,7.44 15.89,8 15.89,9.06V14.17H18V8.91Z"></path></svg>
-          <a href="https://port87.social/@hperrin" target="_blank" rel="noreferrer">@hperrin@port87.social on Mastodon</a></li>
-        <li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"></path></svg>
-          <a href="mailto:someone@example.com">(loading...)</a></li>
-        <li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path></svg>
+);<!-- HTML_TAG_END --></code></pre> </section> <section class="page-steps"><a href="/user-guide/creating-entities" class="button" style="margin: .5em;">Previous: Creating Entities</a> <a href="/user-guide/subscribing-to-queries" class="button" style="margin: .5em;">Next: Subscribing to Queries</a> </section>  <footer id="footer" data-svelte-h="svelte-12j9vpf"><p class="copyright">© SciActive Inc. All rights reserved. Design by:
+        <a href="https://html5up.net">HTML5 UP</a>.</p></footer></div></div>  <div id="sidebar"><div class="inner"> <section id="top-panel" class="alt"><div class="title"><img class="logo" src="/images/web-logo.png" alt="SciActive"> <span class="name" data-svelte-h="svelte-1ym2tgr">SciActive</span></div></section>  <nav id="menu"><ul><li><a href="/">Homepage</a></li> <li><span class="opener static" data-svelte-h="svelte-60cxqh">User Guide</span> <ul><li><a href="/user-guide/introduction">Introduction</a></li> <li><a href="/user-guide/creating-entities">Creating Entities</a></li> <li><a href="/user-guide/entity-querying">Entity Querying</a></li> <li><a href="/user-guide/subscribing-to-queries">Subscribing to Queries</a></li> <li><a href="/user-guide/entity-class">Entity Class</a></li> <li><a href="/user-guide/defining-entities">Defining Entities</a></li> <li><a href="/user-guide/uids">UIDs</a></li> <li><a href="/user-guide/transactions">Transactions</a></li> <li><a href="/user-guide/export-and-import">Export and Import</a></li></ul></li> <li><span class="opener static" data-svelte-h="svelte-5ppnrj">Packages</span> <ul><li><a href="/packages/nymph">Nymph Core</a></li> <li><a href="/packages/driver-mysql">MySQL Driver</a></li> <li><a href="/packages/driver-postgresql">PostgreSQL Driver</a></li> <li><a href="/packages/driver-sqlite3">SQLite3 Driver</a></li> <li><a href="/packages/server">REST Server</a></li> <li><a href="/packages/pubsub">PubSub Server</a></li> <li><a href="/packages/client">Client</a></li> <li><a href="/packages/client-node">Node Client</a></li> <li><a href="/packages/tilmeld">Tilmeld</a></li> <li><a href="/packages/tilmeld-client">Tilmeld Client</a></li> <li><a href="/packages/tilmeld-components">Tilmeld Components</a></li> <li><a href="/packages/tilmeld-setup">Tilmeld Setup</a></li> <li><a href="/packages/sorter">Entity Sorter</a></li> <li><a href="/packages/query-parser">Query Parser</a></li> <li><a href="/packages/guid">GUID / Unique Code Generator</a></li></ul></li></ul></nav>  <section><header class="major" data-svelte-h="svelte-grs083"><h2>Get in touch</h2></header> <p data-svelte-h="svelte-1l9tx70">Nymph is a product of SciActive Inc. You can contact SciActive by email
+        or post, or follow on Mastodon.</p> <ul class="contact"><li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M20.94,14C20.66,15.41 18.5,16.96 15.97,17.26C14.66,17.41 13.37,17.56 12,17.5C9.75,17.39 8,16.96 8,16.96V17.58C8.32,19.8 10.22,19.93 12.03,20C13.85,20.05 15.47,19.54 15.47,19.54L15.55,21.19C15.55,21.19 14.27,21.87 12,22C10.75,22.07 9.19,21.97 7.38,21.5C3.46,20.45 2.78,16.26 2.68,12L2.67,8.57C2.67,4.23 5.5,2.96 5.5,2.96C6.95,2.3 9.41,2 11.97,2H12.03C14.59,2 17.05,2.3 18.5,2.96C18.5,2.96 21.33,4.23 21.33,8.57C21.33,8.57 21.37,11.78 20.94,14M18,8.91C18,7.83 17.7,7 17.15,6.35C16.59,5.72 15.85,5.39 14.92,5.39C13.86,5.39 13.05,5.8 12.5,6.62L12,7.5L11.5,6.62C10.94,5.8 10.14,5.39 9.07,5.39C8.15,5.39 7.41,5.72 6.84,6.35C6.29,7 6,7.83 6,8.91V14.17H8.1V9.06C8.1,8 8.55,7.44 9.46,7.44C10.46,7.44 10.96,8.09 10.96,9.37V12.16H13.03V9.37C13.03,8.09 13.53,7.44 14.54,7.44C15.44,7.44 15.89,8 15.89,9.06V14.17H18V8.91Z"></path></svg> <a href="https://port87.social/@hperrin" target="_blank" rel="noreferrer" data-svelte-h="svelte-2tjg6n">@hperrin@port87.social on Mastodon</a></li> <li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"></path></svg> <a href="mailto:someone@example.com" data-svelte-h="svelte-1duywns">(loading...)</a></li> <li class="icon"><svg style="width: 24px; height: 24px; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"></path></svg>
           SciActive Inc<br>
           310 S Twin Oaks Valley Rd #107<br>
           PMB 422<br>
-          San Marcos, CA 92078
-        </li></ul></section></div>
-
-  
-</div>
-
-
+          San Marcos, CA 92078</li></ul></section></div>  </div> 
 			
 			<script>
 				{
-					__sveltekit_8kvpve = {
+					__sveltekit_11368d0 = {
 						base: new URL("../..", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -572,8 +247,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.f2fe2cce.js"),
-						import("../../_app/immutable/entry/app.1ad30235.js")
+						import("../../_app/immutable/entry/start.f85d7925.js"),
+						import("../../_app/immutable/entry/app.3df4c651.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 21],
