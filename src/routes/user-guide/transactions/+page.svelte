@@ -9,9 +9,10 @@
 
   <p>
     In Node.js, Nymph supports nested transactions. Nothing will be permanently
-    written to the database's storage until the highest level transaction is
-    committed. When a nested transaction is rolled back, the database will be in
-    the state where the transaction above it started that nested transaction.
+    written to the database's storage, and no PubSub subscribers will be
+    notified, until the highest level transaction is committed. When a nested
+    transaction is rolled back, the database will be in the state where the
+    transaction above it started that nested transaction.
   </p>
 
   <p>

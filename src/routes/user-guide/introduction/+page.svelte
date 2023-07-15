@@ -10,8 +10,7 @@
   <p>
     Nymph is an ORM for Node.js and the browser, written in TypeScript. Nymph
     data objects, called entities, are accessed just like plain objects. Nymph
-    includes a REST server and a Publish/Subscribe server. It used to be a PHP
-    library and was migrated to Node.js in 2021.
+    includes a REST server and a Publish/Subscribe server.
   </p>
 
   <header class="major">
@@ -34,7 +33,7 @@
     method on your entities before calling
     <code>return await super.$save();</code>. This means that during
     development, you don't need to worry about managing schemas at all, but you
-    still get the benefit of strictly typed data checks in production.
+    still get the benefit of strict checks in production.
   </p>
 
   <p>
@@ -56,18 +55,17 @@
 
   <p>
     If an entity is referenced in another entity's property, the class name is
-    saved along with the GUID. When this property is accessed after the top
-    level entity is pulled from the DB, Nymph will retrieve the referenced
-    entity using the saved class.
+    saved along with the GUID. When this referenced entity is awoken, Nymph will
+    retrieve it using the saved class.
   </p>
 
   <p>
     When an entity containing a referenced entity is pulled from the database,
     the referenced entity will exist in the data as a "sleeping reference".
     Sleeping references have the right class and know their GUID, but other data
-    is not accessible until its pulled from the database. In Node.js, this
-    happens automatically when the data is accessed. In the client, this happens
-    when you use the <code>$ready</code> method.
+    is not accessible until its pulled from the database. This happens when you
+    use the <code>$wake</code> method on it, or the <code>$wakeAll</code> method
+    on its parent.
   </p>
 
   <p>
@@ -89,11 +87,6 @@
       href="/api/latest/"
       rel="external">API docs</a
     >, which covers every part of Nymph's API.
-  </p>
-
-  <p>
-    If you need help with the old version of Nymph that ran on PHP, you can
-    browse the <a href="/api/legacy/3.0.0/" rel="external">Legacy API docs</a>.
   </p>
 </section>
 

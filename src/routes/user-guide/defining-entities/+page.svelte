@@ -43,17 +43,15 @@ export class Todo extends Entity<TodoData> {
     return (await super.factory(guid)) as Todo & TodoData;
   }
 
-  static factorySync(guid?: string): Todo & TodoData {
-    return super.factorySync(guid) as Todo & TodoData;
+  static factorySync(): Todo & TodoData {
+    return super.factorySync() as Todo & TodoData;
   }
 
-  constructor(guid?: string) {
-    super(guid);
+  constructor() {
+    super();
 
-    if (this.guid == null) {
-      this.$data.name = '';
-      this.$data.done = false;
-    }
+    this.$data.name = '';
+    this.$data.done = false;
   }
 
   async $archive() {
@@ -94,7 +92,7 @@ export class Todo extends Entity<TodoData> {
     if (
       await this.$nymph.getEntity(
         {
-          class: this.constructor as typeof Todo,
+          class: this.$nymph.getEntityClass(Todo),
         },
         selector
       )
@@ -127,21 +125,19 @@ export class Todo extends Entity<TodoData> {
   // The name of the server class
   public static class = 'Todo';
 
-  constructor(guid?: string) {
-    super(guid);
-
-    if (guid == null) {
-      this.$data.name = '';
-      this.$data.done = false;
-    }
-  }
-
   static async factory(guid?: string): Promise<Todo & TodoData> {
     return (await super.factory(guid)) as Todo & TodoData;
   }
 
-  static factorySync(guid?: string): Todo & TodoData {
-    return super.factorySync(guid) as Todo & TodoData;
+  static factorySync(): Todo & TodoData {
+    return super.factorySync() as Todo & TodoData;
+  }
+
+  constructor() {
+    super();
+
+    this.$data.name = '';
+    this.$data.done = false;
   }
 
   async $archive(): Promise<boolean> {
@@ -169,9 +165,11 @@ const Todo = nymph.addEntityClass(TodoClass);`}
     there is an instance of Nymph available in <code>this.$nymph</code> (or
     <code>this.nymph</code> in static methods). In Node.js, these instances will
     know which user is logged in and add appropriate permission checks, and will
-    maintain a persistent DB connection during a transaction. On the client, these
-    instances will know how to communicate with the configured REST server. Basically,
-    you have to use these instances.
+    maintain a persistent DB connection during a transaction. On the client,
+    these instances will know how to communicate with the configured REST
+    server. Basically, you have to use these instances. You can also use
+    <code>this.$nymph.getEntityClass</code>
+    and <code>this.nymph.getEntityClass</code> to get the right class for Nymph queries.
   </p>
 
   <p>

@@ -15,7 +15,7 @@
   </header>
 
   <p>
-    The <code>Entity</code> class's factory method can take a GUID as an
+    The <code>Entity</code> class' factory method can take a GUID as an
     argument. You can provide other factory functions that can take things as
     well. For example, the <code>User</code> class in Tilmeld has a
     <code>factoryUsername</code> method that takes a username. The method will return

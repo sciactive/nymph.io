@@ -37,11 +37,11 @@
     <h2>Features</h2>
   </header>
   <p>
-    Imagine writing a SQL query on the frontend and saying, "update this array
-    whenever the results for this query change." Now imagine instead of SQL,
-    your query is a simple JSON structure and has automatic access control built
-    right in. Imagine having all your logic on the frontend, or the backend if
-    you prefer, because you work with the data all the same. That's Nymph.
+    Picture writing a SQL query on the frontend and saying, "update this array
+    whenever the results for this query change." Now instead of SQL, your query
+    is a simple JSON structure and has automatic access control built right in.
+    You can have all your logic on the frontend, or the backend if you prefer,
+    because you work with the data all the same. That's Nymph.
   </p>
   <div class="features">
     <article>
