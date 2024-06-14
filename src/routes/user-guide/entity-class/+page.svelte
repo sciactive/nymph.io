@@ -179,8 +179,9 @@ await nymph.deleteEntities([entity]);`}
       if it's true, the function uses <code>$equals</code>.
     </li>
     <li>
-      <code>$arraySearch</code> - Search an array for the entity and return the
-      corresponding key. Takes two arguments, the array and a boolean
+      <code>$arraySearch</code> - Search an array for the entity and return its
+      index, or <code>-1</code> if it's not found. Takes two arguments, the
+      array and a boolean
       <code>strict</code>. If <code>strict</code> is false or undefined, the
       function uses
       <code>$is</code>

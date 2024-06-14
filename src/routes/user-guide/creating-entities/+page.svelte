@@ -39,7 +39,7 @@ if (someBlogPost.guid == null) {
 await blogPost.$save();
 
 let superPosts = await nymph.getEntities(
-  { class: BlogPost.class },
+  { class: BlogPost },
   { type: '&', tag: 'super-post' }
 );
 
@@ -106,8 +106,8 @@ console.log(entity.foo.bar); // Outputs undefined.`}
     Nymph. Instead, it creates instances without data called "sleeping
     references". You can use `$wake` on the entity or `$wakeAll` on the parent
     entity to get the entity's data from the DB. The <code>$wakeAll</code>
-    method will awaken all sleeping references in the entity's data. You can
-    call <code>$clearCache</code>
+    method will awaken all sleeping references in the entity's data. You can call
+    <code>$clearCache</code>
     in Node.js or <code>$refresh</code> in the client to turn all the entities back
     into sleeping references.
   </p>
