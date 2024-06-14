@@ -70,7 +70,7 @@ const nymph = new Nymph(
     verifyChangeRedirect: 'http://localhost',
     cancelChangeRedirect: 'http://localhost',
     jwtSecret: 'shhhhh',
-  })
+  }),
 );
 
 // Create your Express app.
@@ -86,8 +86,8 @@ app.use(
     {
       restUrl: 'http://localhost/rest',
     },
-    nymph
-  )
+    nymph,
+  ),
 );
 
 // Do anything else you need to do...

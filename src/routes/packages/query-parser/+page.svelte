@@ -100,7 +100,7 @@ async function doQuery() {
   />
 
   <header class="major">
-    <h2>Usage</h2>
+    <h2>Options</h2>
   </header>
 
   <p>You can set limit, offset, sort, and reverse like this.</p>
@@ -172,7 +172,7 @@ async function doQuery() {
   <p>Check for a tag.</p>
 
   <ul>
-    <li><code>&lt;tag&gt;</code> or <code>&lt;!tag&gt;</code></li>
+    <li><code>{'<name>'}</code> or <code>{'<!name>'}</code></li>
   </ul>
 
   <header>
@@ -206,7 +206,7 @@ async function doQuery() {
       <code>{'name<{refclassname inner query}>'}</code> or
       <code>{'name!<{refclassname inner query}>'}</code>
       <ul>
-        <li>(Esacpe curly brackets with a leading backslash.)</li>
+        <li>(Escape curly brackets with a leading backslash.)</li>
         <li>
           (Requires a map of refclassname to their actual class and default
           fields.)
@@ -306,9 +306,9 @@ async function doQuery() {
   <p>Check a prop's value is greater than a given value.</p>
 
   <ul>
-    <li><code>name&gt;number</code></li>
+    <li><code>{'name>number'}</code></li>
     <li>
-      <code>name&gt;relative</code>
+      <code>{'name>relative'}</code>
       <ul>
         <li>
           (A single relative time value like <code>now</code> or
@@ -317,7 +317,7 @@ async function doQuery() {
       </ul>
     </li>
     <li>
-      <code>name&gt;"relative time value"</code>
+      <code>{'name>"relative time value"'}</code>
       <ul>
         <li>
           (Use this for a time value with a space like <code
@@ -337,9 +337,9 @@ async function doQuery() {
   <p>Check a prop's value is greater than or equal to a given value.</p>
 
   <ul>
-    <li><code>name&gt;=number</code></li>
+    <li><code>{'name>=number'}</code></li>
     <li>
-      <code>name&gt;=relative</code>
+      <code>{'name>=relative'}</code>
       <ul>
         <li>
           (A single relative time value like <code>now</code> or
@@ -348,7 +348,7 @@ async function doQuery() {
       </ul>
     </li>
     <li>
-      <code>name&gt;="relative time value"</code>
+      <code>{'name>="relative time value"'}</code>
       <ul>
         <li>
           (Use this for a time value with a space like <code
@@ -368,9 +368,9 @@ async function doQuery() {
   <p>Check a prop's value is less than a given value.</p>
 
   <ul>
-    <li><code>name&lt;number</code></li>
+    <li><code>{'name<number'}</code></li>
     <li>
-      <code>name&lt;relative</code>
+      <code>{'name<relative'}</code>
       <ul>
         <li>
           (A single relative time value like <code>now</code> or
@@ -379,7 +379,7 @@ async function doQuery() {
       </ul>
     </li>
     <li>
-      <code>name&lt;"relative time value"</code>
+      <code>{'name<"relative time value"'}</code>
       <ul>
         <li>
           (Use this for a time value with a space like <code
@@ -399,9 +399,9 @@ async function doQuery() {
   <p>Check a prop's value is less than or equal to a given value.</p>
 
   <ul>
-    <li><code>name&lt;=number</code></li>
+    <li><code>{'name<=number'}</code></li>
     <li>
-      <code>name&lt;=relative</code>
+      <code>{'name<=relative'}</code>
       <ul>
         <li>
           (A single relative time value like <code>now</code> or
@@ -410,7 +410,7 @@ async function doQuery() {
       </ul>
     </li>
     <li>
-      <code>name&lt;="relative time value"</code>
+      <code>{'name<="relative time value"'}</code>
       <ul>
         <li>
           (Use this for a time value with a space like <code
@@ -435,14 +435,14 @@ async function doQuery() {
 
   <p>Here are some examples of nested selectors.</p>
 
-  <pre>Either enabled is truthy and abilities contains "subscriber", or abilities contains "lifelong-subscriber".
+  <pre>{`Either enabled is truthy and abilities contains "subscriber", or abilities contains "lifelong-subscriber".
 
-(| ([enabled] abilities&lt;"subscriber"&gt;) abilities&lt;"lifeline-subscriber"&gt;)
+(| ([enabled] abilities<"subscriber">) abilities<"lifeline-subscriber">)
 
 
 Published is not truthy and cdate is not greater than 6 months ago.
 
-(! [published] cdate&gt;"6 months ago")</pre>
+(! [published] cdate>"6 months ago")`}</pre>
 
   <header class="major">
     <h2>Default Fields</h2>

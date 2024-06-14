@@ -33,8 +33,8 @@
   <p>
     The Tilmeld client contains the client versions of the <code>User</code> and
     <code>Group</code>
-    entities. It also contains helpers, <code>getClientConfig</code>,
-    <code>login</code>, <code>register</code>, and <code>checkUsername</code>.
+    entities. It also contains helpers, <code>login</code>,
+    <code>register</code>, and <code>checkUsername</code>.
   </p>
 
   <p>
