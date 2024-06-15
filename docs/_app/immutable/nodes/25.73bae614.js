@@ -1,4 +1,4 @@
-import{S as De,i as Ie,s as Pe,R as xe,e as Te,a as h,k as s,q as a,y as Oe,F as Se,T as je,h as e,c as d,l as o,m as i,r as n,z as Ae,p as se,n as S,C as t,b as at,A as Je,D as qe,g as He,d as Le,B as Me}from"../chunks/index.d7cc8d8b.js";import{H as Ue,g as We}from"../chunks/github.df9008b1.js";import{t as Ye}from"../chunks/typescript.7dd1ec19.js";import{b as Ce}from"../chunks/paths.4334e024.js";function Re(ke){let b,j,K,r,N,T,nt,st,A,ot,it,J,rt,lt,C,q,ct,ht,dt,m,k,H,mt,pt,ut,D,L,yt,ft,gt,I,M,Et,wt,bt,P,U,vt,_t,$t,x,W,Nt,Tt,Ct,v,kt,Y,Dt,It,Pt,u,xt,R,Ot,St,z,jt,At,Jt,F,qt,Ht,Q,Lt,Mt,_,Ut,p,Wt,V,Yt,Rt,B,zt,Ft,G,Qt,Vt,X,y,f,Bt,Gt,g,Kt,Z;return _=new Ue({props:{language:Ye,code:`import { EntityUniqueConstraintError, type Nymph } from '@nymphjs/nymph';
+import{S as De,i as Ie,s as Pe,R as xe,e as Te,a as h,k as s,q as a,y as Oe,F as Se,T as je,h as e,c as d,l as o,m as i,r as n,z as Ae,p as se,n as S,C as t,b as at,A as Je,D as qe,g as He,d as Le,B as Me}from"../chunks/index.d7cc8d8b.js";import{H as Ue,g as We}from"../chunks/github.df9008b1.js";import{t as Ye}from"../chunks/typescript.7dd1ec19.js";import{b as Ce}from"../chunks/paths.d307dac8.js";function Re(ke){let b,j,K,r,N,T,nt,st,A,ot,it,J,rt,lt,C,q,ct,ht,dt,m,k,H,mt,pt,ut,D,L,yt,ft,gt,I,M,Et,wt,bt,P,U,vt,_t,$t,x,W,Nt,Tt,Ct,v,kt,Y,Dt,It,Pt,u,xt,R,Ot,St,z,jt,At,Jt,F,qt,Ht,Q,Lt,Mt,_,Ut,p,Wt,V,Yt,Rt,B,zt,Ft,G,Qt,Vt,X,y,f,Bt,Gt,g,Kt,Z;return _=new Ue({props:{language:Ye,code:`import { EntityUniqueConstraintError, type Nymph } from '@nymphjs/nymph';
 import { Entity, nymphJoiProps } from '@nymphjs/nymph';
 import type { AccessControlData } from '@nymphjs/tilmeld';
 import { enforceTilmeld, tilmeldJoiProps } from '@nymphjs/tilmeld';
@@ -39,10 +39,10 @@ export class Todo extends Entity<TodoData> {
     this.$nymph = nymph;
     if (!this.$asleep()) {
       if (this.$data.user) {
-        this.$data.user.$nymph = nymph;
+        this.$data.user.$setNymph(nymph);
       }
       if (this.$data.group) {
-        this.$data.group.$nymph = nymph;
+        this.$data.group.$setNymph(nymph);
       }
       if (this.$data.parent) {
         this.$data.parent.$setNymph(nymph);
