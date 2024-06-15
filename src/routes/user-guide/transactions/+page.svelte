@@ -113,10 +113,10 @@ export class Todo extends Entity<TodoData> {
     this.$nymph = nymph;
     if (!this.$asleep()) {
       if (this.$data.user) {
-        this.$data.user.$nymph = nymph;
+        this.$data.user.$setNymph(nymph);
       }
       if (this.$data.group) {
-        this.$data.group.$nymph = nymph;
+        this.$data.group.$setNymph(nymph);
       }
       if (this.$data.parent) {
         this.$data.parent.$setNymph(nymph);
