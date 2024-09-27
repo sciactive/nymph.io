@@ -238,10 +238,7 @@ if (cronUser.guid == null) {
         </tr>
         <tr>
           <td>contain</td>
-          <td
-            >The named property contains the value (its JSON string is found
-            within the property's JSON string).</td
-          >
+          <td>The named property is an array that contains the value.</td>
           <td><code>{"{type: '&', contain: ['foo', 'bar']}"}</code></td>
           <td><code>{"entity.foo = ['bar', 'baz']"}</code></td>
         </tr>

@@ -219,10 +219,7 @@ async function doQuery() {
     <h3>contain and !contain</h3>
   </header>
 
-  <p>
-    Check for a JSON representation appearing within the JSON representation of
-    the named property.
-  </p>
+  <p>Check if the array at the named property contains a value.</p>
 
   <ul>
     <li>
