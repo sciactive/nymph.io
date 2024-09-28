@@ -1,0 +1,15 @@
+import{s as W,I as X,e as I,a as s,f as o,x as Y,J as Z,d as H,c as r,g as l,h as ee,r as f,j as $,u as a,i as z,v as te}from"../chunks/scheduler.d7e45cc8.js";import{S as ae,i as ne,b as O,d as J,m as U,a as B,t as F,e as G}from"../chunks/index.77720afb.js";import{H as K,g as se}from"../chunks/github.64534d2c.js";import{b as re}from"../chunks/bash.7e4226ac.js";import{t as oe}from"../chunks/typescript.09c48802.js";function le(V){let i,_,L,e,h,q='<h1 style="font-size: 3em;">MySQL Driver</h1>',C,y,N=`The MySQL driver lets you configure Nymph to query and save data to a MySQL
+    database.`,T,m,Q="<h2>Installation</h2>",w,c,b,d,A="<h2>Usage</h2>",j,g,P=`Supply an instance of this driver with its configuration to Nymph's
+    constructor.`,E,p,S,u,k="<h2>Options</h2>",D,v,R='See the <a href="https://github.com/sciactive/nymphjs/tree/master/packages/driver-mysql/src/conf/d.ts" target="_blank" rel="external">config declaration file</a>.',M;return c=new K({props:{language:re,code:"npm install --save @nymphjs/driver-mysql"}}),p=new K({props:{language:oe,code:`import { Nymph } from '@nymphjs/nymph';
+import MySQLDriver from '@nymphjs/driver-mysql';
+
+const mysqlConfig = {
+  host: 'your_db_host',
+  database: 'your_database',
+  user: 'your_user',
+  password: 'your_password',
+};
+
+const nymph = new Nymph({}, new MySQLDriver(mysqlConfig));
+
+// All done. Nymph is ready to use.`}}),{c(){i=new X(!1),_=I(),L=s(),e=o("section"),h=o("header"),h.innerHTML=q,C=s(),y=o("p"),y.textContent=N,T=s(),m=o("header"),m.innerHTML=Q,w=s(),O(c.$$.fragment),b=s(),d=o("header"),d.innerHTML=A,j=s(),g=o("p"),g.textContent=P,E=s(),O(p.$$.fragment),S=s(),u=o("header"),u.innerHTML=k,D=s(),v=o("p"),v.innerHTML=R,this.h()},l(n){const x=Y("svelte-vuwwx9",document.head);i=Z(x,!1),_=I(),x.forEach(H),L=r(n),e=l(n,"SECTION",{});var t=ee(e);h=l(t,"HEADER",{class:!0,"data-svelte-h":!0}),f(h)!=="svelte-npnixk"&&(h.innerHTML=q),C=r(t),y=l(t,"P",{"data-svelte-h":!0}),f(y)!=="svelte-l950z0"&&(y.textContent=N),T=r(t),m=l(t,"HEADER",{class:!0,"data-svelte-h":!0}),f(m)!=="svelte-1hx9pnb"&&(m.innerHTML=Q),w=r(t),J(c.$$.fragment,t),b=r(t),d=l(t,"HEADER",{class:!0,"data-svelte-h":!0}),f(d)!=="svelte-n87w0o"&&(d.innerHTML=A),j=r(t),g=l(t,"P",{"data-svelte-h":!0}),f(g)!=="svelte-11ejrn5"&&(g.textContent=P),E=r(t),J(p.$$.fragment,t),S=r(t),u=l(t,"HEADER",{class:!0,"data-svelte-h":!0}),f(u)!=="svelte-1v13hnh"&&(u.innerHTML=k),D=r(t),v=l(t,"P",{"data-svelte-h":!0}),f(v)!=="svelte-10vpxnw"&&(v.innerHTML=R),t.forEach(H),this.h()},h(){document.title="MySQL Driver - Packages - Nymph.js",i.a=_,$(h,"class","major"),$(m,"class","major"),$(d,"class","major"),$(u,"class","major")},m(n,x){i.m(se,document.head),a(document.head,_),z(n,L,x),z(n,e,x),a(e,h),a(e,C),a(e,y),a(e,T),a(e,m),a(e,w),U(c,e,null),a(e,b),a(e,d),a(e,j),a(e,g),a(e,E),U(p,e,null),a(e,S),a(e,u),a(e,D),a(e,v),M=!0},p:te,i(n){M||(B(c.$$.fragment,n),B(p.$$.fragment,n),M=!0)},o(n){F(c.$$.fragment,n),F(p.$$.fragment,n),M=!1},d(n){n&&(i.d(),H(L),H(e)),H(_),G(c),G(p)}}}class pe extends ae{constructor(i){super(),ne(this,i,null,le,W,{})}}export{pe as component};
