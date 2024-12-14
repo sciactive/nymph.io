@@ -20,7 +20,7 @@
   <Highlight language={bash} code={`npm install --save @nymphjs/client-node`} />
 
   <p>
-    This package is the Nymph client for Node.js. You can find CJS in <code
+    This package is the Nymph client for Node.js. You can find ES modules in <code
       >dist</code
     >, or TS source in <code>src</code>. There is also a
     <strong><a href="{base}/packages/client">browser client</a></strong>.

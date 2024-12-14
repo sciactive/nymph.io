@@ -21,7 +21,7 @@
   <Highlight language={bash} code={`npm install --save @nymphjs/client`} />
 
   <p>
-    This package is the Nymph client for browsers. You can find UMD in <code
+    This package is the Nymph client for browsers. You can find ES modules in <code
       >dist</code
     >, or TS source in <code>src</code>. There is also a
     <strong><a href="{base}/packages/client-node">Node.js client</a></strong>.
@@ -36,7 +36,7 @@
   <Highlight
     language={typescript}
     code={`import { Nymph, PubSub } from '@nymphjs/client';
-import TodoClass from 'Todo';
+import TodoClass from './Todo.js';
 
 const nymphOptions = {
   restUrl: 'https://yournymphrestserver/path/to/your/endpoint',

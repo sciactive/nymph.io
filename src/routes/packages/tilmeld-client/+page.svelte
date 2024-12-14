@@ -23,7 +23,8 @@
   />
 
   <p>
-    You can find UMD in <code>dist</code>, or TS source in <code>src</code>.
+    You can find ES modules in <code>dist</code>, or TS source in
+    <code>src</code>.
   </p>
 
   <header class="major">

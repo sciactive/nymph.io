@@ -30,7 +30,7 @@
     code={`import { Nymph } from '@nymphjs/nymph';
 // or
 import { Nymph } from '@nymphjs/client';
-import PageClass from 'Page';
+import PageClass from './Page.js';
 
 import { Sorter } from '@nymphjs/sorter';
 
