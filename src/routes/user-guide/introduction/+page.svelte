@@ -91,7 +91,7 @@
 </section>
 
 <section class="page-steps">
-  <span />
+  <span></span>
   <a
     href="{base}/user-guide/creating-entities"
     class="button"

@@ -76,7 +76,7 @@ nymph.import(filename);`}
   <a href="{base}/user-guide/transactions" class="button" style="margin: .5em;"
     >Previous: Transactions</a
   >
-  <span />
+  <span></span>
 </section>
 
 <script lang="ts">
