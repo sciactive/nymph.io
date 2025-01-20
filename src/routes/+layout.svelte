@@ -44,6 +44,8 @@
   id="main"
   on:click={setSidebarInactive}
   on:keypress={(event) => event.key === 'Enter' || setSidebarInactive()}
+  tabindex="0"
+  role="button"
 >
   <div class="inner">
     <Header />
@@ -66,6 +68,7 @@
   class:inactive={sidebarInactive}
   on:click={handleSidebarLinkActivate}
   on:keypress={handleSidebarLinkActivate}
+  role="navigation"
 >
   <div class="inner">
     <!-- Logo -->
