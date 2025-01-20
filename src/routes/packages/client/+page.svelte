@@ -10,8 +10,8 @@
 
   <p>
     The Nymph Client allows you to query and push data to a Nymph REST server
-    from the browser. You can also subscribe to entities and queries on a Nymph
-    PubSub server and be notified of changes.
+    from the browser or Node.js. You can also subscribe to entities and queries
+    on a Nymph PubSub server and be notified of changes.
   </p>
 
   <header class="major">
@@ -21,10 +21,9 @@
   <Highlight language={bash} code={`npm install --save @nymphjs/client`} />
 
   <p>
-    This package is the Nymph client for browsers. You can find ES modules in <code
-      >dist</code
-    >, or TS source in <code>src</code>. There is also a
-    <strong><a href="{base}/packages/client-node">Node.js client</a></strong>.
+    This package is the Nymph client for browsers and Node.js, but requires at
+    least Node.js 22. You can find ES modules in <code>dist</code>, or TS source
+    in <code>src</code>.
   </p>
 
   <header class="major">
