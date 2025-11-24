@@ -57,7 +57,7 @@ const nymph = new Nymph(
   new SQLite3Driver({
     filename: ':memory:',
   }),
-  tilmeld
+  tilmeld,
 );
 
 // These are the classes specific to this instance of Tilmeld.
@@ -84,7 +84,8 @@ const { User, Group } = tilmeld;`}
 
   <ul>
     <li>
-      <code>system/admin</code> - A user with this ability has **all** abilities.
+      <code>system/admin</code> - A user with this ability has
+      <strong>all</strong> abilities.
     </li>
     <li>
       <code>tilmeld/admin</code> - Allow the user to manage and edit other user's

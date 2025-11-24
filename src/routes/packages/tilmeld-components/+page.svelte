@@ -10,7 +10,7 @@
 
   <p>
     The Tilmeld Components are front end registration/login, account recovery,
-    account details, and password change components build with <a
+    account details, and password change components built with <a
       href="https://svelte.dev/"
       target="_blank">Svelte</a
     >

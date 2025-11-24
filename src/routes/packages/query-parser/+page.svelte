@@ -219,10 +219,7 @@ async function doQuery() {
     <h3>contain and !contain</h3>
   </header>
 
-  <p>
-    Check for a JSON representation appearing within the JSON representation of
-    the named property.
-  </p>
+  <p>Check if the array at the named property contains a value.</p>
 
   <ul>
     <li>
@@ -242,10 +239,29 @@ async function doQuery() {
       <ul>
         <li>
           (Search for a JSON encoded value (like <code>true</code>,
-          <code>1</code>,
-          <code>[1,2,3]</code>, or <code>{'{"prop":"val"}'}</code>).)
+          <code>1</code>, <code>[1,2,3]</code>, or
+          <code>{'{"prop":"val"}'}</code>).)
         </li>
       </ul>
+    </li>
+  </ul>
+
+  <header>
+    <h3>search and !search</h3>
+  </header>
+
+  <p>
+    An array with a name, then search query. True if the named property contains
+    the query. Use single quotes to find sequential terms and double quotes to
+    find exact terms. Use "or" as the or operator. Use "-" before a term as the
+    negation operator. Stop words and punctuation are stripped. Case
+    insensitive.
+  </p>
+
+  <ul>
+    <li>
+      <code>{'name(query)'}</code> or
+      <code>{'name!(query)'}</code>
     </li>
   </ul>
 

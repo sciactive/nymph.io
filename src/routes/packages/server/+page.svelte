@@ -46,7 +46,7 @@ const nymph = new Nymph(
   {},
   new SQLite3Driver({
     filename: ':memory:',
-  })
+  }),
 );
 const MyEntity = nymph.addEntityClass(MyEntityClass);
 
@@ -68,8 +68,8 @@ app.listen(80);`}
   </p>
 
   <p>
-    Now you can configure your <strong>client</strong> using your server's address
-    (and the optional path, if set).
+    Now you can configure your <strong>client</strong>, using your server's
+    address (and the optional path, if set).
   </p>
 
   <Highlight
@@ -117,7 +117,7 @@ const nymph = new Nymph(
   new SQLite3Driver({
     filename: ':memory:',
   }),
-  tilmeld
+  tilmeld,
 );
 const MyEntity = nymph.addEntityClass(MyEntityClass);
 
@@ -153,8 +153,8 @@ app.user(
     {
       restUrl: 'https://mydomain.tld/rest',
     },
-    nymph
-  )
+    nymph,
+  ),
 );
 
 // Do anything else you need to do...

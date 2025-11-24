@@ -45,7 +45,7 @@ const nymph = new Nymph(
   {},
   new SQLite3Driver({
     filename: ':memory:', // Put the correct driver/config here.
-  })
+  }),
 );
 PubSub.initPublisher(pubSubConfig, nymph);`}
   />
@@ -74,7 +74,7 @@ const nymph = new Nymph(
   {},
   new SQLite3Driver({
     filename: ':memory:', // Put the correct driver/config here.
-  })
+  }),
 );
 // Don't forget to do this; even here!
 PubSub.initPublisher(pubSubConfig, nymph);
@@ -89,8 +89,8 @@ const pubsub = createServer(8080, pubSubConfig, nymph);`}
 
   <Highlight
     language={typescript}
-    code={`import http from 'http';
-import { server as WebSocketServer } from 'websocket';
+    code={`import http from 'node:http';
+import ws from 'websocket';
 import SQLite3Driver from '@nymphjs/driver-sqlite3';
 import { Nymph } from '@nymphjs/nymph';
 import { PubSub } from '@nymphjs/pubsub';
@@ -108,7 +108,7 @@ const nymph = new Nymph(
   {},
   new SQLite3Driver({
     filename: ':memory:', // Put the correct driver/config here.
-  })
+  }),
 );
 // Don't forget to do this; even here!
 PubSub.initPublisher(pubSubConfig, nymph);
@@ -122,10 +122,10 @@ const server = http.createServer((_request, response) => {
 const listener = server.listen(port, () => {
   console.log(
     new Date().toISOString(),
-    \`Nymph-PubSub server started listening on port \${port}.\`
+    \`Nymph-PubSub server started listening on port \${port}.\`,
   );
 });
-const wsServer = new WebSocketServer({
+const wsServer = new ws.server({
   httpServer: listener,
   // You should not use autoAcceptConnections for production
   // applications, as it defeats all standard cross-origin protection

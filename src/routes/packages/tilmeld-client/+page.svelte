@@ -23,7 +23,8 @@
   />
 
   <p>
-    You can find UMD in <code>dist</code>, or TS source in <code>src</code>.
+    You can find ES modules in <code>dist</code>, or TS source in
+    <code>src</code>.
   </p>
 
   <header class="major">
@@ -32,9 +33,8 @@
 
   <p>
     The Tilmeld client contains the client versions of the <code>User</code> and
-    <code>Group</code>
-    entities. It also contains helpers, <code>getClientConfig</code>,
-    <code>login</code>, <code>register</code>, and <code>checkUsername</code>.
+    <code>Group</code> entities. It also contains helpers, <code>login</code>,
+    <code>register</code>, and <code>checkUsername</code>.
   </p>
 
   <p>

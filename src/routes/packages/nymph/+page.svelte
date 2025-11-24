@@ -26,8 +26,10 @@
   <p>
     To use Nymph, you need a database driver. Nymph.js provides a <a
       href="{base}/packages/driver-mysql">MySQL driver</a
-    >, <a href="{base}/packages/driver-postgresql">PostgreSQL driver</a>, and a
-    <a href="{base}/packages/driver-sqlite3">SQLite3 driver</a>.
+    >, a <a href="{base}/packages/driver-postgresql">PostgreSQL driver</a>, and
+    a
+    <a href="{base}/packages/driver-sqlite3">SQLite3 driver</a>. They all
+    provide the exact same functionality.
   </p>
 
   <header class="major">
@@ -65,7 +67,7 @@ async function run() {
 
   const otherPendingTodos = await nymph.getEntities(
     { class: Todo },
-    { type: '&', '!guid': myEntity.guid, equal: ['done', false] }
+    { type: '&', '!guid': myEntity.guid, equal: ['done', false] },
   );
 
   const total = otherPendingTodos.length;
@@ -73,7 +75,7 @@ async function run() {
   console.log(
     \`Besides the one I just created, there \${
       single ? 'is' : 'are'
-    } \${total} pending todo\${single ? '' : 's'} in the database.\`
+    } \${total} pending todo\${single ? '' : 's'} in the database.\`,
   );
 }`}
   />
@@ -92,23 +94,13 @@ export default class Todo extends Entity<TodoData> {
   static ETYPE = 'todo'; // This is used for the table name(s) in the DB.
   static class = 'Todo'; // This is used to map references to their class.
 
-  static async factory(guid?: string): Promise<Todo & TodoData> {
-    return (await super.factory(guid)) as Todo & TodoData;
-  }
+  constructor() {
+    super();
 
-  static factorySync(guid?: string): Todo & TodoData {
-    return super.factorySync(guid) as Todo & TodoData;
-  }
-
-  constructor(guid?: string) {
-    super(guid);
-
-    if (this.guid == null) {
-      // Within the methods of an entity, you will use \`this.$data\` to access
-      // its data. Outside, you don't need the $data part.
-      this.$data.text = '';
-      this.$data.done = false;
-    }
+    // Within the methods of an entity, you will use \`this.$data\` to access
+    // its data. Outside, you don't need the $data part.
+    this.$data.text = '';
+    this.$data.done = false;
   }
 
   async $getOtherTodos() {
@@ -117,7 +109,7 @@ export default class Todo extends Entity<TodoData> {
     // instance of Nymph, so it could be a transactional instance.
     const otherTodos = await this.$nymph.getEntities(
       { class: Todo },
-      { type: '!&', guid: this.guid }
+      { type: '!&', guid: this.guid },
     );
     return otherTodos;
   }
