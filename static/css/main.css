@@ -2008,10 +2008,10 @@ ul.pagination li > .page.active {
   color: #ffffff !important;
 }
 ul.pagination li > .page.active:hover {
-  background-color: #4666b1;
+  background-color: rgb(70.3525862069, 102.3310344828, 176.9474137931);
 }
 ul.pagination li > .page.active:active {
-  background-color: #3e5a9b;
+  background-color: rgb(61.6474137931, 89.6689655172, 155.0525862069);
 }
 ul.pagination li:first-child {
   padding-right: 0.75em;
@@ -2177,14 +2177,14 @@ input[type=reset].primary:hover,
 input[type=button].primary:hover,
 button.primary:hover,
 .button.primary:hover {
-  background-color: #4666b1;
+  background-color: rgb(70.3525862069, 102.3310344828, 176.9474137931);
 }
 input[type=submit].primary:active,
 input[type=reset].primary:active,
 input[type=button].primary:active,
 button.primary:active,
 .button.primary:active {
-  background-color: #3e5a9b;
+  background-color: rgb(61.6474137931, 89.6689655172, 155.0525862069);
 }
 input[type=submit].disabled, input[type=submit]:disabled,
 input[type=reset].disabled,
@@ -2661,7 +2661,7 @@ body {
   padding-bottom: 0;
 }
 #sidebar > .inner > .alt {
-  background-color: #eff1f2;
+  background-color: rgb(239.3333333333, 240.9, 242.4666666667);
   border-bottom: 0;
   margin: -2.2222222222em 0 4.4444444444em -2.2222222222em;
   padding: 2.2222222222em;

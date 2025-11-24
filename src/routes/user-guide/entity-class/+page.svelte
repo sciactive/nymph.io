@@ -42,24 +42,17 @@ entity.$hasTag('foo'); // False`}
   />
 
   <p>
-    In Node.js, entities that have been saved inside another entity's property
-    are loaded as "sleeping references". This means their data is not actually
-    pulled from the database. It will "wake up" when you first try to access
-    something other than its GUID.
-  </p>
-
-  <p>
-    In the client, there are still sleeping references, but they can't be loaded
-    synchronously. Instead, they are loaded with the <code>$ready</code> method,
-    or by using the <code>$readyAll</code> method on the entity that contains them.
+    Entities that have been saved inside another entity's property are loaded as
+    "sleeping references". This means their data is not actually pulled from the
+    database/server. It will "wake up" when you use <code>$wake</code> on it or
+    <code>$wakeAll</code> on the entity that contains it.
   </p>
 
   <p>
     To clear the cache of referenced entities, so that the next time one is
-    accessed it will be pulled from the database, use the <code
-      >$clearCache</code
+    awoken, it will be pulled from the database, use the <code>$clearCache</code
     >
-    method in Node.js and the <code>$refresh</code> method in the client.
+    method in Node.js or the <code>$refresh</code> method in the client.
   </p>
 
   <Highlight
@@ -83,9 +76,10 @@ await instOfFoo.$save();
 console.log(entity.foo.bar); // Outputs 'Old value.'
 // If on Node.js
 entity.$clearCache();
+await entity.foo.$wake();
 // Else if on the client
 await entity.$refresh();
-await entity.foo.$ready();
+await entity.foo.$wake();
 // End if
 console.log(entity.foo.bar); // Outputs 'New value.'`}
   />
@@ -169,7 +163,8 @@ await nymph.deleteEntities([entity]);`}
     <li>
       <code>$equals</code> - Perform a more strict comparison of two entities
       (basically a GUID + data + tags check). To return true, the entities must
-      meet the following criteria.
+      meet the following criteria. Unlike <code>$is</code>, this method can't be
+      used on sleeping references.
       <ul>
         <li>They must be entities.</li>
         <li>They must have equal GUIDs, or both can have no GUID.</li>
@@ -184,8 +179,9 @@ await nymph.deleteEntities([entity]);`}
       if it's true, the function uses <code>$equals</code>.
     </li>
     <li>
-      <code>$arraySearch</code> - Search an array for the entity and return the
-      corresponding key. Takes two arguments, the array and a boolean
+      <code>$arraySearch</code> - Search an array for the entity and return its
+      index, or <code>-1</code> if it's not found. Takes two arguments, the
+      array and a boolean
       <code>strict</code>. If <code>strict</code> is false or undefined, the
       function uses
       <code>$is</code>

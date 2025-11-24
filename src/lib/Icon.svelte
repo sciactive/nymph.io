@@ -6,6 +6,9 @@
 </svg>
 
 <script lang="ts">
-  export let path: string;
-  export let verticalAlign = 'middle';
+  interface Props {
+    path: string;
+    verticalAlign?: string;
+  }
+  let { path, verticalAlign = 'middle' }: Props = $props();
 </script>

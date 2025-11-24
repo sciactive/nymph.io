@@ -27,8 +27,7 @@
     To use Nymph, you need a database driver. Nymph.js provides a <a
       href="{base}/packages/driver-mysql">MySQL driver</a
     >, a <a href="{base}/packages/driver-postgresql">PostgreSQL driver</a>, and
-    a
-    <a href="{base}/packages/driver-sqlite3">SQLite3 driver</a>. They all
+    a <a href="{base}/packages/driver-sqlite3">SQLite3 driver</a>. They all
     provide the exact same functionality.
   </p>
 

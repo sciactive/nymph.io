@@ -1,4 +1,4 @@
-<svelte:window on:resize={handleWindowResize} />
+<svelte:window onresize={handleWindowResize} />
 <svelte:head>
   <meta
     name="description"
@@ -42,13 +42,15 @@
 <!-- Main -->
 <div
   id="main"
-  on:click={setSidebarInactive}
-  on:keypress={(event) => event.key === 'Enter' || setSidebarInactive()}
+  onclick={setSidebarInactive}
+  onkeypress={(event) => event.key === 'Enter' || setSidebarInactive()}
+  tabindex="0"
+  role="button"
 >
   <div class="inner">
     <Header />
 
-    <slot />
+    {@render children?.()}
 
     <!-- Footer -->
     <footer id="footer">
@@ -64,8 +66,9 @@
 <div
   id="sidebar"
   class:inactive={sidebarInactive}
-  on:click={handleSidebarLinkActivate}
-  on:keypress={handleSidebarLinkActivate}
+  onclick={handleSidebarLinkActivate}
+  onkeypress={handleSidebarLinkActivate}
+  role="navigation"
 >
   <div class="inner">
     <!-- Logo -->
@@ -183,7 +186,7 @@
     <a
       href="#sidebar"
       class="toggle"
-      on:click={(event) => {
+      onclick={(event) => {
         // Prevent default.
         event.preventDefault();
         event.stopPropagation();
@@ -197,18 +200,24 @@
 </div>
 
 <script lang="ts">
+  import type { Snippet } from 'svelte';
   import { onMount } from 'svelte';
   import { mdiEmail, mdiMapMarker, mdiMenu, mdiMastodon } from '@mdi/js';
   import { base, assets } from '$app/paths';
   import Header from '$lib/Header.svelte';
   import Icon from '$lib/Icon.svelte';
 
-  let email: HTMLAnchorElement;
-  let sidebarInactive = false;
-  let smallWindow = false;
+  interface Props {
+    children?: Snippet;
+  }
+  let { children }: Props = $props();
+
+  let email: HTMLAnchorElement = $state();
+  let sidebarInactive = $state(false);
+  let smallWindow = $state(false);
 
   onMount(() => {
-    const contactEmail = ['sciactive.com', 'hperrin'].reverse().join('@');
+    const contactEmail = ['port87.com', 'hperrin'].reverse().join('@');
     email.href = 'mailto:' + contactEmail;
     email.textContent = contactEmail;
 

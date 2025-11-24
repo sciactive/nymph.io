@@ -12,9 +12,9 @@
     To create or retrieve an entity, you can call the <code>factory</code>
     static method of an entity's class and pass in an optional GUID. You can also
     use the <code>factorySync</code> method if you need to create a new entity
-    synchronously. The benefit of using the factory method is that it can return
-    the correct type in TypeScript. To check that an entity hasn't been saved
-    yet, check that the GUID is null (<code>entity.guid == null</code>).
+    synchronously. The benefit of using the factory methods is that they can
+    return the correct type in TypeScript. To check that an entity hasn't been
+    saved yet, check that the GUID is null (<code>entity.guid == null</code>).
   </p>
 
   <Highlight
@@ -39,7 +39,7 @@ if (someBlogPost.guid == null) {
 await blogPost.$save();
 
 let superPosts = await nymph.getEntities(
-  { class: BlogPost.class },
+  { class: BlogPost },
   { type: '&', tag: 'super-post' }
 );
 
@@ -104,23 +104,12 @@ console.log(entity.foo.bar); // Outputs undefined.`}
   <p>
     When an entity is loaded, it does not request its referenced entities from
     Nymph. Instead, it creates instances without data called "sleeping
-    references". When you first access an entity's data (in Node.js), if it is a
-    sleeping reference, it will fill its data from the DB synchronously. You can
-    call <code>$clearCache</code> in Node.js or <code>$refresh</code> in the client
-    to turn all the entities back into sleeping references.
-  </p>
-
-  <p>
-    Keep in mind that because Nymph is making a synchronous database call when
-    you access a referenced entity's data, you may get thrown errors. You should
-    surround access to data like this in a try/catch block.
-  </p>
-
-  <p>
-    In the client, the <code>$readyAll</code> method can be used to awaken all sleeping
-    references in the entity's data. This is the most convenient way to do this,
-    since, unlike in Node.js, the sleeping reference can't just be loaded when it
-    is first accessed.
+    references". You can use `$wake` on the entity or `$wakeAll` on the parent
+    entity to get the entity's data from the DB. The <code>$wakeAll</code>
+    method will awaken all sleeping references in the entity's data. You can call
+    <code>$clearCache</code>
+    in Node.js or <code>$refresh</code> in the client to turn all the entities back
+    into sleeping references.
   </p>
 </section>
 

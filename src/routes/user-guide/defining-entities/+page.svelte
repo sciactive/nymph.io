@@ -21,7 +21,11 @@
     <div style="text-align: end;">Extending Entity in Node.js</div>
     <Highlight
       language={typescript}
-      code={`import { Entity, Selector, nymphJoiProps } from '@nymphjs/nymph';
+      code={`import {
+  Entity,
+  EntityUniqueConstraintError,
+  nymphJoiProps,
+} from '@nymphjs/nymph';
 import { tilmeldJoiProps } from '@nymphjs/tilmeld';
 import Joi from 'joi';
 
@@ -39,21 +43,16 @@ export class Todo extends Entity<TodoData> {
   protected $protectedTags = ['archived'];
   protected $allowlistTags? = [];
 
-  static async factory(guid?: string): Promise<Todo & TodoData> {
-    return (await super.factory(guid)) as Todo & TodoData;
+  constructor() {
+    super();
+
+    this.$data.name = '';
+    this.$data.done = false;
   }
 
-  static factorySync(guid?: string): Todo & TodoData {
-    return super.factorySync(guid) as Todo & TodoData;
-  }
-
-  constructor(guid?: string) {
-    super(guid);
-
-    if (this.guid == null) {
-      this.$data.name = '';
-      this.$data.done = false;
-    }
+  async $getUniques() {
+    // Make sure this isn't a duplicate Todo for this user.
+    return [\`\${this.$data.user.guid}:\${this.$data.name}\`];
   }
 
   async $archive() {
@@ -83,26 +82,14 @@ export class Todo extends Entity<TodoData> {
       'Invalid Todo: '
     );
 
-    // Check that this is not a duplicate Todo.
-    const selector: Selector = {
-      type: '&',
-      equal: ['name', this.$data.name],
-    };
-    if (this.guid) {
-      selector['!guid'] = this.guid;
+    try {
+      return await super.$save();
+    } catch (e: any) {
+      if (e instanceof EntityUniqueConstraintError) {
+        throw new Error('There is already a todo for that.');
+      }
+      throw e;
     }
-    if (
-      await this.$nymph.getEntity(
-        {
-          class: this.constructor as typeof Todo,
-        },
-        selector
-      )
-    ) {
-      throw new Error('There is already a todo for that.');
-    }
-
-    return await super.$save();
   }
 }
 
@@ -127,21 +114,11 @@ export class Todo extends Entity<TodoData> {
   // The name of the server class
   public static class = 'Todo';
 
-  constructor(guid?: string) {
-    super(guid);
+  constructor() {
+    super();
 
-    if (guid == null) {
-      this.$data.name = '';
-      this.$data.done = false;
-    }
-  }
-
-  static async factory(guid?: string): Promise<Todo & TodoData> {
-    return (await super.factory(guid)) as Todo & TodoData;
-  }
-
-  static factorySync(guid?: string): Todo & TodoData {
-    return super.factorySync(guid) as Todo & TodoData;
+    this.$data.name = '';
+    this.$data.done = false;
   }
 
   async $archive(): Promise<boolean> {
@@ -169,9 +146,11 @@ const Todo = nymph.addEntityClass(TodoClass);`}
     there is an instance of Nymph available in <code>this.$nymph</code> (or
     <code>this.nymph</code> in static methods). In Node.js, these instances will
     know which user is logged in and add appropriate permission checks, and will
-    maintain a persistent DB connection during a transaction. On the client, these
-    instances will know how to communicate with the configured REST server. Basically,
-    you have to use these instances.
+    maintain a persistent DB connection during a transaction. On the client,
+    these instances will know how to communicate with the configured REST
+    server. Basically, you have to use these instances. You can also use
+    <code>this.$nymph.getEntityClass</code>
+    and <code>this.nymph.getEntityClass</code> to get the right class for Nymph queries.
   </p>
 
   <p>
@@ -197,6 +176,17 @@ const Todo = nymph.addEntityClass(TodoClass);`}
       >class</code
     > static property. This class name should match on each side. It is how Nymph
     maps the client class to the Node.js class and vice versa.
+  </p>
+
+  <p>
+    Nymph provides a mechanism to ensure uniqueness among entities. Any strings
+    returned by the <code>$getUniques</code> method will have a uniqueness
+    constraint enforced by the database across this entity's etype. The
+    <code>Todo</code> class returns a string containing both the user's GUID and
+    the todo name. This ensures that the user can't have two todos with the same
+    name. The <code>$save</code> method checks for a thrown
+    <code>EntityUniqueConstraintError</code>
+    when calling the super class' <code>$save</code>.
   </p>
 
   <p>

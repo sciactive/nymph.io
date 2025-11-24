@@ -15,7 +15,7 @@
   </header>
 
   <p>
-    The <code>Entity</code> class's factory method can take a GUID as an
+    The <code>Entity</code> class' factory method can take a GUID as an
     argument. You can provide other factory functions that can take things as
     well. For example, the <code>User</code> class in Tilmeld has a
     <code>factoryUsername</code> method that takes a username. The method will return
@@ -25,13 +25,12 @@
 
   <Highlight
     language={typescript}
-    code={`// FoobarBaz expects a GUID.
-const baz = await FoobarBaz.factory(guid);
+    code={`const baz = await FoobarBaz.factory(guid);
 if (baz.guid == null) {
   console.error("Can't find the Foobar Baz!");
 }
 
-// Tilmeld's User class expects a GUID or a username.
+// Tilmeld's User class has a username factory function.
 const cronUser = await User.factoryUsername('cron');
 if (cronUser.guid == null) {
   console.error("Can't find the cron user!");
@@ -62,11 +61,7 @@ if (cronUser.guid == null) {
           <td>class</td>
           <td>typeof Entity</td>
           <td>Entity</td>
-          <td
-            >The class used to create each entity. It must have a <code
-              >factory</code
-            > static method that returns a new instance.</td
-          >
+          <td>The Entity class to query.</td>
         </tr>
         <tr>
           <td>limit</td>
@@ -243,11 +238,8 @@ if (cronUser.guid == null) {
         </tr>
         <tr>
           <td>contain</td>
-          <td
-            >The named property contains the value (its JSON string is found
-            within the property's JSON string).</td
-          >
-          <td><code>{"{type: '&', array: ['foo', 'bar']}"}</code></td>
+          <td>The named property is an array that contains the value.</td>
+          <td><code>{"{type: '&', contain: ['foo', 'bar']}"}</code></td>
           <td><code>{"entity.foo = ['bar', 'baz']"}</code></td>
         </tr>
         <tr>
