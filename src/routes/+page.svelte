@@ -10,9 +10,9 @@
     </header>
     <p>
       Nymph is an object relational mapper for collaborative web apps. Nymph
-      runs in Node.js and provides a REST server with clients built for Node.js
-      and the browser. It allows rapid prototyping and production ready speed
-      and features.
+      runs in Node.js and provides a REST server with a client that works in
+      Node.js and the browser. It allows rapid prototyping and production ready
+      speed and features.
     </p>
     <p>
       Nymph can use SQLite3, MySQL, or PostgreSQL as its database backend. You
@@ -37,11 +37,10 @@
     <h2>Features</h2>
   </header>
   <p>
-    Picture writing a SQL query on the frontend and saying, "update this array
-    whenever the results for this query change." Now instead of SQL, your query
-    is a simple JSON structure and has automatic access control built right in.
-    You can have all your logic on the frontend, or the backend if you prefer,
-    because you work with the data all the same. That's Nymph.
+    Write simple JSON search queries, with automatic access control built right
+    in, and get updated on the client automatically with any changes. You can
+    have all your logic on the frontend, or the backend if you prefer, because
+    you work with the data all the same.
   </p>
   <div class="features">
     <article>
@@ -49,8 +48,51 @@
       <div class="content">
         <h3>Speedy</h3>
         <p>
-          Nymph is lean and fast. Not just in processing, but Nymph can be used
-          for rapid prototyping.
+          Nymph is fast. Not just in processing, but Nymph can be used for rapid
+          prototyping.
+        </p>
+      </div>
+    </article>
+    <article>
+      <span class="icon"><Icon path={mdiShield} /></span>
+      <div class="content">
+        <h3>Secure</h3>
+        <p>
+          Nymph provides an optional user and group manager called Tilmeld that
+          secures your app based on granular permission controls.
+        </p>
+      </div>
+    </article>
+    <article>
+      <span class="icon"><Icon path={mdiForum} /></span>
+      <div class="content">
+        <h3>Reactive</h3>
+        <p>
+          Nymph's publish/subscribe server makes it easy to build <strong
+            >collaborative</strong
+          > apps. Subscribe to queries from the client and be updated when the queries'
+          results have changed.
+        </p>
+      </div>
+    </article>
+    <article>
+      <span class="icon"><Icon path={mdiAtom} /></span>
+      <div class="content">
+        <h3>Atomic Transactions</h3>
+        <p>
+          Nymph supports atomic, nested transactions to ensure data integrity.
+          Nothing is actually written to the database until the top level
+          transaction is committed.
+        </p>
+      </div>
+    </article>
+    <article>
+      <span class="icon"><Icon path={mdiTextSearch} /></span>
+      <div class="content">
+        <h3>Full Text Search</h3>
+        <p>
+          Nymph provides a full text search engine to provide fast results when
+          searching through millions of entities.
         </p>
       </div>
     </article>
@@ -62,28 +104,6 @@
           Nymph is licensed under the Apache-2 license. It provides all you need
           to build a backend for your app and the frontend tools you'll need as
           well.
-        </p>
-      </div>
-    </article>
-    <article>
-      <span class="icon"><Icon path={mdiForum} /></span>
-      <div class="content">
-        <h3>Reactive</h3>
-        <p>
-          Nymph's publish/subscribe server makes it easy to build <strong
-            >collaborative</strong
-          > apps. You can subscribe to complex queries from the client and be notified
-          when the queries' results have changed.
-        </p>
-      </div>
-    </article>
-    <article>
-      <span class="icon"><Icon path={mdiShield} /></span>
-      <div class="content">
-        <h3>Secure</h3>
-        <p>
-          Nymph provides an optional user and group manager called Tilmeld that
-          secures your app based on granular permission controls.
         </p>
       </div>
     </article>
@@ -148,9 +168,11 @@
 <script lang="ts">
   import Icon from '$lib/Icon.svelte';
   import {
+    mdiAtom,
     mdiForum,
     mdiShield,
     mdiSourceRepository,
-    mdiSpeedometer
+    mdiSpeedometer,
+    mdiTextSearch
   } from '@mdi/js';
 </script>
