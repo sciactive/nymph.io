@@ -102,11 +102,11 @@ if (cronUser.guid == null) {
         </tr>
         <tr>
           <td>return</td>
-          <td>'entity' | 'guid' | 'count'</td>
+          <td>'entity' | 'object' | 'guid' | 'count'</td>
           <td>'entity'</td>
           <td
-            >What to return, the entities with their data, just the GUIDs, or
-            just a count.</td
+            >What to return, the entities with their data, just their data, just
+            the GUIDs, or just a count.</td
           >
         </tr>
         <tr>
@@ -241,6 +241,17 @@ if (cronUser.guid == null) {
           <td>The named property is an array that contains the value.</td>
           <td><code>{"{type: '&', contain: ['foo', 'bar']}"}</code></td>
           <td><code>{"entity.foo = ['bar', 'baz']"}</code></td>
+        </tr>
+        <tr>
+          <td>search</td>
+          <td
+            >The named property matches the query. Single quotes find sequential
+            terms. Double quotes find exact terms. "or" is the or operator. "-"
+            before a term is the negation operator. Stop words and punctuation
+            are stripped. Case insensitive.</td
+          >
+          <td><code>{"{type: '&', search: ['foo', 'bar']}"}</code></td>
+          <td><code>{"entity.foo = 'A string with the word bar.'"}</code></td>
         </tr>
         <tr>
           <td>match</td>

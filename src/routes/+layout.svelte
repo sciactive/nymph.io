@@ -113,6 +113,9 @@
               <a href="{base}/user-guide/transactions">Transactions</a>
             </li>
             <li>
+              <a href="{base}/user-guide/full-text-search">Full Text Search</a>
+            </li>
+            <li>
               <a href="{base}/user-guide/export-and-import">Export and Import</a
               >
             </li>

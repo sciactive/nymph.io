@@ -73,8 +73,10 @@ nymph.import(filename);`}
 </section>
 
 <section class="page-steps">
-  <a href="{base}/user-guide/transactions" class="button" style="margin: .5em;"
-    >Previous: Transactions</a
+  <a
+    href="{base}/user-guide/full-text-search"
+    class="button"
+    style="margin: .5em;">Previous: Full Text Search</a
   >
   <span></span>
 </section>

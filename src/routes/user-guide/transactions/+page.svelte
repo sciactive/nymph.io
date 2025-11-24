@@ -213,9 +213,9 @@ export class Todo extends Entity<TodoData> {
     >Previous: UIDs</a
   >
   <a
-    href="{base}/user-guide/export-and-import"
+    href="{base}/user-guide/full-text-search"
     class="button"
-    style="margin: .5em;">Next: Export and Import</a
+    style="margin: .5em;">Next: Full Text Search</a
   >
 </section>
 

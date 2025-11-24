@@ -251,7 +251,7 @@ async function doQuery() {
   </header>
 
   <p>
-    An array with a name, then search query. True if the named property contains
+    An array with a name, then search query. True if the named property matches
     the query. Use single quotes to find sequential terms and double quotes to
     find exact terms. Use "or" as the or operator. Use "-" before a term as the
     negation operator. Stop words and punctuation are stripped. Case
