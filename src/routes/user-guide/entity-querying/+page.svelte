@@ -96,8 +96,8 @@ if (cronUser.guid == null) {
           <td>'cdate' | 'mdate' | string</td>
           <td>'cdate'</td>
           <td
-            >How to sort the entities. Should be "cdate", "mdate", or the name
-            of a property.</td
+            >How to sort the entities. Should be "cdate", "mdate", the name of a
+            property, or null.</td
           >
         </tr>
         <tr>

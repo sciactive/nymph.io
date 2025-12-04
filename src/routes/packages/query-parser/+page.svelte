@@ -108,7 +108,7 @@ async function doQuery() {
   <ul>
     <li><code>limit:number</code></li>
     <li><code>offset:number</code></li>
-    <li><code>sort:string</code></li>
+    <li><code>sort:string</code> or <code>sort:-</code></li>
     <li>
       <code>reverse:true</code>, <code>reverse:false</code>,
       <code>reverse:1</code>, or <code>reverse:0</code>
@@ -118,6 +118,12 @@ async function doQuery() {
   <p>
     These must appear in the top level of the query (outside of any
     parentheses).
+  </p>
+
+  <p>
+    Using a dash for sort means the results will not be sorted in any particular
+    order. You can also use "cdate" for created date and "mdate" for modified
+    date.
   </p>
 
   <header class="major">
