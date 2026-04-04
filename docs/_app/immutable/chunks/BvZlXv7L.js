@@ -1,0 +1,1 @@
+function e(e){return{name:`Plain text`,aliases:[`text`,`txt`],disableAutodetect:!0}}var t={name:`plaintext`,register:e};export{t};
