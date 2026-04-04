@@ -22,10 +22,10 @@
     <ul class="actions">
       <li>
         <a
-          href="https://github.com/sciactive/nymphjs"
+          href="https://forge.sciactive.com/sciactive/nymphjs"
           target="_blank"
           rel="noreferrer"
-          class="button big">Nymph.js on GitHub</a
+          class="button big">Nymph.js on SciActive Forge</a
         >
       </li>
     </ul>

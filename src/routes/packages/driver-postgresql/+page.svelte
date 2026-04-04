@@ -54,7 +54,7 @@ const nymph = new Nymph({}, new PostgreSQLDriver(postgresqlConfig));
 
   <p>
     See the <a
-      href="https://github.com/sciactive/nymphjs/tree/master/packages/driver-postgresql/src/conf/d.ts"
+      href="https://forge.sciactive.com/sciactive/nymphjs/src/branch/master/packages/driver-postgresql/src/conf/d.ts"
       target="_blank"
       rel="external">config declaration file</a
     >.

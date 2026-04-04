@@ -9,7 +9,7 @@
   <meta property="og:url" content="http://nymph.io/" />
   <meta
     property="og:image"
-    content="https://raw.githubusercontent.com/sciactive/nymph/master/assets/nymph-logo-500.png"
+    content="https://forge.sciactive.com/sciactive/nymph/raw/branch/master/assets/nymph-logo-500.png"
   />
   <meta property="og:site_name" content="Nymph" />
   <meta property="fb:admins" content="508999194" />

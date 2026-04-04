@@ -10,7 +10,7 @@
 
   <p>
     Nymph provides a case insensitive full text search engine based on the <a
-      href="https://github.com/sciactive/tokenizer"
+      href="https://forge.sciactive.com/sciactive/tokenizer"
       target="_blank">SciActive Tokenizer</a
     >. It has the ability to search for sequential tokens, exact tokens, "or"
     searches, and negation of tokens.

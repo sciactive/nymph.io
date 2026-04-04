@@ -15,18 +15,18 @@
     </li>
     <li>
       <a
-        href="https://github.com/sciactive/nymphjs"
+        href="https://forge.sciactive.com/sciactive/nymphjs"
         target="_blank"
         rel="noreferrer"
         class="icon brands"
-        title="GitHub"><Icon path={mdiGithub} /></a
+        title="Repo"><Icon path={mdiGit} /></a
       >
     </li>
   </ul>
 </header>
 
 <script lang="ts">
-  import { mdiMastodon, mdiGithub } from '@mdi/js';
+  import { mdiMastodon, mdiGit } from '@mdi/js';
   import { base } from '$app/paths';
   import Icon from '$lib/Icon.svelte';
 </script>
