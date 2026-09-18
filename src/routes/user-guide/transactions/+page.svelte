@@ -53,8 +53,20 @@
     Nymph instance will have that instance within their static <code>nymph</code
     >
     property and instance <code>$nymph</code> property. As long as the entity code
-    always uses these instances, every query and change should occur within that
-    transaction.
+    always uses these instances, every query and change should occur within that transaction.
+  </p>
+
+  <p>
+    Since it is <strong>very</strong> important to use the right instance when
+    you are using transactions, you should defined a
+    <code>$setNymph(nymph)</code>
+    method on all of your entities. You should use this to set
+    <code>this.$nymph = nymph</code>, then call <code>$setNymph</code> on any
+    child entities, passing the transaction instance to them too. When you are
+    done with the transaction, you can call the <code>$setNymph</code> method
+    again, with the original Nymph instance. <code>$setNymph</code> methods
+    exist on the <code>User</code> and <code>Group</code> classes in Tilmeld. The
+    example below uses this pattern.
   </p>
 
   <p>
@@ -165,7 +177,7 @@ export class Todo extends Entity<TodoData> {
       // Delete this todo's children.
       const children = await tnymph.getEntities(
         {
-          class: tnymph.getEntityClass(Todo),
+          class: Todo,
           skipAc: true,
         },
         {
@@ -202,9 +214,10 @@ export class Todo extends Entity<TodoData> {
   <p>
     The <code>$setNymph</code> method is used to make sure the entity and all
     referenced entities use the transactional Nymph instance. The
-    <code>tnymph</code> Nymph instance is used during the transaction, and the
-    children are retrieved using the proper class with
-    <code>tnymph.getEntityClass(Todo)</code>.
+    <code>tnymph</code> Nymph instance is used during the transaction. You don't
+    need to worry about which instance you pass to <code>getEntities</code>,
+    because it will always retrieve and use the correct instance. Factory
+    methods may not, however.
   </p>
 </section>
 

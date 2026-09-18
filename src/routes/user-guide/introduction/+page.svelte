@@ -8,9 +8,10 @@
   </header>
 
   <p>
-    Nymph is an ORM for Node.js and the browser, written in TypeScript. Nymph
-    data objects, called entities, are accessed just like plain objects. Nymph
-    includes a REST server and a Publish/Subscribe server.
+    Nymph is an application data framework for Node.js and the browser, written
+    in TypeScript. Nymph data objects, called entities, are accessed just like
+    plain objects. Nymph includes a REST server, a Publish/Subscribe server, and
+    a user/group manager with authentication.
   </p>
 
   <header class="major">
@@ -22,7 +23,7 @@
       >entities</strong
     >. Entities can hold most types of data available in JavaScript, including
     other entities. Entities are not strictly structured, so data of any type
-    can be added and saved just by assigning a property on the entity and
+    can be added and saved just by assigning it to a property on the entity and
     calling <code>$save</code>. This makes data manipulation and rapid
     prototyping in Nymph very easy. Then when you're ready to launch to
     production, you would use a validation library to enforce a schema for your
@@ -54,26 +55,33 @@
   </p>
 
   <p>
-    If an entity is referenced in another entity's property, the class name is
-    saved along with the GUID. When this referenced entity is awoken, Nymph will
-    retrieve it using the saved class.
-  </p>
-
-  <p>
-    When an entity containing a referenced entity is pulled from the database,
-    the referenced entity will exist in the data as a "sleeping reference".
-    Sleeping references have the right class and know their GUID, but other data
-    is not accessible until its pulled from the database. This happens when you
-    use the <code>$wake</code> method on it, or the <code>$wakeAll</code> method
-    on its parent.
+    When you save an entity in another entity's properties, that relationship is
+    saved in the database, and you can query for those kinds of relationships.
+    When you pull out the parent entity from the database, the child entity is
+    in a reference state called a "sleeping entity". When an entity is asleep,
+    only its GUID is known. You can "awaken" the entity, which pulls all of its
+    data from the database/server. Referenced entities' class names are saved
+    along with their GUIDs. When this entity is isntantiated, Nymph will
+    retrieve it using the saved class, so it will have the correct class even
+    when it's asleep. You can awaken a sleeping entity by using the <code
+      >$wake</code
+    >
+    method on it. You can also use the <code>$wakeAll</code> method on an entity to
+    awaken all of the sleeping entities in its data.
   </p>
 
   <p>
     When querying entities with Nymph, the ETYPE constant on the class
-    determines which database table(s) Nymph will look in.
+    determines which database table(s) Nymph will look in. Usually, one etype
+    will map to exactly one class, but that's not a requirement.
   </p>
 
   <p>
+    You now know the basics of how data is managed in a Nymph application. When
+    you're ready to start getting into the details, move to the next section.
+  </p>
+
+  <p style="font-size: smaller;">
     Caution: When changing an entity's class name, any entities referencing it
     must be resaved after setting the reference again using the new class name.
   </p>

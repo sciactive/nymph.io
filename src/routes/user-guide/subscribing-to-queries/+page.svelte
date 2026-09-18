@@ -57,8 +57,8 @@ pubsub.subscribeEntities(
   />
 
   <p>
-    You can also receive a count of how many subscribers there are to that
-    query. The count is given to a third callback.
+    You can also receive a count of how many subscribers there are to that query
+    (unless that has been disabled). The count is given to a third callback.
   </p>
 
   <Highlight

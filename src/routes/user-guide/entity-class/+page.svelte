@@ -236,7 +236,7 @@ entity.$inArray(arr, true); // false`}
     the entity's data will be replaced with that of the entity on the server
     side after the method was run. This will cause any awoken entities in the
     data of your entity to be replaced with sleeping entities, so you will have
-    to run <code>$readyAll</code> again. If you know that the server side method
+    to run <code>$wakeAll</code> again. If you know that the server side method
     will not change any of the data on the entity, you can set
     <code>stateless</code> to true.
   </p>

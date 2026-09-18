@@ -6,18 +6,33 @@
   <div class="content">
     <header>
       <h1>Nymph.js</h1>
-      <p>JavaScript data objects for Node.js and the browser.</p>
+      <p>Application data framework for Node.js and the browser.</p>
     </header>
     <p>
-      Nymph is an object relational mapper for collaborative web apps. Nymph
-      runs in Node.js and provides a REST server with a client that works in
-      Node.js and the browser. It allows rapid prototyping and production ready
-      speed and features.
+      Nymph.js is an application data framework. It includes an object
+      relational mapper, a powerful querying language, a user and group manager,
+      a REST server with a client that works in both Node.js and the browser,
+      and a publish/subscribe server for real time collaboration. It allows
+      rapid prototyping and production ready speed and features.
     </p>
     <p>
       Nymph can use SQLite3, MySQL, or PostgreSQL as its database backend. You
       can use SQLite in development, and MySQL or Postgres in production. You
       can even use Nymph with SQLite in an Electron app.
+    </p>
+    <p>
+      Nymph is the application data framework that powers <a
+        href="https://port87.com"
+        target="_blank">Port87</a
+      >. It also powers
+      <a href="https://forge.sciactive.com/sciactive/nephele" target="_blank"
+        >Nephele</a
+      >'s deduplication adapter. Nymph was started in 2009 as part of a
+      framework called
+      <a href="https://sourceforge.net/projects/pines/" target="_blank">Pines</a
+      >. In 2012, it was spun off into its own project, and in 2021, it was
+      migrated to Node.js. As part of Pines, it powered TECHsmart's entire ERP
+      system for over a decade.
     </p>
     <ul class="actions">
       <li>
@@ -114,7 +129,7 @@
   <header class="major">
     <h2>Framework Agnostic</h2>
     <p>
-      Nymph is very easy to integrate into React, Svelte, Angular, Ember, and
+      Nymph is very easy to integrate into React, Svelte, Angular, Vue, and
       more.
     </p>
   </header>
@@ -124,7 +139,8 @@
     complex apps with any frontend framework. Because you don't have to write
     SQL, almost all of your logic can be on the client side, if you prefer. You
     can also use backend logic in the client as if it were written on the
-    front-end with automatic asynchronous server calls.
+    front-end with automatic asynchronous server calls. You can even use
+    generator functions for streamed communication on long running tasks.
   </p>
   <p>
     Nymph's REST server package makes it easy to integrate anywhere in your app.

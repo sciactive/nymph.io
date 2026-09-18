@@ -95,6 +95,8 @@ export class Todo extends Entity<TodoData> {
 
 // Elsewhere, after initializing Nymph.
 import { Todo as TodoClass } from './Todo.js';
+// It is important to use the Todo class returned by addEntityClass (or
+// getEntityClass) because it has a reference to the instance of Nymph.
 const Todo = nymph.addEntityClass(TodoClass);`}
     />
   </div>
@@ -128,6 +130,8 @@ export class Todo extends Entity<TodoData> {
 
 // Elsewhere, after initializing Nymph.
 import { Todo as TodoClass } from './Todo.js';
+// It is important to use the Todo class returned by addEntityClass (or
+// getEntityClass) because it has a reference to the instance of Nymph.
 const Todo = nymph.addEntityClass(TodoClass);`}
     />
   </div>
@@ -164,11 +168,33 @@ const Todo = nymph.addEntityClass(TodoClass);`}
   <p>
     The <code>$clientEnabledMethods</code> property and the
     <code>clientEnabledStaticMethods</code>
-    static property in Node.js determine which methods and static methods can be
-    called from the client using <code>$serverCall</code> and
+    static property in Node.js determine which methods and static methods can be called
+    from the client using <code>$serverCall</code> and
     <code>serverCallStatic</code>. In the client class, the
     <code>return await this.$serverCall('$archive', []);</code> statement takes advantage
     of this feature.
+  </p>
+
+  <p>
+    You can define a
+    <code>$updateDataProtection()</code>
+    method on your entity. You can then call this method from the
+    <code>constructor()</code>
+    and the <code>$putData()</code> method to update the security related
+    instance properties,
+    <code>$privateData</code>, <code>$protectedData</code>,
+    <code>$allowlistData</code>, <code>$protectedTags</code>,
+    <code>$allowlistTags</code>, and <code>$clientEnabledMethods</code>, based
+    on the currently logged in user.
+  </p>
+
+  <p>
+    To geth the currently logged in user, you can use <code
+      >enforceTilmeld(this)</code
+    >
+    to get the Tilmeld instance, then <code>tilmeld.currentUser</code>. In the
+    client, you would use <code>await User.current()</code> instead, since there is
+    no Tilmeld instance.
   </p>
 
   <p>

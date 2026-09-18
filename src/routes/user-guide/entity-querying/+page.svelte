@@ -19,8 +19,8 @@
     argument. You can provide other factory functions that can take things as
     well. For example, the <code>User</code> class in Tilmeld has a
     <code>factoryUsername</code> method that takes a username. The method will return
-    a new entity if the queried entity is not found. You can determine if it was
-    found by checking that its GUID is not null.
+    a new entity if the queried entity is not found. You can determine if it was found
+    by checking that its GUID is not null.
   </p>
 
   <Highlight
@@ -128,6 +128,18 @@ if (cronUser.guid == null) {
           >
         </tr>
         <tr>
+          <td>acRequest</td>
+          <td>TilmeldAccessRequest</td>
+          <td>ALL_LEVELS</td>
+          <td
+            >Controls what kind of access levels the query looks for. For
+            example, you can limit a query to only entities owned by one of the
+            user's secondary groups. The levels can be ORed together (using <code
+              >|</code
+            >) to include multiple levels.</td
+          >
+        </tr>
+        <tr>
           <td>skipAc</td>
           <td>boolean</td>
           <td>false</td>
@@ -205,27 +217,50 @@ if (cronUser.guid == null) {
         <tr>
           <td>guid</td>
           <td>The entity's GUID is equal.</td>
-          <td><code>{"{type: '&', guid: '790229ae527f1511b3120b71'}"}</code></td
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"{type: '&', guid: '790229ae527f1511b3120b71'}"}</pre></td
           >
-          <td><code>{"entity.guid = '790229ae527f1511b3120b71'"}</code></td>
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"entity.guid = '790229ae527f1511b3120b71'"}</pre></td
+          >
         </tr>
         <tr>
           <td>tag</td>
           <td>The entity has the tag.</td>
-          <td><code>{"{type: '&', tag: 'foobar'}"}</code></td>
-          <td><code>{"entity.$addTag('foobar')"}</code></td>
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"{type: '&', tag: 'foobar'}"}</pre></td
+          >
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"entity.$addTag('foobar')"}</pre></td
+          >
         </tr>
         <tr>
           <td>defined</td>
-          <td>The named property is not undefined.</td>
-          <td><code>{"{type: '&', defined: 'foo'}"}</code></td>
-          <td><code>{'entity.foo = 0'}</code></td>
+          <td
+            >The named property is not undefined (i.e. it has <strong
+              >any</strong
+            > value).</td
+          >
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"{type: '&', defined: 'foo'}"}</pre></td
+          >
+          <td
+            ><pre style="white-space: pre-wrap;">{'entity.foo = null'}</pre></td
+          >
         </tr>
         <tr>
           <td>truthy</td>
           <td>The named property evaluates to true.</td>
-          <td><code>{"{type: '&', truthy: 'foo'}"}</code></td>
-          <td><code>{'entity.foo = 1'}</code></td>
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"{type: '&', truthy: 'foo'}"}</pre></td
+          >
+          <td><pre style="white-space: pre-wrap;">{'entity.foo = 1'}</pre></td>
         </tr>
         <tr>
           <td>equal</td>
@@ -233,14 +268,23 @@ if (cronUser.guid == null) {
             >The named property is defined and equals the value (their JSON
             strings are identical).</td
           >
-          <td><code>{"{type: '&', equal: ['foo', 0]}"}</code></td>
-          <td><code>{'entity.foo = 0'}</code></td>
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"{type: '&', equal: ['foo', 0]}"}</pre></td
+          >
+          <td><pre style="white-space: pre-wrap;">{'entity.foo = 0'}</pre></td>
         </tr>
         <tr>
           <td>contain</td>
           <td>The named property is an array that contains the value.</td>
-          <td><code>{"{type: '&', contain: ['foo', 'bar']}"}</code></td>
-          <td><code>{"entity.foo = ['bar', 'baz']"}</code></td>
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"{type: '&', contain: ['foo', 'bar']}"}</pre></td
+          >
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"entity.foo = ['bar', 'baz']"}</pre></td
+          >
         </tr>
         <tr>
           <td>search</td>
@@ -250,8 +294,14 @@ if (cronUser.guid == null) {
             before a term is the negation operator. Stop words and punctuation
             are stripped. Case insensitive.</td
           >
-          <td><code>{"{type: '&', search: ['foo', 'bar']}"}</code></td>
-          <td><code>{"entity.foo = 'A string with the word bar.'"}</code></td>
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"{type: '&', search: ['foo', 'bar']}"}</pre></td
+          >
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"entity.foo = 'A string with the word bar.'"}</pre></td
+          >
         </tr>
         <tr>
           <td>match</td>
@@ -259,8 +309,14 @@ if (cronUser.guid == null) {
             >The named property matches. Uses POSIX RegExp. Case sensitive. Must
             *not* be surrounded by any delimiters.</td
           >
-          <td><code>{"{type: '&', match: ['foo', 'bar.*z']}"}</code></td>
-          <td><code>{"entity.foo = 'foobarbaz'"}</code></td>
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"{type: '&', match: ['foo', 'bar.*z']}"}</pre></td
+          >
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"entity.foo = 'foobarbaz'"}</pre></td
+          >
         </tr>
         <tr>
           <td>imatch</td>
@@ -268,8 +324,14 @@ if (cronUser.guid == null) {
             >The named property matches. Uses POSIX RegExp. Case insensitive.
             Must *not* be surrounded by any delimiters.</td
           >
-          <td><code>{"{type: '&', imatch: ['foo', 'BaR.*Z']}"}</code></td>
-          <td><code>{"entity.foo = 'foobarbaz'"}</code></td>
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"{type: '&', imatch: ['foo', 'BaR.*Z']}"}</pre></td
+          >
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"entity.foo = 'foobarbaz'"}</pre></td
+          >
         </tr>
         <tr>
           <td>like</td>
@@ -277,8 +339,14 @@ if (cronUser.guid == null) {
             >The named property matches. Uses % for variable length wildcard and
             _ for single character wildcard. Case sensitive.</td
           >
-          <td><code>{"{type: '&', like: ['foo', 'f%bar_az']}"}</code></td>
-          <td><code>{"entity.foo = 'foobarbaz'"}</code></td>
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"{type: '&', like: ['foo', 'f%bar_az']}"}</pre></td
+          >
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"entity.foo = 'foobarbaz'"}</pre></td
+          >
         </tr>
         <tr>
           <td>ilike</td>
@@ -286,45 +354,71 @@ if (cronUser.guid == null) {
             >The named property matches. Uses % for variable length wildcard and
             _ for single character wildcard. Case insensitive.</td
           >
-          <td><code>{"{type: '&', ilike: ['foo', 'F%bAr_aZ']}"}</code></td>
-          <td><code>{"entity.foo = 'foobarbaz'"}</code></td>
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"{type: '&', ilike: ['foo', 'F%bAr_aZ']}"}</pre></td
+          >
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"entity.foo = 'foobarbaz'"}</pre></td
+          >
         </tr>
         <tr>
           <td>gt</td>
           <td>The named property is greater than the value.</td>
-          <td><code>{"{type: '&', gt: ['foo', 5]}"}</code></td>
-          <td><code>{'entity.foo = 6'}</code></td>
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"{type: '&', gt: ['foo', 5]}"}</pre></td
+          >
+          <td><pre style="white-space: pre-wrap;">{'entity.foo = 6'}</pre></td>
         </tr>
         <tr>
           <td>gte</td>
           <td>The named property is greater than or equal to the value.</td>
-          <td><code>{"{type: '&', gte: ['foo', 6]}"}</code></td>
-          <td><code>{'entity.foo = 6'}</code></td>
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"{type: '&', gte: ['foo', 6]}"}</pre></td
+          >
+          <td><pre style="white-space: pre-wrap;">{'entity.foo = 6'}</pre></td>
         </tr>
         <tr>
           <td>lt</td>
           <td>The named property is less than the value.</td>
-          <td><code>{"{type: '&', lt: ['foo', 7]}"}</code></td>
-          <td><code>{'entity.foo = 6'}</code></td>
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"{type: '&', lt: ['foo', 7]}"}</pre></td
+          >
+          <td><pre style="white-space: pre-wrap;">{'entity.foo = 6'}</pre></td>
         </tr>
         <tr>
           <td>lte</td>
           <td>The named property is less than or equal to the value.</td>
-          <td><code>{"{type: '&', lte: ['foo', 6]}"}</code></td>
-          <td><code>{'entity.foo = 6'}</code></td>
+          <td
+            ><pre
+              style="white-space: pre-wrap;">{"{type: '&', lte: ['foo', 6]}"}</pre></td
+          >
+          <td><pre style="white-space: pre-wrap;">{'entity.foo = 6'}</pre></td>
         </tr>
         <tr>
           <td>ref</td>
-          <td>The named property is the entity or contains the entity.</td>
           <td
-            ><code
-              >{"{type: '&', ref: ['foo', '790229ae527f1511b3120b71']}"}</code
-            ></td
+            >The named property is the entity or contains the entity (you can
+            give an entity or its GUID).</td
           >
           <td
-            ><code
-              >{"entity.foo = await Entity.factory('790229ae527f1511b3120b71')"}</code
-            ></td
+            ><pre style="white-space: pre-wrap;">{`{
+  type: '&',
+  ref: [
+    'foo',
+    '790229ae527f1511b3120b71'
+  ]
+}`}</pre></td
+          >
+          <td
+            ><pre style="white-space: pre-wrap;">{`entity.foo =
+  await Entity.factory(
+    '790229ae527f1511b3120b71'
+  )`}</pre></td
           >
         </tr>
         <tr>
@@ -334,14 +428,29 @@ if (cronUser.guid == null) {
             an entity that matches the query.</td
           >
           <td
-            ><code
-              >{"{type: '&', qref: ['foo', [{class: Entity}, {type: '&', equal: ['name', 'Foobar']}]]}"}</code
-            ></td
+            ><pre style="white-space: pre-wrap;">{`{
+  type: '&',
+  qref: [
+    'foo',
+    [
+      {class: Entity},
+      {
+        type: '&',
+        equal: ['name', 'Foobar']
+      }
+    ]
+  ]
+}`}</pre></td
           >
           <td
-            ><code
-              >{"entity.foo = await nymph.getEntity({class: Entity}, {type: '&', equal: ['name', 'Foobar']})"}</code
-            ></td
+            ><pre style="white-space: pre-wrap;">{`entity.foo =
+  await nymph.getEntity(
+    {class: Entity},
+    {
+      type: '&',
+      equal: ['name', 'Foobar']
+    }
+  )`}</pre></td
           >
         </tr>
         <tr>
@@ -351,11 +460,15 @@ if (cronUser.guid == null) {
             like any other clause.)</td
           >
           <td
-            ><code
-              >{"{type: '&', selector: {type: '|', tag: ['foo', 'bar']}}"}</code
-            ></td
+            ><pre style="white-space: pre-wrap;">{`{
+  type: '&',
+  selector: {
+    type: '|',
+    tag: ['foo', 'bar']
+  }
+}`}</pre></td
           >
-          <td><code>{"entity.$addTag('bar')"}</code></td>
+          <td><pre>{"entity.$addTag('bar')"}</pre></td>
         </tr>
       </tbody>
     </table>
