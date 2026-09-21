@@ -1,19 +1,19 @@
 <svelte:head>
-  <title>Nymph.js - JavaScript Data Objects</title>
+  <title>Nymph.js - Application Data and Access Framework</title>
 </svelte:head>
 
 <section id="banner">
   <div class="content">
     <header>
       <h1>Nymph.js</h1>
-      <p>Application data framework for Node.js and the browser.</p>
+      <p>Application Data and Access Framework for Node.js and the browser.</p>
     </header>
     <p>
-      Nymph.js is an application data framework. It includes an object
-      relational mapper, a powerful querying language, a user and group manager,
-      a REST server with a client that works in both Node.js and the browser,
-      and a publish/subscribe server for real time collaboration. It allows
-      rapid prototyping and production ready speed and features.
+      Nymph.js includes an object relational mapper with nested, atomic
+      transactions, a powerful query language, a user and group manager with
+      granular access controls, a REST server, a publish/subscribe server for
+      real time collaboration, and a client for Node.js and the browser. It
+      allows rapid prototyping and production ready speed and features.
     </p>
     <p>
       Nymph can use SQLite3, MySQL, or PostgreSQL as its database backend. You
@@ -21,10 +21,11 @@
       can even use Nymph with SQLite in an Electron app.
     </p>
     <p>
-      Nymph is the application data framework that powers <a
+      Nymph is the framework that powers the <a
         href="https://port87.com"
         target="_blank">Port87</a
-      >. It also powers
+      >
+      email service. It also powers
       <a href="https://forge.sciactive.com/sciactive/nephele" target="_blank"
         >Nephele</a
       >'s deduplication adapter. Nymph was started in 2009 as part of a

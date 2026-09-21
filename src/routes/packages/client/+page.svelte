@@ -9,9 +9,15 @@
   </header>
 
   <p>
-    The Nymph Client allows you to query and push data to a Nymph REST server
-    from the browser or Node.js. You can also subscribe to entities and queries
-    on a Nymph PubSub server and be notified of changes.
+    The Nymph Client allows you to query and push data to a Nymph REST server,
+    and subscribe to entities and queries on a Nymph PubSub server and be
+    notified of changes, from the browser or Node.js.
+  </p>
+
+  <p>
+    For Tilmeld user authentication, be sure to load the <a
+      href="{base}/packages/tilmeld-client">Tilmeld Client</a
+    > entities as well.
   </p>
 
   <header class="major">
@@ -110,4 +116,6 @@ subscription.unsubscribe();`}
   import bash from 'svelte-highlight/languages/bash';
   import typescript from 'svelte-highlight/languages/typescript';
   import github from 'svelte-highlight/styles/github';
+
+  import { base } from '$app/paths';
 </script>

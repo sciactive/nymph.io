@@ -9,8 +9,8 @@
   </header>
 
   <p>
-    The Nymph core provides the base level classes and utilities to query the
-    database, save data to it, and define different data types.
+    The Nymph core package provides the base level classes and utilities to
+    query the database, save data to it, and define different data types.
   </p>
 
   <header class="major">
@@ -28,7 +28,8 @@
       href="{base}/packages/driver-mysql">MySQL driver</a
     >, a <a href="{base}/packages/driver-postgresql">PostgreSQL driver</a>, and
     a <a href="{base}/packages/driver-sqlite3">SQLite3 driver</a>. They all
-    provide the exact same functionality.
+    provide the exact same functionality (with the exception of alphanumerical
+    sort order, which is dependent on database collation).
   </p>
 
   <header class="major">
@@ -125,6 +126,37 @@ export default class Todo extends Entity<TodoData> {
       target="_blank"
       rel="external noreferrer">config declaration file</a
     >.
+  </p>
+
+  <header class="major">
+    <h2>Live Migrations</h2>
+  </header>
+
+  <p>
+    Sometimes database changes can be live migrated. In these cases, running <code
+      >needsMigration()</code
+    > will tell you about them, and the docblock for that method will give you more
+    information. You should always run this method after updating to a new version
+    of Nymph to see what needs to be migrated, if anything.
+  </p>
+  <p>
+    If a migration is needed, you should export the DB in the version you were
+    using before, in case anything goes wrong during the migration.
+  </p>
+  <p>
+    The next step is to use the <code>liveMigration(migrationType)</code> method with
+    the correct migration type.
+  </p>
+  <p>
+    If required (explained in the docblock), you might then need to run a
+    specific import on all of your entities. This is very important, and you
+    might not be able to use new features or upgrade further without performing
+    this step.
+  </p>
+  <p>
+    Note that you can always export the DB in the version you were previously
+    using, completely clear the DB (drop all of the tables), then import the DB
+    in the new version.
   </p>
 </section>
 

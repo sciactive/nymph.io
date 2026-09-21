@@ -32,8 +32,6 @@
 
   <p>
     You need to have an SMUI theme compiled and installed on your front end app.
-    If you're using Svelte, you need to have TypeScript support and you should
-    use the 'svelte' mainfield from package.json.
   </p>
 </section>
 

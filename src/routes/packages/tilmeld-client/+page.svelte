@@ -56,13 +56,14 @@ const nymph = new Nymph({
 });
 const User = nymph.addEntityClass(UserClass);
 const Group = nymph.addEntityClass(GroupClass);
+// This initialization step is required for authentication to work!
 User.init(nymph);`}
   />
 
   <p>
     If you're running more than one instance of Nymph client, be sure to use the
     classes returned by <code>addEntityClass</code>, so as not to accidentally
-    submit entities from one instances to another instance.
+    submit entities from one instance to another instance.
   </p>
 </section>
 

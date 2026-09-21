@@ -9,8 +9,10 @@
   </header>
 
   <p>
-    Tilmeld (the d is silent) is a user and group management system for Nymph.
-    It provides strict access controls to protect entities from unauthorized
+    Tilmeld (the d is silent) is a user and group management, access control,
+    and authentication system for Nymph. It allows creation and management of
+    users and groups, including the ability to manage multiple domains. It
+    provides strict access controls to protect entities from unauthorized
     access/modification. It allows for granting and revoking ad hoc abilities to
     users and groups, then checking for those abilities. It provides
     authentication services and features protection against XSRF attacks.
@@ -92,8 +94,12 @@ const { User, Group } = tilmeld;`}
       account and group information and grant/revoke abilities.
     </li>
     <li>
-      <code>tilmeld/switch</code> - Allow the user to switch to other users (log
-      in as them without their password).
+      <code>tilmeld/switch</code> - Allow the user to switch to other users (log in
+      as them without their password).
+    </li>
+    <li>
+      <code>tilmeld/domain/[domain]/admin</code> - Allow a user to create and edit
+      users in a domain.
     </li>
     <li><code>uid/get/[name]</code> - Allow the user to read the named UID.</li>
     <li>
