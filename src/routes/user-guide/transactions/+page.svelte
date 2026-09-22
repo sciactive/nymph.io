@@ -273,6 +273,9 @@ export class Todo extends Entity<TodoData> {
       // Delete todo.
       await super.$delete();
 
+      // Commit transaction.
+      await tnymph.commit(transaction);
+
       this.$setNymph(nymph);
     } catch (e: any) {
       await tnymph.rollback(transaction);
