@@ -57,10 +57,10 @@ export class Todo extends Entity<TodoData> {
 
   async $archive() {
     if (this.$hasTag('archived')) {
-      return true;
+      return;
     }
     this.$addTag('archived');
-    return await this.$save();
+    await this.$save();
   }
 
   async $save() {
@@ -83,7 +83,7 @@ export class Todo extends Entity<TodoData> {
     );
 
     try {
-      return await super.$save();
+      await super.$save();
     } catch (e: any) {
       if (e instanceof EntityUniqueConstraintError) {
         throw new Error('There is already a todo for that.');
@@ -123,7 +123,7 @@ export class Todo extends Entity<TodoData> {
     this.$data.done = false;
   }
 
-  async $archive(): Promise<boolean> {
+  async $archive(): Promise<void> {
     return await this.$serverCall('$archive', []);
   }
 }
