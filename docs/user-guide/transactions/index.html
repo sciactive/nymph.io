@@ -11,15 +11,15 @@
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
-    <link href="../../_app/immutable/entry/start.DLGgXT17.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/C4hVk8aN.js" rel="modulepreload">
+    <link href="../../_app/immutable/entry/start.CsfU-l8X.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/D4HAnt_U.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/H09IMVH7.js" rel="modulepreload">
-		<link href="../../_app/immutable/entry/app.EIetSMY1.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.CaFWB1tB.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/0.Bpuwn4RX.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.BHUd1KzH.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/CjttxovM.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/D8EN8fFf.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/26.DEBz7WmC.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/26.mvfmazec.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/D_gJAAal.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BF3MJUBc.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/Ciszbs-_.js" rel="modulepreload">
@@ -242,6 +242,9 @@
       <span class="hljs-comment">// Delete todo.</span>
       <span class="hljs-keyword">await</span> <span class="hljs-variable language_">super</span>.$delete();
 
+      <span class="hljs-comment">// Commit transaction.</span>
+      <span class="hljs-keyword">await</span> tnymph.<span class="hljs-title function_">commit</span>(transaction);
+
       <span class="hljs-variable language_">this</span>.$setNymph(nymph);
     } <span class="hljs-keyword">catch</span> (<span class="hljs-attr">e</span>: <span class="hljs-built_in">any</span>) {
       <span class="hljs-keyword">await</span> tnymph.<span class="hljs-title function_">rollback</span>(transaction);
@@ -259,15 +262,15 @@
 			
 			<script>
 				{
-					__sveltekit_1q1dc46 = {
+					__sveltekit_c5qnjm = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.DLGgXT17.js"),
-						import("../../_app/immutable/entry/app.EIetSMY1.js")
+						import("../../_app/immutable/entry/start.CsfU-l8X.js"),
+						import("../../_app/immutable/entry/app.CaFWB1tB.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 26],
