@@ -3,7 +3,7 @@ import{E as e,G as t,J as n,K as r,L as i,T as a,U as o,_ as s,at as c,ot as l,w
     Then initialize the new User class with the Nymph instance. (This allows the
     class to set up authentication listeners.)</p> <!> <p>If you're running more than one instance of Nymph client, be sure to use the
     classes returned by <code>addEntityClass</code>, so as not to accidentally
-    submit entities from one instances to another instance.</p></section>`);function _(e){var _=g();s(`1ir30v8`,e=>{var t=a(),n=r(t);d(n,()=>h),i(()=>{o.title=`Tilmeld Client - Packages - Nymph.js`}),u(e,t)});var v=n(t(_),6);f(v,{get language(){return m},code:`npm install --save @nymphjs/tilmeld-client`});var y=n(v,10);f(y,{get language(){return p},code:`import { Nymph } from '@nymphjs/client';
+    submit entities from one instance to another instance.</p></section>`);function _(e){var _=g();s(`1ir30v8`,e=>{var t=a(),n=r(t);d(n,()=>h),i(()=>{o.title=`Tilmeld Client - Packages - Nymph.js`}),u(e,t)});var v=n(t(_),6);f(v,{get language(){return m},code:`npm install --save @nymphjs/tilmeld-client`});var y=n(v,10);f(y,{get language(){return p},code:`import { Nymph } from '@nymphjs/client';
 import {
   User as UserClass,
   Group as GroupClass,
@@ -14,4 +14,5 @@ const nymph = new Nymph({
 });
 const User = nymph.addEntityClass(UserClass);
 const Group = nymph.addEntityClass(GroupClass);
+// This initialization step is required for authentication to work!
 User.init(nymph);`}),c(2),l(_),u(e,_)}export{_ as component};

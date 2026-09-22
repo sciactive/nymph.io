@@ -1,4 +1,4 @@
-import{B as e,E as t,G as n,J as r,K as i,L as a,T as o,U as s,_ as c,at as l,m as u,ot as d,w as f,x as p}from"../chunks/H09IMVH7.js";import{o as m}from"../chunks/CIAV_iJ2.js";import"../chunks/xihTtKlq.js";import"../chunks/D8EN8fFf.js";import{t as h}from"../chunks/D_gJAAal.js";import{t as g}from"../chunks/BF3MJUBc.js";import{t as _}from"../chunks/Ciszbs-_.js";var v=t(`<section><header class="major"><h1 style="font-size: 3em;">Defining Entities</h1></header> <p>To create a new type of data object in Nymph, you extend the <code>Entity</code> class. This is equivalent to creating a new table in a relational database.
+import{B as e,E as t,G as n,J as r,K as i,L as a,T as o,U as s,_ as c,at as l,m as u,ot as d,w as f,x as p}from"../chunks/H09IMVH7.js";import{o as m}from"../chunks/C4hVk8aN.js";import"../chunks/xihTtKlq.js";import"../chunks/D8EN8fFf.js";import{t as h}from"../chunks/D_gJAAal.js";import{t as g}from"../chunks/BF3MJUBc.js";import{t as _}from"../chunks/Ciszbs-_.js";var v=t(`<section><header class="major"><h1 style="font-size: 3em;">Defining Entities</h1></header> <p>To create a new type of data object in Nymph, you extend the <code>Entity</code> class. This is equivalent to creating a new table in a relational database.
     If you are going to use the class on the client side, you also need to create
     a corresponding client class. Below are two examples, one for Node.js, and one
     for the client. A more in depth explanation follows the examples.</p> <div><div style="text-align: end;">Extending Entity in Node.js</div> <!></div> <div><div style="text-align: end;">Extending Entity in the Client</div> <!></div> <p>In both cases, defaults are set in the constructor (the <code>done</code> property is set to false and the <code>name</code> property is set to an
@@ -62,10 +62,10 @@ export class Todo extends Entity<TodoData> {
 
   async $archive() {
     if (this.$hasTag('archived')) {
-      return true;
+      return;
     }
     this.$addTag('archived');
-    return await this.$save();
+    await this.$save();
   }
 
   async $save() {
@@ -88,7 +88,7 @@ export class Todo extends Entity<TodoData> {
     );
 
     try {
-      return await super.$save();
+      await super.$save();
     } catch (e: any) {
       if (e instanceof EntityUniqueConstraintError) {
         throw new Error('There is already a todo for that.');
@@ -120,7 +120,7 @@ export class Todo extends Entity<TodoData> {
     this.$data.done = false;
   }
 
-  async $archive(): Promise<boolean> {
+  async $archive(): Promise<void> {
     return await this.$serverCall('$archive', []);
   }
 }

@@ -1,7 +1,7 @@
-import{E as e,G as t,J as n,K as r,L as i,T as a,U as o,_ as s,ot as c,w as l,x as u}from"../chunks/H09IMVH7.js";import"../chunks/xihTtKlq.js";import"../chunks/D8EN8fFf.js";import{t as d}from"../chunks/D_gJAAal.js";import{t as f}from"../chunks/BF3MJUBc.js";import{t as p}from"../chunks/DDTgMnDM.js";import{t as m}from"../chunks/Ciszbs-_.js";var h=e(`<section><header class="major"><h1 style="font-size: 3em;">Client</h1></header> <p>The Nymph Client allows you to query and push data to a Nymph REST server
-    from the browser or Node.js. You can also subscribe to entities and queries
-    on a Nymph PubSub server and be notified of changes.</p> <header class="major"><h2>Installation</h2></header> <!> <p>This package is the Nymph client for browsers and Node.js, but requires at
-    least Node.js 22 to be used in Node. You can find ES modules in <code>dist</code>, or TS source in <code>src</code>.</p> <header class="major"><h2>Usage</h2></header> <p>Here's an overview:</p> <!></section>`);function g(e){var g=h();s(`17ufcse`,e=>{var t=a(),n=r(t);u(n,()=>m),i(()=>{o.title=`Client - Packages - Nymph.js`}),l(e,t)});var _=n(t(g),6);d(_,{get language(){return p},code:`npm install --save @nymphjs/client`});var v=n(_,8);d(v,{get language(){return f},code:`import { Nymph, PubSub } from '@nymphjs/client';
+import{B as e,E as t,G as n,J as r,K as i,L as a,T as o,U as s,_ as c,at as l,m as u,ot as d,w as f,x as p}from"../chunks/H09IMVH7.js";import{o as m}from"../chunks/C4hVk8aN.js";import"../chunks/xihTtKlq.js";import"../chunks/D8EN8fFf.js";import{t as h}from"../chunks/D_gJAAal.js";import{t as g}from"../chunks/BF3MJUBc.js";import{t as _}from"../chunks/DDTgMnDM.js";import{t as v}from"../chunks/Ciszbs-_.js";var y=t(`<section><header class="major"><h1 style="font-size: 3em;">Client</h1></header> <p>The Nymph Client allows you to query and push data to a Nymph REST server,
+    and subscribe to entities and queries on a Nymph PubSub server and be
+    notified of changes, from the browser or Node.js.</p> <p>For Tilmeld user authentication, be sure to load the <a>Tilmeld Client</a> entities as well.</p> <header class="major"><h2>Installation</h2></header> <!> <p>This package is the Nymph client for browsers and Node.js, but requires at
+    least Node.js 22 to be used in Node. You can find ES modules in <code>dist</code>, or TS source in <code>src</code>.</p> <header class="major"><h2>Usage</h2></header> <p>Here's an overview:</p> <!></section>`);function b(t){var b=y();c(`17ufcse`,e=>{var t=o(),n=i(t);p(n,()=>v),a(()=>{s.title=`Client - Packages - Nymph.js`}),f(e,t)});var x=r(n(b),4),S=r(n(x));l(),d(x);var C=r(x,4);h(C,{get language(){return _},code:`npm install --save @nymphjs/client`});var w=r(C,8);h(w,{get language(){return g},code:`import { Nymph, PubSub } from '@nymphjs/client';
 import TodoClass from './Todo.js';
 
 const nymphOptions = {
@@ -67,4 +67,4 @@ let subscription = pubsub.subscribeEntities(
 // ...
 
 // Remember to clean up your subscriptions when you no longer need them.
-subscription.unsubscribe();`}),c(g),l(e,g)}export{g as component};
+subscription.unsubscribe();`}),d(b),e(()=>u(S,`href`,`${m??``}/packages/tilmeld-client`)),f(t,b)}export{b as component};

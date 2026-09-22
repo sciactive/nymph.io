@@ -1,12 +1,15 @@
-import{E as e,G as t,J as n,K as r,L as i,T as a,U as o,_ as s,at as c,ot as l,w as u,x as d}from"../chunks/H09IMVH7.js";import"../chunks/xihTtKlq.js";import"../chunks/D8EN8fFf.js";import{t as f}from"../chunks/D_gJAAal.js";import{t as p}from"../chunks/BF3MJUBc.js";import{t as m}from"../chunks/DDTgMnDM.js";import{t as h}from"../chunks/Ciszbs-_.js";var g=e(`<section><header class="major"><h1 style="font-size: 3em;">Tilmeld</h1></header> <p>Tilmeld (the d is silent) is a user and group management system for Nymph.
-    It provides strict access controls to protect entities from unauthorized
+import{E as e,G as t,J as n,K as r,L as i,T as a,U as o,_ as s,at as c,ot as l,w as u,x as d}from"../chunks/H09IMVH7.js";import"../chunks/xihTtKlq.js";import"../chunks/D8EN8fFf.js";import{t as f}from"../chunks/D_gJAAal.js";import{t as p}from"../chunks/BF3MJUBc.js";import{t as m}from"../chunks/DDTgMnDM.js";import{t as h}from"../chunks/Ciszbs-_.js";var g=e(`<section><header class="major"><h1 style="font-size: 3em;">Tilmeld</h1></header> <p>Tilmeld (the d is silent) is a user and group management, access control,
+    and authentication system for Nymph. It allows creation and management of
+    users and groups, including the ability to manage multiple domains. It
+    provides strict access controls to protect entities from unauthorized
     access/modification. It allows for granting and revoking ad hoc abilities to
     users and groups, then checking for those abilities. It provides
     authentication services and features protection against XSRF attacks.</p> <header class="major"><h2>Installation</h2></header> <!> <header class="major"><h2>Usage</h2></header> <p>When you initialize Nymph, provide it with an instance of the Tilmeld class
     from this package. You now have access to the User and Group classes that
     are specific to that instance of Nymph/Tilmeld.</p> <p>Here's an overview.</p> <!> <header class="major"><h2>Options</h2></header> <p>See the <a href="https://forge.sciactive.com/sciactive/nymphjs/src/branch/master/packages/tilmeld/src/conf/d.ts" target="_blank" rel="external">config declaration file</a>.</p> <header class="major"><h2>Abilities</h2></header> <p>There are a few abilities that Tilmeld uses internally:</p> <ul><li><code>system/admin</code> - A user with this ability has <strong>all</strong> abilities.</li> <li><code>tilmeld/admin</code> - Allow the user to manage and edit other user's
-      account and group information and grant/revoke abilities.</li> <li><code>tilmeld/switch</code> - Allow the user to switch to other users (log
-      in as them without their password).</li> <li><code>uid/get/[name]</code> - Allow the user to read the named UID.</li> <li><code>uid/new/[name]</code> - Allow the user to read, create, and increment
+      account and group information and grant/revoke abilities.</li> <li><code>tilmeld/switch</code> - Allow the user to switch to other users (log in
+      as them without their password).</li> <li><code>tilmeld/domain/[domain]/admin</code> - Allow a user to create and edit
+      users in a domain.</li> <li><code>uid/get/[name]</code> - Allow the user to read the named UID.</li> <li><code>uid/new/[name]</code> - Allow the user to read, create, and increment
       the named UID.</li> <li><code>uid/set/[name]</code> - Allow the user to read, create, increment, set,
       and delete the named UID.</li></ul> <p>The admin and switch abilities cannot be inherited from groups.</p></section>`);function _(e){var _=g();s(`1ivawsu`,e=>{var t=a(),n=r(t);d(n,()=>h),i(()=>{o.title=`Tilmeld - Packages - Nymph.js`}),u(e,t)});var v=n(t(_),6);f(v,{get language(){return m},code:`npm install --save @nymphjs/tilmeld`});var y=n(v,8);f(y,{get language(){return p},code:`import SQLite3Driver from '@nymphjs/driver-sqlite3';
 import { Tilmeld } from '@nymphjs/tilmeld';
