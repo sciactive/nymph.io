@@ -42,11 +42,11 @@ import Category from './Category';
 async function doQuery() {
   const [options, ...selectors] = queryParser({
     query:
-      'limit:4 sort:mdate foobar (| [archived] mdate<"2 weeks ago") category<{cat Tech}>',
+      'limit:4 sort:mdate foobar (| [archived] mdate<"2 weeks ago") category<{Cat Tech}>',
     entityClass: BlogPost,
     defaultFields: ['title', 'body'],
     qrefMap: {
-      cat: {
+      Cat: {
         class: Category,
         defaultFields: ['name'],
       },
@@ -133,15 +133,15 @@ async function doQuery() {
   <p>These are the available clauses, and their syntax.</p>
 
   <header>
-    <h3>equal and !equal</h3>
+    <h3>equal and not equal</h3>
   </header>
 
   <p>Check for string or JSON representation equality.</p>
 
   <ul>
-    <li><code>name=string</code> or <code>name!=string</code></li>
+    <li><code>name=string</code> or <code>-name=string</code></li>
     <li>
-      <code>name="string value"</code> or <code>name!="string value"</code>
+      <code>name="string value"</code> or <code>-name="string value"</code>
       <ul>
         <li>
           (Use this if you have a space in your string, or if your string could
@@ -151,7 +151,7 @@ async function doQuery() {
       </ul>
     </li>
     <li>
-      <code>name=JSON</code> or <code>name!=JSON</code>
+      <code>name=JSON</code> or <code>-name=JSON</code>
       <ul>
         <li>
           (Match a JSON encoded value (like <code>true</code>, <code>1</code>,
@@ -162,47 +162,47 @@ async function doQuery() {
   </ul>
 
   <header>
-    <h3>guid and !guid</h3>
+    <h3>guid and not guid</h3>
   </header>
 
   <p>Check for entity GUID.</p>
 
   <ul>
-    <li><code>{'{guid}'}</code> or <code>{'{!guid}'}</code></li>
+    <li><code>{'{guid}'}</code> or <code>{'-{guid}'}</code></li>
   </ul>
 
   <header>
-    <h3>tag and !tag</h3>
+    <h3>tag and not tag</h3>
   </header>
 
   <p>Check for a tag.</p>
 
   <ul>
-    <li><code>{'<name>'}</code> or <code>{'<!name>'}</code></li>
+    <li><code>{'<name>'}</code> or <code>{'-<name>'}</code></li>
   </ul>
 
   <header>
-    <h3>truthy and !truthy</h3>
+    <h3>truthy and not truthy</h3>
   </header>
 
   <p>Check for truthiness.</p>
 
   <ul>
-    <li><code>[name]</code> or <code>[!name]</code></li>
+    <li><code>[name]</code> or <code>-[name]</code></li>
   </ul>
 
   <header>
-    <h3>ref and !ref</h3>
+    <h3>ref and not ref</h3>
   </header>
 
   <p>Check for a reference to another entity.</p>
 
   <ul>
-    <li><code>{'name<{guid}>'}</code> or <code>{'name!<{guid}>'}</code></li>
+    <li><code>{'name<{guid}>'}</code> or <code>{'-name<{guid}>'}</code></li>
   </ul>
 
   <header>
-    <h3>qref and !qref</h3>
+    <h3>qref and not qref</h3>
   </header>
 
   <p>Check for a reference to another entity using a query.</p>
@@ -210,7 +210,7 @@ async function doQuery() {
   <ul>
     <li>
       <code>{'name<{refclassname inner query}>'}</code> or
-      <code>{'name!<{refclassname inner query}>'}</code>
+      <code>{'-name<{refclassname inner query}>'}</code>
       <ul>
         <li>(Escape curly brackets with a leading backslash.)</li>
         <li>
@@ -222,7 +222,7 @@ async function doQuery() {
   </ul>
 
   <header>
-    <h3>contain and !contain</h3>
+    <h3>contain and not contain</h3>
   </header>
 
   <p>Check if the array at the named property contains a value.</p>
@@ -230,7 +230,7 @@ async function doQuery() {
   <ul>
     <li>
       <code>{'name<value>'}</code> or
-      <code>{'name!<value>'}</code>
+      <code>{'-name<value>'}</code>
       <ul>
         <li>
           (Escape angle brackets with a leading backslash. If your value could
@@ -241,7 +241,7 @@ async function doQuery() {
     </li>
     <li>
       <code>{'name<JSON>'}</code> or
-      <code>{'name!<JSON>'}</code>
+      <code>{'-name<JSON>'}</code>
       <ul>
         <li>
           (Search for a JSON encoded value (like <code>true</code>,
@@ -253,7 +253,7 @@ async function doQuery() {
   </ul>
 
   <header>
-    <h3>search and !search</h3>
+    <h3>search and not search</h3>
   </header>
 
   <p>
@@ -266,32 +266,46 @@ async function doQuery() {
   <ul>
     <li>
       <code>{'name(query)'}</code> or
-      <code>{'name!(query)'}</code>
+      <code>{'-name(query)'}</code>
+    </li>
+    <li>
+      <code>{'name:query'}</code> or
+      <code>{"name:'sequence query'"}</code> or
+      <code>{'name:"exact query"'}</code> or
+      <code>{'-name:query'}</code> or
+      <code>{"-name:'sequence query'"}</code> or
+      <code>{'-name:"exact query"'}</code>
+      <ul>
+        <li>
+          (The "limit", "offset", "sort", and "reverse" properties cannot be
+          used with the colon syntax.)
+        </li>
+      </ul>
     </li>
   </ul>
 
   <header>
-    <h3>match and !match</h3>
+    <h3>match and not match</h3>
   </header>
 
   <p>Check for POSIX regex match.</p>
 
   <ul>
-    <li><code>name~/pattern/</code> or <code>name!~/pattern/</code></li>
+    <li><code>name~/pattern/</code> or <code>-name~/pattern/</code></li>
   </ul>
 
   <header>
-    <h3>imatch and !imatch</h3>
+    <h3>imatch and not imatch</h3>
   </header>
 
   <p>Check for case insensitive POSIX regex match.</p>
 
   <ul>
-    <li><code>name~/pattern/i</code> or <code>name!~/pattern/i</code></li>
+    <li><code>name~/pattern/i</code> or <code>-name~/pattern/i</code></li>
   </ul>
 
   <header>
-    <h3>like and !like</h3>
+    <h3>like and not like</h3>
   </header>
 
   <p>
@@ -300,15 +314,15 @@ async function doQuery() {
   </p>
 
   <ul>
-    <li><code>name~pattern</code> or <code>name!~pattern</code></li>
+    <li><code>name~pattern</code> or <code>-name~pattern</code></li>
     <li>
-      <code>name~"pattern"</code> or <code>name!~"pattern"</code>
+      <code>name~"pattern"</code> or <code>-name~"pattern"</code>
       <ul><li>(Use this if you have a space in your pattern.)</li></ul>
     </li>
   </ul>
 
   <header>
-    <h3>ilike and !ilike</h3>
+    <h3>ilike and not ilike</h3>
   </header>
 
   <p>
@@ -317,19 +331,19 @@ async function doQuery() {
   </p>
 
   <ul>
-    <li><code>name~"pattern"i</code> or <code>name!~"pattern"i</code></li>
+    <li><code>name~"pattern"i</code> or <code>-name~"pattern"i</code></li>
   </ul>
 
   <header>
-    <h3>gt</h3>
+    <h3>gt and not gt</h3>
   </header>
 
   <p>Check a prop's value is greater than a given value.</p>
 
   <ul>
-    <li><code>{'name>number'}</code></li>
+    <li><code>{'name>number'}</code> or <code>{'-name>number'}</code></li>
     <li>
-      <code>{'name>relative'}</code>
+      <code>{'name>relative'}</code> or <code>{'-name>relative'}</code>
       <ul>
         <li>
           (A single relative time value like <code>now</code> or
@@ -338,7 +352,8 @@ async function doQuery() {
       </ul>
     </li>
     <li>
-      <code>{'name>"relative time value"'}</code>
+      <code>{'name>"relative time value"'}</code> or
+      <code>{'-name>"relative time value"'}</code>
       <ul>
         <li>
           (Use this for a time value with a space like <code
@@ -352,15 +367,15 @@ async function doQuery() {
   </ul>
 
   <header>
-    <h3>gte</h3>
+    <h3>gte and not gte</h3>
   </header>
 
   <p>Check a prop's value is greater than or equal to a given value.</p>
 
   <ul>
-    <li><code>{'name>=number'}</code></li>
+    <li><code>{'name>=number'}</code> or <code>{'-name>=number'}</code></li>
     <li>
-      <code>{'name>=relative'}</code>
+      <code>{'name>=relative'}</code> or <code>{'-name>=relative'}</code>
       <ul>
         <li>
           (A single relative time value like <code>now</code> or
@@ -369,7 +384,8 @@ async function doQuery() {
       </ul>
     </li>
     <li>
-      <code>{'name>="relative time value"'}</code>
+      <code>{'name>="relative time value"'}</code> or
+      <code>{'-name>="relative time value"'}</code>
       <ul>
         <li>
           (Use this for a time value with a space like <code
@@ -383,15 +399,15 @@ async function doQuery() {
   </ul>
 
   <header>
-    <h3>lt</h3>
+    <h3>lt and not lt</h3>
   </header>
 
   <p>Check a prop's value is less than a given value.</p>
 
   <ul>
-    <li><code>{'name<number'}</code></li>
+    <li><code>{'name<number'}</code> or <code>{'-name<number'}</code></li>
     <li>
-      <code>{'name<relative'}</code>
+      <code>{'name<relative'}</code> or <code>{'-name<relative'}</code>
       <ul>
         <li>
           (A single relative time value like <code>now</code> or
@@ -400,7 +416,8 @@ async function doQuery() {
       </ul>
     </li>
     <li>
-      <code>{'name<"relative time value"'}</code>
+      <code>{'name<"relative time value"'}</code> or
+      <code>{'-name<"relative time value"'}</code>
       <ul>
         <li>
           (Use this for a time value with a space like <code
@@ -414,15 +431,15 @@ async function doQuery() {
   </ul>
 
   <header>
-    <h3>lte</h3>
+    <h3>lte and not lte</h3>
   </header>
 
   <p>Check a prop's value is less than or equal to a given value.</p>
 
   <ul>
-    <li><code>{'name<=number'}</code></li>
+    <li><code>{'name<=number'}</code> or <code>{'-name<=number'}</code></li>
     <li>
-      <code>{'name<=relative'}</code>
+      <code>{'name<=relative'}</code> or <code>{'-name<=relative'}</code>
       <ul>
         <li>
           (A single relative time value like <code>now</code> or
@@ -431,7 +448,8 @@ async function doQuery() {
       </ul>
     </li>
     <li>
-      <code>{'name<="relative time value"'}</code>
+      <code>{'name<="relative time value"'}</code> or
+      <code>{'-name<="relative time value"'}</code>
       <ul>
         <li>
           (Use this for a time value with a space like <code
