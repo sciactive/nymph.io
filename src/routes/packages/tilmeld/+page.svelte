@@ -72,7 +72,7 @@ const { User, Group } = tilmeld;`}
 
   <p>
     See the <a
-      href="https://forge.sciactive.com/sciactive/nymphjs/src/branch/master/packages/tilmeld/src/conf/d.ts"
+      href="https://forge.sciactive.com/sciactive/nymphjs/src/branch/master/packages/tilmeld/src/conf/index.ts"
       target="_blank"
       rel="external">config declaration file</a
     >.

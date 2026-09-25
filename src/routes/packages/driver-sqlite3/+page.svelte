@@ -51,7 +51,7 @@ const nymph = new Nymph({}, new SQLite3Driver(sqliteConfig));
 
   <p>
     See the <a
-      href="https://forge.sciactive.com/sciactive/nymphjs/src/branch/master/packages/driver-sqlite3/src/conf/d.ts"
+      href="https://forge.sciactive.com/sciactive/nymphjs/src/branch/master/packages/driver-sqlite3/src/conf/index.ts"
       target="_blank"
       rel="external">config declaration file</a
     >.

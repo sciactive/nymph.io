@@ -54,7 +54,7 @@ const nymph = new Nymph({}, new MySQLDriver(mysqlConfig));
 
   <p>
     See the <a
-      href="https://forge.sciactive.com/sciactive/nymphjs/src/branch/master/packages/driver-mysql/src/conf/d.ts"
+      href="https://forge.sciactive.com/sciactive/nymphjs/src/branch/master/packages/driver-mysql/src/conf/index.ts"
       target="_blank"
       rel="external">config declaration file</a
     >.
