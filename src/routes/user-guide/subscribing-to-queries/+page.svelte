@@ -31,7 +31,7 @@
 
   <Highlight
     language={typescript}
-    code={`let smiths: (User & UserData)[] = [];
+    code={`let smiths: User[] = [];
 pubsub.subscribeEntities(
   {
     class: User
@@ -63,7 +63,7 @@ pubsub.subscribeEntities(
 
   <Highlight
     language={typescript}
-    code={`let smiths: (User & UserData)[] = [];
+    code={`let smiths: User[] = [];
 pubsub.subscribeEntities(
   {
     class: User
@@ -95,7 +95,7 @@ pubsub.subscribeEntities(
 
   <Highlight
     language={typescript}
-    code={`let smiths: (User & UserData)[] = [];
+    code={`let smiths: User[] = [];
 let subscription = pubsub.subscribeEntities(
   {
     class: User

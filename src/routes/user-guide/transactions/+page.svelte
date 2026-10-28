@@ -147,11 +147,13 @@ import type { AccessControlData } from '@nymphjs/tilmeld';
 import { enforceTilmeld, tilmeldJoiProps } from '@nymphjs/tilmeld';
 import Joi from 'joi';
 
-export type TodoData = {
+export interface TodoData extends AccessControlData {
   name: string;
   done: boolean;
-  parent?: Todo & TodoData;
-} & AccessControlData;
+  parent?: Todo;
+}
+
+export interface Todo extends TodoData {}
 
 export class Todo extends Entity<TodoData> {
   static ETYPE = 'todo';
@@ -165,13 +167,13 @@ export class Todo extends Entity<TodoData> {
   constructor() {
     super();
 
-    this.$data.name = '';
-    this.$data.done = false;
+    this.name = '';
+    this.done = false;
   }
 
   async $getUniques() {
     return [
-      \`\${this.$data.user?.guid}:\${this.$data.parent?.guid}:\${this.$data.name}\`,
+      \`\${this.user?.guid}:\${this.parent?.guid}:\${this.name}\`,
     ];
   }
 

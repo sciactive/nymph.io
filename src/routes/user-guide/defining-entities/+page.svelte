@@ -29,10 +29,12 @@
 import { tilmeldJoiProps } from '@nymphjs/tilmeld';
 import Joi from 'joi';
 
-export type TodoData = {
+export interface TodoData {
   name?: string;
   done?: boolean;
-};
+}
+
+export interface Todo extends TodoData {}
 
 export class Todo extends Entity<TodoData> {
   static ETYPE = 'todo';
@@ -46,13 +48,13 @@ export class Todo extends Entity<TodoData> {
   constructor() {
     super();
 
-    this.$data.name = '';
-    this.$data.done = false;
+    this.name = '';
+    this.done = false;
   }
 
   async $getUniques() {
     // Make sure this isn't a duplicate Todo for this user.
-    return [\`\${this.$data.user.guid}:\${this.$data.name}\`];
+    return [\`\${this.user.guid}:\${this.name}\`];
   }
 
   async $archive() {
@@ -107,10 +109,12 @@ const Todo = nymph.addEntityClass(TodoClass);`}
       language={typescript}
       code={`import { Entity } from '@nymphjs/client';
 
-export type TodoData = {
+export interface TodoData {
   name?: string;
   done?: boolean;
-};
+}
+
+export interface Todo extends TodoData {}
 
 export class Todo extends Entity<TodoData> {
   // The name of the server class
@@ -119,8 +123,8 @@ export class Todo extends Entity<TodoData> {
   constructor() {
     super();
 
-    this.$data.name = '';
-    this.$data.done = false;
+    this.name = '';
+    this.done = false;
   }
 
   async $archive(): Promise<void> {
@@ -138,23 +142,21 @@ const Todo = nymph.addEntityClass(TodoClass);`}
 
   <p>
     In both cases, defaults are set in the constructor (the <code>done</code>
-    property is set to false and the <code>name</code> property is set to an
-    empty string). You can see that from within the methods of an entity, the
-    entity's data (other than guid, cdate, mdate, and tags) are accessed from
-    <code>this.$data</code>. The
-    <code>$data</code> part is not necessary outside of the entity's own methods.
+    property is set to false and the <code>name</code> property is set to an empty
+    string).
   </p>
 
   <p>
-    You'll also notice that when using Nymph from within an entity's methods,
-    there is an instance of Nymph available in <code>this.$nymph</code> (or
+    You'll notice that when using Nymph from within an entity's methods, there
+    is an instance of Nymph available in <code>this.$nymph</code> (or
     <code>this.nymph</code> in static methods). In Node.js, these instances will
     know which user is logged in and add appropriate permission checks, and will
     maintain a persistent DB connection during a transaction. On the client,
     these instances will know how to communicate with the configured REST
     server. Basically, you have to use these instances. You can also use
     <code>this.$nymph.getEntityClass</code>
-    and <code>this.nymph.getEntityClass</code> to get the right class for Nymph queries.
+    and <code>this.nymph.getEntityClass</code> to get the right class for calling
+    static methods.
   </p>
 
   <p>

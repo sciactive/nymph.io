@@ -119,15 +119,6 @@ if (cronUser.guid == null) {
           >
         </tr>
         <tr>
-          <td>skipCache</td>
-          <td>boolean</td>
-          <td>false</td>
-          <td
-            >If true, Nymph will skip the cache and retrieve the entity from the
-            DB.</td
-          >
-        </tr>
-        <tr>
           <td>acRequest</td>
           <td>TilmeldAccessRequest</td>
           <td>ALL_LEVELS</td>
