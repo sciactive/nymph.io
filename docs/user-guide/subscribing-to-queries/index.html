@@ -11,15 +11,15 @@
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
-    <link href="../../_app/immutable/entry/start.Dl3NIW6m.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/BVJHovD9.js" rel="modulepreload">
+    <link href="../../_app/immutable/entry/start.C6-noKgm.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CfC_FZJX.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/H09IMVH7.js" rel="modulepreload">
-		<link href="../../_app/immutable/entry/app.CXbhbHSx.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.D64yW7sO.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/0.QEitDSTb.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.MTs_Ud6U.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/CjttxovM.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/D8EN8fFf.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/25.Dk2qRs7V.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/25.BXX-_4I-.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/D_gJAAal.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BF3MJUBc.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/Ciszbs-_.js" rel="modulepreload">
@@ -69,7 +69,7 @@
     to a query. It will return a function you can call to subscribe to the
     query. That function accepts a resolve and reject callback, similar to a
     promise. The resolve function will receive an update, which will at first be
-    an array of entities, then will be an update object with instructions that <code>updateArray</code> uses to update the original array.</p> <!--[--><pre data-language="typescript" style="overflow-x: var(--overflow-x, auto); overflow-y: var(--overflow-y, auto); border-radius: var(--border-radius, 0); width: var(--width, auto); max-width: var(--max-width, none);" class="svelte-167dipq"><code class="hljs"><!--[0--><!----><span class="hljs-keyword">let</span> <span class="hljs-attr">smiths</span>: (<span class="hljs-title class_">User</span> &amp; <span class="hljs-title class_">UserData</span>)[] = [];
+    an array of entities, then will be an update object with instructions that <code>updateArray</code> uses to update the original array.</p> <!--[--><pre data-language="typescript" style="overflow-x: var(--overflow-x, auto); overflow-y: var(--overflow-y, auto); border-radius: var(--border-radius, 0); width: var(--width, auto); max-width: var(--max-width, none);" class="svelte-167dipq"><code class="hljs"><!--[0--><!----><span class="hljs-keyword">let</span> <span class="hljs-attr">smiths</span>: <span class="hljs-title class_">User</span>[] = [];
 pubsub.<span class="hljs-title function_">subscribeEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">User</span>
@@ -92,7 +92,7 @@ pubsub.<span class="hljs-title function_">subscribeEntities</span>(
     <span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;Error: &#x27;</span> + e.<span class="hljs-property">textStatus</span>);
   }
 );<!----><!--]--></code></pre><!--]--><!----> <p>You can also receive a count of how many subscribers there are to that query
-    (unless that has been disabled). The count is given to a third callback.</p> <!--[--><pre data-language="typescript" style="overflow-x: var(--overflow-x, auto); overflow-y: var(--overflow-y, auto); border-radius: var(--border-radius, 0); width: var(--width, auto); max-width: var(--max-width, none);" class="svelte-167dipq"><code class="hljs"><!--[0--><!----><span class="hljs-keyword">let</span> <span class="hljs-attr">smiths</span>: (<span class="hljs-title class_">User</span> &amp; <span class="hljs-title class_">UserData</span>)[] = [];
+    (unless that has been disabled). The count is given to a third callback.</p> <!--[--><pre data-language="typescript" style="overflow-x: var(--overflow-x, auto); overflow-y: var(--overflow-y, auto); border-radius: var(--border-radius, 0); width: var(--width, auto); max-width: var(--max-width, none);" class="svelte-167dipq"><code class="hljs"><!--[0--><!----><span class="hljs-keyword">let</span> <span class="hljs-attr">smiths</span>: <span class="hljs-title class_">User</span>[] = [];
 pubsub.<span class="hljs-title function_">subscribeEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">User</span>
@@ -114,7 +114,7 @@ pubsub.<span class="hljs-title function_">subscribeEntities</span>(
     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`There are now <span class="hljs-subst">${count}</span> users watching the Smiths.`</span>);
   }
 );<!----><!--]--></code></pre><!--]--><!----> <p>To unsubscribe from the query, use the <code>unsubscribe</code> method on
-    the <code>PubSubSubscription</code> object returned by the function.</p> <!--[--><pre data-language="typescript" style="overflow-x: var(--overflow-x, auto); overflow-y: var(--overflow-y, auto); border-radius: var(--border-radius, 0); width: var(--width, auto); max-width: var(--max-width, none);" class="svelte-167dipq"><code class="hljs"><!--[0--><!----><span class="hljs-keyword">let</span> <span class="hljs-attr">smiths</span>: (<span class="hljs-title class_">User</span> &amp; <span class="hljs-title class_">UserData</span>)[] = [];
+    the <code>PubSubSubscription</code> object returned by the function.</p> <!--[--><pre data-language="typescript" style="overflow-x: var(--overflow-x, auto); overflow-y: var(--overflow-y, auto); border-radius: var(--border-radius, 0); width: var(--width, auto); max-width: var(--max-width, none);" class="svelte-167dipq"><code class="hljs"><!--[0--><!----><span class="hljs-keyword">let</span> <span class="hljs-attr">smiths</span>: <span class="hljs-title class_">User</span>[] = [];
 <span class="hljs-keyword">let</span> subscription = pubsub.<span class="hljs-title function_">subscribeEntities</span>(
   {
     <span class="hljs-attr">class</span>: <span class="hljs-title class_">User</span>
@@ -160,15 +160,15 @@ pubsub.<span class="hljs-title function_">subscribeEntities</span>(
 			
 			<script>
 				{
-					__sveltekit_1jean5n = {
+					__sveltekit_x8eerc = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.Dl3NIW6m.js"),
-						import("../../_app/immutable/entry/app.CXbhbHSx.js")
+						import("../../_app/immutable/entry/start.C6-noKgm.js"),
+						import("../../_app/immutable/entry/app.D64yW7sO.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 25],

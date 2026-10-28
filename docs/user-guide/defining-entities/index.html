@@ -11,15 +11,15 @@
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
-    <link href="../../_app/immutable/entry/start.Dl3NIW6m.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/BVJHovD9.js" rel="modulepreload">
+    <link href="../../_app/immutable/entry/start.C6-noKgm.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CfC_FZJX.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/H09IMVH7.js" rel="modulepreload">
-		<link href="../../_app/immutable/entry/app.CXbhbHSx.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.D64yW7sO.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/0.QEitDSTb.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.MTs_Ud6U.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/CjttxovM.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/D8EN8fFf.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/19.BOGlhRIn.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/19.CTAI361r.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/D_gJAAal.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BF3MJUBc.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/Ciszbs-_.js" rel="modulepreload">
@@ -74,10 +74,12 @@
 <span class="hljs-keyword">import</span> { tilmeldJoiProps } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/tilmeld&#x27;</span>;
 <span class="hljs-keyword">import</span> <span class="hljs-title class_">Joi</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;joi&#x27;</span>;
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">TodoData</span> = {
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">TodoData</span> {
   <span class="hljs-attr">name</span>?: <span class="hljs-built_in">string</span>;
   <span class="hljs-attr">done</span>?: <span class="hljs-built_in">boolean</span>;
-};
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Todo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">TodoData</span> {}
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Todo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Entity</span>&lt;<span class="hljs-title class_">TodoData</span>&gt; {
   <span class="hljs-keyword">static</span> <span class="hljs-variable constant_">ETYPE</span> = <span class="hljs-string">&#x27;todo&#x27;</span>;
@@ -91,13 +93,13 @@
   <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) {
     <span class="hljs-variable language_">super</span>();
 
-    <span class="hljs-variable language_">this</span>.<span class="hljs-property">$data</span>.<span class="hljs-property">name</span> = <span class="hljs-string">&#x27;&#x27;</span>;
-    <span class="hljs-variable language_">this</span>.<span class="hljs-property">$data</span>.<span class="hljs-property">done</span> = <span class="hljs-literal">false</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = <span class="hljs-string">&#x27;&#x27;</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">done</span> = <span class="hljs-literal">false</span>;
   }
 
   <span class="hljs-keyword">async</span> $getUniques() {
     <span class="hljs-comment">// Make sure this isn&#x27;t a duplicate Todo for this user.</span>
-    <span class="hljs-keyword">return</span> [<span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.$data.user.guid}</span>:<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.$data.name}</span>`</span>];
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.user.guid}</span>:<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.name}</span>`</span>];
   }
 
   <span class="hljs-keyword">async</span> $archive() {
@@ -144,10 +146,12 @@
 <span class="hljs-comment">// getEntityClass) because it has a reference to the instance of Nymph.</span>
 <span class="hljs-keyword">const</span> <span class="hljs-title class_">Todo</span> = nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">TodoClass</span>);<!----><!--]--></code></pre><!--]--><!----></div> <div><div style="text-align: end;">Extending Entity in the Client</div> <!--[--><pre data-language="typescript" style="overflow-x: var(--overflow-x, auto); overflow-y: var(--overflow-y, auto); border-radius: var(--border-radius, 0); width: var(--width, auto); max-width: var(--max-width, none);" class="svelte-167dipq"><code class="hljs"><!--[0--><!----><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Entity</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/client&#x27;</span>;
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">TodoData</span> = {
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">TodoData</span> {
   <span class="hljs-attr">name</span>?: <span class="hljs-built_in">string</span>;
   <span class="hljs-attr">done</span>?: <span class="hljs-built_in">boolean</span>;
-};
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Todo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">TodoData</span> {}
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Todo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Entity</span>&lt;<span class="hljs-title class_">TodoData</span>&gt; {
   <span class="hljs-comment">// The name of the server class</span>
@@ -156,8 +160,8 @@
   <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) {
     <span class="hljs-variable language_">super</span>();
 
-    <span class="hljs-variable language_">this</span>.<span class="hljs-property">$data</span>.<span class="hljs-property">name</span> = <span class="hljs-string">&#x27;&#x27;</span>;
-    <span class="hljs-variable language_">this</span>.<span class="hljs-property">$data</span>.<span class="hljs-property">done</span> = <span class="hljs-literal">false</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = <span class="hljs-string">&#x27;&#x27;</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">done</span> = <span class="hljs-literal">false</span>;
   }
 
   <span class="hljs-keyword">async</span> $archive(): <span class="hljs-title class_">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt; {
@@ -169,14 +173,14 @@
 <span class="hljs-keyword">import</span> { <span class="hljs-title class_">Todo</span> <span class="hljs-keyword">as</span> <span class="hljs-title class_">TodoClass</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./Todo.js&#x27;</span>;
 <span class="hljs-comment">// It is important to use the Todo class returned by addEntityClass (or</span>
 <span class="hljs-comment">// getEntityClass) because it has a reference to the instance of Nymph.</span>
-<span class="hljs-keyword">const</span> <span class="hljs-title class_">Todo</span> = nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">TodoClass</span>);<!----><!--]--></code></pre><!--]--><!----></div> <p>In both cases, defaults are set in the constructor (the <code>done</code> property is set to false and the <code>name</code> property is set to an
-    empty string). You can see that from within the methods of an entity, the
-    entity's data (other than guid, cdate, mdate, and tags) are accessed from <code>this.$data</code>. The <code>$data</code> part is not necessary outside of the entity's own methods.</p> <p>You'll also notice that when using Nymph from within an entity's methods,
-    there is an instance of Nymph available in <code>this.$nymph</code> (or <code>this.nymph</code> in static methods). In Node.js, these instances will
+<span class="hljs-keyword">const</span> <span class="hljs-title class_">Todo</span> = nymph.<span class="hljs-title function_">addEntityClass</span>(<span class="hljs-title class_">TodoClass</span>);<!----><!--]--></code></pre><!--]--><!----></div> <p>In both cases, defaults are set in the constructor (the <code>done</code> property is set to false and the <code>name</code> property is set to an empty
+    string).</p> <p>You'll notice that when using Nymph from within an entity's methods, there
+    is an instance of Nymph available in <code>this.$nymph</code> (or <code>this.nymph</code> in static methods). In Node.js, these instances will
     know which user is logged in and add appropriate permission checks, and will
     maintain a persistent DB connection during a transaction. On the client,
     these instances will know how to communicate with the configured REST
-    server. Basically, you have to use these instances. You can also use <code>this.$nymph.getEntityClass</code> and <code>this.nymph.getEntityClass</code> to get the right class for Nymph queries.</p> <p>In Node.js, the etype is set to <code>"todo"</code>. The etype of an entity
+    server. Basically, you have to use these instances. You can also use <code>this.$nymph.getEntityClass</code> and <code>this.nymph.getEntityClass</code> to get the right class for calling
+    static methods.</p> <p>In Node.js, the etype is set to <code>"todo"</code>. The etype of an entity
     determines which table(s) the entity will be placed in. When you search for
     an entity, you give Nymph a class. Nymph will use that class' etype to
     determine where to search for entities. If you don't provide a class, the <code>Entity</code> class and the "entity" etype will be used.</p> <p>The <code>$clientEnabledMethods</code> property and the <code>clientEnabledStaticMethods</code> static property in Node.js determine which methods and static methods can be called
@@ -199,15 +203,15 @@
 			
 			<script>
 				{
-					__sveltekit_1jean5n = {
+					__sveltekit_x8eerc = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.Dl3NIW6m.js"),
-						import("../../_app/immutable/entry/app.CXbhbHSx.js")
+						import("../../_app/immutable/entry/start.C6-noKgm.js"),
+						import("../../_app/immutable/entry/app.D64yW7sO.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 19],

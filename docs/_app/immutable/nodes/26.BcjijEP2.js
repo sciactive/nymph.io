@@ -1,4 +1,4 @@
-import{B as e,E as t,G as n,J as r,K as i,L as a,T as o,U as s,_ as c,at as l,m as u,ot as d,w as f,x as p}from"../chunks/H09IMVH7.js";import{o as m}from"../chunks/BVJHovD9.js";import"../chunks/xihTtKlq.js";import"../chunks/D8EN8fFf.js";import{t as h}from"../chunks/D_gJAAal.js";import{t as g}from"../chunks/BF3MJUBc.js";import{t as _}from"../chunks/Ciszbs-_.js";var v=t(`<section><header class="major"><h1 style="font-size: 3em;">Transactions</h1></header> <p>In Node.js, Nymph supports nested transactions. Nothing will be permanently
+import{B as e,E as t,G as n,J as r,K as i,L as a,T as o,U as s,_ as c,at as l,m as u,ot as d,w as f,x as p}from"../chunks/H09IMVH7.js";import{o as m}from"../chunks/CfC_FZJX.js";import"../chunks/xihTtKlq.js";import"../chunks/D8EN8fFf.js";import{t as h}from"../chunks/D_gJAAal.js";import{t as g}from"../chunks/BF3MJUBc.js";import{t as _}from"../chunks/Ciszbs-_.js";var v=t(`<section><header class="major"><h1 style="font-size: 3em;">Transactions</h1></header> <p>In Node.js, Nymph supports nested transactions. Nothing will be permanently
     written to the database's storage, and no PubSub subscribers will be
     notified, until the highest level transaction is committed. When a nested
     transaction is rolled back, the database will be in the state where the
@@ -55,11 +55,13 @@ import type { AccessControlData } from '@nymphjs/tilmeld';
 import { enforceTilmeld, tilmeldJoiProps } from '@nymphjs/tilmeld';
 import Joi from 'joi';
 
-export type TodoData = {
+export interface TodoData extends AccessControlData {
   name: string;
   done: boolean;
-  parent?: Todo & TodoData;
-} & AccessControlData;
+  parent?: Todo;
+}
+
+export interface Todo extends TodoData {}
 
 export class Todo extends Entity<TodoData> {
   static ETYPE = 'todo';
@@ -73,13 +75,13 @@ export class Todo extends Entity<TodoData> {
   constructor() {
     super();
 
-    this.$data.name = '';
-    this.$data.done = false;
+    this.name = '';
+    this.done = false;
   }
 
   async $getUniques() {
     return [
-      \`\${this.$data.user?.guid}:\${this.$data.parent?.guid}:\${this.$data.name}\`,
+      \`\${this.user?.guid}:\${this.parent?.guid}:\${this.name}\`,
     ];
   }
 

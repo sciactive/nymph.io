@@ -11,15 +11,15 @@
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
-    <link href="../../_app/immutable/entry/start.Dl3NIW6m.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/BVJHovD9.js" rel="modulepreload">
+    <link href="../../_app/immutable/entry/start.C6-noKgm.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CfC_FZJX.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/H09IMVH7.js" rel="modulepreload">
-		<link href="../../_app/immutable/entry/app.CXbhbHSx.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.D64yW7sO.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/0.QEitDSTb.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.MTs_Ud6U.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/CjttxovM.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/D8EN8fFf.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/9.CFb0ed-B.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/9.c7ZdKSZL.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/D_gJAAal.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BF3MJUBc.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/DDTgMnDM.js" rel="modulepreload">
@@ -95,7 +95,11 @@
 
   <span class="hljs-keyword">const</span> otherPendingTodos = <span class="hljs-keyword">await</span> nymph.<span class="hljs-title function_">getEntities</span>(
     { <span class="hljs-attr">class</span>: <span class="hljs-title class_">Todo</span> },
-    { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>, <span class="hljs-string">&#x27;!guid&#x27;</span>: myEntity.<span class="hljs-property">guid</span>, <span class="hljs-attr">equal</span>: [<span class="hljs-string">&#x27;done&#x27;</span>, <span class="hljs-literal">false</span>] },
+    {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;&amp;&#x27;</span>,
+      <span class="hljs-string">&#x27;!guid&#x27;</span>: myEntity.<span class="hljs-property">guid</span>,
+      <span class="hljs-attr">equal</span>: [<span class="hljs-string">&#x27;done&#x27;</span>, <span class="hljs-literal">false</span>],
+    },
   );
 
   <span class="hljs-keyword">const</span> total = otherPendingTodos.<span class="hljs-property">length</span>;
@@ -108,22 +112,22 @@
 }<!----><!--]--></code></pre><!--]--><!----> <!--[--><pre data-language="typescript" style="overflow-x: var(--overflow-x, auto); overflow-y: var(--overflow-y, auto); border-radius: var(--border-radius, 0); width: var(--width, auto); max-width: var(--max-width, none);" class="svelte-167dipq"><code class="hljs"><!--[0--><!----><span class="hljs-comment">// Todo.ts</span>
 <span class="hljs-keyword">import</span> { <span class="hljs-title class_">Entity</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/nymph&#x27;</span>;
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">TodoData</span> = {
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">TodoData</span> {
   <span class="hljs-attr">text</span>: <span class="hljs-built_in">string</span>;
   <span class="hljs-attr">done</span>: <span class="hljs-built_in">boolean</span>;
-};
+}
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Todo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Entity</span>&lt;<span class="hljs-title class_">TodoData</span>&gt; {
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Todo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">TodoData</span> {}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Todo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Entity</span>&lt;<span class="hljs-title class_">TodoData</span>&gt; {
   <span class="hljs-keyword">static</span> <span class="hljs-variable constant_">ETYPE</span> = <span class="hljs-string">&#x27;todo&#x27;</span>; <span class="hljs-comment">// This is used for the table name(s) in the DB.</span>
   <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> = <span class="hljs-string">&#x27;Todo&#x27;</span>; <span class="hljs-comment">// This is used to map references to their class.</span>
 
   <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) {
     <span class="hljs-variable language_">super</span>();
 
-    <span class="hljs-comment">// Within the methods of an entity, you will use `this.$data` to access</span>
-    <span class="hljs-comment">// its data. Outside, you don&#x27;t need the $data part.</span>
-    <span class="hljs-variable language_">this</span>.<span class="hljs-property">$data</span>.<span class="hljs-property">text</span> = <span class="hljs-string">&#x27;&#x27;</span>;
-    <span class="hljs-variable language_">this</span>.<span class="hljs-property">$data</span>.<span class="hljs-property">done</span> = <span class="hljs-literal">false</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">text</span> = <span class="hljs-string">&#x27;&#x27;</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">done</span> = <span class="hljs-literal">false</span>;
   }
 
   <span class="hljs-keyword">async</span> $getOtherTodos() {
@@ -132,7 +136,10 @@
     <span class="hljs-comment">// instance of Nymph, so it could be a transactional instance.</span>
     <span class="hljs-keyword">const</span> otherTodos = <span class="hljs-keyword">await</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">$nymph</span>.<span class="hljs-title function_">getEntities</span>(
       { <span class="hljs-attr">class</span>: <span class="hljs-title class_">Todo</span> },
-      { <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;!&amp;&#x27;</span>, <span class="hljs-attr">guid</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">guid</span> },
+      {
+        <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;!&amp;&#x27;</span>,
+        <span class="hljs-attr">guid</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">guid</span>,
+      },
     );
     <span class="hljs-keyword">return</span> otherTodos;
   }
@@ -150,15 +157,15 @@
 			
 			<script>
 				{
-					__sveltekit_1jean5n = {
+					__sveltekit_x8eerc = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.Dl3NIW6m.js"),
-						import("../../_app/immutable/entry/app.CXbhbHSx.js")
+						import("../../_app/immutable/entry/start.C6-noKgm.js"),
+						import("../../_app/immutable/entry/app.D64yW7sO.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 9],

@@ -11,15 +11,15 @@
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
-    <link href="../../_app/immutable/entry/start.Dl3NIW6m.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/BVJHovD9.js" rel="modulepreload">
+    <link href="../../_app/immutable/entry/start.C6-noKgm.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CfC_FZJX.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/H09IMVH7.js" rel="modulepreload">
-		<link href="../../_app/immutable/entry/app.CXbhbHSx.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.D64yW7sO.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/0.QEitDSTb.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.MTs_Ud6U.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/CjttxovM.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/D8EN8fFf.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/26.DbNVCHp9.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/26.BcjijEP2.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/D_gJAAal.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BF3MJUBc.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/Ciszbs-_.js" rel="modulepreload">
@@ -116,11 +116,13 @@
 <span class="hljs-keyword">import</span> { enforceTilmeld, tilmeldJoiProps } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@nymphjs/tilmeld&#x27;</span>;
 <span class="hljs-keyword">import</span> <span class="hljs-title class_">Joi</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;joi&#x27;</span>;
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> <span class="hljs-title class_">TodoData</span> = {
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">TodoData</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AccessControlData</span> {
   <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
   <span class="hljs-attr">done</span>: <span class="hljs-built_in">boolean</span>;
-  <span class="hljs-attr">parent</span>?: <span class="hljs-title class_">Todo</span> &amp; <span class="hljs-title class_">TodoData</span>;
-} &amp; <span class="hljs-title class_">AccessControlData</span>;
+  <span class="hljs-attr">parent</span>?: <span class="hljs-title class_">Todo</span>;
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Todo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">TodoData</span> {}
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Todo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Entity</span>&lt;<span class="hljs-title class_">TodoData</span>&gt; {
   <span class="hljs-keyword">static</span> <span class="hljs-variable constant_">ETYPE</span> = <span class="hljs-string">&#x27;todo&#x27;</span>;
@@ -134,13 +136,13 @@
   <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) {
     <span class="hljs-variable language_">super</span>();
 
-    <span class="hljs-variable language_">this</span>.<span class="hljs-property">$data</span>.<span class="hljs-property">name</span> = <span class="hljs-string">&#x27;&#x27;</span>;
-    <span class="hljs-variable language_">this</span>.<span class="hljs-property">$data</span>.<span class="hljs-property">done</span> = <span class="hljs-literal">false</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = <span class="hljs-string">&#x27;&#x27;</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">done</span> = <span class="hljs-literal">false</span>;
   }
 
   <span class="hljs-keyword">async</span> $getUniques() {
     <span class="hljs-keyword">return</span> [
-      <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.$data.user?.guid}</span>:<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.$data.parent?.guid}</span>:<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.$data.name}</span>`</span>,
+      <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.user?.guid}</span>:<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.parent?.guid}</span>:<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.name}</span>`</span>,
     ];
   }
 
@@ -262,15 +264,15 @@
 			
 			<script>
 				{
-					__sveltekit_1jean5n = {
+					__sveltekit_x8eerc = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.Dl3NIW6m.js"),
-						import("../../_app/immutable/entry/app.CXbhbHSx.js")
+						import("../../_app/immutable/entry/start.C6-noKgm.js"),
+						import("../../_app/immutable/entry/app.D64yW7sO.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 26],
